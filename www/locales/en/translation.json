@@ -1,0 +1,331 @@
+{
+  "general": {
+    "update": "Update",
+    "delete": "Delete",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "add_new": "Add New",
+    "manage_images": "Manage Images",
+    "image": "Image",
+    "remove": "Remove",
+    "yes": "Yes",
+    "no": "Noا",
+    "save": "Save",
+    "upload_image": "Upload Image",
+    "profile": "My Account",
+    "orders": "Orders",
+    "order": "Order",
+    "search": "Search",
+    "Close": "Close",
+    "back": "Back",
+    "search_txt": "Search course or tutor",
+    "chat": "Chat"
+  },
+  "allClasses": {
+    "title": "All Classes"
+  },
+  "order_details":{
+    "title":"Order Details",
+    "orddate":"Order date",
+    "ordstatus":"Order Status",
+    "date":"Date:",
+    "time":"Time:",
+    "address":"Address",
+    "date":"Other information",
+    "description":"Description",
+    "price":"Price ",
+    "name":"Name : ",
+    "type":"Type : "
+  },
+  "allpackages": {
+    "title": "All Packages"
+  },
+  "regist_cat": {
+    "title": "Favorite Courses",
+    "register": "REGISTER"
+  },
+  "settings": {
+    "title": "Settings",
+    "list_title": "Notification List",
+    "push_noti": "Push Notification",
+    "sms": "SMS Notification",
+    "email": "Email Notification"
+  },
+  "myaddresses": {
+    "title": "Edit Address",
+    "edit": "Edit",
+    "address": "Address"
+  },
+  "favorite": {
+    "mine": "My Favorite",
+    "courses": "By Course",
+    "title": "Favorite List",
+    "tech_description":"In this favorite section we are presenting for you all tutors you already add in your favorite list.",
+    "course_description":"In this favorite section we are presenting for you the highest rated tutors based on your favorites topics."
+  },
+  "info": {
+    "title": "Help",
+    "language": "change language",
+    "about": "About Ebda",
+    "terms": "Terms & Conditions",
+    "faq": "FAQ",
+    "support": "Support",
+    "settings": "settings",
+    "Followus": "Follow us"
+  },
+  "search": {
+    "title": "Search",
+    "btn": "Search"
+  },
+  "index": {
+    "home": "Home Page",
+    "profile": "My Account",
+    "all_subj": "All Subjects",
+    "browse_cat": "Browse By Category",
+    "Back": "Back",
+    "group": "Group Sessions",
+    "SpecialPackages": "Package Courses",
+    "COURSES": "COURSES"
+  },
+  "filter": {
+    "title": "Refine Your Search",
+    "category": "MAIN CATEGORY",
+    "select_cat": "All",
+    "subcat": "SUB CATEGORIES",
+    "sub_subcat": "SUB SUB CATEGORIES",
+    "select_subcat": "All",
+    "city": "CITY",
+    "select_city": "All",
+    "search": "SEARCH"
+  },
+  "desc": {
+    "classes": "Classes",
+    "packages": "Packages",
+    "special_order": "Private Session",
+    "nationality": "Nationality :",
+    "definition": "Definition",
+    "skills": "Skills :",
+    "experience": "Experience:",
+    "certificates": "Certificates:",
+    "languages": "Languages",
+    "rated_orders": "Number Of Rated Orders :",
+    "provider_rating": "Tutor Rating",
+    "price_rating": "Price Rating",
+    "quality_rating": "Quality Rating",
+    "report": "Report this tutor",
+    "overview": "Overview",
+    "reviews": "Reviews",
+    "sorry_class": "Sorry There are no Classes",
+    "sorry_pkg": "Sorry There are no packages"
+  },
+  "report_tutor": {
+    "title": "Report Tutor",
+    "selectreasons": "Select Reason",
+    "reason": "Reason",
+    "write_notes": "Write Notes"
+  },
+  "filter_sort": {
+    "filter": "Filter",
+    "sort": "Sort",
+    "area": "Map",
+    "rating": "Rating",
+    "price": "Price Range",
+    "distance": "Distance",
+    "city": "City"
+  },
+  "packages": {
+    "title": "Packages ",
+    "arts": "Arts ",
+    "description": "Description: ",
+    "requirements": "Requirements: ",
+    "terms": "Terms: ",
+    "register": "Register "
+  },
+  "special_order": {
+    "country":"Country ",
+    "paymenttype":"Payment Type ",
+    "cach":"Cash ",
+    "credit":"credit ",
+    "title": "Private Session ",
+    "learn": "I want to learn ",
+    "date": "Date ",
+    "time": "Time ",
+    "select_cat": "Select Category",
+    "category": "Category ",
+    "address": "Address ",
+    "newaddress": "New Address",
+    "address_placeholder": "Street - Building - Floor",
+    "location": "Location On Map",
+    "notes": "Notes ",
+    "price": "Price ",
+    "Description": "Hint: ",
+    "select_city": "Select City",
+    "select_address": "Select Address",
+    "numofsessions": "Number Of Sessions",
+    "district": "District",
+    "block": "Block",
+    "street": "Street",
+    "building_number": "Zip Code "
+  },
+  "classes": {
+    "title": "Classes"
+  },
+  "my_orders": {
+    "title": "My Orders",
+    "cancel_reason": "Cancel Reason",
+    "address": "Address",
+    "cancel": "Cancel",
+    "status": "Status",
+    "fname": "First Name",
+    "city": "City",
+    "phone": "Phone",
+    "lname": "Last Name",
+    "prov_title": "Service Provider",
+    "ord_data": "Order Data",
+    "order_num": "Order Number",
+    "datetime": "Order Date & Time",
+    "class_data": "Class Data",
+    "session_data": "Session Data",
+    "package_data": "Package Data",
+    "package_name": "Package Name",
+    "sessions_num": "Number Of Sessions",
+    "package_price": "Price",
+    "sessions_period": "Sessions Period",
+    "duration": "Duration",
+    "class_data": "Class Data",
+    "class_name": "Class Name",
+    "class_price": "Price",
+    "cancel_reason": "Cancel Reason",
+    "dipute": "Open Dispute",
+    "recieved": "Confirm Service Recieved",
+    "notation": "Swipe Left to cancel and chat"
+  },
+  "map": {
+    "title": "MAP"
+  },
+  "profile": {
+    "title": "My Account",
+    "name": "Name",
+    "fname": "First Name",
+    "lname": "Last Name",
+    "phone": "Phone",
+    "email": "Email",
+    "oldpass": "Old Password",
+    "newpass": "New Password",
+    "newpassconf": "Password Confirmation",
+    "success": "Successfully Updated",
+    "update": "Update",
+    "basic_data": "MY ACCOUNT ",
+    "password": "CHANGE PASSWORD ",
+    "addresses": "MY ADDRESSES",
+    "dop": "Date Of Birth",
+    "browse": "Browse",
+    "orders": "Orders",
+    "Inbox": "Inbox",
+    "Addresses": "Addresses",
+    "Paymentmethods": "Payment methods",
+    "Changepassword": "Change password",
+    "Logout": "Logout",
+    "typemessage": "Type a message",
+    "message": "Chat"
+  },
+  "change_pass": {
+    "title": "Password"
+  },
+  "login": {
+    "login_title": "Login",
+    "email": "E-mail",
+    "p_email": "E-mail",
+    "password": "Password",
+    "register": "Register",
+    "forget_pass": "Forget Password",
+    "p_password": "Password",
+    "no_acc": "Haven't Account ?",
+    "touch_title": "Login Using Touch ID"
+  },
+  "toolbar": {
+    "Courses": "Courses",
+    "Profile": "My Account",
+    "Favorites": "Favorites",
+    "Notifications": "Notifications",
+    "Settings": "Help"
+  },
+  "forget_pass": {
+    "title": "Please add your email and submit in order to reset and send new password to your email",
+    "nav_title": "Forget Password",
+    "email": "Email",
+    "submit": "Submit"
+  },
+  "register": {
+    "title": "Register New Account",
+    "cancel": "Cancel",
+    "register": "Register",
+    "help": "Need help ?",
+    "terms": "Terms and Conditions",
+    "sub_cats": "What kind of Subject(s) are you looking for?",
+    "basic_details": "BASIC DETAILS",
+    "fname": "First Name",
+    "lname": "Last Name",
+    "pass": "Password",
+    "email": "E-mail",
+    "Phone": "Phone",
+    "Birthday": "Birthday",
+    "NEXT": "NEXT",
+    "fname_inp": "minimum of 3 characters",
+    "pass_inp": "Must be a secure password"
+  },
+  "support": {
+    "title": "Support",
+    "Name": "Name",
+    "Email": "Email",
+    "Subject": "Subject",
+    "Message": "Message",
+    "send": "send"
+  },
+  "faq": {
+    "title": "FAQ",
+    "Answers": "Answers to all your questions"
+  },
+  "intro": {
+    "title": "Start Something New",
+    "started": "Sign Up",
+    "login": "Login"
+  },
+  "testimonials": {
+    "title": "Testimonials"
+  },
+  "chat": {
+    "title": "Chat",
+    "send": "Send"
+  },
+  "notificatiosns": {
+    "title": "Notifcations"
+  },
+  "accepted": {
+    "title": "your opinion matters",
+    "tutor_rate": "Tutor Rating",
+    "select_rate": "Select Rate",
+    "price_rate": "Price Rating",
+    "quality_rate": "Quality Rating",
+    "comment": "Any Comment ?",
+    "leave_comment": "Submit Survay"
+  },
+  "dispute": {
+    "title": "Disputes",
+    "refund": "Refund Only"
+  },
+  "dispute_request": {
+    "money_amount": "Refund Amount In SR",
+    "isrecieved": "Did you receive the item?",
+    "details": "Please write your request details",
+    "upload": "Press to upload ",
+    "register": "Register",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "verifyAccount": {
+    "title": "Verify Account",
+    "code": "enter your verification code",
+    "submit": "SUBMIT"
+  }
+}

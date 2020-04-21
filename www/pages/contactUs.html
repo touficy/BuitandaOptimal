@@ -1,0 +1,161 @@
+<div class="page page-contactUs light page-current" data-name="contactUs">
+
+    <div class="navbar nav-height">
+
+        <div class="navbar-inner nav-height">
+    
+            <div class="left">
+              <a href="#" class="back item-link  " style="color: white; margin-left: 1vh;">
+                <i  class="f7-icons">arrow_left</i >
+            </a>
+            </div>
+    
+            <div class="title width-All center_a"  >
+                <a style="color: white;"  href="#" class="link center_a ft-1 ContactUs">
+                   
+                </a style="color: white;">
+            </div>
+    
+            <div class="right margin-right-10">
+    
+                <a onclick="goToCheckout()" class="link ft-1">
+                  <span class="cart_counter" style="display:none"></span>
+
+                    <img src="img/Cart.svg" style="width: 5vh;">
+    
+                </a>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    <!-- <div class="toolbar tabbar toolbar-bottom o-visible" style="font-size: 11px;">
+      <div class="toolBarHome  toolbar-inner ">
+           
+
+            <a href="/home/" class="tab-link toolbar-title HOME ActiveColor " ><img  style="width: 4vh;" src="img/Home gray.svg" alt=""><p class="HomeTab" style="margin: unset;"> HOME </p></a>
+            <a href="/AllCategory/" class="tab-link toolbar-title CATEGORY  "><img  style="width: 4vh;" src="img/Categories gray.svg" alt=""> <p class="CATEGORYTab" style="margin: unset;"> CATEGORY </p></a>
+            <a href="/AuctionList/" class="tab-link toolbar-title AUCTION  "><img  style="width: 4vh;" src="img/Auction gray.svg" alt=""><p class="AUCTIONTab" style="margin: unset;"> AUCTION </p></a>
+            <a href="/profile/" class="tab-link toolbar-title PROFILE  " style="color: #32c2ff;"><img  style="width: 4vh;" src="img/login blue.svg" alt=""> <p class="PROFILETab" style="margin: unset;"> PROFILE </p></a>
+            </div>
+    </div> -->
+        <div class="page-content infinite-scroll-content" style="background-color: white; ">
+          
+          <div class="white  " style="margin:5vh 2vh 0vh 3vh;">
+            <div class="row">
+              <div class="col-20  end" >
+                <img class="img-contact" src="img/location.svg" >
+              </div>
+              <div class="col-80">
+                <p class="bold margin-p addressC">ADRESS <br> <span class="span-contact"> CAPOLO 1 RUA: PEDRO DE CASTRO VAN-DUNEM LOI MUNICIPIO: KILAMBA KIAXI LUANDA- ANGOLA </span></p>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-20  end" >
+                <img class="img-contact" src="img/phone.svg">
+              </div>
+              <div class="col-80">
+                <p class="bold margin-p phoneContact">PHONE NUMBER <br> <span class="span-contact PhoneNumbContact" onclick="callNum()"> + 244 923 474 222</span></p>
+
+              </div>
+            </div>
+
+
+
+
+            <div class="row">
+              <div class="col-20  end" >
+                <img class="img-contact" src="img/email.svg">
+              </div>
+              <div class="col-80">
+              <a href="#"  onclick="cordova.InAppBrowser.open('mailto:info@optimalsolutons.zrb7', '_system', 'location=yes')"  style="color: black;">  <p class="bold margin-p">EMAIL <br> <span class="span-contact"> info@buitanda.com</span></p> </a>
+
+              </div>
+            </div>
+
+          </div>
+
+
+          <div>
+            <div class="list shadow" style="margin:1vh 2vh 0vh 3vh;">
+              <ul  >
+                 <li class="item-content item-input">
+                   <div class="item-inner">
+                     <div class="item-input-wrap">
+                      <input  class="NameC" type="text" placeholder="Name" name="name">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                
+              </ul>
+
+              
+            </div>     
+            <div class="list shadow" style="margin:1vh 2vh 0vh 3vh;">
+              <ul  >
+                 <li class="item-content item-input">
+                   <div class="item-inner">
+                     <div class="item-input-wrap">
+                      <input  class="EmailC"  type="text" placeholder="Email" name="name">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                
+              </ul>
+
+              
+            </div>     
+            <div class="list shadow" style="margin:1vh 2vh 0vh 3vh;">
+              <ul  >
+                 <li class="item-content item-input">
+                   <div class="item-inner">
+                     <div class="item-input-wrap">
+                      <input  class="SubjectC" type="text" placeholder="Subject" name="name">
+                      <span class="input-clear-button"></span>
+                    </div>
+                  </div>
+                </li>
+                
+              </ul>
+
+              
+            </div> 
+        
+
+          <div class="list shadow" style="margin:1vh 2vh 0vh 3vh;">
+            <ul >
+               <li class="item-content item-input">
+                 <div class="item-inner">
+                   <div class="item-input-wrap">
+                    <textarea rows="4" cols="50" class="MsgC" placeholder=" "></textarea>
+
+                    <!-- <textarea  class="MsgC"  rows="4" cols="50" placeholder="Message"  >
+                    </textarea> -->
+                    <span class="input-clear-button"></span>
+            <!-- <textarea  class="MsgC"  placeholder="Message" class="white" >
+              
+            </textarea> -->
+                    <!-- <span class="input-clear-button"></span> -->
+                  </div>
+                </div>
+              </li>
+              
+            </ul>
+
+            
+          </div> 
+
+          <div style="text-align:-webkit-center; ">
+            <button class="col button button-raised button-fill" id="sendC" style="width: 45vw; margin: 1vh 0 1vh 0; background-color: #32c2ff;" onclick="contact()">Send   </button>
+        </div>
+          </div>
+
+
+            <div style="margin-top: 12vh;"></div>
+        </div>
+    </div>

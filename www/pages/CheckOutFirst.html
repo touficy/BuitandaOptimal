@@ -1,0 +1,168 @@
+<div class="page page-CheckOutFirst light page-current" data-name="CheckOutFirst">
+
+
+    <div class="navbar nav-height">
+
+        <div class="navbar-inner nav-height">
+
+            <div class="left" onclick="getMyCard()">
+                <a href="#" class="back item-link  " style="color: white; margin-left: 1vh;">
+                    <i class="f7-icons">arrow_left</i>
+                </a>
+            </div>
+
+            <div class="title width-All  " style="text-align: center; display: contents">
+                <a style="color: white; width: -webkit-fill-available;" href="#"
+                    class="link ft-1 TitleCheckout center_a">
+                    CHECKOUT
+
+                </a style="color: white;">
+            </div>
+
+            <!-- <div class="right margin-right-10">
+    
+                <a href="#" class="link ft-1">
+                    <span class="cart_counter" style="display:none"></span>
+
+                    <img src="img/Cart.svg" style="width: 5vh;">
+    
+                </a>
+    
+            </div> -->
+
+        </div>
+
+    </div>
+    <!-- <div class="toolbar tabbar toolbar-bottom o-visible" style="font-size: 11px;">
+        <div class="toolBarHome  toolbar-inner ">
+    
+            <a href="/home/" class="tab-link toolbar-title HOME " ><img  style="width: 4vh;" src="img/Home gray.svg" alt="">HOME</a>
+            <a href="/AllCategory/" class="tab-link toolbar-title CATEGORY"  style="color: #32c2ff;"><img  style="width: 4vh;" src="img/Categories Blue.svg" alt=""> CATEGORY</a>
+            <a href="/AuctionList/" class="tab-link toolbar-title AUCTION"><img  style="width: 4vh;" src="img/Auction gray.svg" alt="">AUCTION</a>
+            <a href="/profile/" class="tab-link toolbar-title PROFILE"><img  style="width: 4vh;" src="img/login gray.svg" alt="">PROFILE</a>
+        </div>
+    </div> -->
+    <div class="page-content infinite-scroll-content" style="background-color:#e6e6e6; margin-top: 1vh;">
+
+        <div class="row white" style="align-items: unset; justify-content:unset;height: 9vh; ">
+            <div class="align-Center col-25 white" style="width:33%;background-color: #32c2ff; ">
+                <p class="no-margin bold SHOPINGCheckout " style="color: white;"> SHOPING CART</p>
+            </div>
+
+            <div class="align-Center col-25 white" style="width:33%;">
+                <p class="no-margin bold AddressCheckout"> ADDRESS</p>
+            </div>
+
+            <!-- <div class="align-Center col-25 white" style="width:33%;">
+                <p class="no-margin bold DeliveryCheckout"> DELIVERY</p>
+            </div> -->
+
+            <div class="align-Center col-25 white" style="width:33%;">
+                <p class="no-margin bold PaymentCHECKOUT"> PAYMENT</p>
+            </div>
+        </div>
+
+        <div class="AllCheckout">
+            <table class="inv-table" style="margin-top: 2vh;">
+                <tbody class="DataItem">
+                    <!-- <tr>
+                    <th class="text-align-left"   width="15%">Item</th>
+                    <th class="text-align-center" width="20%">Unit Price</th>
+                    <th class="text-align-center"  width="33%">Qty</th>
+                    <th class="text-align-center" width="10%"> </th>
+                    <th class="text-align-center" width="25%">Total</th>
+                </tr> -->
+                    <!-- <tr style="font-size: 8px;">
+                        
+                    <td class="ItemOrder" width="15%">
+                        <img src="img/TMk.jpg" style="width:  10vh" >
+                        <p style="text-align: center;">Black </p>
+
+                    </td>
+
+
+                    <td class="text-align-center  QtyOrder"  width="20%">
+                        <p>156 000,00 KWZ	</p>
+                    </td>
+
+
+                    <td class="text-align-center subTotal_Delviery"  width="25%">
+
+                        <div class="row">
+   
+                            <div class="col-30" style="  text-align: end;" onclick="decreaseProduct(222,10)"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>
+                            <div class="col-40">
+                                <input type="number" readonly="" id="valCardPro_222" value="10" style="  text-align: center; width:-webkit-fill-available "> </div>
+                            <div class="col-30" onclick="increaseProduct(222)"> <i class="material-icons"style="font-size: 15px;">add</i> </div>
+                        </div>
+                    </td>
+
+                    <td class="text-align-center subTotal_Delviery" width="10%">
+                        <img src="img/delete.svg" style="width:  3vh" >
+
+                    </td>
+
+
+                    <td class="text-align-center subTotal_Delviery"  width="25%">
+                        <p>156 000,00 KWZ	</p>
+
+                    </td>
+ 
+                </tr> -->
+
+                </tbody>
+
+            </table>
+            <table class="inv-table" style="    width: 27vh;background: #e6e6e6; margin-left: auto;">
+                <tbody class=" " style="background-color: white;">
+
+
+                    <tr style="font-size: 8px;">
+
+                        <td class="text-align-center  " width="50%">
+                            <p class="TotalQ Total">TOTAL</p>
+                        </td>
+
+
+                        <td class="text-align-center  " width="50%">
+                            <p class="TotalA">156 000,00 KWZ </p>
+                        </td>
+
+
+
+
+                    </tr>
+                    <!-- <tr style="font-size: 8px;">
+                        
+                    <td class="text-align-center  "  width="50%">
+                        <p class="TAXESQ">ALL VAT TAXES ARE INCLUDED   </p>
+                    </td>
+                    <td class="text-align-center  QtyOrder" style="background-color: #e6e6e6;border: 1px solid #e6e6e6 ; " width="0%">
+                     </td>
+
+                  
+
+
+                  
+ 
+                </tr> -->
+
+                </tbody>
+            </table>
+            <div style="text-align:-webkit-center">
+                <button class="col button button-raised button-fill" id="nextCheckout"
+                    style="width: 45vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="getOrderArr ()"> Next
+                </button>
+            </div>
+
+            <div style="background: white;width: 100%;display: inline-flex;margin-top: 3vh;">
+                <i class="f7-icons"
+                    style=" color: red;text-align: center;margin-top: auto;margin-bottom: auto;">star_fill</i>
+                <p>ALL VAT TAXES ARE INCLUDED </p>
+            </div>
+
+            <div style="margin-top: 6vh;"></div>
+        </div>
+    </div>
+
+</div>

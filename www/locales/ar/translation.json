@@ -1,0 +1,345 @@
+{
+   "general":{
+      "update":"تحديث",
+      "delete":"حذف",
+      "submit":"حفظ",
+      "cancel":"إلغاء",
+      "add_new":"اضف جديد",
+      "manage_images":"إدارة الصور",
+      "image":"صورة",
+      "remove":"إزالة",
+      "yes":"نعم فعلا",
+      "no":"لا",
+      "save":"حفظ",
+      "upload_image":"تحميل الصور",
+      "profile":"الملف الشخصي",
+      "orders":"الطلبات",
+      "order":"الطلب",
+      "search":"بحث",
+      "back":"الرجوع",
+      "search_txt":"ابحث عن قسم او مُدرب",
+      "chat":"مراسلة"
+   },
+   "order_details":{
+     "title":"تفاصيل الطلب",
+     "orddate":"تاريخ الطلب",
+     "ordstatus":"الحالة",
+     "date":"التاريخ : ",
+     "time":"الوقت : ",
+     "address":"العنوان",
+     "other_info":"معلومات اخري",
+     "description":"الوصف ",
+     "price":"السعر ",
+     "name":"الاسم : ",
+     "type":"النوع : "
+   },
+   "allClasses":{
+     "title":"كل الفصول"
+   },
+   "allpackages":{
+     "title":"كل الباقات"
+   },
+     "info":{
+    "title":"المساعدة",
+     "language":"تغيير اللغة",
+     "about":"نبذة عن ابدأ",
+     "terms":"الشروط والأحكام",
+     "faq":"الأسئلة الشائعة",
+      "support":"تواصل معنا",
+    "settings":"التنبيهات",
+     "Followus":"المواقع الاجتماعية"
+   },
+   "regist_cat":{
+     "title":"الأقسام المفضلة",
+     "register":"تم"
+   },
+   "settings":{
+     "title":"الاعدادات",
+     "list_title":"قائمه الإشعارات",
+     "push_noti":"الإشعارات",
+     "sms":"اشعارات الرسائل النصية",
+     "email":"اشعارات البريد الالكتروني"
+   },
+   "search":{
+     "title":"البحث",
+     "btn":"ابحث"
+   },
+   "index":{
+      "home":"الصفحة الرئيسية",
+      "profile":"ملف تعريفي للمستخدم",
+      "all_subj":"كل الأقسام",
+      "browse_cat":"ابحث بالقسم",
+      "Back":"رجوع",
+      "group":"محاضرات ودورات عامة",
+      "SpecialPackages":"الباقات",
+      "COURSES":"الاقسام"
+   },
+   "filter":{
+     "title":"تحسين نتائج البحث",
+     "category":"الخدمات الاساسية",
+     "select_cat":"الكل",
+     "sub_subcat":"الفئات الفرعية للفرعية",
+     "select_subcat":"الكل",
+     "city":"المدينة",
+     "select_city":"الكل",
+      "icon":"تصفية البحث",
+     "search":"بحث"
+   },
+   "desc":{
+      "classes":"محاضرات عامة",
+      "packages":"الباقات",
+      "special_order":"حصص خاصة",
+      "nationality":"الجنسية:",
+      "definition":"تعريف",
+      "skills":"المهارات:",
+      "experience":"الخبرة:",
+      "certificates":"الشهادات:",
+      "languages":"اللغات",
+      "rated_orders":"عدد الطلبات التي تم تقيمها:",
+      "provider_rating":"تقييم مقدم الخدمة",
+      "price_rating":"تقييم السعر",
+      "quality_rating":"تقييم الجودة",
+      "report":"أبلغ عن هذا المحاضر",
+      "overview":"بياناتي",
+      "reviews":"التعليقات",
+      "sorry_class":"عذرا لا يوجد فصول",
+      "sorry_pkg":"عذرا لا يوجد باقات"
+   },
+   "report_tutor":{
+     "title":"ابلاغ عن المحاضر",
+     "selectreasons":"اختار سبب",
+     "reason":"السبب",
+     "write_notes":"اكتب ملاحظاتك"
+   },
+   "filter_sort":{
+     "filter":"تصنيف",
+     "sort":"ترتيب",
+     "area":"الخريطة",
+     "rating":"التقييم ",
+     "price":"السعر",
+     "distance":"المسافة ",
+     "city":"المدينة "
+   },
+   "packages":{
+      "title":"الباقات ",
+      "arts":"فنون ",
+      "description":"الوصف: ",
+      "requirements":"المتطلبات: ",
+      "terms":"الشروط:",
+      "register":"تم"
+   },
+   "special_order":{
+     "country":"البلد ",
+     "paymenttype":"وسيلة الدفع",
+     "cach":"نقداً ",
+     "credit":"بطاقة ائتمان ",
+     "title":"حصص خاصة ",
+     "learn":" أريد تعلم ",
+     "date":"التاريخ ",
+     "time":"الوقت ",
+     "select_cat":"اختار قسم",
+     "category":"الاقسام ",
+     "address":"العنوان",
+     "newaddress":"العنوان الجديد",
+     "address_placeholder":"الشارع - المبني - الطابق",
+     "notes":"الملاحظات",
+     "price":"السعر ",
+     "location":"الموقع على الخريطة",
+     "Description":"نبذة : ",
+     "select_city":"اختار المدينة",
+     "select_address":"اختار عنوان",
+     "numofsessions":"عدد الحصص",
+     "district":"منطقة",
+     "block":"حي",
+     "street":"شارع",
+     "building_number":"الرمز البريدي "
+   },
+   "classes":{
+     "title":"الفصول"
+   },
+   "my_orders":{
+     "title":"الطلبات",
+     "cancel_reason":"سبب الالغاء",
+     "address":"العنوان",
+     "cancel":"الغاء",
+     "status":"الحالة",
+     "fname":"الاسم الاول",
+     "city":"المدينة",
+     "phone":"الهاتف",
+     "lname":"الاسم الاخير",
+     "prov_title":"مقدم الخدمة",
+     "ord_data":"بيانات الطلب",
+     "order_num":"رقم الطلب",
+     "datetime":"تاريخ ووقت الطلب",
+     "class_data":"بيانات الحصة",
+     "package_data":"بيانات الباقة",
+     "package_name":"اسم الباقة",
+     "session_data":"بيانات الحصة",
+     "sessions_num":"عدد الحصص",
+     "package_price":"السعر",
+     "sessions_period":"مدة الحصص",
+     "duration":"المدة",
+     "class_data":"بيانات الصف",
+     "class_name":"اسم الصف",
+     "class_place":"المكان",
+     "class_price":"السعر",
+     "cancel_reason":"سبب الالغاء",
+     "dipute":"افتح الشكوى",
+     "recieved":"تاكيد وصول الخدمة",
+     "notation":"اسحب من اليمين للإلغاء والمراسلة",
+     "chat":"مراسلة"
+   },
+   "toolbar":{
+     "Courses":"الأقسام",
+     "Profile":"الملف الشخصي",
+     "Favorites":"المفضلة",
+     "Notifications":"الإشعارات",
+     "Settings":"المساعدة"
+
+   },
+   "favorite":{
+     "mine":"المدربين المفضلين",
+     "courses":"الاقسام المفضلة",
+     "title":"قائمة المفضلة",
+     "tech_description":"  الأساتذة الذين قمت بإضافتهم للمفضلة الخاصة بك.",
+     "course_description":"   أعلى الأساتذة تقييماً حسب المواد المفضلة لديك ."
+   },
+
+
+   "map":{
+     "title":"الخريطة"
+   },
+   "profile":{
+     "title":"الملف الشخصي",
+     "name":"الاسم",
+     "fname":"الاسم الأول",
+     "lname":"الاسم الأخير",
+     "phone":"الهاتف",
+     "email":"البريد الالكتروني",
+     "oldpass":"كلمة السر القديمة",
+     "newpass":"كلمة السر الجديدة",
+     "newpassconf":"تاكيد كلمة السر الجديدة",
+     "success":"تم تحديث البيانات",
+     "update":"تحديث",
+     "basic_data":" حسابي الشخصي ",
+     "password":" تغيير كلمة المرور ",
+     "addresses":" العناوين ",
+     "dop":"تاريخ الميلاد ",
+     "browse":"اختار صورة",
+     "orders":"الطلبات",
+      "Inbox":"المراسلات",
+     "Addresses":"العناوين",
+     "Paymentmethods":"وسيلة الدفع",
+     "Changepassword":"تغيير كلمة المرور",
+     "Logout":"تسجيل الخروج",
+     "Close":"اغلاق",
+     "typemessage":"اكتب رسالة",
+     "message":"محادثة"
+   },
+   "change_pass":{
+     "title":"كلمة المرور"
+   },
+   "login":{
+     "login_title":"تسجيل الدخول",
+     "email":"البريد الالكتروني",
+    "p_email":"البريد الالكتروني",
+     "password":"كلمة المرور",
+     "p_password":"كلمة المرور",
+     "register":"تم",
+     "forget_pass":"نسيت كلمة المرور",
+     "no_acc":"ليس لديك حساب ؟",
+     "touch_title":"تفعيل خاصية الدخول بالبصمة"
+   },
+   "forget_pass":{
+     "title":"الرجاء إضافة بريدك الإلكتروني من أجل إعادة تعيين كلمة المرور الجديدة وإرسالها إلى بريدك الإلكتروني",
+     "email":"البريد الالكتروني",
+     "nav_title":"نسيت كلمة المرور ؟",
+     "submit":"تم"
+   },
+   "register":{
+     "title":"انشاء حساب جديد",
+     "cancel":"الغاء",
+     "register":"تم",
+     "help":"تحتاج الي مساعدة؟",
+     "terms":"الشروط والاحكام",
+     "sub_cats":"الاقسام المفضلة",
+     "basic_details":"البيانات الأساسية",
+     "fname":"الاسم الأول",
+     "lname":"الاسم الأخير",
+     "pass":"كلمة المرور",
+     "email":"البريد الإلكتروني",
+     "Phone":"الجوال",
+     "Birthday":"تاريخ الميلاد",
+     "NEXT":"التالي",
+     "fname_inp":"3 حروف علي الأقل",
+     "pass_inp":"كلمة سر اّمنة"
+   },
+   "support":{
+     "title":"الدعم",
+     "Name":"الاسم",
+     "Email":"البريد الإلكتروني",
+     "Subject":"الموضوع",
+     "Message":"الرسالة",
+     "send":"ارسال"
+   },
+   "myaddresses":{
+     "title":"تعديل العنوان",
+     "edit":"تعديل",
+     "address":"العنوان"
+   },
+   "faq":{
+     "title":"الأسئلة الشائعة",
+     "Answers":"إجابات لكل اسئلتك"
+   },
+   "intro":{
+     "title":"ابدا شي جديد",
+     "started":"انشاء حساب",
+     "login":"تسجيل دخول"
+   },
+   "testimonials":{
+     "title":"الشهادات - التوصيات"
+   },
+   "chat":{
+     "title":"المحادثة",
+     "send":"ارسال"
+   },
+   "notificatiosns":{
+     "title":"الاشعارات"
+   },
+   "aboutpage":{
+     "title":"عن ابدأ",
+     "mainhead":"اعثر على المدرب المناسب",
+     "topdescription":"ابدأ هي عبارة عن منصة عبر الإنترنت لتوصيل الطلاب بالخبراء في جميع أنحاء المملكة العربية السعودية. يمكن للطالب استخدام النظام الأساسي لطلب المساعدة أو المساعدة من الخبراء. يمكن للخبراء تقديم المساعدة للطلاب وجني الأموال من معارفهم وخبراتهم.",
+     "privatesession":"حصة خاصة",
+     "privatesession_des":"يقدم جلسة فردية مخصصة لموضوعك ومهاراتك",
+     "subjects":"مجموعة متنوعة من الكورسات",
+     "subjects_des":"من العلوم والفنون والرياضة إلى اللغات ، لغات البرمجة والرقص وغيرها الكثير .."
+   },
+   "accepted":{
+     "title":"رأيك يهمنا",
+     "tutor_rate":"تقييم المدرب",
+     "select_rate":"اختار تقييم",
+     "price_rate":"تقييم السعر",
+     "quality_rate":"تقييم الجودة",
+     "comment":" تعليق ؟",
+     "leave_comment":"ارسال التقرير"
+   },
+   "dispute":{
+     "title":"الشكاوي",
+     "refund":"اعادة جزأ من المال"
+   },
+   "dispute_request":{
+     "money_amount":"قيمة المال الذي تريد اعادته بالريال",
+     "isrecieved":"هل استلمت الطلب ؟",
+     "details":"من فضلك اكتب تفاصيل طلبك",
+     "upload":"اضغط لرفع الدليل",
+     "register":"تم",
+     "yes":"نعم",
+     "no":"لا"
+   },
+   "verifyAccount":{
+     "title": "التحقق من الحساب",
+     "code":" ادخل رمز التفعيل ",
+     "submit" : "تأكيد"
+   }
+}

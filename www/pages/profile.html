@@ -1,0 +1,162 @@
+<div class="page page-profile light page-current" data-name="profile">
+
+    <div class="navbar nav-height">
+
+        <div class="navbar-inner nav-height">
+    
+          <div class="left">
+            <a href="#" class="   " style="color: white; margin-left: 1vh; width: 6vh;">
+           </a>
+          </div>
+    
+            <div class="title width-All   "  >
+                <a style="color: white;"  href="#" class="link center_a ft-1 ProfileTitle">
+                   PROFILE
+                </a style="color: white;">
+            </div>
+    
+            <div class="right margin-right-10">
+    
+                <a onclick="goToCheckout()" class="link ft-1">
+                  <span class="cart_counter" style="display:none"></span>
+
+    
+                    <img src="img/Cart.svg" style="width: 5vh;">
+    
+                </a>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+    <div class="toolbar tabbar toolbar-bottom o-visible" style="font-size: 11px;">
+      <div class="toolBarHome  toolbar-inner ">
+                    
+
+        <a href="/home/" class="tab-link toolbar-title HOME ActiveColor  " ><img  style="width: 4vh;" src="img/Home gray.svg" alt=""><p class="HomeTab" style="margin: unset;"> HOME </p></a>
+        <a href="/AllCategory/" class="tab-link toolbar-title CATEGORY  "><img  style="width: 4vh;" src="img/Categories gray.svg" alt=""> <p class="CATEGORYTab" style="margin: unset;"> CATEGORY </p></a>
+        <a href="/AuctionList/" class="tab-link toolbar-title AUCTION  "><img  style="width: 4vh;" src="img/Auction gray.svg" alt=""><p class="AUCTIONTab" style="margin: unset;"> AUCTION </p></a>
+        <a href="/profile/" class="tab-link toolbar-title PROFILE  " style="color: #32c2ff;"><img  style="width: 4vh;" src="img/login blue.svg" alt=""> <p class="PROFILETab" style="margin: unset;"> PROFILE </p></a>
+                  </div> 
+    </div>
+        <!-- <div class="page-content infinite-scroll-content" style="background-color: #e6e6e6;   "> -->
+          <div class="page-content infinite-scroll-content" style="background-color: white;   ">
+
+          <div class="list" style="margin-top: 3vh;">
+            <ul class="LoggedOut" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+              <li>
+                <a href="/Login/" class="item-link item-content">
+                  <div class="item-media"><img  class="img-menu" src="img/edit profile.svg"></div>
+                  <div class="item-inner">
+                    <div class="font-menu item-title Login " style="font-size : 17px; font-weight:bolder" >Login</div>
+                    
+                  </div>
+                </a>
+              </li>
+          </ul>
+          
+          
+          <ul  class="LoggedOut" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+            <li>
+              <a href="/Register/" class="item-link item-content">
+                <div class="item-media"><img  class="img-menu" src="img/edit profile.svg"></div>
+                <div class="item-inner">
+                  <div class="font-menu item-title Register " style="font-size : 17px; font-weight:bolder">Register</div>
+                  
+                </div>
+              </a>
+            </li>
+          </ul>
+
+
+
+          <ul  class="LoggedOut" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+            <li>
+              <a href="/Register-Company/" class="item-link item-content">
+                <div class="item-media"><img  class="img-menu" src="img/edit profile.svg"></div>
+                <div class="item-inner">
+                  <div class="font-menu item-title BECOME" style="font-size : 17px; font-weight:bolder">BECOME A SELLER</div>
+                  
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          
+            <ul class="Logedin" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+              <li>
+                <a href="/EditProfile/" class="item-link item-content">
+                  <div class="item-media"><img  class="img-menu" src="img/edit profile.svg"></div>
+                  <div class="item-inner">
+                    <div class="font-menu item-title EDIT" style="font-size : 17px; font-weight:bolder">EDIT PROFILE</div>
+                    
+                  </div>
+                </a>
+              </li>
+          </ul >
+
+          <!-- <ul class="Logedin" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+            <li>
+              <a href="/instructions/" class="item-link item-content">
+                <div class="item-media"><img  class="img-menu" src="img/notifications.svg"></div>
+                <div class="item-inner">
+                  <div class="font-menu item-title NOTIFICATION" style="font-size : 17px; font-weight:bolder">NOTIFICATION</div>
+                  
+                </div>
+              </a>
+            </li>
+        </ul> -->
+
+        <ul style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+          <li>
+            <a href="/contactUs/" class="item-link item-content">
+              <div class="item-media"><img  class="img-menu" src="img/contact us.svg"></div>
+              <div class="item-inner">
+                <div class="font-menu item-title CONTACT" style="font-size : 17px; font-weight:bolder">CONTACT US</div>
+                
+              </div>
+            </a>
+          </li>
+      </ul>
+
+      <ul style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+        <li>
+          <a href="/selcLang/" class="item-link item-content">
+            <div class="item-media"><img  class="img-menu" src="img/change lang.svg"></div>
+            <div class="item-inner">
+              <div class="font-menu item-title CHOOSE_Lang" style="font-size : 17px; font-weight:bolder">CHOOSE LANGUAGE </div>
+              
+            </div>
+          </a>
+        </li>
+    </ul>
+
+    <ul class="Logedin" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
+      <li>
+        <a href="/orders/" class="item-link item-content">
+          <div class="item-media"><img  class="img-menu" src="img/My orders.svg"></div>
+          <div class="item-inner">
+            <div class="font-menu item-title MyOrder" style="font-size : 17px; font-weight:bolder">MY ORDERS</div>
+            
+          </div>
+        </a>
+      </li>
+  </ul>
+
+
+  <ul class="Logedin" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey" onclick="logout  ()">
+    <li>
+      <a href="" class="item-link item-content">
+        <div class="item-media"><img  class="img-menu" src="img/logout.svg"></div>
+        <div class="item-inner">
+          <div class="font-menu item-title Logout" style="font-size : 17px; font-weight:bolder">Logout</div>
+          
+        </div>
+      </a>
+    </li>
+</ul>
+          </div>
+            <div style="margin-top: 12vh;"></div>
+        </div>
+    </div>

@@ -1,0 +1,120 @@
+<div class="page page-ProfileShop light page-current" data-name="ProfileShop">
+
+    
+    <div class="navbar nav-height">
+
+        <div class="navbar-inner nav-height">
+    
+            <div class="left">
+                <a href="#" class="back item-link  " style="color: white; margin-left: 1vh;">
+                    <i  class="f7-icons">arrow_left</i >
+                </a>
+            </div>
+    
+            <div class="title width-All  " style="text-align: center; display: contents" >
+                <a style="color: white; width: -webkit-fill-available;"  href="#" class="link ft-1 TitleCheckout center_a">
+                    CHECKOUT
+
+                </a style="color: white;">
+            </div>
+    
+            <!-- <div class="right margin-right-10">
+    
+                <a href="#" class="link ft-1">
+                    <span class="cart_counter" style="display:none"></span>
+
+                    <img src="img/Cart.svg" style="width: 5vh;">
+    
+                </a>
+    
+            </div> -->
+    
+        </div>
+    
+    </div>
+    <!-- <div class="toolbar tabbar toolbar-bottom o-visible" style="font-size: 11px;">
+        <div class="toolBarHome  toolbar-inner ">
+    
+            <a href="/home/" class="tab-link toolbar-title HOME " ><img  style="width: 4vh;" src="img/Home gray.svg" alt="">HOME</a>
+            <a href="/AllCategory/" class="tab-link toolbar-title CATEGORY"  style="color: #32c2ff;"><img  style="width: 4vh;" src="img/Categories Blue.svg" alt=""> CATEGORY</a>
+            <a href="/AuctionList/" class="tab-link toolbar-title AUCTION"><img  style="width: 4vh;" src="img/Auction gray.svg" alt="">AUCTION</a>
+            <a href="/profile/" class="tab-link toolbar-title PROFILE"><img  style="width: 4vh;" src="img/login gray.svg" alt="">PROFILE</a>
+        </div>
+    </div> -->
+        <div class="page-content infinite-scroll-content" style="background-color:#e6e6e6; margin-top: 1vh;">
+          
+           <div class="row white" style="align-items: unset; justify-content:unset;height: 9vh; ">
+               <div class="align-Center col-25 white"  style="width:33%;background-color: #484848; " >
+                   <p class="no-margin bold SHOPINGCheckout " style="color: white;"  > SHOPING CART</p>
+               </div>
+
+               <div class="align-Center col-25 white" style=" background-color: #32c2ff;width:33%; " >
+                <p class="no-margin bold AddressCheckout"  style="color: white;"> ADDRESS</p>
+            </div>
+
+            <!-- <div class="align-Center col-25 white" style="width:33%;">
+                <p class="no-margin bold DeliveryCheckout "> DELIVERY</p>
+            </div> -->
+
+            <div class="align-Center col-25 white" style="width:33%;">
+                <p class="no-margin bold PaymentCHECKOUT "> PAYMENT</p>
+            </div>
+           </div>
+
+
+           <div class="white" style="margin-top: 2vh;" id="EditDiv">
+               <div style="display: inline-flex; width:-webkit-fill-available;">
+                <div style="width: -webkit-fill-available">
+               <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; padding-top: 1vh;" id="nameShop"> </p>
+               </div>
+               <div style="  width:-webkit-fill-available; text-align: end; align-items: flex-end;">
+               <p style="font-weight: bolder; margin: 1vh 3vh 0vh 0vh; padding-top: 1vh;" class="EditBtn" onclick="editShop()">Edit Profile</p>
+            </div>
+        </div>
+
+               <p style=" margin: 0vh 0vh 1vh 2vh;" id="phoneShop"></p>
+               <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; " id="addressShP"> </p>
+               <p style=" margin: 0vh 0vh 1vh 2vh;"  id="AddressShop"> </p>    
+               <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh;" id="NoteP"> </p>
+               <p style=" margin: 0vh 0vh 1vh 2vh; padding-bottom: 1vh;"  id="noteShop"> </p>
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+           
+
+        </div>
+        <div  class="row">
+            <div class="col-50">        
+                <a href="#" class="back item-link  "  >
+  
+                <button class="back item-link  col button button-raised button-fill" id="BackBtnShop" style="width: 45vw; margin: 3vh 0 1vh 0; background-color: #484848;" >Back   </button>
+         </a>
+            </div>
+            <div class="col-50">     
+            <button class="col button button-raised button-fill" id="NextProfile" style="width: 45vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="getPersonalDataOrder()">Next   </button>
+        </div>
+    </div>
+
+            <div style="margin-top: 6vh;"></div>
+        </div>
+    </div>

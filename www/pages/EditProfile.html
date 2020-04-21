@@ -1,0 +1,262 @@
+<div class="page page-EditProfile light page-current" data-name="EditProfile">
+
+  <div class="navbar nav-height">
+
+      <div class="navbar-inner nav-height">
+  
+          <div class="left">
+            <a href="#" class="back item-link  " style="color: white; margin-left: 1vh;">
+              <i  class="f7-icons">arrow_left</i >
+          </a>
+          </div>
+  
+          <div class="  title width-All  " >
+              <a style="color: white;"  href="#" class="titleEditProfile center_a link ft-1">
+                 Edit Profile
+              </a style="color: white;">
+          </div>
+  
+          <div class="right margin-right-10">
+  
+              <a onclick="goToCheckout()" class="link ft-1">
+                <span class="cart_counter" style="display:none"></span>
+
+                  <img src="img/Cart.svg" style="width: 5vh;">
+  
+              </a>
+  
+          </div>
+  
+      </div>
+  
+  </div>
+  <!-- <div class="toolbar tabbar toolbar-bottom o-visible" style="font-size: 11px;">
+    <div class="toolBarHome  toolbar-inner ">
+                   
+
+          <a href="/home/" class="tab-link toolbar-title HOME ActiveColor  " ><img  style="width: 4vh;" src="img/Home gray.svg" alt=""><p class="HomeTab" style="margin: unset;"> HOME </p></a>
+          <a href="/AllCategory/" class="tab-link toolbar-title CATEGORY  "><img  style="width: 4vh;" src="img/Categories gray.svg" alt=""> <p class="CATEGORYTab" style="margin: unset;"> CATEGORY </p></a>
+          <a href="/AuctionList/" class="tab-link toolbar-title AUCTION  "><img  style="width: 4vh;" src="img/Auction gray.svg" alt=""><p class="AUCTIONTab" style="margin: unset;"> AUCTION </p></a>
+          <a href="/profile/" class="tab-link toolbar-title PROFILE  " style="color: #32c2ff;"><img  style="width: 4vh;" src="img/login blue.svg" alt=""> <p class="PROFILETab" style="margin: unset;"> PROFILE </p></a>
+          </div>
+  </div> -->
+      <div class="page-content infinite-scroll-content" style="background-color: white; ">
+        
+        <div class="containerPage" >
+ 
+                  
+
+
+
+                          <div class="containerPage" >
+
+     
+                            <div class="RegisterContent">
+
+                              <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">
+                                <ul  >
+                                   <li class="item-content item-input">
+                                     <div class="item-inner">
+                                       <div class="item-input-wrap">
+                                        <input class="namePerson" id="namePerson"  type="text" placeholder="Name" name="namePerson">
+                                        <span class="input-clear-button"></span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  
+                                </ul>
+                  
+                                
+                              </div> 
+
+                           <div class="list shadow userType" style="margin:2vh 2vh 0vh  0vh;">
+                               <ul >
+                                  <li class="item-content item-input">
+                                    <div class="item-inner">
+                                      <div class="item-input-wrap">
+                                       <input id="nifCompany" class="nifCompany"  type="number" placeholder="NIF" name="name">
+                                       <span class="input-clear-button"></span>
+                                     </div>
+                                   </div>
+                                 </li>
+                                     
+                               </ul>
+                              </div>
+
+
+
+                       <div class="list shadow " style="margin:2vh 2vh 0vh  0vh;">
+                           <ul >
+                              <li class="item-content item-input">
+                                <div class="item-inner">
+                                  <div class="item-input-wrap">
+                                   <input id="addressCompany" class="addressCompany"  type="text" placeholder="ENDEREÇO" name="name">
+                                   <span class="input-clear-button"></span>
+                                 </div>
+                               </div>
+                             </li>
+                                     
+                           </ul>
+                       
+                                   
+                         </div> 
+                           <div class="list shadow userType"  style="margin:2vh 2vh 0vh  0vh;">
+                        <ul>
+                                    
+                            
+                            <li class="item-content item-input item-input-outline item-input-with-value">
+                                <div class="item-inner ">
+                                          
+                                     <div class="item-input-wrap">
+                                        <select id="SelectBusiness" class="input-with-value SelectBusiness"  >
+                                       <option value="-1">Business TYPE</option>
+                                      
+                    
+                                         </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                            <div class="list shadow userType"  style="margin:2vh 2vh 0vh  0vh;">
+                              <ul class="">
+                                  <li class="item-content item-input item-input-outline item-input-with-value">
+                                      <div class="item-inner ">
+                                              
+                                                
+                                          <div class="item-input-wrap">
+                                              <select id="ProductType" class="input-with-value ProductType"  >
+                                                <option value="-1">PRODUCT TYPE</option>
+                                           
+                    
+                                                        
+                                              </select>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                       </div>
+
+
+                              <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">
+                                <ul>
+                                    
+                            
+                                    <li class="item-content item-input item-input-outline item-input-with-value">
+                                        <div class="item-inner ">
+                                            <!-- "item-floating-label" class on item title -->
+                                             <div class="item-input-wrap">
+                                                <select class="CountrySelect" id="CountrySelect" class="input-with-value" onchange="getCity()" >
+                                                  <option value="-1" id="CountryEdit">Country</option>
+
+                                                   
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                            <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">
+                              <ul>
+                                  
+                          
+                                  <li class="item-content item-input item-input-outline item-input-with-value">
+                                      <div class="item-inner ">
+                                          <!-- "item-floating-label" class on item title -->
+                                           <div class="item-input-wrap">
+                                              <select  class="CitySelect" id="CitySelect" class="input-with-value"  >
+                                                <option value="-1"  id="CityEdit">City</option>
+
+                                                  
+                                              </select>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+
+
+                              <div class="list shadow" style="margin:1vh 2vh 0vh  0vh;">
+                                <ul  >
+                                   <li class="item-content item-input">
+                                     <div class="item-inner">
+                                       <div class="item-input-wrap">
+                                        <input class="emailPerson" id="emailPerson" value=""  type="text" placeholder="Email" name="name">
+                                        <span class="input-clear-button"></span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  
+                                </ul>
+                  
+                                
+                              </div>  
+
+                            <div class="list shadow userType" style="margin:2vh 2vh 0vh  0vh;">
+                             <ul >
+                                <li class="item-content item-input">
+                                  <div class="item-inner">
+                                    <div class="item-input-wrap">
+                                     <input id="phone" class="phone"  type="number" placeholder="TELEFONE" name="name">
+                                     <span class="input-clear-button"></span>
+                                   </div>
+                                 </div>
+                               </li>
+                                   
+                             </ul>
+                     
+                                 
+                           </div>
+                              
+                              <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">
+                                <ul  >
+                                   <li class="item-content item-input">
+                                     <div class="item-inner">
+                                       <div class="item-input-wrap">
+                                        <input class="mobilePerson" id="mobilePerson"   type="number" placeholder="Mobile" name="name">
+                                        <span class="input-clear-button"></span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  
+                                </ul>
+                  
+                                 
+                              </div>
+
+
+                              <!-- <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">
+                                <ul  >
+                                   <li class="item-content item-input">
+                                     <div class="item-inner">
+                                       <div class="item-input-wrap">
+                                        <input id="passwordPerson"   type="password" placeholder="password" name="name">
+                                        <span class="input-clear-button"></span>
+                                      </div>
+                                    </div>
+                                  </li>
+                                  
+                                </ul>
+                  
+                                
+                              </div>  -->
+                               
+                          
+                  
+                        
+                  
+                      
+                            </div>
+                          </div>
+
+                          <div style="text-align:-webkit-center">
+                            <button id="updateProfile" id="UpdateEdit" onclick="updateProfile()" class="col button button-raised button-fill" style="width: 45vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;">Update </button>
+                        </div>
+                        </div>
+
+          <div style="margin-top: 12vh;"></div>
+      </div>
+  </div>
