@@ -117,7 +117,7 @@ function onDeviceReady() {
       $('.versionStyle').html('V' + version)
       $.ajax({
          type: 'GET',
-         url: "http://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=checkversion&version=" + version + "&format=json",
+         url: "https://buitanda.com/ws.php?type=checkversion&version=" + version + "&format=json",
 
 
          success: function (json) {
@@ -583,8 +583,9 @@ $$(document).on('page:init', '.page[data-name="contactUs"]', function (e) {
 
 
 $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
+   $('.taxes').html(if_lang('ALL VAT TAXES ARE INCLUDED',' Preço com IVA incluido à taxa em vigor'))
    $('.TotalProductFirst').html(if_lang('Total products ', ' Total produtos	'))
-   $('.TotalShippingQ').html(if_lang('Total shipping ', ' Total envio	'))
+   $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
     if(shipping == 0 ){
       $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
    }
@@ -630,7 +631,7 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
 
 
    $('.TotalProductFirst').html(if_lang('Total  ', ' Total'))
-   $('.TotalShippingQ').html(if_lang('Total shipping ', ' Total envio	'))
+   $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
    $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ') 
 
    if(shipping == 0 ){
@@ -737,7 +738,7 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
    $.ajax({
       async: false,
       type: 'POST',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=search_deal&search=" + textSearch + "&lang=" + localStorage.BuitLang + "&customerId="+localStorage.buitandaUserID+"&format=json",
+      url: "https://buitanda.com/ws.php?type=search_deal&search=" + textSearch + "&lang=" + localStorage.BuitLang + "&customerId="+localStorage.buitandaUserID+"&format=json",
 
 
       success: function (json) {
@@ -833,7 +834,7 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
    var TempRecipe = []
    // $.ajax({
    //    type: 'GET',
-   //    url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=deals&cat_id=" + CategoryIdSearch + "&format=json",
+   //    url: "https://buitanda.com/ws.php?type=deals&cat_id=" + CategoryIdSearch + "&format=json",
 
 
    //    success: function (json) {
@@ -1103,7 +1104,7 @@ function getLatestDeal() {
 
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=latest_deals&format=json",
+      url: "https://buitanda.com/ws.php?type=latest_deals&format=json",
 
 
       success: function (json) {
@@ -1149,6 +1150,7 @@ function getLatestDeal() {
 
                   ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
                   ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
 
                   ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
 
@@ -1194,7 +1196,7 @@ function getLatestDeal() {
 function getBestSeller() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=bestseller&format=json",
+      url: "https://buitanda.com/ws.php?type=bestseller&format=json",
 
 
       success: function (json) {
@@ -1283,7 +1285,7 @@ function getBestSeller() {
 function getClosettDeal() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=closed_deals&format=json",
+      url: "https://buitanda.com/ws.php?type=closed_deals&format=json",
 
       success: function (json) {
          //alert(json['posts'][0]['description']);
@@ -1389,7 +1391,7 @@ function getAuctionHome() {
    console.log('att ------ > ' + att)
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=auctions_home&format=json",
+      url: "https://buitanda.com/ws.php?type=auctions_home&format=json",
 
       success: function (json) {
          var mySwiper = app.swiper.create('.swiper-auction', {
@@ -1512,7 +1514,7 @@ function getAuctionHome() {
 function getAllCategory() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=categories&lang="+localStorage.BuitLang+"&format=json",
+      url: "https://buitanda.com/ws.php?type=categories&lang="+localStorage.BuitLang+"&format=json",
 
 
       success: function (json) {
@@ -1555,7 +1557,7 @@ function getCategoryProduct(id, name ) {
 
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort="+sort+"&format=json",
+      url: "https://buitanda.com/ws.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort="+sort+"&format=json",
 
 
       success: function (json) {
@@ -1579,19 +1581,19 @@ function getCategoryProduct(id, name ) {
                $$('.infinite-scroll-preloader').hide();
 
                }
-               // li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['title'], json['posts'][i]['title']) + "'" + ')" >' +
+               // li = li + '<div class="col-30"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['title'], json['posts'][i]['title']) + "'" + ')" >' +
                //    ' <a > ' +
 
-               //    '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+               //    '<div class="white height_cat_prod" style=" display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
                //    ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style=" ">' +
                //    '</div>' +
                //    '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
                //    '   <div class ="length-p">' +
 
-               //    ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '  </p> ' +
+               //    ' <p class=" lineP margin-white paddig-product" style="color:black; font-size:11px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '  </p> ' +
 
                //    ' </div>' +
-               //    ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+               //    ' <span style="font-size:12px">' + json['posts'][i]['current'] + ' KWZ</span> ' +
 
                //    ' </div>' +
 
@@ -1606,7 +1608,7 @@ function getCategoryProduct(id, name ) {
                                     '<div class="col-80 padding-left">' +
                                     '<p style="white-space:break-spaces; margin-top:2vh">' +if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle'])  + ' </p>' +
                                     '<p class="text-secondary small text-mute no-margin">'  +' </p>' +
-                                    '<h5 class="text-green font-weight-normal no-margin"><span class="discount-price">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                                    '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
                                     ' </h5>' +
 
                                     ' </div>' +
@@ -1630,7 +1632,7 @@ function getCategoryProduct(id, name ) {
 function getProduct(id, title) {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=deal_desc&deal_id=" + id + "&format=json",
+      url: "https://buitanda.com/ws.php?type=deal_desc&deal_id=" + id + "&format=json",
 
 
       success: function (json) {
@@ -1664,7 +1666,7 @@ function getProduct(id, title) {
             var n = if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).indexOf("http");
             if (if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']) != '') {
                if (n == -1) {
-                  tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://host1.optimalsolutionslebanon.com/~buitanda")
+                  tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://buitanda.com")
                }
                else {
                   tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'")
@@ -1678,8 +1680,10 @@ function getProduct(id, title) {
 
 
             li = '  <h3 class="gray  margin-top-p">' + if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle']) + '</h3>' +
-               '  <p class="descP margin-top-p"> SKU#' + json['posts'][0]['sku'] + '  </p>';
-            // '<p class="descP margin-top-p">Model <span> :'+json['posts'][0]['title']+' </span></p>'+
+               '  <p class="descP margin-top-p"> SKU#' + json['posts'][0]['sku'] + '  </p>'+
+                   
+                  ' <p class="discount-price descP margin-top-p   "  >  '+if_lang('OLD PRICE ' , 'PREÇO ') + json['posts'][i]['original'] + ' KWZ</p>';
+                              // '<p class="descP margin-top-p">Model <span> :'+json['posts'][0]['title']+' </span></p>'+
             if (json['posts'][0]['saving'] == "") {
                li = li + '   <p class="descP margin-top-p">Price / Item  <span class="blue-span">:' + json['posts'][0]['current'] + ' KWZ</span></p>'
             }
@@ -2256,7 +2260,7 @@ function getBidDiv() {
 function getCountry() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=country&format=json  ",
+      url: "https://buitanda.com/ws.php?type=country&format=json  ",
 
 
       success: function (json) {
@@ -2279,7 +2283,7 @@ function getCountry() {
 function getBusinessType() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getBusinesses&format=json",
+      url: "https://buitanda.com/ws.php?type=getBusinesses&format=json",
 
 
       success: function (json) {
@@ -2302,7 +2306,7 @@ function getBusinessType() {
 function getBusinessTypeByID(id) {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getBusinesses&format=json",
+      url: "https://buitanda.com/ws.php?type=getBusinesses&format=json",
 
 
       success: function (json) {
@@ -2337,7 +2341,7 @@ function getProductType() {
 
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=categories&format=json",
+      url: "https://buitanda.com/ws.php?type=categories&format=json",
 
 
       success: function (json) {
@@ -2359,7 +2363,7 @@ function getProductType() {
 function getProductTypeByID(id) {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=categories&format=json",
+      url: "https://buitanda.com/ws.php?type=categories&format=json",
 
 
       success: function (json) {
@@ -2394,7 +2398,7 @@ function getProductTypeByID(id) {
 function getCountryCompany() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=country&format=json  ",
+      url: "https://buitanda.com/ws.php?type=country&format=json  ",
 
 
       success: function (json) {
@@ -2441,7 +2445,7 @@ function getBussinessByID(id) {
 function getCountryByID(id) {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=country&format=json",
+      url: "https://buitanda.com/ws.php?type=country&format=json",
 
 
       success: function (json) {
@@ -2479,7 +2483,7 @@ function getCity() {
    console.log(id)
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=cities&country_id=" + id + "&format=json ",
+      url: "https://buitanda.com/ws.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
@@ -2513,7 +2517,7 @@ function getCityCompany() {
    console.log(id)
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=cities&country_id=" + id + "&format=json ",
+      url: "https://buitanda.com/ws.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
@@ -2542,7 +2546,7 @@ function getCityByID(id, Cityid) {
 
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=cities&country_id=" + id + "&format=json ",
+      url: "https://buitanda.com/ws.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
@@ -2620,7 +2624,7 @@ function RegisterPerson() {
                         } else {
                            $.ajax({
                               type: 'POST',
-                              url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=registration&name=' + name + '&email=' + Email + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+                              url: 'https://buitanda.com/ws.php?type=registration&name=' + name + '&email=' + Email + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
                               success: function (json) {
@@ -2738,11 +2742,11 @@ function RegisterCompany() {
                                     } else {
                                        console.log('city ---- > ' + City)
                                        console.log('Countery ---- > ' + Country)
-                                       console.log('https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+                                       console.log('https://buitanda.com/ws.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                                        $.ajax({
                                           type: 'POST',
-                                          url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+                                          url: 'https://buitanda.com/ws.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
                                              '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
                                           success: function (json) {
@@ -2851,12 +2855,12 @@ function RegisterSeller() {
                                  if (!$('.conditions').prop('checked')) {
                                     alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                  } else {
-                                    console.log('https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+                                    console.log('https://buitanda.com/ws.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
                                        '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
 
                                     $.ajax({
                                        type: 'POST',
-                                       url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+                                       url: 'https://buitanda.com/ws.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json',
 
                                        success: function (json) {
@@ -2914,11 +2918,11 @@ function login() {
       else {
          $.ajax({
             type: 'POST',
-            url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+            url: 'https://buitanda.com/ws.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
             success: function (json) {
-               console.log('https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               console.log('https://buitanda.com/ws.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                console.log(json)
                if (json['posts'][0] != 0) {
                   localStorage.buitandaUserID = json['posts'][0]['id']
@@ -2966,7 +2970,7 @@ function resetPassword() {
 
       $.ajax({
          type: 'POST',
-         url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=checkEmail&email=' + email + '&format=json',
+         url: 'https://buitanda.com/ws.php?type=checkEmail&email=' + email + '&format=json',
 
 
          success: function (json) {
@@ -3005,7 +3009,7 @@ function checkCode() {
 
       $.ajax({
          type: 'POST',
-         url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=checkCode&customer_id=' + localStorage.buitandaTemp + '&code=' + code + '&format=json',
+         url: 'https://buitanda.com/ws.php?type=checkCode&customer_id=' + localStorage.buitandaTemp + '&code=' + code + '&format=json',
          
 
          success: function (json) {
@@ -3062,7 +3066,7 @@ function setNewPassword() {
 
             $.ajax({
                type: 'POST',
-               url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=resetpassword&customer_id=' + localStorage.buitandaTemp + '&password=' + password + '&format=json',
+               url: 'https://buitanda.com/ws.php?type=resetpassword&customer_id=' + localStorage.buitandaTemp + '&password=' + password + '&format=json',
 
 
                success: function (json) {
@@ -3083,8 +3087,8 @@ function setNewPassword() {
 function getProfile() {
    $.ajax({
       type: 'GET',
-      url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getProfile&customer_id=' + localStorage.buitandaUserID + '&format=json',
-      // url:  'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getProfile&customer_id=80&format=json',
+      url: 'https://buitanda.com/ws.php?type=getProfile&customer_id=' + localStorage.buitandaUserID + '&format=json',
+      // url:  'https://buitanda.com/ws.php?type=getProfile&customer_id=80&format=json',
 
 
       success: function (json) {
@@ -3193,12 +3197,12 @@ function updateProfile() {
                               else {
 
 
-                                 console.log('https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
+                                 console.log('https://buitanda.com/ws.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
                                     ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
 
                                  $.ajax({
                                     type: 'POST',
-                                    url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=update_profile_user&name=' + name + '&mobile=' + mobile + '&email=' + Email +
+                                    url: 'https://buitanda.com/ws.php?type=update_profile_user&name=' + name + '&mobile=' + mobile + '&email=' + Email +
                                        ' &country_id=' + Country + '&city_id=' + City + '&NIF=' + nif + '&prod_type=' + ProductType + '&bussines_type=' + business + '&address=' + address + '&phone=' + phone + '&customer_id=' + localStorage.buitandaUserID + '&format=json',
 
 
@@ -3239,7 +3243,7 @@ function updateProfile() {
 function getLang() {
    $.ajax({
       type: 'GET',
-      url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getLangs&format=json',
+      url: 'https://buitanda.com/ws.php?type=getLangs&format=json',
 
 
       success: function (json) {
@@ -3289,7 +3293,7 @@ function setLang() {
 function getBanners() {
    $.ajax({
       type: 'GET',
-      url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=banners&format=json',
+      url: 'https://buitanda.com/ws.php?type=banners&format=json',
 
 
       success: function (json) {
@@ -3333,7 +3337,7 @@ function getBanners() {
 function getAuctionsList() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=auctions_list&format=json",
+      url: "https://buitanda.com/ws.php?type=auctions_list&format=json",
 
 
       success: function (json) {
@@ -3385,7 +3389,7 @@ function getAuctionProduct(id) {
 
    $.ajax({
       type: 'GET',
-      url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=auction&auct_id=' + id + '&format=json',
+      url: 'https://buitanda.com/ws.php?type=auction&auct_id=' + id + '&format=json',
 
 
       success: function (json) {
@@ -3495,7 +3499,7 @@ function getAuctionProduct(id) {
          var n = if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).indexOf("http");
          if (if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']) != '') {
             if (n == -1) {
-               tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://host1.optimalsolutionslebanon.com/~buitanda")
+               tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://buitanda.com")
             }
             else {
                tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'")
@@ -3610,7 +3614,7 @@ function bidSetIntreval(id) {
 
       $.ajax({
          type: 'GET',
-         url: 'https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=last_bid&prod_id=' + id + '&format=json',
+         url: 'https://buitanda.com/ws.php?type=last_bid&prod_id=' + id + '&format=json',
 
 
          success: function (json) {
@@ -3692,7 +3696,7 @@ function timer(date, id, server_time) {
 function getRecomendedCategory(idprod, idCat) {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=deals_like&cat_id=" + idCat + "&prod_id=" + idprod + "&format=json",
+      url: "https://buitanda.com/ws.php?type=deals_like&cat_id=" + idCat + "&prod_id=" + idprod + "&format=json",
 
 
       success: function (json) {
@@ -3788,7 +3792,7 @@ function getRecomendedAuction(id) {
    // //console.log('in auction')
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=like&auc_id=" + id + "&format=json",
+      url: "https://buitanda.com/ws.php?type=like&auc_id=" + id + "&format=json",
 
       success: function (json) {
          if (json['posts'][0] != 0) {
@@ -3922,7 +3926,7 @@ function contact() {
             else {
                $.ajax({
                   type: 'POST',
-                  url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=contactus&format=json&name=" + name + "&email=" + email + "&subject=" + sub + "&message=" + msg + "",
+                  url: "https://buitanda.com/ws.php?type=contactus&format=json&name=" + name + "&email=" + email + "&subject=" + sub + "&message=" + msg + "",
 
                   success: function (json) {
                      //console.log(json)
@@ -3980,7 +3984,7 @@ function getMyCard() {
    // console.log('im get my card')
    $.ajax({
       type: 'GET',
-      url: "   https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
+      url: "   https://buitanda.com/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
       cache: false,
       success: function (json) {
@@ -4098,7 +4102,7 @@ function addToCard(id, avilable) {
          if (qty > 0) {
             $.ajax({
                type: 'GET',
-               url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=addToCart&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+               url: "https://buitanda.com/ws.php?type=addToCart&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&qty=" + qty + "&format=json",
 
 
                success: function (json) {
@@ -4129,7 +4133,7 @@ function deleteProduct(id) {
 
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=deleteFromCart&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&format=json",
+      url: "https://buitanda.com/ws.php?type=deleteFromCart&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&format=json",
 
       success: function (json) {
          //console.log(json)
@@ -4173,7 +4177,7 @@ function decreaseQty(id, minQty, current) {
       $.ajax({
          type: 'GET',
 
-         url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=updateCart&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+         url: "https://buitanda.com/ws.php?type=updateCart&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
 
 
          success: function (json) {
@@ -4228,7 +4232,7 @@ function increaseQTy(id, max, current) {
       $.ajax({
          type: 'GET',
 
-         url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=updateCart&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+         url: "https://buitanda.com/ws.php?type=updateCart&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
 
 
          success: function (json) {
@@ -4334,7 +4338,7 @@ constantTotal =   $('.TotalA').html()
    go_to_page('ProfileShop')
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
+      url: "https://buitanda.com/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
 
       success: function (json) {
@@ -4413,7 +4417,7 @@ function SubmitOrder() {
    arrOrder = encodeURIComponent(JSON.stringify(arrOrder));
    console.log(arrOrder)
 
-   var url = "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
+   var url = "https://buitanda.com/ws.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
       "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
       "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json"
    $.ajax({
@@ -4448,18 +4452,18 @@ function getInstructions() {
 
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getPage&page_id=63&format=json",
+      url: "https://buitanda.com/ws.php?type=getPage&page_id=63&format=json",
 
 
       success: function (json) {
          console.log(json)
          var desc = json['posts'][0]['description'].split("src='")
-         desc = desc[0] + "src='https://host1.optimalsolutionslebanon.com/~buitanda" + desc[1]
+         desc = desc[0] + "src='https://buitanda.com" + desc[1]
          desc = desc.split("width")
          desc = desc[0] + "width:100% ;text-align:" + desc[1]
 
          var descAr = json['posts'][0]['ardescription'].split("src='")
-         descAr = descAr[0] + "src='https://host1.optimalsolutionslebanon.com/~buitanda" + descAr[1]
+         descAr = descAr[0] + "src='https://buitanda.com" + descAr[1]
          descAr = descAr.split("width")
          // console.log(descAr[0])
          // console.log(descAr[1])
@@ -4496,7 +4500,7 @@ function goToCheckout() {
 function getOrders() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getMyOrders&customer_id=" + localStorage.buitandaUserID + "&format=json",
+      url: "https://buitanda.com/ws.php?type=getMyOrders&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
 
       success: function (json) {
@@ -4563,7 +4567,7 @@ function getOrders() {
 function getMyAuction() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=user_auctions&customerId=" + localStorage.buitandaUserID + "&format=json",
+      url: "https://buitanda.com/ws.php?type=user_auctions&customerId=" + localStorage.buitandaUserID + "&format=json",
 
 
       success: function (json) {
@@ -4632,7 +4636,7 @@ function getMyOrder(id) {
    go_to_page('MyOrder')
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getMyOrders&customer_id=" + localStorage.buitandaUserID + "&format=json",
+      url: "https://buitanda.com/ws.php?type=getMyOrders&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
 
       success: function (json) {
@@ -4763,12 +4767,12 @@ function SubmitAuction(idPro, title) {
 
       $.ajax({
          type: 'POST',
-         url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json",
+         url: "https://buitanda.com/ws.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json",
 
 
          success: function (json) {
             if (json['posts'][0] != -1) {
-               console.log("https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
+               console.log("https://buitanda.com/ws.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
 
                console.log(json)
                alert(if_lang('bid added successfully', 'lance adicionado com sucesso'))
@@ -4813,7 +4817,7 @@ function SearchISIN(idPro, title) {
 
    //    $.ajax({
    //     type: 'POST',
-   //     url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=search_deal&search="+textSearch+"&lang="+localStorage.BuitLang+"&format=json",
+   //     url: "https://buitanda.com/ws.php?type=search_deal&search="+textSearch+"&lang="+localStorage.BuitLang+"&format=json",
 
 
    //     success: function (json) { 
@@ -5047,7 +5051,7 @@ function get_timeDifference(strtdatetime) {
 function getPrivacyPolicy() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=privacy&format=json",
+      url: "https://buitanda.com/ws.php?type=privacy&format=json",
 
 
       success: function (json) {
@@ -5065,7 +5069,7 @@ function getPrivacyPolicy() {
 function getTermAndCondition() {
    $.ajax({
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=terms&format=json",
+      url: "https://buitanda.com/ws.php?type=terms&format=json",
 
 
       success: function (json) {
@@ -5095,7 +5099,7 @@ function GetShipping (){
    $.ajax({
       async: false,
       type: 'GET',
-      url: "https://host1.optimalsolutionslebanon.com/~buitanda/ws.php?type=getShipment&total=" + tot + "&format=json",
+      url: "https://buitanda.com/ws.php?type=getShipment&total=" + tot + "&format=json",
 
 
       success: function (json) {
