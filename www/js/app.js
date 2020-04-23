@@ -1680,9 +1680,16 @@ function getProduct(id, title) {
 
 
             li = '  <h3 class="gray  margin-top-p">' + if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle']) + '</h3>' +
-               '  <p class="descP margin-top-p"> SKU#' + json['posts'][0]['sku'] + '  </p>'+
+               '  <p class="descP margin-top-p"> SKU#' + json['posts'][0]['sku'] + '  </p>';
+
+                  if (json['posts'][0]['special'] == "1" )
+
+                  {
+
+                 
+                  li = li +   ' <p class="discount-price descP margin-top-p   "  >  '+if_lang('OLD PRICE ' , 'PREÇO ') + json['posts'][i]['original'] + ' KWZ</p>';
+               }
                    
-                  ' <p class="discount-price descP margin-top-p   "  >  '+if_lang('OLD PRICE ' , 'PREÇO ') + json['posts'][i]['original'] + ' KWZ</p>';
                               // '<p class="descP margin-top-p">Model <span> :'+json['posts'][0]['title']+' </span></p>'+
             if (json['posts'][0]['saving'] == "") {
                li = li + '   <p class="descP margin-top-p">Price / Item  <span class="blue-span">:' + json['posts'][0]['current'] + ' KWZ</span></p>'
