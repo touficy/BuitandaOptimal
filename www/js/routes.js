@@ -136,7 +136,7 @@ var routes = [
     name: 'ProfileShop',
   },
   {
-    path: '/CategoryProduct/:id/:nameCat/',
+    path: '/CategoryProduct/:id/',
     url: './pages/CategoryProduct.html',
     name: 'CategoryProduct',
   },
