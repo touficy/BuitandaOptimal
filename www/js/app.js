@@ -3411,19 +3411,24 @@ function getAuctionProduct(id) {
          $('.RecomendedForYOU').html(if_lang('RECOMMENDED ITEMS', 'ITENS RECOMENDADOS'))
          console.log(json)
          var title = if_lang( json['posts'][0]['title'] , json['posts'][0]['sectitle'])
-         console.log('str --- > '+title)
+         // console.log('str --- > '+title)
          var lenString = title.length
 
          //console.log(title[2])
+         var  str = ''
          console.log('length --- > '+ lenString)
           if (lenString > 17) {
-            str = ''
+            console.log('ttile --- > '+title )
             for (var x = 0; x < 15; x++) {
                str = str + title[x]
             }
             str = str + '..'
-            //console.log(str)
          }
+         else{
+            str = title
+         }
+         console.log('str --- > ' +str)
+
          $('.titleAuction').html(str);
 
          $('.Recommened-auction').empty();
