@@ -1441,7 +1441,7 @@ function getAuctionHome() {
                      '   </div>' +
                      '  <div class="helooo">' +
                      // '<p>'+json['posts'][i]['startingbidprice']+'</p>'+
-                     '  <span  class="spanHome"  > ' + json['posts'][i]['startingbidprice'] + ' KWZ</span>' +
+                     '  <span  class="spanHome"  > ' + json['posts'][i]['originalprice'] + ' KWZ</span>' +
 
 
                      '   </div>' +
@@ -3373,7 +3373,7 @@ function getAuctionsList() {
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
                   '     <p class="pRedCat timer_' + json['posts'][i]['id'] + '" >' + timer(json['posts'][i]['endauctionDate'], json['posts'][i]['id'], json['posts'][i]['server_time'], json['posts'][i]['server_time']) + '</p>' +
-                  ' <p class="margin-white paddig-product" style="color:black;padding:1px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>  <span>' + json['posts'][i]['startingbidprice'] + ' KWZ</span> ' +
+                  ' <p class="margin-white paddig-product" style="color:black;padding:1px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>  <span>' + json['posts'][i]['originalprice'] + ' KWZ</span> ' +
                   ' </div>' +
                   '  </a>' +
 
@@ -3453,7 +3453,7 @@ function getAuctionProduct(id) {
          var test = timer(json['posts'][0]['endauctionDate'], json['posts'][0]['id'], json['posts'][0]['server_time'])
          var li = '    <h3 class="gray  margin-top-p"> ' + if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle']) + '</h3>' +
 
-            '<p class=" descP margin-top-p" >' + if_lang('Starting Price: ' + json['posts'][0]['startingbidprice'], 'Preço inicial:  ' + json['posts'][0]['startingbidprice']) + '</p>' +
+            '<p class=" descP margin-top-p" >' + if_lang('Market Price: ' + json['posts'][0]['originalprice'], 'Preço de Mercado:  ' + json['posts'][0]['originalprice']) + '</p>' +
             '     <p class="pRedCat timer_' + json['posts'][0]['id'] + '" >' + timer(json['posts'][0]['endauctionDate'], json['posts'][0]['id'], json['posts'][0]['server_time']) + '</p>';
          if ($('.timer_' + id).html() != 'EXPIRED') {
             console.log($('.timer_' + id).html())
