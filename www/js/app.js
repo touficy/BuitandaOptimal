@@ -1425,6 +1425,8 @@ function getAuctionHome() {
 
             if (flagSwip == 0) {
                for (var i = 0; i < json['posts'].length; i++) {
+                  var    Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
+                  console.log(Remaining_time)
                   go_to_page_params
 
                   mySwiper.addSlide(i, '  <div class="swiper-slide" onclick="go_to_page_params(' + "'" + 'Auction' + "'" + ',' + json['posts'][i]['id'] + ')" style="width:17vh; ">' +
@@ -1434,7 +1436,7 @@ function getAuctionHome() {
                      '   </div>' + '   </div>' +
                      '  <div>' +
 
-                     '     <p class="pRed timer_' + json['posts'][i]['id'] + '"  style="margin-left:1vh;text-align:center"> ' + timer(json['posts'][i]['endauctionDate'], json['posts'][i]['id'], json['posts'][i]['server_time']) + '</p>' +
+                     '     <p class="pRed timer_' + json['posts'][i]['id'] + '"  style="margin-left:1vh;text-align:center"> ' + Remaining_time + '</p>' +
                      '   <div class ="length-p">' +
 
                      ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
@@ -3363,6 +3365,7 @@ function getAuctionsList() {
 
             var li = ''
             for (var i = 0; i < json['posts'].length; i++) {
+               var    Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
 
 
                li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Auction' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
@@ -3372,7 +3375,7 @@ function getAuctionsList() {
                   ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style=" ">' +
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                  '     <p class="pRedCat timer_' + json['posts'][i]['id'] + '" >' + timer(json['posts'][i]['endauctionDate'], json['posts'][i]['id'], json['posts'][i]['server_time'], json['posts'][i]['server_time']) + '</p>' +
+                  '     <p class="pRedCat timer_' + json['posts'][i]['id'] + '" >' + Remaining_time+ '</p>' +
                   ' <p class="margin-white paddig-product" style="color:black;padding:1px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>  <span>' + json['posts'][i]['originalprice'] + ' KWZ</span> ' +
                   ' </div>' +
                   '  </a>' +
@@ -5040,7 +5043,7 @@ function get_timeDifference(strtdatetime) {
          if (days > 1) grammar = "s "
          var hrreset = days * 24;
          hh = hh - hrreset;
-         daylabel = days + " Day" + grammar;
+         daylabel = days   + grammar;
       }
 
 
@@ -5065,6 +5068,73 @@ function get_timeDifference(strtdatetime) {
       if (msectext.length == 1) { msectext = '0' + msectext };
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
       return daylabel + ' Day ' + hourtext + " h " + mintext + " m " + sectext + ' sec ';
+   }
+}
+
+
+function get_timeDifference_Days(strtdatetime) {
+   var datetime = new Date(strtdatetime).getTime();
+   var now = new Date().getTime();
+
+   if (isNaN(datetime)) {
+      return "";
+   }
+
+   //console.log(datetime + " " + now);
+
+   if (datetime < now) {
+      return 'Expired';
+   } else {
+      var milisec_diff = datetime - now;
+
+      var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24));
+
+      var date_diff = new Date(milisec_diff);
+
+
+
+
+
+      var msec = milisec_diff;
+      var hh = Math.floor(msec / 1000 / 60 / 60);
+      msec -= hh * 1000 * 60 * 60;
+      var mm = Math.floor(msec / 1000 / 60);
+      msec -= mm * 1000 * 60;
+      var ss = Math.floor(msec / 1000);
+      msec -= ss * 1000
+
+
+      var daylabel = "";
+      if (days > 0) {
+         var grammar = " ";
+         if (days > 1) grammar = "s "
+         var hrreset = days * 24;
+         hh = hh - hrreset;
+         daylabel = days + grammar;
+      }
+
+
+      //  Format Hours
+      var hourtext = '00';
+      hourtext = String(hh);
+      if (hourtext.length == 1) { hourtext = '0' + hourtext };
+
+      //  Format Minutes
+      var mintext = '00';
+      mintext = String(mm);
+      if (mintext.length == 1) { mintext = '0' + mintext };
+
+      //  Format Seconds
+      var sectext = '00';
+      sectext = String(ss);
+      if (sectext.length == 1) { sectext = '0' + sectext };
+
+      var msectext = '00';
+      msectext = String(msec);
+      msectext = msectext.substring(0, 1);
+      if (msectext.length == 1) { msectext = '0' + msectext };
+      // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
+      return daylabel + ' Day ' + hourtext + " h " ;
    }
 }
 function getPrivacyPolicy() {
