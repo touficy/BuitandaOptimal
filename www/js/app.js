@@ -1426,7 +1426,7 @@ function getAuctionHome() {
             if (flagSwip == 0) {
                for (var i = 0; i < json['posts'].length; i++) {
                   var    Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
-                  console.log(Remaining_time)
+                  // console.log(Remaining_time)
                   go_to_page_params
 
                   mySwiper.addSlide(i, '  <div class="swiper-slide" onclick="go_to_page_params(' + "'" + 'Auction' + "'" + ',' + json['posts'][i]['id'] + ')" style="width:17vh; ">' +
@@ -1436,7 +1436,7 @@ function getAuctionHome() {
                      '   </div>' + '   </div>' +
                      '  <div>' +
 
-                     '     <p class="pRed timer_' + json['posts'][i]['id'] + '"  style="margin-left:1vh;text-align:center"> ' + Remaining_time + '</p>' +
+                     '     <p class="pRed "  style="margin-left:1vh;text-align:center"> ' + Remaining_time + '</p>' +
                      '   <div class ="length-p">' +
 
                      ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
@@ -1464,7 +1464,7 @@ function getAuctionHome() {
                      '   </div>' + '   </div>' +
                      '  <div>' +
 
-                     '     <p class="pRed timer_' + json['posts'][i]['id'] + '"  style="margin-left:1vh;text-align:center"> ' + timer(json['posts'][i]['endauctionDate'], json['posts'][i]['id'], json['posts'][i]['server_time']) + '</p>' +
+                     '     <p class="pRed "  style="margin-left:1vh;text-align:center"> ' + timer(json['posts'][i]['endauctionDate'], json['posts'][i]['id'], json['posts'][i]['server_time']) + '</p>' +
                      '   <div class ="length-p">' +
 
                      ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
@@ -3375,7 +3375,7 @@ function getAuctionsList() {
                   ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style=" ">' +
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                  '     <p class="pRedCat timer_' + json['posts'][i]['id'] + '" >' + Remaining_time+ '</p>' +
+                  '     <p class="pRedCat " >' + Remaining_time+ '</p>' +
                   ' <p class="margin-white paddig-product" style="color:black;padding:1px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>  <span>' + json['posts'][i]['originalprice'] + ' KWZ</span> ' +
                   ' </div>' +
                   '  </a>' +
@@ -5112,8 +5112,12 @@ function get_timeDifference_Days(strtdatetime) {
          hh = hh - hrreset;
          daylabel = days + grammar;
       }
+      else{
+         daylabel = 0
+      }
 
 
+      
       //  Format Hours
       var hourtext = '00';
       hourtext = String(hh);
@@ -5133,6 +5137,7 @@ function get_timeDifference_Days(strtdatetime) {
       msectext = String(msec);
       msectext = msectext.substring(0, 1);
       if (msectext.length == 1) { msectext = '0' + msectext };
+      console.log(daylabel)
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
       return daylabel + ' Day ' + hourtext + " h " ;
    }
