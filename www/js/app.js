@@ -1107,6 +1107,7 @@ function getLatestDeal() {
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws.php?type=latest_deals&format=json",
+      cache: false,
 
 
       success: function (json) {
@@ -1199,6 +1200,7 @@ function getBestSeller() {
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws.php?type=bestseller&format=json",
+      cache: false,
 
 
       success: function (json) {
@@ -1394,6 +1396,7 @@ function getAuctionHome() {
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws.php?type=auctions_home&format=json",
+      cache: false,
 
       success: function (json) {
          var mySwiper = app.swiper.create('.swiper-auction', {
@@ -1519,6 +1522,7 @@ function getAllCategory() {
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws.php?type=categories&lang="+localStorage.BuitLang+"&format=json",
+      cache: false,
 
 
       success: function (json) {
@@ -3310,6 +3314,7 @@ function getBanners() {
    $.ajax({
       type: 'GET',
       url: 'https://buitanda.com/ws.php?type=banners&format=json',
+      cache: false,
 
 
       success: function (json) {
@@ -3354,6 +3359,7 @@ function getAuctionsList() {
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws.php?type=auctions_list&format=json",
+      cache: false,
 
 
       success: function (json) {
