@@ -648,8 +648,10 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
 $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
 
-
-   
+   $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 42px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'  ,
+                        'Cartão de crédito   <a href="#" style=" margin-left: 42px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
+   $('.Bank_Transfer').html( if_lang('Bank Transfer  <a href="/instructions/" style=" margin-left: 6vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
+                           'this is the translation  <a href="/instructions/" style=" margin-left: 6vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>' ))
    // $('.Trans').html(if_lang('<img src="img/TransEn.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;"> ',
    //    '<img src="img/Trans.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;">'))
    // $('.trans2').html(if_lang(' <img src="img/trans2En.jpg "  onclick="SubmitRefOrder()" style="width: 90vw;">',
@@ -3674,7 +3676,7 @@ function getAuctionProduct(id) {
 var TimerFlag = 1
 
 function bidSetIntreval(id) {
-   // var x = setInterval(function () {
+   var x = setInterval(function () {
 
       $.ajax({
          type: 'GET',
@@ -3706,7 +3708,7 @@ function bidSetIntreval(id) {
          }
       });
 
-   // }, 1000);
+   }, 1000);
 }
 
 function timer(date, id, server_time) {
@@ -5159,7 +5161,7 @@ function get_timeDifference_Days(strtdatetime) {
       }
 
 
-      
+       
       //  Format Hours
       var hourtext = '00';
       hourtext = String(hh);
