@@ -141,23 +141,57 @@ function onDeviceReady() {
    // $('.PROFILETab').html(if_lang('PROFILE','PERFIL'))
 
 
-   if (Framework7.device.ios) {
-      var mob_model = device.model;
-      // //console.log(device.model);
-      var mob_model_num = mob_model.split("e")[1].split(",");
-      if (mob_model_num[0] > 10 || (mob_model_num[0] == 10 && (mob_model_num[1] == 3) || mob_model_num[1] == 6)) {
-         // alert("iphone x");         
-         // $('.nav-height').attr('style', 'padding-top:65px!important');
-         $('body').css({
-            "padding-top": "constant(safe-area-inset-top)!important;",
-            "padding-top": "env(safe-area-inset-top)!important;"
-         });
-         $('.toolbar').css({
-            "margin-bottom": "constant(safe-area-inset-bottom)!important;",
-            "margin-bottom": "env(safe-area-inset-bottom)!important;"
-         });
-      }
-   }
+  if (Framework7.device.ios) {
+        var mob_model = device.model;
+        // console.log(device.model);
+        var mob_model_num = mob_model.split("e")[1].split(",");
+        if (mob_model_num[0] > 10 || (mob_model_num[0] == 10 && (mob_model_num[1] == 3) || mob_model_num[1] == 6)) {
+            // alert("iphone x");         
+            // $('.nav-height').attr('style', 'padding-top:65px!important');
+            $('body').css({
+                "padding-top": "constant(safe-area-inset-top)!important;",
+                "padding-top": "env(safe-area-inset-top)!important;"
+            });
+            $('.toolbar').css({
+                "margin-bottom": "constant(safe-area-inset-bottom)!important;",
+                "margin-bottom": "env(safe-area-inset-bottom)!important;"
+            });
+        }
+    }
+    if (device.platform.toLowerCase() == "android") {
+        var permissions = cordova.plugins.permissions;
+        var list = [
+            // permissions.CAMERA,
+            // permissions.GET_ACCOUNTS,
+            permissions.ACCESS_COARSE_LOCATION,
+            // permissions.CAMERA,
+            // permissions.GET_ACCOUNTS,
+            // permissions.READ_CONTACTS,CAPTURE_VIDEO_OUTPUT
+            // permissions.READ_CALENDAR,
+            // permissions.CAPTURE_VIDEO_OUTPUT,
+            // permissions.WRITE_EXTERNAL_STORAGE
+        ];
+        permissions.checkPermission(list, success, error);
+
+        function error() {
+            console.warn('Some needed permissions is not turned on');
+        }
+
+        function success(status) {
+            if (!status.hasPermission) {
+
+                permissions.requestPermissions(
+                    list,
+                    function(status) {
+                        if (!status.hasPermission) error();
+                    },
+                    error);
+            }
+        }
+    }
+    
+        PLATFORM = device.platform;
+   console.log(PLATFORM)
    // alert("hi");
    // //console.log('device ready --- > ' + localStorage, mercadoLanguage)
 
@@ -706,6 +740,7 @@ $$(document).on('page:init', '.page[data-name="selcLang"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
+   console.log(PLATFORM)
    if (localStorage.buitandaUserType != 'Company') {
       $('.userType').hide()
    }
@@ -2942,6 +2977,7 @@ function login() {
 
 
             success: function (json) {
+               console.log(PLATFORM)
                console.log('https://buitanda.com/ws.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                console.log(json)
                if (json['posts'][0] != 0) {
@@ -4440,8 +4476,8 @@ function SubmitOrder() {
    showIndicator()
 
    console.log(arrOrder)
-   // var paymen_type = $("input[name='my-radio']:checked").val();
-   var paymen_type = ''
+   var paymen_type = $("input[name='my-radio']:checked").val();
+
    arrOrder = encodeURIComponent(JSON.stringify(arrOrder));
    console.log(arrOrder)
 
@@ -5113,7 +5149,7 @@ function get_timeDifference_Days(strtdatetime) {
       var daylabel = "";
       if (days > 0) {
          var grammar = " ";
-         if (days > 1)  
+         if (days > 1) 
          var hrreset = days * 24;
          hh = hh - hrreset;
          daylabel = days + grammar;
