@@ -646,13 +646,14 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
 
 
 $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
+   $('.payment_Method').html(if_lang('Payment Method','Opções de pagamentos'))
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
-   $('.Cash_on').html( 'Cash on delivery  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-   'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>')
+   $('.Cash_on').html( if_lang( 'Cash on delivery  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
+   'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" margin-left: 25px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
    $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'  ,
-                        'Cartão de crédito   <a href="#" style=" margin-left: 35px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
+                        'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
    $('.Bank_Transfer').html( if_lang('Bank Transfer  <a href="/instructions/" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-                           'this is the translation  <a href="/instructions/" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>' ))
+                           'Transferência Bancária  <a href="/instructions/" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>' ))
    // $('.Trans').html(if_lang('<img src="img/TransEn.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;"> ',
    //    '<img src="img/Trans.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;">'))
    // $('.trans2').html(if_lang(' <img src="img/trans2En.jpg "  onclick="SubmitRefOrder()" style="width: 90vw;">',
