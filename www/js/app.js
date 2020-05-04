@@ -4440,8 +4440,8 @@ function SubmitOrder() {
    showIndicator()
 
    console.log(arrOrder)
-   var paymen_type = $("input[name='my-radio']:checked").val();
-
+   // var paymen_type = $("input[name='my-radio']:checked").val();
+   var paymen_type = 'Cash on Delivery'
    arrOrder = encodeURIComponent(JSON.stringify(arrOrder));
    console.log(arrOrder)
 
