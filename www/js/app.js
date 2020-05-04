@@ -4441,7 +4441,7 @@ function SubmitOrder() {
 
    console.log(arrOrder)
    // var paymen_type = $("input[name='my-radio']:checked").val();
-   var paymen_type = 'Cash on Delivery'
+   var paymen_type = ''
    arrOrder = encodeURIComponent(JSON.stringify(arrOrder));
    console.log(arrOrder)
 
@@ -5113,7 +5113,7 @@ function get_timeDifference_Days(strtdatetime) {
       var daylabel = "";
       if (days > 0) {
          var grammar = " ";
-         if (days > 1) grammar = "s "
+         if (days > 1)  
          var hrreset = days * 24;
          hh = hh - hrreset;
          daylabel = days + grammar;
