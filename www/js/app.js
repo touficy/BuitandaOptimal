@@ -3674,7 +3674,7 @@ function getAuctionProduct(id) {
 var TimerFlag = 1
 
 function bidSetIntreval(id) {
-   var x = setInterval(function () {
+   // var x = setInterval(function () {
 
       $.ajax({
          type: 'GET',
@@ -3706,7 +3706,7 @@ function bidSetIntreval(id) {
          }
       });
 
-   }, 1000);
+   // }, 1000);
 }
 
 function timer(date, id, server_time) {
