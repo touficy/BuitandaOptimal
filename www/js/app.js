@@ -492,6 +492,16 @@ $$(document).on('page:init', '.page[data-name="termAndCondition"]', function (e)
 })
 $$(document).on('page:init', '.page[data-name="MyOrder"]', function (e) {
    $('.MyOrderTitle').html(if_lang('MY ORDERS', 'Meu pedido'))
+   $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
+
+   if(shipping == 0 ){
+      $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+   }
+   else{
+      $('.TotalShippingA').html(if_lang( shipping +' KWZ', shipping+' KWZ'))
+   
+   
+   }
    getMyCard()
 })
 
@@ -4716,6 +4726,8 @@ function getMyOrder(id) {
 
             for (var i = 0; i < json['posts'].length; i++) {
                if (json['posts'][i]['id'] == id) {
+                  constantTotal=json['posts'][i]['total']
+
                   li = '<div class="block block-strong inv-section">' +
                      '  <div class="inv-logo">' +
                      '    <h2 id="orderTitle">' + if_lang('Order ', 'Encomenda ') + '# ' + json['posts'][i]['id'] + '  </h2>' +
@@ -4782,10 +4794,19 @@ function getMyOrder(id) {
                   }
                   li = li + '    </tbody>' +
                      '  <tfoot>' +
+                     '   <tr>' +
+                     '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
+                     ' <td colspan="4" >' + json['posts'][i]['total'] + ' KWZ</td>' +
+                     ' </tr>' +
+
+                     '   <tr>' +
+                     '   <td colspan="1"><b>' + if_lang('Total shipping ', ' ENTREGA	') + ':</b></td>' +
+                     ' <td colspan="4" class="TotalShippingA">' +   '  </td>' +
+                     ' </tr>' +
 
                      '   <tr>' +
                      '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
-                     ' <td colspan="4" class="TotalOrder">' + json['posts'][i]['total'] + ' KWZ</td>' +
+                     ' <td colspan="4" class="TotalWithShippingg">' +   '  </td>' +
                      ' </tr>' +
                      ' </tfoot>' +
 
@@ -4795,7 +4816,11 @@ function getMyOrder(id) {
 
                }
             }
+   
             $('.allContent').html(li)
+
+            GetShipping()
+
 
          }
          else {
@@ -5236,6 +5261,7 @@ function GetShipping (){
    }
    tot = constantTotal.replace(/\s/g, '')
    tot = tot.replace('KWZ', '')
+   console.log(tot)
    $.ajax({
       async: false,
       type: 'GET',
@@ -5250,8 +5276,7 @@ function GetShipping (){
          console.log(json)
          shipping =nf.format( json['posts']['0']['totalShipping'] )
       
-          console.log(totalPlusShiping)
-         totalPlusShiping = nf.format(json['posts']['0']['total'])
+          totalPlusShiping = nf.format(json['posts']['0']['total'])
          console.log(totalPlusShiping)
          if(shipping == 0 ){
             $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
