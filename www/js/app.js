@@ -450,12 +450,12 @@ $$(document).on('page:init', '.page[data-name="Register"]', function (e) {
    $('.Person').html(if_lang('Person', 'Pessoal'))
    $('.Company').html(if_lang('Company', 'Empresa'))
    $('.CountryNAme').html(if_lang('Country', 'PAíS'))
-   $('.addressCompany').attr('placeholder', if_lang('Address', 'ENDEREÇO'));
+   $('.addressCompanyLable').html( if_lang('Address', 'ENDEREÇO'));
 
-   $('#namePerson').attr('placeholder', if_lang('Name', 'Nome'));
-   $('#emailPerson').attr('placeholder', if_lang('EMAIL', 'EMAIL'));
-   $('#mobilePerson').attr('placeholder', if_lang('Mobile', 'MóVEL'));
-   $('#passwordPerson').attr('placeholder', if_lang('password', 'SENHA'));
+   $('.namePersonLable').html( if_lang('Name', 'Nome'));
+   $('.emailPersonLable').html( if_lang('EMAIL', 'EMAIL'));
+   $('.mobilePersonLable').html( if_lang('Mobile', 'MóVEL'));
+   $('.passwordPersonLable').html( if_lang('password', 'SENHA'));
 
    $('.AcceptSignUp').html(if_lang('I accept', 'eu aceito') + ' <a href="/termAndCondition/" onclick="" style="text-decoration: underline;">' + if_lang('Terms and Condition', 'termos e Condições') + '</a>')
 
@@ -550,8 +550,8 @@ $$(document).on('page:init', '.page[data-name="instructions"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="Login"]', function (e) {
-   $('#emailLogin').attr('placeholder', if_lang('Email', 'INSERE O TEU EMAIL'));
-   $('#passwordLogins').attr('placeholder', if_lang('Password', 'Digite a senha'));
+   $('.emailLoginLable').html( if_lang('Email', 'INSERE O TEU EMAIL'));
+   $('.passwordLoginsLable').html( if_lang('Password', 'Digite a senha'));
    $('.titleLogins').html(if_lang('Login', 'Entrar'))
    $('#loginbtn').html(if_lang('Login', 'Entrar'))
    $('#ForgetBtn').html(if_lang('Forget Password ?', 'Esqueceste-te da palavra-passe?'))
@@ -582,8 +582,8 @@ $$(document).on('page:init', '.page[data-name="ResetPassword"]', function (e) {
 
    $('.ResetPasswordTitle').html(if_lang('Reset Account ', ' Redefinir conta'))
 
-   $('#passwordReset').attr('placeholder', if_lang('password', 'SENHA'));
-   $('#cPasswordReset').attr('placeholder', if_lang('Confirmation password', 'SENHA DE CONFIRMAÇÃO'));
+   $('.passwordResetLable').httml( if_lang('password', 'SENHA'));
+   $('.cPasswordResetLable').httml( if_lang('Confirmation password', 'SENHA DE CONFIRMAÇÃO'));
 
    $('#ResetPasswordBtn').html(if_lang('Reset   ', ' Redefinir  '))
 
@@ -618,9 +618,9 @@ $$(document).on('page:init', '.page[data-name="contactUs"]', function (e) {
 
    $('.phoneContact').html(if_lang('PHONE NUMBER <br> <span class="span-contact PhoneNumbContact" onclick="callNum()"> + 244 923 474 222</span>',
       'Número de telefone <br> <span class="span-contact PhoneNumbContact" onclick="callNum()"> + 244 923 474 222</span>'))
-   $('.NameC').attr('placeholder', if_lang('Name', 'Nome'));
-   $('.SubjectC').attr('placeholder', if_lang('subject', 'sujeito'));
-   $('.MsgC').attr('placeholder', if_lang('Message', 'mensagem'));
+   $('.NameCLable').html( if_lang('Name', 'Nome'));
+   $('.SubjectCLable').html( if_lang('subject', 'sujeito'));
+   $('.MsgCLable').html( if_lang('Message', 'mensagem'));
    $('#sendC').html(if_lang('Send ', ' ENVIAR'))
 
 })
@@ -759,7 +759,7 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
       $('.userType').hide()
    }
    console.log('user type ----- >' + localStorage.buitandaUserType)
-   $('.addressCompany').attr('placeholder', if_lang('Address', 'ENDEREÇO'));
+   $('.addressCompanyLable').html( if_lang('Address', 'ENDEREÇO'));
 
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
@@ -767,9 +767,9 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
    $('.PROFILETab').html(if_lang('PROFILE', 'PERFIL'))
 
    getProfile()
-   $('#namePerson').attr('placeholder', if_lang('Name', 'Nome'));
-   $('#mobilePerson').attr('placeholder', if_lang('Mobile', 'Móvel'));
-   $('#passwordPerson').attr('placeholder', if_lang('Password', 'SENHA'));
+   $('.namePersonLable').html( if_lang('Name', 'Nome'));
+   $('.mobilePersonLable').html( if_lang('Mobile', 'Móvel'));
+   $('.passwordPersonLable').html( if_lang('Password', 'SENHA'));
    $('#CountryEdit').html(if_lang('Country', 'País'));
    $('#CityEdit').html(if_lang('City', 'Cidade'));
    $('#updateProfile').html(if_lang('Update', 'Atualizar'));
@@ -1984,54 +1984,46 @@ function getRegisterForm() {
    var li = ''
    if (data == 'Company') {
       getCountryCompany()
-      li = ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
+      li = '<div class="list no-hairlines-md" style="margin-left: 3vh;">' +
          '   <ul >' +
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
+         '   <div class="item-title item-label nameCompanyLable">Company Name</div>'+
+
          '    <div class="item-input-wrap">' +
-         '    <input id="nameCompany" class="nameCompany"  type="text" placeholder="Company Name" name="name">' +
+         '    <input id="nameCompany" class="nameCompany"  type="text" placeholder="" name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '    </div>' +
          '  </li>' +
 
-         ' </ul>'
-         +
+        
 
-         '  </div> ' +
-
-         ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         '   <ul >' +
+         
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
+         '   <div class="item-title item-label NIFLable">NIF</div>'+
+
          '    <div class="item-input-wrap">' +
-         '    <input id="nifCompany" class="nifCompany" type="number" placeholder="NIF" name="name">' +
+         '    <input id="nifCompany" class="nifCompany" type="number" placeholder=" " name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '    </div>' +
          '  </li>' +
 
-         ' </ul>'
-         +
-
-         '  </div> ' +
-         ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         '   <ul >' +
+          
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
+         '   <div class="item-title item-label addressCompanyLable">' + if_lang('Address', 'ENDEREÇO') + '</div>'+
+
          '    <div class="item-input-wrap">' +
-         '    <input id="addressCompany" class="addressCompany"  type="text" placeholder=" ' + if_lang('Address', 'ENDEREÇO') + '" name="name">' +
+         '    <input id="addressCompany" class="addressCompany"  type="text" placeholder=" " name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '    </div>' +
          '  </li>' +
 
-         ' </ul>'
-         +
-
-         '  </div> ' +
-         '    <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">' +
-         ' <ul>' +
+         
 
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2046,14 +2038,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-         '  </ul>' +
-         '  </div>' +
-
-
-
-         '    <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">' +
-         ' <ul>' +
-
+         
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
          '    <div class="item-inner ">' +
@@ -2069,10 +2054,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-         '  </ul>' +
-         '  </div>' +
-         '    <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">' +
-         ' <ul>' +
+         
 
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2088,11 +2070,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-         '  </ul>' +
-         '  </div>' +
-
-         '  <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">' +
-         '<ul>' +
+         
 
 
          '<li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2106,44 +2084,48 @@ function getRegisterForm() {
          '  </div>' +
          '  </div>' +
          '   </li>' +
-         '</ul>' +
-         '  </div>' +
-         '   <div class="list shadow" style="margin:1vh 2vh 0vh  0vh;">' +
-         '    <ul >' +
+         
          ' <li class="item-content item-input">' +
          '   <div class="item-inner">' +
+         '   <div class="item-title item-label emailCompanyLable">' + if_lang('Email', 'Email') + '</div>'+
+
          '  <div class="item-input-wrap">' +
          ' <input id="emailCompany" class="emailCompany" type="text" placeholder="Email" name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '   </div>' +
          '   </li>' +
-
-         '     </ul>' +
-
-
-         '  </div>    ' +
-         '  <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         ' <ul >' +
+ 
          ' <li class="item-content item-input">' +
          ' <div class="item-inner">' +
+         '   <div class="item-title item-label phoneLable">' + if_lang('phone', 'TELEFONE') + '</div>'+
+
          '   <div class="item-input-wrap">' +
-         ' <input id="phone" class="phone"  type="number" placeholder=" ' + if_lang('phone', 'TELEFONE') + '" name="name">' +
+         ' <input id="phone" class="phone"  type="number" placeholder="  " name="name">' +
          ' <span class="input-clear-button"></span>' +
          ' </div>' +
          '  </div>' +
          '  </li>' +
 
-         '  </ul>' +
-
-
-         ' </div>' +
-         ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         '  <ul >' +
+       
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
+         '   <div class="item-title item-label mobileCompanyLable">' + if_lang('Mobile', 'MóVEL') + '</div>'+
+
          ' <div class="item-input-wrap">' +
-         '  <input id="mobileCompany" class="mobileCompany"  type="number" placeholder="' + if_lang('Mobile', 'MóVEL') + '" name="name">' +
+         '  <input id="mobileCompany" class="mobileCompany"  type="number" placeholder=" " name="name">' +
+         '<span class="input-clear-button"></span>' +
+         ' </div>' +
+         ' </div>' +
+         '   </li>' +
+
+        
+         '   <li class="item-content item-input">' +
+         '  <div class="item-inner">' +
+         '   <div class="item-title item-label PasswordCompanyLable">' + if_lang('Password', 'SENHA') + '</div>'+
+
+         ' <div class="item-input-wrap">' +
+         '  <input id="PasswordCompany" class="PasswordCompany" type="Password" placeholder="" name="name">' +
          '<span class="input-clear-button"></span>' +
          ' </div>' +
          ' </div>' +
@@ -2153,22 +2135,7 @@ function getRegisterForm() {
 
 
          '  </div> ' +
-         ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         '  <ul >' +
-         '   <li class="item-content item-input">' +
-         '  <div class="item-inner">' +
-         ' <div class="item-input-wrap">' +
-         '  <input id="PasswordCompany" class="PasswordCompany" type="Password" placeholder="' + if_lang('Password', 'SENHA') + '" name="name">' +
-         '<span class="input-clear-button"></span>' +
-         ' </div>' +
-         ' </div>' +
-         '   </li>' +
-
-         '   </ul>' +
-
-
-         '  </div> ' +
-         '<div class="form-group margin-vertical text-align-left">' +
+         '<div class="form-group margin-vertical text-align-left" " style="    margin-left: 5vh;">' +
          '   <label class="checkbox">' +
          '    <input class="conditions" id="conditions" type="checkbox">' +
 
@@ -2187,38 +2154,32 @@ function getRegisterForm() {
 
 
    if (data == 'Person') {
-      li = ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
+      li = '<div class="list no-hairlines-md" style="margin-left: 3vh;">' +
          '   <ul >' +
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
+         '   <div class="item-title item-label namePersonLable">'   + if_lang('Name', 'Nome')+ '</div>'+
+
          '    <div class="item-input-wrap">' +
-         '    <input id="namePerson"  type="text" placeholder="' + if_lang('Name', 'Nome') + '" name="name">' +
+         '    <input id="namePerson"  type="text" placeholder=" " name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '    </div>' +
          '  </li>' +
 
-         ' </ul>'
-         +
-
-         '  </div> ' +
-         ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         '   <ul >' +
+        
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
+         '   <div class="item-title item-label addressCompanyLable">' + if_lang('Address', 'ENDEREÇO') + '</div>'+
+
          '    <div class="item-input-wrap">' +
-         '    <input id="addressCompany" class="addressCompany"  type="text" placeholder=" ' + if_lang('Address', 'ENDEREÇO') + '" name="name">' +
+         '    <input id="addressCompany" class="addressCompany"  type="text" placeholder=" " name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '    </div>' +
          '  </li>' +
 
-         ' </ul>'
-         +
-
-         '  </div> ' +
-         '    <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">' +
-         ' <ul>' +
+        
 
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2234,11 +2195,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-         '  </ul>' +
-         '  </div>' +
-
-         '  <div class="list shadow"  style="margin:2vh 2vh 0vh  0vh;">' +
-         '<ul>' +
+        
 
 
          '<li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2253,44 +2210,37 @@ function getRegisterForm() {
          '  </div>' +
          '  </div>' +
          '   </li>' +
-         '</ul>' +
-         '  </div>' +
-         '   <div class="list shadow" style="margin:1vh 2vh 0vh  0vh;">' +
-         '    <ul >' +
+       
          ' <li class="item-content item-input">' +
          '   <div class="item-inner">' +
+                  '   <div class="item-title item-label emailPersonLable">' + if_lang('EMAIL', 'EMAIL') + '</div>'+
+
          '  <div class="item-input-wrap">' +
-         ' <input id="emailPerson"  type="text" placeholder="' + if_lang('EMAIL', 'EMAIL') + '" name="name">' +
+         ' <input id="emailPerson"  type="text" placeholder=" " name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '   </div>' +
          '   </li>' +
 
-         '     </ul>' +
-
-
-         '  </div>    ' +
-         '  <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         ' <ul >' +
+         
          ' <li class="item-content item-input">' +
          ' <div class="item-inner">' +
+         '   <div class="item-title item-label mobilePersonLable">' + if_lang('Mobile', 'MóVEL') + '</div>'+
+
          '   <div class="item-input-wrap">' +
-         ' <input id="mobilePerson"  type="number" placeholder="' + if_lang('Mobile', 'MóVEL') + '" name="name">' +
+         ' <input id="mobilePerson"  type="number" placeholder="" name="name">' +
          ' <span class="input-clear-button"></span>' +
          ' </div>' +
          '  </div>' +
          '  </li>' +
 
-         '  </ul>' +
-
-
-         ' </div>' +
-         ' <div class="list shadow" style="margin:2vh 2vh 0vh  0vh;">' +
-         '  <ul >' +
+        
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
+         '   <div class="item-title item-label mobilePersonLable">' + if_lang('password', 'SENHA') + '</div>'+
+
          ' <div class="item-input-wrap">' +
-         '  <input id="passwordPerson"  type="password" placeholder="' + if_lang('password', 'SENHA') + '" name="name">' +
+         '  <input id="passwordPerson"  type="password" placeholder="" name="name">' +
          '<span class="input-clear-button"></span>' +
          ' </div>' +
          ' </div>' +
@@ -2300,7 +2250,7 @@ function getRegisterForm() {
 
 
          '  </div> ' +
-         '<div class="form-group margin-vertical text-align-left">' +
+         '<div class="form-group margin-vertical text-align-left" " style="    margin-left: 5vh;">' +
          '   <label class="checkbox">' +
          '    <input class="conditions" id="conditions" type="checkbox">' +
 
