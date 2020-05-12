@@ -109,12 +109,13 @@ function reloadPage() {
 }
 var PLATFORM = '';
 var UUID = '';
+var versionApp
 
 document.addEventListener("deviceready", onDeviceReady, false);
-var versionApp
 function onDeviceReady() {
    cordova.getAppVersion.getVersionNumber(function (version) {
       $('.versionStyle').html('V' + version)
+      VersionApp = version
       $.ajax({
          type: 'GET',
          url: "https://buitanda.com/ws.php?type=checkversion&version=" + version + "&format=json",
@@ -2643,7 +2644,7 @@ function RegisterPerson() {
                         } else {
                            $.ajax({
                               type: 'POST',
-                              url: 'https://buitanda.com/ws.php?type=registration&name=' + name + '&email=' + Email + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+                              url: 'https://buitanda.com/ws.php?type=registration&name=' + name + '&email=' + Email +  '&version=' + VersionApp + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
                               success: function (json) {
@@ -2765,7 +2766,7 @@ function RegisterCompany() {
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                                        $.ajax({
                                           type: 'POST',
-                                          url: 'https://buitanda.com/ws.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+                                          url: 'https://buitanda.com/ws.php?type=registration_company&name=' + name + '&email=' + Email +  '&version=' + VersionApp + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
                                              '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
                                           success: function (json) {
@@ -2937,7 +2938,7 @@ function login() {
       else {
          $.ajax({
             type: 'POST',
-            url: 'https://buitanda.com/ws.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+            url: 'https://buitanda.com/ws.php?type=login&email=' + email + '&password=' + password +  '&version=' + VersionApp + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
             success: function (json) {
