@@ -62,7 +62,7 @@
            </div>
 
 
-           <div class="white" style="margin-top: 2vh;" id="EditDiv">
+           <div class="white loginProfileShop" style="margin-top: 2vh;" id="EditDiv">
                <div style="display: inline-flex; width:-webkit-fill-available;">
                 <div style="width: -webkit-fill-available">
                <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; padding-top: 1vh;" id="nameShop"> </p>
@@ -103,6 +103,115 @@
            
 
         </div>
+
+
+        <div class="list no-hairlines-md logoutProfileShop" style="margin-top: 2vh;">
+            <ul  >
+               <li class="item-content item-input">
+                 <div class="item-inner">
+                  <div class="item-title item-label namePersonLable">Name</div>
+
+                   <div class="item-input-wrap">
+                    <input class="namePersons"  type="text" placeholder="Name" name="name">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+              
+           
+               <li class="item-content item-input">
+                 <div class="item-inner">
+                  <div class="item-title item-label addressCompanyLable">ENDEREÇO</div>
+
+                   <div class="item-input-wrap">
+                   <input id="addressCompanys" class="addressCompanys"  type="text" placeholder=" " name="name">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+              
+            
+
+                
+        
+                <li class="item-content item-input item-input-outline item-input-with-value">
+                    <div class="item-inner ">
+                        <!-- "item-floating-label" class on item title -->
+                         <div class="item-input-wrap">
+                            <select id="CountrySelect" class="input-with-value CountrySelect" onchange="getCity()" >
+                              <option value="-1" class="CountryNAme">Country</option>
+
+                               
+                            </select>
+                        </div>
+                    </div>
+                </li>
+          
+              
+      
+              <li class="item-content item-input item-input-outline item-input-with-value">
+                  <div class="item-inner ">
+                      <!-- "item-floating-label" class on item title -->
+                       <div class="item-input-wrap">
+                          <select  id="CitySelect" class="input-with-value CitySelect"  >
+                            <option value="-1" class="City">City</option>
+
+                              
+                          </select>
+                      </div>
+                  </div>
+              </li>
+         
+               <li class="item-content item-input">
+                 <div class="item-inner">
+                  <div class="item-title item-label emailPersonLable">Email</div>
+
+                   <div class="item-input-wrap">
+                    <input class="emailPersons"  type="text" placeholder="Email" onchange="findEmail()" name="name">
+                    <span class="input-clear-button"></span>
+                    <span onclick="popLogin()" class="spanLoginAlert" style="color: red; font-size: 12px;">Email already exists, click here to login</span>
+
+                  </div>
+                </div>
+              </li>
+              
+           
+               <li class="item-content item-input">
+                 <div class="item-inner">
+                  <div class="item-title item-label mobilePersonLable">Mobile</div>
+
+                   <div class="item-input-wrap">
+                    <input class="mobilePersons"   type="number" placeholder="Mobile" name="name">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+              
+         
+               <li class="item-content item-input">
+                 <div class="item-inner">
+                  <div class="item-title item-label passwordPersonLable">password</div>
+
+                   <div class="item-input-wrap">
+                    <input class="passwordPersons"   type="password" placeholder="password" name="name">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                 <div class="item-title item-label passwordPersonLable">password</div>
+
+                  <div class="item-input-wrap">
+                   <input class="notePersons"   type="text" placeholder="note" name="name">
+                   <span class="input-clear-button"></span>
+                 </div>
+               </div>
+             </li>
+            </ul>
+
+            
+          </div> 
         <div  class="row">
             <div class="col-50">        
                 <a href="#" class="back item-link  "  >

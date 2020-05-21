@@ -69,7 +69,8 @@ $$(document).on('page:init', function (e) {
 
 
 });
-
+var versionApp='';
+var versionApplication
 
 
 function showIndicator() {
@@ -109,13 +110,12 @@ function reloadPage() {
 }
 var PLATFORM = '';
 var UUID = '';
-var versionApp
 
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
    cordova.getAppVersion.getVersionNumber(function (version) {
       $('.versionStyle').html('V' + version)
-      VersionApp = version
+      versionApplication = version
       $.ajax({
          type: 'GET',
          url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=checkversion&version=" + version + "&format=json",
@@ -700,13 +700,35 @@ else{
 })
 
 $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
-   getProfile()
-   editShop()
-   $('.addressShP').html(if_lang('Address ', '  Endereço'))
-   $('.NoteP').html(if_lang('Note ', '  Notas'))
-   $('.EditBtn').html(if_lang('Edit Info ', '  Atualizar '))
-   $("#NextProfile").html(if_lang('Next ', ' Seguinte  '))
+   if(Checklogin()){
+      $('.logoutProfileShop').hide()
+      getProfile()
+      editShop()
+      $('.addressShP').html(if_lang('Address ', '  Endereço'))
+      $('.NoteP').html(if_lang('Note ', '  Notas'))
+      $('.EditBtn').html(if_lang('Edit Info ', '  Atualizar '))
+      $("#NextProfile").html(if_lang('Next ', ' Seguinte  '))
+   
+   }
+   else{
 
+      $('.spanLoginAlert').hide()
+
+      $('.Person').html(if_lang('Person', 'Pessoal'))
+   $('.Company').html(if_lang('Company', 'Empresa'))
+   $('.CountryNAme').html(if_lang('Country', 'PAíS'))
+   $('.addressCompanyLable').html( if_lang('Address', 'ENDEREÇO'));
+
+   $('.namePersonLable').html( if_lang('Name', 'Nome'));
+   $('.emailPersonLable').html( if_lang('EMAIL', 'EMAIL'));
+   $('.mobilePersonLable').html( if_lang('Mobile', 'MóVEL'));
+   $('.passwordPersonLable').html( if_lang('password', 'SENHA'));
+      getCountry()
+      $('#NextProfile').attr('onclick','RegisterTillCheckout()')
+      $('.loginProfileShop').hide()
+
+   }
+  
 
    $('.SHOPINGCheckout').html(if_lang('CART ', 'CARRINHO'))
    $('.AddressCheckout').html(if_lang('ADDRESS ', '  ENDEREÇO  '))
@@ -2290,7 +2312,7 @@ function getCountry() {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + json['posts'][i]['name'] + '</option>'
          }
          $('.CountrySelect').append(li)
-         // $('#CountrySelectCompany').html(li)
+          // $('#CountrySelectCompany').html(li)
 
 
 
@@ -2644,7 +2666,7 @@ function RegisterPerson() {
                         } else {
                            $.ajax({
                               type: 'POST',
-                              url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email +  '&version=' + VersionApp + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+                              url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email +  '&version=' + versionApplication + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
                               success: function (json) {
@@ -2766,7 +2788,7 @@ function RegisterCompany() {
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                                        $.ajax({
                                           type: 'POST',
-                                          url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration_company&name=' + name + '&email=' + Email +  '&version=' + VersionApp + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+                                          url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration_company&name=' + name + '&email=' + Email +  '&version=' + versionApplication + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
                                              '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
                                           success: function (json) {
@@ -2938,7 +2960,7 @@ function login() {
       else {
          $.ajax({
             type: 'POST',
-            url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password +  '&version=' + VersionApp + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+            url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password +  '&version=' + versionApplication + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
             success: function (json) {
@@ -4011,9 +4033,11 @@ function setSoldFlag(id) {
 
 function getMyCard() {
    // console.log('im get my card')
+   if(Checklogin()){
+      
    $.ajax({
       type: 'GET',
-      url: "   https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
       cache: false,
       success: function (json) {
@@ -4117,6 +4141,115 @@ function getMyCard() {
       }
    });
 
+   
+}
+else{
+   $.ajax({
+      type: 'GET',
+      url: "   https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&uuid=" +UUID+ "&format=json",
+
+      cache: false,
+      success: function (json) {
+
+         if (json['posts'] != undefined) {
+            if (json['posts'][0] != 0) {
+               // console.log(json)
+               var li = ''
+               var nameProduct;
+               var total = 0;
+               var totalAll = 0;
+               li = li + ' <tr>' +
+                  '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
+                  ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
+                  ' <th class="text-align-center"  width="15%">  ' + if_lang('Qty ', 'Qty') + '</th>' +
+                  ' <th class="text-align-center" width="10%"> </th>' +
+                  ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
+                  '      </tr>'
+               //console.log(json['posts'].length)
+               if (json['posts']['0'] != 0) {
+                  for (var i = 0; i < json['posts'].length; i++) {
+
+
+                     total = parseFloat(json['posts'][i]['deal_info']['current2']) * parseInt(json['posts'][i]['qty'])
+                     totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current2']) * parseInt(json['posts'][i]['qty'])
+                     var nf = Intl.NumberFormat('fr');
+                     // console.log(nf.format(total)); // 42,000,000 in many locales
+                     total = nf.format(total)
+
+                     nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
+                     li = li + ' <tr style="font-size: 8px;">' +
+
+                        '  <td class="ItemOrder" width="15%">' +
+                        '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
+                        ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
+
+                        '   </td>' +
+
+
+                        '   <td class="text-align-center  QtyOrder"  width="20%">' +
+                        '      <p>' + json['posts'][i]['deal_info']['current'] + ' KWZ	</p>' +
+                        '  </td>' +
+
+
+                        '   <td class="text-align-center subTotal_Delviery"  width="15%">' +
+
+                        '   <div class="row" style="width:12vh">' +
+
+                        '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current2'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
+                        '   <div class="col-40">' +
+                        '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
+                        '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current2'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
+                        ' </div>' +
+                        '   </td>' +
+
+                        '<td class="text-align-center subTotal_Delviery" width="10%">' +
+                        ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ')" style="width:  3vh" >' +
+
+                        '   </td>' +
+
+
+                        '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
+                        '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+
+                        '   </td>' +
+
+                        '  </tr>'
+                  }
+               }
+               $('.DataItem').html(li)
+               var nf = Intl.NumberFormat('fr');
+               totalAll = nf.format(totalAll)
+               $('.TotalA').html(totalAll + ' KWZ')
+               // console.log('i ---- >'+i)
+               if (i > 0) {
+                  $('.cart_counter').css('display', 'block')
+                  $('.cart_counter').html(i)
+                  $("#nextCheckout").removeAttr("disabled");
+                  $("#nextCheckout").css("background", '#32c2ff');
+
+
+               }
+               else {
+                  console.log('in else getCard')
+                  $('.cart_counter').css('display', 'none')
+                  $("#nextCheckout").attr("disabled", true);
+                  $("#nextCheckout").css("background", 'gray');
+
+
+
+               }
+            }
+            else {
+               $('.cart_counter').css('display', 'none')
+               $("#nextCheckout").attr("disabled", true);
+               $("#nextCheckout").css("background", 'gray');
+               $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
+            }
+         }
+
+      }
+   });
+}
 
 }
 
@@ -4152,8 +4285,33 @@ function addToCard(id, avilable) {
 
    }
    else {
-      alert(if_lang('please login first', 'faça o login primeiro'))
-      go_to_page("Login")
+    var qty = $('.valCardPros_' + id).val()
+      qty = parseInt(qty)
+      console.log(qty)
+      if (avilable > 0) {
+         if (qty > 0) {
+            $.ajax({
+               type: 'GET',
+               url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+
+
+               success: function (json) {
+                  console.log(json)
+                  //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                  alert(if_lang('your product added successfully ', 'your product added successfully '))
+                  getMyCard()
+               }
+            });
+         }
+         else {
+            alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+         }
+      }
+      else {
+         alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+      }
+      // alert(if_lang('please login first', 'faça o login primeiro'))
+      // go_to_page("Login")
    }
 }
 
@@ -4361,10 +4519,12 @@ var phoneOrder
 var AddressOrder
 var DeliveryType
 var constantTotal
+
 function getOrderArr() {
 constantTotal =   $('.TotalA').html()
-
-   go_to_page('ProfileShop')
+if (Checklogin()){
+   $('.logoutProfileShop').empty()
+   console.log('in logout')
    $.ajax({
       type: 'GET',
       url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
@@ -4384,6 +4544,17 @@ constantTotal =   $('.TotalA').html()
          //console.log(arrOrder)
       }
    })
+}
+else{
+
+
+   $('.loginProfileShop').hide()
+
+
+}
+   go_to_page('ProfileShop')
+ 
+  
 }
 var notesORder
 function getPersonalDataOrder() {
@@ -4516,13 +4687,9 @@ function SubmitRefOrder() {
 }
 
 function goToCheckout() {
-   if (Checklogin()) {
+   
       go_to_page('CheckOutFirst')
-   }
-   else {
-      alert(if_lang('please login first', 'faça o login primeiro'))
-      go_to_page("Login")
-   }
+  
 }
 
 
@@ -5198,8 +5365,252 @@ function getProductCategorySorting (){
    $$('.infinite-scroll-preloader').show()
    console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
+   console.log(sort)
    $('.CatProd').empty()
    start = 0
    end = 8
    getCategoryProduct(CategoryIdSearch)
  }
+
+
+ function findEmail (email){
+   
+   $.ajax({
+      async: false,
+      type: 'GET',
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=select&format=json&table=customers&columns=*&condition=email='"+$('.emailPersons').val()+"'",
+
+
+      success: function (json) {
+         
+               if(json['posts']['0']!=0){
+              $('.spanLoginAlert').show()
+              $('.spanLoginAlert').html(if_lang('Email already exists, click here to login','O e-mail já existe, clique aqui para fazer login'))
+
+               $('#NextProfile').attr('disabled','true')
+
+               }
+               else{
+                   $('.spanLoginAlert').hide()
+                  $('#NextProfile').removeAttr('disabled','false')
+
+               }
+      
+      }
+
+
+   });
+ }
+
+
+
+ function RegisterTillCheckout() {
+   showIndicator()
+   var name = $('.namePersons').val()
+   var Country = $('.CountrySelect').val()
+   var City = $('.CitySelect').val()
+   var Email = $('.emailPersons').val()
+   var adddres = $('.addressCompanys').val()
+   var mobile = $('.mobilePersons').val()
+   var password = $('.passwordPersons').val()
+   var note = $('notePersons').val()
+   if (name == '') {
+      hideIndicator()
+
+      alert(if_lang("please enter name", 'por favor digite o nome'))
+   }
+   else {
+      console.log('name --- >'+name)
+      if (adddres == '') {
+         alert(if_lang("please enter address", 'digite o endereço'))
+      }
+      else {
+         if (Country == -1) {
+            alert(if_lang("please choose Country", 'por favor escolha país'))
+         }
+         else {
+            if (City == '') {
+               hideIndicator()
+
+               alert(if_lang("please choose City", 'por favor escolha a cidade'))
+            }
+            else {
+               if (Email == '') {
+                  hideIndicator()
+
+                  alert(if_lang("please enter email", 'por favor insira o email'))
+               }
+               else {
+                  if (mobile == '') {
+                     hideIndicator()
+
+                     alert(if_lang("please enter mobile", 'por favor entre no celular'))
+                  }
+                  else {
+                     if (password == '') {
+                        hideIndicator()
+
+                        alert(if_lang("please enter password", 'por favor digite a senha'))
+                     }
+
+                     else {
+                        if (!$('.conditions').prop('checked')) {
+                           alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
+                        } else {
+                           $.ajax({
+                              type: 'POST',
+                              url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email +  '&version=' + versionApplication + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+
+
+                              success: function (json) {
+                                 console.log(json)
+                                 if (json['posts'][0] == -1) {
+                                    alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
+                                 }
+                                 else if (json['posts'][0] == 0) {
+                                    alert(if_lang('There is a problem currently being resolved, please try again later  ', 'Há um problema sendo resolvido no momento. Tente novamente mais tarde'))
+
+                                 }
+                                 else {
+                                    // alert(if_lang('The account has been successfully created congratulations ' , 'A conta foi criada com sucesso parabéns'))
+
+                                    localStorage.buitandaUserID = json['posts'][0]
+                                    localStorage.buitandaUserType = json['posts'][1]
+
+                                    console.log(localStorage.buitandaUserID)
+                                    notesORder = note
+                                    phoneOrder = mobile
+                                    AddressOrder = adddres
+                                    go_to_page('SubmitOrder')
+
+                                 }
+                                 hideIndicator()
+                              }
+                           });
+
+                        }
+                     }
+
+                  }
+               }
+            }
+         }
+      }
+   }
+
+
+   //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+
+
+   hideIndicator()
+}
+
+
+
+
+function popLogin (){
+
+
+ 
+      app.popup.create({
+         content: '<div class="popup" style=" overflow-y:scroll; height:46vh;margin-top:28vh">' +
+            '<div style="text-align:end; margin:1vh">' +
+            '<img class="popup-close"  src="img/close.svg">' +
+            '</div>' +
+            '<div class="page-content grey-bk" style="height: 50%; overflow:initial">' +
+            '<div class="list no-hairlines-md" style="margin-left: 3vh;">'+
+          '  <ul  >'+
+             '  <li class="item-content item-input">'+
+               '  <div class="item-inner">'+
+                '  <div class="item-title item-label emailLoginLable">Email</div>'+
+
+                  ' <div class="item-input-wrap">'+
+               '     <input class="emailLogins"  type="text" placeholder="" name="name">'+
+                   ' <span class="input-clear-button"></span>'+
+                '  </div>'+
+               ' </div>'+
+            '  </li>'+
+              
+            
+              ' <li class="item-content item-input">'+
+'                 <div class="item-inner">'+
+                 ' <div class="item-title item-label passwordLoginsLable">password</div>'+
+
+                  ' <div class="item-input-wrap">'+
+                    '<input class="passwordLoginss"  type="password" placeholder=" " name="name">'+
+                   ' <span class="input-clear-button"></span>'+
+                  '</div>'+
+               ' </div>'+
+            '  </li>'+
+              
+         '   </ul>'+
+
+            
+          '</div> '+
+          '<div style="text-align:-webkit-center">'+
+       '   <button class="col button button-raised button-fill" id="loginbtn" style="width: 26vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="loginTillCheckout()">Login   </button>'+
+ '     </div>'+
+            //  '<div class="block block-strong">' + if_lang(json['posts'][0].description, json['posts'][0].ardescription) + '</div>' +
+            '</div>' +
+            '</div>',
+      }).open();
+   
+   
+}
+
+
+
+
+function loginTillCheckout() {
+   showIndicator()
+   var email = $('.emailLogins').val()
+   var password = $('.passwordLoginss').val()
+   //console.log(email+ '    ' +password)
+
+   if (email == '') {
+      alert(if_lang('please enter email', 'من فضلك ادخل البريد الالكتروني'))
+      hideIndicator()
+
+   }
+   else {
+      if (password == ' ') {
+         alert(if_lang('please enter password', 'من فضلك ادخل الرقم السري'))
+         hideIndicator()
+
+      }
+      else {
+         $.ajax({
+            type: 'POST',
+            url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password +  '&version=' + versionApplication + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+
+
+            success: function (json) {
+               console.log(PLATFORM)
+               console.log('https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               console.log(json)
+               if (json['posts'][0] != 0) {
+                  localStorage.buitandaUserID = json['posts'][0]['id']
+                  localStorage.buitandaUserType = json['posts'][0]['user_type']
+                  // console.log(  localStorage.buitandaUserID)
+
+                  notesORder = ''
+                  phoneOrder =  json['posts'][0]['phoneNumber']
+                  AddressOrder = json['posts'][0]['address']
+                  go_to_page('CheckOutFirst')
+
+                 
+
+               }
+               else {
+                  alert(if_lang('please enter right email and password ! ', 'please enter right email and password ! '))
+
+               }
+               // if(json['posts'][0]  == 0){
+               // //console.log('nice')}
+               hideIndicator()
+            }
+         });
+      }
+   }
+
+}
