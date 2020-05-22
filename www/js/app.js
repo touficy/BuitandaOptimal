@@ -3590,8 +3590,7 @@ function getAuctionsList() {
          if (json['posts'][0] != 0) {
 
 
-            $('.titleCategory').html(name)
-
+ 
             var li = ''
             for (var i = 0; i < json['posts'].length; i++) {
                var Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
