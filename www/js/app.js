@@ -899,17 +899,17 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
 
    getMyCard()
    var cat_id = page.route.params.id;
-   var cat_name = page.route.params.nameCat;
+   // var cat_name = page.route.params.nameCat;
    //console.log('Cat name ---  > '+ cat_name)
-   cat_name = cat_name.split('%20')
-   var n = ''
-   for (var i = 0; i < cat_name.length; i++) {
-      n = n + cat_name[i] + ' '
-   }
+   // cat_name = cat_name.split('%20')
+   // var n = ''
+   // for (var i = 0; i < cat_name.length; i++) {
+   //    n = n + cat_name[i] + ' '
+   // }
    MainCatID = cat_id
-   MainNameCat = n
+   // MainNameCat = n
 
-   getCategoryProduct(cat_id, n, -1)
+   getCategoryProduct(cat_id)
 
 
    var Data = [];
@@ -1743,7 +1743,7 @@ function getAllCategory() {
          for (var i = 0; i < json['posts'].length; i++) {
 
 
-            li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + "'" + ')" >' +
+            li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] +  ')" >' +
                ' <a > ' +
 
 
@@ -4737,15 +4737,12 @@ function addToCard(id, avilable) {
             console.log(qty)
             if (avilable > 0) {
                if (qty > 0) {
-                  var url =  "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json"
                   $.ajax({
                      type: 'GET',
-                     url:url,
+                     url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
 
 
                      success: function (json) {
-                        console.log('uuid in card ------------------------------------------ > '+UUID)
-                        console.log(url)
                         console.log(json)
                         //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                         alert(if_lang('your product added successfully ', 'your product added successfully '))
