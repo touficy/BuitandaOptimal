@@ -4730,12 +4730,15 @@ function addToCard(id, avilable) {
             console.log(qty)
             if (avilable > 0) {
                if (qty > 0) {
+                  var url =  "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json"
                   $.ajax({
                      type: 'GET',
-                     url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                     url:url,
 
 
                      success: function (json) {
+                        console.log('uuid in card ------------------------------------------ > '+UUID)
+                        console.log(url)
                         console.log(json)
                         //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                         alert(if_lang('your product added successfully ', 'your product added successfully '))
