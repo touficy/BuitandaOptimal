@@ -614,3 +614,19 @@ p , h2 , h1 ,h4 , div,  span {
 .height_cat_prod{
   /* height: 20vh; */
 }
+
+.color_box{
+  height: 4vh;
+  width: 4vh;
+  margin-right: 2vh;
+  
+}
+
+
+.size_box{
+  height: 4vh;
+  width: 4vh;
+  margin-right: 2vh;
+  border: 1px solid black;
+  text-align: center;
+}

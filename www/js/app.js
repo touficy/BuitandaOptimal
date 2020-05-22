@@ -69,7 +69,7 @@ $$(document).on('page:init', function (e) {
 
 
 });
-var versionApp='';
+var versionApp = '';
 var versionApplication
 
 
@@ -83,15 +83,15 @@ function alert(msg) {
    app.dialog.alert(msg, "Buitanda");
 }
 
-function alert_Reload (msg){
-   app.dialog.alert(msg , "Buitanda" ,function() {
+function alert_Reload(msg) {
+   app.dialog.alert(msg, "Buitanda", function () {
       location.reload()
-  } )
+   })
 }
 
 function AnotherAlert(msg) {
    app.dialog.alert(msg, "Buitanda", ReloadeApp);
- }
+}
 function ReloadeApp() {
    location.reload();
 
@@ -142,56 +142,56 @@ function onDeviceReady() {
    // $('.PROFILETab').html(if_lang('PROFILE','PERFIL'))
 
 
-  if (Framework7.device.ios) {
-        var mob_model = device.model;
-        // console.log(device.model);
-        var mob_model_num = mob_model.split("e")[1].split(",");
-        if (mob_model_num[0] > 10 || (mob_model_num[0] == 10 && (mob_model_num[1] == 3) || mob_model_num[1] == 6)) {
-            // alert("iphone x");         
-            // $('.nav-height').attr('style', 'padding-top:65px!important');
-            $('body').css({
-                "padding-top": "constant(safe-area-inset-top)!important;",
-                "padding-top": "env(safe-area-inset-top)!important;"
-            });
-            $('.toolbar').css({
-                "margin-bottom": "constant(safe-area-inset-bottom)!important;",
-                "margin-bottom": "env(safe-area-inset-bottom)!important;"
-            });
-        }
-    }
-    if (device.platform.toLowerCase() == "android") {
-        var permissions = cordova.plugins.permissions;
-        var list = [
-            // permissions.CAMERA,
-            // permissions.GET_ACCOUNTS,
-            permissions.ACCESS_COARSE_LOCATION,
-            // permissions.CAMERA,
-            // permissions.GET_ACCOUNTS,
-            // permissions.READ_CONTACTS,CAPTURE_VIDEO_OUTPUT
-            // permissions.READ_CALENDAR,
-            // permissions.CAPTURE_VIDEO_OUTPUT,
-            // permissions.WRITE_EXTERNAL_STORAGE
-        ];
-        permissions.checkPermission(list, success, error);
+   if (Framework7.device.ios) {
+      var mob_model = device.model;
+      // console.log(device.model);
+      var mob_model_num = mob_model.split("e")[1].split(",");
+      if (mob_model_num[0] > 10 || (mob_model_num[0] == 10 && (mob_model_num[1] == 3) || mob_model_num[1] == 6)) {
+         // alert("iphone x");         
+         // $('.nav-height').attr('style', 'padding-top:65px!important');
+         $('body').css({
+            "padding-top": "constant(safe-area-inset-top)!important;",
+            "padding-top": "env(safe-area-inset-top)!important;"
+         });
+         $('.toolbar').css({
+            "margin-bottom": "constant(safe-area-inset-bottom)!important;",
+            "margin-bottom": "env(safe-area-inset-bottom)!important;"
+         });
+      }
+   }
+   if (device.platform.toLowerCase() == "android") {
+      var permissions = cordova.plugins.permissions;
+      var list = [
+         // permissions.CAMERA,
+         // permissions.GET_ACCOUNTS,
+         permissions.ACCESS_COARSE_LOCATION,
+         // permissions.CAMERA,
+         // permissions.GET_ACCOUNTS,
+         // permissions.READ_CONTACTS,CAPTURE_VIDEO_OUTPUT
+         // permissions.READ_CALENDAR,
+         // permissions.CAPTURE_VIDEO_OUTPUT,
+         // permissions.WRITE_EXTERNAL_STORAGE
+      ];
+      permissions.checkPermission(list, success, error);
 
-        function error() {
-            console.warn('Some needed permissions is not turned on');
-        }
+      function error() {
+         console.warn('Some needed permissions is not turned on');
+      }
 
-        function success(status) {
-            if (!status.hasPermission) {
+      function success(status) {
+         if (!status.hasPermission) {
 
-                permissions.requestPermissions(
-                    list,
-                    function(status) {
-                        if (!status.hasPermission) error();
-                    },
-                    error);
-            }
-        }
-    }
-    
-        PLATFORM = device.platform;
+            permissions.requestPermissions(
+               list,
+               function (status) {
+                  if (!status.hasPermission) error();
+               },
+               error);
+         }
+      }
+   }
+
+   PLATFORM = device.platform;
    console.log(PLATFORM)
    // alert("hi");
    // //console.log('device ready --- > ' + localStorage, mercadoLanguage)
@@ -451,12 +451,12 @@ $$(document).on('page:init', '.page[data-name="Register"]', function (e) {
    $('.Person').html(if_lang('Person', 'Pessoal'))
    $('.Company').html(if_lang('Company', 'Empresa'))
    $('.CountryNAme').html(if_lang('Country', 'PAíS'))
-   $('.addressCompanyLable').html( if_lang('Address', 'ENDEREÇO'));
+   $('.addressCompanyLable').html(if_lang('Address', 'ENDEREÇO'));
 
-   $('.namePersonLable').html( if_lang('Name', 'Nome'));
-   $('.emailPersonLable').html( if_lang('EMAIL', 'EMAIL'));
-   $('.mobilePersonLable').html( if_lang('Mobile', 'MóVEL'));
-   $('.passwordPersonLable').html( if_lang('password', 'SENHA'));
+   $('.namePersonLable').html(if_lang('Name', 'Nome'));
+   $('.emailPersonLable').html(if_lang('EMAIL', 'EMAIL'));
+   $('.mobilePersonLable').html(if_lang('Mobile', 'MóVEL'));
+   $('.passwordPersonLable').html(if_lang('password', 'SENHA'));
 
    $('.AcceptSignUp').html(if_lang('I accept', 'eu aceito') + ' <a href="/termAndCondition/" onclick="" style="text-decoration: underline;">' + if_lang('Terms and Condition', 'termos e Condições') + '</a>')
 
@@ -495,13 +495,13 @@ $$(document).on('page:init', '.page[data-name="MyOrder"]', function (e) {
    $('.MyOrderTitle').html(if_lang('MY ORDERS', 'Meu pedido'))
    $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
 
-   if(shipping == 0 ){
+   if (shipping == 0) {
       $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
    }
-   else{
-      $('.TotalShippingA').html(if_lang( shipping +' KWZ', shipping+' KWZ'))
-   
-   
+   else {
+      $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
+
+
    }
    getMyCard()
 })
@@ -551,8 +551,8 @@ $$(document).on('page:init', '.page[data-name="instructions"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="Login"]', function (e) {
-   $('.emailLoginLable').html( if_lang('Email', 'INSERE O TEU EMAIL'));
-   $('.passwordLoginsLable').html( if_lang('Password', 'Digite a senha'));
+   $('.emailLoginLable').html(if_lang('Email', 'INSERE O TEU EMAIL'));
+   $('.passwordLoginsLable').html(if_lang('Password', 'Digite a senha'));
    $('.titleLogins').html(if_lang('Login', 'Entrar'))
    $('#loginbtn').html(if_lang('Login', 'Entrar'))
    $('#ForgetBtn').html(if_lang('Forget Password ?', 'Esqueceste-te da palavra-passe?'))
@@ -583,8 +583,8 @@ $$(document).on('page:init', '.page[data-name="ResetPassword"]', function (e) {
 
    $('.ResetPasswordTitle').html(if_lang('Reset Account ', ' Redefinir conta'))
 
-   $('.passwordResetLable').httml( if_lang('password', 'SENHA'));
-   $('.cPasswordResetLable').httml( if_lang('Confirmation password', 'SENHA DE CONFIRMAÇÃO'));
+   $('.passwordResetLable').httml(if_lang('password', 'SENHA'));
+   $('.cPasswordResetLable').httml(if_lang('Confirmation password', 'SENHA DE CONFIRMAÇÃO'));
 
    $('#ResetPasswordBtn').html(if_lang('Reset   ', ' Redefinir  '))
 
@@ -619,27 +619,27 @@ $$(document).on('page:init', '.page[data-name="contactUs"]', function (e) {
 
    $('.phoneContact').html(if_lang('PHONE NUMBER <br> <span class="span-contact PhoneNumbContact" onclick="callNum()"> + 244 923 474 222</span>',
       'Número de telefone <br> <span class="span-contact PhoneNumbContact" onclick="callNum()"> + 244 923 474 222</span>'))
-   $('.NameCLable').html( if_lang('Name', 'Nome'));
-   $('.SubjectCLable').html( if_lang('subject', 'sujeito'));
-   $('.MsgCLable').html( if_lang('Message', 'mensagem'));
+   $('.NameCLable').html(if_lang('Name', 'Nome'));
+   $('.SubjectCLable').html(if_lang('subject', 'sujeito'));
+   $('.MsgCLable').html(if_lang('Message', 'mensagem'));
    $('#sendC').html(if_lang('Send ', ' ENVIAR'))
 
 })
 
 
 $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
-   $('.taxes').html(if_lang('ALL VAT TAXES ARE INCLUDED',' Preço com IVA incluido à taxa em vigor'))
+   $('.taxes').html(if_lang('ALL VAT TAXES ARE INCLUDED', ' Preço com IVA incluido à taxa em vigor'))
    $('.TotalProductFirst').html(if_lang('Total products ', ' Total produtos	'))
    $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
-    if(shipping == 0 ){
+   if (shipping == 0) {
       $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
    }
-   else{
-      $('.TotalShippingA').html(if_lang( shipping +' KWZ', shipping+' KWZ'))
-   
-   
+   else {
+      $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
+
+
    }
-   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ') 
+   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
    $('.TotalQ').html(if_lang('Total ', ' Total'))
    $('.TAXESQ').html(if_lang('ALL VAT TAXES ARE INCLUDED ', ' Preço com IVA incluido à taxa em vigor'))
@@ -657,14 +657,14 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
 
 
 $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
-   $('.payment_Method').html(if_lang('Payment Method','Opções de pagamentos'))
+   $('.payment_Method').html(if_lang('Payment Method', 'Opções de pagamentos'))
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
-   $('.Cash_on').html( if_lang( 'Cash on delivery  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-   'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" margin-left: 25px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
-   $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'  ,
-                        'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
-   $('.Bank_Transfer').html( if_lang('Bank Transfer  <a href="/instructions/" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-                           'Transferência Bancária  <a href="/instructions/" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>' ))
+   $('.Cash_on').html(if_lang('Cash on delivery  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
+      'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" margin-left: 25px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
+   $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
+      'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
+   $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href="/instructions/" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
+      'Transferência Bancária  <a href="/instructions/" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
    // $('.Trans').html(if_lang('<img src="img/TransEn.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;"> ',
    //    '<img src="img/Trans.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;">'))
    // $('.trans2').html(if_lang(' <img src="img/trans2En.jpg "  onclick="SubmitRefOrder()" style="width: 90vw;">',
@@ -681,16 +681,16 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
 
    $('.TotalProductFirst').html(if_lang('Total  ', ' Total'))
    $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
-   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ') 
+   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
-   if(shipping == 0 ){
-   $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
-}
-else{
-   $('.TotalShippingA').html(if_lang( shipping +' KWZ', shipping+' KWZ'))
+   if (shipping == 0) {
+      $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+   }
+   else {
+      $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
 
 
-}
+   }
    $('.TotalQ').html(if_lang('Total ', ' Total'))
    $('.TAXESQ').html(if_lang('ALL VAT TAXES ARE INCLUDED ', ' Preço com IVA incluido à taxa em vigor'))
    $("#nextCheckout").html(if_lang('Next ', ' Seguinte  '))
@@ -700,35 +700,36 @@ else{
 })
 
 $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
-   if(Checklogin()){
+   if (Checklogin()) {
       $('.logoutProfileShop').hide()
-      getProfile()
-      editShop()
+      console.log('in login ------------------------ ')
+
+       editShop()
       $('.addressShP').html(if_lang('Address ', '  Endereço'))
       $('.NoteP').html(if_lang('Note ', '  Notas'))
       $('.EditBtn').html(if_lang('Edit Info ', '  Atualizar '))
       $("#NextProfile").html(if_lang('Next ', ' Seguinte  '))
-   
+
    }
-   else{
+   else {
+      $('.loginProfileShop').hide()
 
       $('.spanLoginAlert').hide()
 
       $('.Person').html(if_lang('Person', 'Pessoal'))
-   $('.Company').html(if_lang('Company', 'Empresa'))
-   $('.CountryNAme').html(if_lang('Country', 'PAíS'))
-   $('.addressCompanyLable').html( if_lang('Address', 'ENDEREÇO'));
+      $('.Company').html(if_lang('Company', 'Empresa'))
+      $('.CountryNAme').html(if_lang('Country', 'PAíS'))
+      $('.addressCompanyLable').html(if_lang('Address', 'ENDEREÇO'));
 
-   $('.namePersonLable').html( if_lang('Name', 'Nome'));
-   $('.emailPersonLable').html( if_lang('EMAIL', 'EMAIL'));
-   $('.mobilePersonLable').html( if_lang('Mobile', 'MóVEL'));
-   $('.passwordPersonLable').html( if_lang('password', 'SENHA'));
+      $('.namePersonLable').html(if_lang('Name', 'Nome'));
+      $('.emailPersonLable').html(if_lang('EMAIL', 'EMAIL'));
+      $('.mobilePersonLable').html(if_lang('Mobile', 'MóVEL'));
+      $('.passwordPersonLable').html(if_lang('password', 'SENHA'));
       getCountry()
-      $('#NextProfile').attr('onclick','RegisterTillCheckout()')
-      $('.loginProfileShop').hide()
+      $('#NextProfile').attr('onclick', 'RegisterTillCheckout()')
 
    }
-  
+
 
    $('.SHOPINGCheckout').html(if_lang('CART ', 'CARRINHO'))
    $('.AddressCheckout').html(if_lang('ADDRESS ', '  ENDEREÇO  '))
@@ -782,7 +783,7 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
       $('.userType').hide()
    }
    console.log('user type ----- >' + localStorage.buitandaUserType)
-   $('.addressCompanyLable').html( if_lang('Address', 'ENDEREÇO'));
+   $('.addressCompanyLable').html(if_lang('Address', 'ENDEREÇO'));
 
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
@@ -790,9 +791,9 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
    $('.PROFILETab').html(if_lang('PROFILE', 'PERFIL'))
 
    getProfile()
-   $('.namePersonLable').html( if_lang('Name', 'Nome'));
-   $('.mobilePersonLable').html( if_lang('Mobile', 'Móvel'));
-   $('.passwordPersonLable').html( if_lang('Password', 'SENHA'));
+   $('.namePersonLable').html(if_lang('Name', 'Nome'));
+   $('.mobilePersonLable').html(if_lang('Mobile', 'Móvel'));
+   $('.passwordPersonLable').html(if_lang('Password', 'SENHA'));
    $('#CountryEdit').html(if_lang('Country', 'País'));
    $('#CityEdit').html(if_lang('City', 'Cidade'));
    $('#updateProfile').html(if_lang('Update', 'Atualizar'));
@@ -805,12 +806,12 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
    var textSearch = searchName
    console.log(textSearch)
    // $('.titleSearch').html(searchName)
-   console.log(typeof( localStorage.buitandaUserID ))
+   console.log(typeof (localStorage.buitandaUserID))
 
    $.ajax({
       async: false,
       type: 'POST',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=search_deal&search=" + textSearch + "&lang=" + localStorage.BuitLang + "&customerId="+localStorage.buitandaUserID+"&format=json",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=search_deal&search=" + textSearch + "&lang=" + localStorage.BuitLang + "&customerId=" + localStorage.buitandaUserID + "&format=json",
 
 
       success: function (json) {
@@ -825,9 +826,9 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 
 
                // li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['title'], json['posts'][i]['title']) + "'" + ')" >' +
-               li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] +    ')" >' +
- 
-               ' <a > ' +
+               li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
+
+                  ' <a > ' +
 
                   '<div class="white" style=" display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
                   ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style="width:100px;height : 100px">' +
@@ -901,7 +902,7 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
    MainCatID = cat_id
    MainNameCat = n
 
-   getCategoryProduct(cat_id, n , -1)
+   getCategoryProduct(cat_id, n, -1)
 
 
    var Data = [];
@@ -1037,8 +1038,136 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
    // GNameID = n
    getProduct(cat_id)
 
+   $(document).on('click', '.color_box', function (event) {
+      console.log('clicked')
+      event.preventDefault();
+      var color = $(this).attr('data-color');
+      console.log('color ----> ' + color)
+      $('#color_id').val(color);
+      $(".color_box").css({
+         'border': '1px solid #e9e9e9',
+         'cursor': 'pointer'
+      });
+      // fetchImage();
+      console.log('color id --- > ' + $('#color_id').val())
+      $(this).css('border', '2px solid #f90');
+
+      if (colorID == 1 && sizeID == 1) {
+         if (colorID == 1) {
+
+            if (sizeID == 1) {
+               console.log('looooooog')
+               console.log($('#size_id').val())
+
+               console.log($('#color_id').val())
+
+               if ($('#size_id').val() != -1 && $('#color_id').val() != -1) {
+                  getNewProductDetails()
+               }
+            }
+
+         }
+
+      }
 
 
+      if (colorID == 1 && sizeID == 0) {
+         if (colorID == 1) {
+            if ($('#color_id').val() != -1 && $('#color_id').val() != '-1') {
+               getNewProductDetails()
+
+            }
+
+         }
+
+
+
+
+
+
+      }
+
+
+      if (colorID == 0 && sizeID == 1) {
+
+
+
+         if ($('#size_id').val() != -1 && $('#size_id').val() != '-1') {
+
+            getNewProductDetails()
+
+         }
+
+
+      }
+
+   });
+
+
+
+   $(document).on('click', '.size_box', function (event) {
+      console.log('clicked')
+      event.preventDefault();
+      var size = $(this).attr('data-size');
+      $('#size_id').val(size);
+      $(".size_box").css({
+         'border': '1px solid #e9e9e9',
+         'cursor': 'pointer'
+      });
+      // fetchImage();
+      console.log('color id --- > ' + $('#size_id').val())
+      $(this).css('border', '2px solid #f90');
+
+      if (colorID == 1 && sizeID == 1) {
+         if (colorID == 1) {
+
+            if (sizeID == 1) {
+               console.log('looooooog')
+               console.log($('#size_id').val())
+
+               console.log($('#color_id').val())
+
+               if ($('#size_id').val() != -1 && $('#color_id').val() != -1) {
+                  getNewProductDetails()
+               }
+            }
+
+         }
+
+      }
+
+
+      if (colorID == 1 && sizeID == 0) {
+         if (colorID == 1) {
+            if ($('#color_id').val() != -1 && $('#color_id').val() != '-1') {
+               getNewProductDetails()
+
+            }
+
+         }
+
+
+
+
+
+
+      }
+
+
+      if (colorID == 0 && sizeID == 1) {
+
+
+
+         if ($('#size_id').val() != -1 && $('#size_id').val() != '-1') {
+
+            getNewProductDetails()
+
+         }
+
+
+      }
+
+   });
 
 
 })
@@ -1213,10 +1342,10 @@ function getLatestDeal() {
          if (flagSwip == 0) {
             for (var i = 0; i < json['posts'].length; i++) {
 
-               mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] +    ')" class="swiper-slide" style="width:34vw; " >' +
+               mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                  '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] +    ')">' +
+                  '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
 
@@ -1243,7 +1372,7 @@ function getLatestDeal() {
                mySwiper[flagSwip].addSlide(i, '<div class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                  '  <img class="imageSwiper" src="' + json['posts'][i]['image'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] +    ')">' +
+                  '  <img class="imageSwiper" src="' + json['posts'][i]['image'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
 
@@ -1306,10 +1435,10 @@ function getBestSeller() {
 
             for (var i = 0; i < json['posts'].length; i++) {
 
-               mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] +    ')" class="swiper-slide" style="width:34vw; " >' +
+               mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                  '  <img class="imageSwiper" src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] +    ')">' +
+                  '  <img class="imageSwiper" src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
 
@@ -1333,7 +1462,7 @@ function getBestSeller() {
                mySwiper[flagSwip].addSlide(i, '<div class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                  '  <img class="imageSwiper" src="' + json['posts'][i]['image'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] +    ')">' +
+                  '  <img class="imageSwiper" src="' + json['posts'][i]['image'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
 
@@ -1500,7 +1629,7 @@ function getAuctionHome() {
 
             if (flagSwip == 0) {
                for (var i = 0; i < json['posts'].length; i++) {
-                  var    Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
+                  var Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
                   // console.log(Remaining_time)
                   go_to_page_params
 
@@ -1593,7 +1722,7 @@ function getAuctionHome() {
 function getAllCategory() {
    $.ajax({
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=categories&lang="+localStorage.BuitLang+"&format=json",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=categories&lang=" + localStorage.BuitLang + "&format=json",
       cache: false,
 
 
@@ -1631,13 +1760,13 @@ function getAllCategory() {
 
 
 
-function getCategoryProduct(id, name ) {
+function getCategoryProduct(id, name) {
    CategoryIdSearch = id
 
 
    $.ajax({
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort="+sort+"&format=json",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
 
 
       success: function (json) {
@@ -1649,16 +1778,16 @@ function getCategoryProduct(id, name ) {
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
-            if (json['posts'][0] == 0  ) {
+            if (json['posts'][0] == 0) {
                //   endFlash = json['response']['result'].length
 
                app.infiniteScroll.destroy('.infinite-scroll-content');
                $$('.infinite-scroll-preloader').hide();
             }
             else {
-               if( json['posts'].length < 8)
-               {    app.infiniteScroll.destroy('.infinite-scroll-content');
-               $$('.infinite-scroll-preloader').hide();
+               if (json['posts'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
 
                }
                // li = li + '<div class="col-30"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['title'], json['posts'][i]['title']) + "'" + ')" >' +
@@ -1680,21 +1809,21 @@ function getCategoryProduct(id, name ) {
                //    '  </a>' +
 
                //    '</div>'
-             li =  li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
-                                    '  <div class="row width-100">' +
-                                    '<div class="col-20 align-self-center">' +
-                                    ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] +'" alt="" class=""></figure>' +
-                                    ' </div>' +
-                                    '<div class="col-80 padding-left">' +
-                                    '<p style="white-space:break-spaces; margin-top:2vh">' +if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle'])  + ' </p>' +
-                                    '<p class="text-secondary small text-mute no-margin">'  +' </p>' +
-                                    '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
-                                    ' </h5>' +
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
 
-                                    ' </div>' +
-                                   
-                                    '</div>' +
-                                    ' </li>'
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
             }
          }
 
@@ -1707,13 +1836,17 @@ function getCategoryProduct(id, name ) {
 
 
 }
-
+var colorID = 0
+var sizeID = 0
 
 function getProduct(id, title) {
+   colorID = 0
+   sizeID = 0
+
    $.ajax({
       type: 'GET',
       url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deal_desc&deal_id=" + id + "&format=json",
-
+      cache: false,
 
       success: function (json) {
          console.log(json)
@@ -1762,36 +1895,64 @@ function getProduct(id, title) {
             li = '  <h3 class="gray  margin-top-p">' + if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle']) + '</h3>' +
                '  <p class="descP margin-top-p"> SKU#' + json['posts'][0]['sku'] + '  </p>';
 
-                  if (json['posts'][0]['special'] == "1" )
+            if (json['posts'][0]['special'] == "1") {
 
-                  {
 
-                 
-                  li = li +   ' <p class="discount-price descP margin-top-p   "  >  '+if_lang('OLD PRICE ' , 'PREÇO ') + json['posts'][i]['original'] + ' KWZ</p>';
-               }
-                   
-                              // '<p class="descP margin-top-p">Model <span> :'+json['posts'][0]['title']+' </span></p>'+
+               li = li + ' <p class="discount-price descP margin-top-p   "  >  ' + if_lang('OLD PRICE ', 'PREÇO ') + json['posts'][i]['original'] + ' KWZ</p>';
+            }
+
+            // '<p class="descP margin-top-p">Model <span> :'+json['posts'][0]['title']+' </span></p>'+
             if (json['posts'][0]['saving'] == "") {
-               li = li + '   <p class="descP margin-top-p">Price / Item  <span class="blue-span">:' + json['posts'][0]['current'] + ' KWZ</span></p>'
+               li = li + '   <p class="descP margin-top-p">Price / Item  <span class="blue-span Price_Prod">:' + json['posts'][0]['current'] + ' KWZ</span></p>'
             }
             else {
-               li = li + '   <p class="descP margin-top-p">' + if_lang('unit price ', 'Preço unitário') + '  <span class="blue-span">:' + json['posts'][0]['current'] + ' KWZ </span>' +
-                  ' ' + if_lang('saving', 'POUPAR ') + '   <span class="blue-span"> ( ' + json['posts'][0]['saving'] + '%  )</span> </p>'
+               li = li + '   <p class="descP margin-top-p">' + if_lang('unit price ', 'Preço unitário') + '  <span class="blue-span Price_Prod">:' + json['posts'][0]['current'] + ' KWZ </span>' +
+                  ' ' + if_lang('saving', 'POUPAR ') + '   <span class="blue-span "> ( ' + json['posts'][0]['saving'] + '%  )</span> </p>' +
+                  '<input type="hidden" id="product_ID" name="" value="' + json['posts'][0]['id'] + '">';
                // +
                // '  <p class="descP margin-top-p"> saving   <span class="blue-span"> ( '+json['posts'][0]['saving']+'%  )</span> </p>'
             }
-            li = li + ' <div class="descP margin-top-p info"> ' + if_lang(json['posts'][0]['info'], json['posts'][0]['secinfo']) + ' </div>' ;
-            if(json['posts'][0]['availumquantity'] > 0){
-             li = li +  '   <p class="descP margin-top-p">' + if_lang('AVAILABLE QUANTITY : ', 'QUANTIDADE DISPONÍVEL : ') + '  <span class="blue-span"> ' + json['posts'][0]['availumquantity'] + '</span></p>' ;
-            }
-            else{
-               li = li +  '   <p class="descP margin-top-p" style="color:red">' + if_lang('Out of Stock Temporary ', 'Temporariamente fora de estoque ') + '  </p>' ;
+            for (var i = 0; i < json['posts'][0]['colors'].length; i++) {
+
+
+               if (i == 0 && json['posts'][0]['colors'].length > 0) {
+                  colorID = 1
+                  li = li + ' <input type="hidden" id="color_id" name="" value="-1"> ' +
+
+                     '<div style="display:flex" class="descP margin-top-p colors">  <p class="descP margin-top-p" style="margin-left:0;margin-right:1vh"> color </p> '
+               }
+               li = li + '<div class="color_box"  data-color="' + json['posts'][0]['colors'][i]['colorid'] + '" style="background:' + json['posts'][0]['colors'][i]['colorName'] + '"> </div>'
+
+
 
             }
-           li = li+    '   <p class="descP margin-top-p">' + if_lang('CONDITION  : ', 'CONDIÇÃO : ') + '  <span class="blue-span"> ' + json['posts'][0]['prodcondition'] + '  </span></p>'
+            for (var i = 0; i < json['posts'][0]['sizes'].length; i++) {
+
+               if (i == 0 && json['posts'][0]['sizes'].length > 0) {
+                  sizeID = 1
+                  li = li + ' </div> ' +
+                     ' <input type="hidden" id="size_id" name="" value="-1"> ' +
+                     '<div style="display:flex; margin-top:2vh" class="descP margin-top-p sizes">  <p class="descP margin-top-p" style="margin-left:0;margin-right:1vh"> size </p> '
+               }
+               li = li + '<div class="size_box" data-size="' + json['posts'][0]['colors'][i]['sizeid'] + '" >' + json['posts'][0]['sizes'][i]['sizeName'] + ' </div>'
 
 
-            if (soldFlag == 0 && json['posts'][0]['availumquantity'] > 0 ) {
+
+            }
+
+
+            li = li + '</div> <div class="descP margin-top-p info"> ' + if_lang(json['posts'][0]['info'], json['posts'][0]['secinfo']) + ' </div>';
+            if (json['posts'][0]['availumquantity'] > 0) {
+               li = li + '   <p class="descP margin-top-p">' + if_lang('AVAILABLE QUANTITY : ', 'QUANTIDADE DISPONÍVEL : ') + '  <span class="blue-span avQuantity"> ' + json['posts'][0]['availumquantity'] + '</span></p>';
+            }
+            else {
+               li = li + '   <p class="descP margin-top-p" style="color:red">' + if_lang('Out of Stock Temporary ', 'Temporariamente fora de estoque ') + '  </p>';
+
+            }
+            li = li + '   <p class="descP margin-top-p">' + if_lang('CONDITION  : ', 'CONDIÇÃO : ') + '  <span class="blue-span"> ' + json['posts'][0]['prodcondition'] + '  </span></p>'
+
+
+            if (soldFlag == 0 && json['posts'][0]['availumquantity'] > 0) {
 
                li = li + '    <div class="row">' +
                   '   <div class="col-50">' +
@@ -1805,7 +1966,7 @@ function getProduct(id, title) {
                   '      <input type="number" class="valCardPros_' + json['posts'][0]['id'] + '" readonly id="valCardPros_' + json['posts'][0]['id'] + '"  value="' + json['posts'][0]['miniumquantity'] + '" style="  text-align: center; width:-webkit-fill-available ">' +
                   '   </div>' +
 
-                  '   <div class="col-15" onclick="increaseProduct(' + json['posts'][0]['id'] + ',' + json['posts'][0]['availumquantity'] + ')"> ' +
+                  '   <div class="col-15 AddToMax"  onclick="increaseProduct(' + json['posts'][0]['id'] + ',' + json['posts'][0]['availumquantity'] + ')"> ' +
                   '   <i class="material-icons">add</i>          </div>' +
 
                   '  </div>' +
@@ -1840,10 +2001,17 @@ function getProduct(id, title) {
                prevEl: '.swiper-button-prev',
             },
             speed: 100,
+            initialSlide: 3,
             paginationClickable: true,
             spaceBetween: 10,
             watchSlidesProgress: true
          });
+
+         mySwiper.slideTo(3, 0, false)
+
+
+
+
          //  mySwiper.removeAllSlides();	
 
          //   console.log(mySwiper)
@@ -1856,18 +2024,23 @@ function getProduct(id, title) {
             mySwiper.removeAllSlides();
 
             if (json['posts'][0]['images'].length > 0) {
+               mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >' + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+
 
 
                for (var i = 0; i < json['posts'][0]['images'].length; i++) {
                   if (soldFlag == 1) {
-                     //console.log( 'in sold flag')
+
+                     console.log('in sold flag')
                      if (i == 0) {
 
-                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
                      else {
-                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        console.log('else sold flag')
+
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
                      }
                   }
 
@@ -1875,12 +2048,15 @@ function getProduct(id, title) {
                      //console.log( 'out sold flag')
 
                      if (i == 0) {
+                        console.log('out sold flag')
 
-                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
 
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
                      else {
-                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                        console.log('else out sold flag')
+
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
                   }
                   mySwiper.update();
@@ -2011,7 +2187,7 @@ function getRegisterForm() {
          '   <ul >' +
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label nameCompanyLable">Company Name</div>'+
+         '   <div class="item-title item-label nameCompanyLable">Company Name</div>' +
 
          '    <div class="item-input-wrap">' +
          '    <input id="nameCompany" class="nameCompany"  type="text" placeholder="" name="name">' +
@@ -2020,12 +2196,12 @@ function getRegisterForm() {
          '    </div>' +
          '  </li>' +
 
-        
 
-         
+
+
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label NIFLable">NIF</div>'+
+         '   <div class="item-title item-label NIFLable">NIF</div>' +
 
          '    <div class="item-input-wrap">' +
          '    <input id="nifCompany" class="nifCompany" type="number" placeholder=" " name="name">' +
@@ -2034,10 +2210,10 @@ function getRegisterForm() {
          '    </div>' +
          '  </li>' +
 
-          
+
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label addressCompanyLable">' + if_lang('Address', 'ENDEREÇO') + '</div>'+
+         '   <div class="item-title item-label addressCompanyLable">' + if_lang('Address', 'ENDEREÇO') + '</div>' +
 
          '    <div class="item-input-wrap">' +
          '    <input id="addressCompany" class="addressCompany"  type="text" placeholder=" " name="name">' +
@@ -2046,7 +2222,7 @@ function getRegisterForm() {
          '    </div>' +
          '  </li>' +
 
-         
+
 
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2061,7 +2237,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-         
+
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
          '    <div class="item-inner ">' +
@@ -2077,7 +2253,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-         
+
 
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2093,7 +2269,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-         
+
 
 
          '<li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2107,10 +2283,10 @@ function getRegisterForm() {
          '  </div>' +
          '  </div>' +
          '   </li>' +
-         
+
          ' <li class="item-content item-input">' +
          '   <div class="item-inner">' +
-         '   <div class="item-title item-label emailCompanyLable">' + if_lang('Email', 'Email') + '</div>'+
+         '   <div class="item-title item-label emailCompanyLable">' + if_lang('Email', 'Email') + '</div>' +
 
          '  <div class="item-input-wrap">' +
          ' <input id="emailCompany" class="emailCompany" type="text" placeholder="Email" name="name">' +
@@ -2118,10 +2294,10 @@ function getRegisterForm() {
          '    </div>' +
          '   </div>' +
          '   </li>' +
- 
+
          ' <li class="item-content item-input">' +
          ' <div class="item-inner">' +
-         '   <div class="item-title item-label phoneLable">' + if_lang('phone', 'TELEFONE') + '</div>'+
+         '   <div class="item-title item-label phoneLable">' + if_lang('phone', 'TELEFONE') + '</div>' +
 
          '   <div class="item-input-wrap">' +
          ' <input id="phone" class="phone"  type="number" placeholder="  " name="name">' +
@@ -2130,10 +2306,10 @@ function getRegisterForm() {
          '  </div>' +
          '  </li>' +
 
-       
+
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label mobileCompanyLable">' + if_lang('Mobile', 'MóVEL') + '</div>'+
+         '   <div class="item-title item-label mobileCompanyLable">' + if_lang('Mobile', 'MóVEL') + '</div>' +
 
          ' <div class="item-input-wrap">' +
          '  <input id="mobileCompany" class="mobileCompany"  type="number" placeholder=" " name="name">' +
@@ -2142,10 +2318,10 @@ function getRegisterForm() {
          ' </div>' +
          '   </li>' +
 
-        
+
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label PasswordCompanyLable">' + if_lang('Password', 'SENHA') + '</div>'+
+         '   <div class="item-title item-label PasswordCompanyLable">' + if_lang('Password', 'SENHA') + '</div>' +
 
          ' <div class="item-input-wrap">' +
          '  <input id="PasswordCompany" class="PasswordCompany" type="Password" placeholder="" name="name">' +
@@ -2181,7 +2357,7 @@ function getRegisterForm() {
          '   <ul >' +
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label namePersonLable">'   + if_lang('Name', 'Nome')+ '</div>'+
+         '   <div class="item-title item-label namePersonLable">' + if_lang('Name', 'Nome') + '</div>' +
 
          '    <div class="item-input-wrap">' +
          '    <input id="namePerson"  type="text" placeholder=" " name="name">' +
@@ -2190,10 +2366,10 @@ function getRegisterForm() {
          '    </div>' +
          '  </li>' +
 
-        
+
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label addressCompanyLable">' + if_lang('Address', 'ENDEREÇO') + '</div>'+
+         '   <div class="item-title item-label addressCompanyLable">' + if_lang('Address', 'ENDEREÇO') + '</div>' +
 
          '    <div class="item-input-wrap">' +
          '    <input id="addressCompany" class="addressCompany"  type="text" placeholder=" " name="name">' +
@@ -2202,7 +2378,7 @@ function getRegisterForm() {
          '    </div>' +
          '  </li>' +
 
-        
+
 
 
          '  <li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2218,7 +2394,7 @@ function getRegisterForm() {
          ' </div>' +
          '  </div>' +
          '    </li>' +
-        
+
 
 
          '<li class="item-content item-input item-input-outline item-input-with-value">' +
@@ -2233,10 +2409,10 @@ function getRegisterForm() {
          '  </div>' +
          '  </div>' +
          '   </li>' +
-       
+
          ' <li class="item-content item-input">' +
          '   <div class="item-inner">' +
-                  '   <div class="item-title item-label emailPersonLable">' + if_lang('EMAIL', 'EMAIL') + '</div>'+
+         '   <div class="item-title item-label emailPersonLable">' + if_lang('EMAIL', 'EMAIL') + '</div>' +
 
          '  <div class="item-input-wrap">' +
          ' <input id="emailPerson"  type="text" placeholder=" " name="name">' +
@@ -2245,10 +2421,10 @@ function getRegisterForm() {
          '   </div>' +
          '   </li>' +
 
-         
+
          ' <li class="item-content item-input">' +
          ' <div class="item-inner">' +
-         '   <div class="item-title item-label mobilePersonLable">' + if_lang('Mobile', 'MóVEL') + '</div>'+
+         '   <div class="item-title item-label mobilePersonLable">' + if_lang('Mobile', 'MóVEL') + '</div>' +
 
          '   <div class="item-input-wrap">' +
          ' <input id="mobilePerson"  type="number" placeholder="" name="name">' +
@@ -2257,10 +2433,10 @@ function getRegisterForm() {
          '  </div>' +
          '  </li>' +
 
-        
+
          '   <li class="item-content item-input">' +
          '  <div class="item-inner">' +
-         '   <div class="item-title item-label mobilePersonLable">' + if_lang('password', 'SENHA') + '</div>'+
+         '   <div class="item-title item-label mobilePersonLable">' + if_lang('password', 'SENHA') + '</div>' +
 
          ' <div class="item-input-wrap">' +
          '  <input id="passwordPerson"  type="password" placeholder="" name="name">' +
@@ -2312,7 +2488,7 @@ function getCountry() {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + json['posts'][i]['name'] + '</option>'
          }
          $('.CountrySelect').append(li)
-          // $('#CountrySelectCompany').html(li)
+         // $('#CountrySelectCompany').html(li)
 
 
 
@@ -2663,12 +2839,29 @@ function RegisterPerson() {
                      else {
                         if (!$('.conditions').prop('checked')) {
                            alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
+
                         } else {
+                           var url = 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email + '&version=' + versionApplication +
+                              '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json'
                            $.ajax({
                               type: 'POST',
-                              url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email +  '&version=' + versionApplication + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
-
-
+                              url: url,
+                              //   processData: false,
+                              //       contentType: false,
+                              //       cache: false,
+                              //       dataType: "json",
+                              //       data : {name : name,
+                              //          email : Email,
+                              //          version : versionApplication,
+                              //          address : adddres,
+                              //          user_type : 'Personal' , 
+                              //          password : password , 
+                              //          phone : mobile ,
+                              //          country_id : Country ,
+                              //          city_id : City,
+                              //          uuid : UUID, 
+                              //          platform :PLATFORM
+                              //       },
                               success: function (json) {
                                  console.log(json)
                                  if (json['posts'][0] == -1) {
@@ -2788,7 +2981,7 @@ function RegisterCompany() {
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                                        $.ajax({
                                           type: 'POST',
-                                          url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration_company&name=' + name + '&email=' + Email +  '&version=' + versionApplication + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+                                          url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration_company&name=' + name + '&email=' + Email + '&version=' + versionApplication + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
                                              '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
                                           success: function (json) {
@@ -2960,7 +3153,7 @@ function login() {
       else {
          $.ajax({
             type: 'POST',
-            url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password +  '&version=' + versionApplication + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+            url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password + '&version=' + versionApplication + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
             success: function (json) {
@@ -3053,7 +3246,7 @@ function checkCode() {
       $.ajax({
          type: 'POST',
          url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=checkCode&customer_id=' + localStorage.buitandaTemp + '&code=' + code + '&format=json',
-         
+
 
          success: function (json) {
             //console.log(json)
@@ -3394,7 +3587,7 @@ function getAuctionsList() {
 
             var li = ''
             for (var i = 0; i < json['posts'].length; i++) {
-               var    Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
+               var Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
 
 
                li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Auction' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
@@ -3404,7 +3597,7 @@ function getAuctionsList() {
                   ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style=" ">' +
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                  '     <p class="pRedCat " >' + Remaining_time+ '</p>' +
+                  '     <p class="pRedCat " >' + Remaining_time + '</p>' +
                   ' <p class="margin-white paddig-product" style="color:black;padding:1px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>  <span>' + json['posts'][i]['originalprice'] + ' KWZ</span> ' +
                   ' </div>' +
                   '  </a>' +
@@ -3439,27 +3632,27 @@ function getAuctionProduct(id) {
 
 
       success: function (json) {
-         
+
          $('.RecomendedForYOU').html(if_lang('RECOMMENDED ITEMS', 'ITENS RECOMENDADOS'))
          console.log(json)
-         var title = if_lang( json['posts'][0]['title'] , json['posts'][0]['sectitle'])
+         var title = if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle'])
          // console.log('str --- > '+title)
          var lenString = title.length
 
          //console.log(title[2])
-         var  str = ''
-         console.log('length --- > '+ lenString)
-          if (lenString > 17) {
-            console.log('ttile --- > '+title )
+         var str = ''
+         console.log('length --- > ' + lenString)
+         if (lenString > 17) {
+            console.log('ttile --- > ' + title)
             for (var x = 0; x < 15; x++) {
                str = str + title[x]
             }
             str = str + '..'
          }
-         else{
+         else {
             str = title
          }
-         console.log('str --- > ' +str)
+         console.log('str --- > ' + str)
 
          $('.titleAuction').html(str);
 
@@ -3596,14 +3789,14 @@ function getAuctionProduct(id) {
                   //console.log( 'in sold flag')
                   if (i == 0) {
 
-                     mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
-                     ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:100%">' + '</div>' + 
-                     '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:100%">' + '</div>');
+                     mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:100%">' + '</div>' +
+                        '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:100%">' + '</div>');
 
                   }
                   else {
-                     mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
-                     ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:100%">' + '</div>');
+                     mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:100%">' + '</div>');
                   }
 
 
@@ -4033,286 +4226,536 @@ function setSoldFlag(id) {
 
 function getMyCard() {
    // console.log('im get my card')
-   if(Checklogin()){
-      
-   $.ajax({
-      type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
+   if (Checklogin()) {
 
-      cache: false,
-      success: function (json) {
+      $.ajax({
+         type: 'GET',
+         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
-         if (json['posts'] != undefined) {
-            if (json['posts'][0] != 0) {
-               // console.log(json)
-               var li = ''
-               var nameProduct;
-               var total = 0;
-               var totalAll = 0;
-               li = li + ' <tr>' +
-                  '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
-                  ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
-                  ' <th class="text-align-center"  width="15%">  ' + if_lang('Qty ', 'Qty') + '</th>' +
-                  ' <th class="text-align-center" width="10%"> </th>' +
-                  ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
-                  '      </tr>'
-               //console.log(json['posts'].length)
-               if (json['posts']['0'] != 0) {
-                  for (var i = 0; i < json['posts'].length; i++) {
+         cache: false,
+         success: function (json) {
 
-
-                     total = parseFloat(json['posts'][i]['deal_info']['current2']) * parseInt(json['posts'][i]['qty'])
-                     totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current2']) * parseInt(json['posts'][i]['qty'])
-                     var nf = Intl.NumberFormat('fr');
-                     // console.log(nf.format(total)); // 42,000,000 in many locales
-                     total = nf.format(total)
-
-                     nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
-                     li = li + ' <tr style="font-size: 8px;">' +
-
-                        '  <td class="ItemOrder" width="15%">' +
-                        '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
-                        ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
-
-                        '   </td>' +
+            if (json['posts'] != undefined) {
+               if (json['posts'][0] != 0) {
+                  // console.log(json)
+                  var li = ''
+                  var nameProduct;
+                  var total = 0;
+                  var totalAll = 0;
+                  li = li + ' <tr>' +
+                     '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
+                     ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
+                     ' <th class="text-align-center"  width="15%">  ' + if_lang('Qty ', 'Qty') + '</th>' +
+                     ' <th class="text-align-center" width="10%"> </th>' +
+                     ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
+                     '      </tr>'
+                  //console.log(json['posts'].length)
+                  if (json['posts']['0'] != 0) {
+                     for (var i = 0; i < json['posts'].length; i++) {
 
 
-                        '   <td class="text-align-center  QtyOrder"  width="20%">' +
-                        '      <p>' + json['posts'][i]['deal_info']['current'] + ' KWZ	</p>' +
-                        '  </td>' +
+                        total = parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
+                        totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
+                        var nf = Intl.NumberFormat('fr');
+                        // console.log(nf.format(total)); // 42,000,000 in many locales
+                        total = nf.format(total)
+
+                        nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
+                        li = li + ' <tr style="font-size: 8px;">' +
+
+                           '  <td class="ItemOrder" width="15%">' +
+                           '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
+                           ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
+
+                           '   </td>' +
 
 
-                        '   <td class="text-align-center subTotal_Delviery"  width="15%">' +
-
-                        '   <div class="row" style="width:12vh">' +
-
-                        '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current2'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
-                        '   <div class="col-40">' +
-                        '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
-                        '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current2'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
-                        ' </div>' +
-                        '   </td>' +
-
-                        '<td class="text-align-center subTotal_Delviery" width="10%">' +
-                        ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ')" style="width:  3vh" >' +
-
-                        '   </td>' +
+                           '   <td class="text-align-center  QtyOrder"  width="20%">' +
+                           '      <p>' + json['posts'][i]['deal_info']['current'] + ' KWZ	</p>' +
+                           '  </td>' +
 
 
-                        '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
-                        '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+                           '   <td class="text-align-center subTotal_Delviery"  width="15%">' +
 
-                        '   </td>' +
+                           '   <div class="row" style="width:12vh">' +
 
-                        '  </tr>'
+                           '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
+                           '   <div class="col-40">' +
+                           '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
+                           '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
+                           ' </div>' +
+                           '   </td>' +
+
+                           '<td class="text-align-center subTotal_Delviery" width="10%">' +
+                           ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ')" style="width:  3vh" >' +
+
+                           '   </td>' +
+
+
+                           '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
+                           '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+
+                           '   </td>' +
+
+                           '  </tr>'
+                     }
+                  }
+                  $('.DataItem').html(li)
+                  var nf = Intl.NumberFormat('fr');
+                  totalAll = nf.format(totalAll)
+                  $('.TotalA').html(totalAll + ' KWZ')
+                  // console.log('i ---- >'+i)
+                  if (i > 0) {
+                     $('.cart_counter').css('display', 'block')
+                     $('.cart_counter').html(i)
+                     $("#nextCheckout").removeAttr("disabled");
+                     $("#nextCheckout").css("background", '#32c2ff');
+
+
+                  }
+                  else {
+                     console.log('in else getCard')
+                     $('.cart_counter').css('display', 'none')
+                     $("#nextCheckout").attr("disabled", true);
+                     $("#nextCheckout").css("background", 'gray');
+
+
+
                   }
                }
-               $('.DataItem').html(li)
-               var nf = Intl.NumberFormat('fr');
-               totalAll = nf.format(totalAll)
-               $('.TotalA').html(totalAll + ' KWZ')
-               // console.log('i ---- >'+i)
-               if (i > 0) {
-                  $('.cart_counter').css('display', 'block')
-                  $('.cart_counter').html(i)
-                  $("#nextCheckout").removeAttr("disabled");
-                  $("#nextCheckout").css("background", '#32c2ff');
-
-
-               }
                else {
-                  console.log('in else getCard')
                   $('.cart_counter').css('display', 'none')
                   $("#nextCheckout").attr("disabled", true);
                   $("#nextCheckout").css("background", 'gray');
-
-
-
+                  $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
                }
             }
-            else {
-               $('.cart_counter').css('display', 'none')
-               $("#nextCheckout").attr("disabled", true);
-               $("#nextCheckout").css("background", 'gray');
-               $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
-            }
+
          }
-
-      }
-   });
-
-   
-}
-else{
-   $.ajax({
-      type: 'GET',
-      url: "   https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&uuid=" +UUID+ "&format=json",
-
-      cache: false,
-      success: function (json) {
-
-         if (json['posts'] != undefined) {
-            if (json['posts'][0] != 0) {
-               // console.log(json)
-               var li = ''
-               var nameProduct;
-               var total = 0;
-               var totalAll = 0;
-               li = li + ' <tr>' +
-                  '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
-                  ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
-                  ' <th class="text-align-center"  width="15%">  ' + if_lang('Qty ', 'Qty') + '</th>' +
-                  ' <th class="text-align-center" width="10%"> </th>' +
-                  ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
-                  '      </tr>'
-               //console.log(json['posts'].length)
-               if (json['posts']['0'] != 0) {
-                  for (var i = 0; i < json['posts'].length; i++) {
+      });
 
 
-                     total = parseFloat(json['posts'][i]['deal_info']['current2']) * parseInt(json['posts'][i]['qty'])
-                     totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current2']) * parseInt(json['posts'][i]['qty'])
-                     var nf = Intl.NumberFormat('fr');
-                     // console.log(nf.format(total)); // 42,000,000 in many locales
-                     total = nf.format(total)
+   }
+   else {
+      $.ajax({
+         type: 'GET',
+         url: "   https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&uuid=" + UUID + "&format=json",
 
-                     nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
-                     li = li + ' <tr style="font-size: 8px;">' +
+         cache: false,
+         success: function (json) {
 
-                        '  <td class="ItemOrder" width="15%">' +
-                        '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
-                        ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
-
-                        '   </td>' +
-
-
-                        '   <td class="text-align-center  QtyOrder"  width="20%">' +
-                        '      <p>' + json['posts'][i]['deal_info']['current'] + ' KWZ	</p>' +
-                        '  </td>' +
-
-
-                        '   <td class="text-align-center subTotal_Delviery"  width="15%">' +
-
-                        '   <div class="row" style="width:12vh">' +
-
-                        '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current2'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
-                        '   <div class="col-40">' +
-                        '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
-                        '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current2'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
-                        ' </div>' +
-                        '   </td>' +
-
-                        '<td class="text-align-center subTotal_Delviery" width="10%">' +
-                        ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ')" style="width:  3vh" >' +
-
-                        '   </td>' +
+            if (json['posts'] != undefined) {
+               if (json['posts'][0] != 0) {
+                  // console.log(json)
+                  var li = ''
+                  var nameProduct;
+                  var total = 0;
+                  var totalAll = 0;
+                  li = li + ' <tr>' +
+                     '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
+                     ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
+                     ' <th class="text-align-center"  width="15%">  ' + if_lang('Qty ', 'Qty') + '</th>' +
+                     ' <th class="text-align-center" width="10%"> </th>' +
+                     ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
+                     '      </tr>'
+                  //console.log(json['posts'].length)
+                  if (json['posts']['0'] != 0) {
+                     for (var i = 0; i < json['posts'].length; i++) {
 
 
-                        '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
-                        '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+                        total = parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
+                        totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
+                        var nf = Intl.NumberFormat('fr');
+                        // console.log(nf.format(total)); // 42,000,000 in many locales
+                        total = nf.format(total)
 
-                        '   </td>' +
+                        nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
+                        li = li + ' <tr style="font-size: 8px;">' +
 
-                        '  </tr>'
+                           '  <td class="ItemOrder" width="15%">' +
+                           '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
+                           ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
+
+                           '   </td>' +
+
+
+                           '   <td class="text-align-center  QtyOrder"  width="20%">' +
+                           '      <p>' + json['posts'][i]['deal_info']['current'] + ' KWZ	</p>' +
+                           '  </td>' +
+
+
+                           '   <td class="text-align-center subTotal_Delviery"  width="15%">' +
+
+                           '   <div class="row" style="width:12vh">' +
+
+                           '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
+                           '   <div class="col-40">' +
+                           '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
+                           '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
+                           ' </div>' +
+                           '   </td>' +
+
+                           '<td class="text-align-center subTotal_Delviery" width="10%">' +
+                           ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ')" style="width:  3vh" >' +
+
+                           '   </td>' +
+
+
+                           '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
+                           '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+
+                           '   </td>' +
+
+                           '  </tr>'
+                     }
+                  }
+                  $('.DataItem').html(li)
+                  var nf = Intl.NumberFormat('fr');
+                  totalAll = nf.format(totalAll)
+                  $('.TotalA').html(totalAll + ' KWZ')
+                  // console.log('i ---- >'+i)
+                  if (i > 0) {
+                     $('.cart_counter').css('display', 'block')
+                     $('.cart_counter').html(i)
+                     $("#nextCheckout").removeAttr("disabled");
+                     $("#nextCheckout").css("background", '#32c2ff');
+
+
+                  }
+                  else {
+                     console.log('in else getCard')
+                     $('.cart_counter').css('display', 'none')
+                     $("#nextCheckout").attr("disabled", true);
+                     $("#nextCheckout").css("background", 'gray');
+
+
+
                   }
                }
-               $('.DataItem').html(li)
-               var nf = Intl.NumberFormat('fr');
-               totalAll = nf.format(totalAll)
-               $('.TotalA').html(totalAll + ' KWZ')
-               // console.log('i ---- >'+i)
-               if (i > 0) {
-                  $('.cart_counter').css('display', 'block')
-                  $('.cart_counter').html(i)
-                  $("#nextCheckout").removeAttr("disabled");
-                  $("#nextCheckout").css("background", '#32c2ff');
-
-
-               }
                else {
-                  console.log('in else getCard')
                   $('.cart_counter').css('display', 'none')
                   $("#nextCheckout").attr("disabled", true);
                   $("#nextCheckout").css("background", 'gray');
-
-
-
+                  $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
                }
             }
-            else {
-               $('.cart_counter').css('display', 'none')
-               $("#nextCheckout").attr("disabled", true);
-               $("#nextCheckout").css("background", 'gray');
-               $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
-            }
-         }
 
-      }
-   });
-}
+         }
+      });
+   }
 
 }
 
 
 
 function addToCard(id, avilable) {
-   if (Checklogin()) {
-      var qty = $('.valCardPros_' + id).val()
-      qty = parseInt(qty)
-      console.log(qty)
-      if (avilable > 0) {
-         if (qty > 0) {
-            $.ajax({
-               type: 'GET',
-               url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+   var qty = parseInt($('.avQuantity').html())
+   console.log('qty --- > ' + qty)
 
-
-               success: function (json) {
-                  console.log(json)
-                  //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
-                  alert(if_lang('your product added successfully ', 'your product added successfully '))
-                  getMyCard()
-               }
-            });
-         }
-         else {
-            alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
-         }
-      }
-      else {
-         alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
-      }
-
+   if (qty == 0 || qty < 0) {
+      alert(if_lang('Sorry, Item is not available', 'Desculpe, o item não está disponível'))
    }
    else {
-    var qty = $('.valCardPros_' + id).val()
-      qty = parseInt(qty)
-      console.log(qty)
-      if (avilable > 0) {
-         if (qty > 0) {
-            $.ajax({
-               type: 'GET',
-               url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
 
 
-               success: function (json) {
-                  console.log(json)
-                  //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
-                  alert(if_lang('your product added successfully ', 'your product added successfully '))
-                  getMyCard()
+      if (colorID == 1 && sizeID == 1) {
+         if (colorID == 1) {
+            if ($('#color_id').val() == -1 && $('#color_id').val() == '-1') {
+               alert(if_lang('Please select a color', 'Por favor selecione uma cor'))
+            }
+            else {
+               if (sizeID == 1) {
+
+
+                  if ($('#size_id').val() == -1 && $('#size_id').val() == '-1') {
+                     alert(if_lang('Please select a size', 'Por favor selecione um tamanho'))
+
+
+                  }
+
+                  else if ($('#size_id').val() != -1 && $('#color_id').val() != -1) {
+                     if (Checklogin()) {
+                        var qty = $('.valCardPros_' + id).val()
+                        qty = parseInt(qty)
+                        console.log(qty)
+                        if (avilable > 0) {
+                           if (qty > 0) {
+                              $.ajax({
+                                 type: 'GET',
+                                 url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+
+                                 cache: false,
+
+                                 success: function (json) {
+                                    console.log(json)
+                                    //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                                    alert(if_lang('your product added successfully ', 'your product added successfully '))
+                                    getMyCard()
+                                 }
+                              });
+                           }
+                           else {
+                              alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+                           }
+                        }
+                        else {
+                           alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                        }
+
+                     }
+                     else {
+                        var qty = $('.valCardPros_' + id).val()
+                        qty = parseInt(qty)
+                        console.log(qty)
+                        if (avilable > 0) {
+                           if (qty > 0) {
+                              $.ajax({
+                                 type: 'GET',
+                                 url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                                 cache: false,
+
+
+                                 success: function (json) {
+                                    console.log(json)
+                                    //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                                    alert(if_lang('your product added successfully ', 'your product added successfully '))
+                                    getMyCard()
+                                 }
+                              });
+                           }
+                           else {
+                              alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+                           }
+                        }
+                        else {
+                           alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                        }
+                        // alert(if_lang('please login first', 'faça o login primeiro'))
+                        // go_to_page("Login")
+                     }
+                  }
                }
-            });
+            }
+         }
+
+      }
+
+
+      else if (colorID == 1 && sizeID == 0) {
+         if (colorID == 1) {
+            if ($('#color_id').val() == -1 && $('#color_id').val() == '-1') {
+               alert(if_lang('Please select a color', 'Por favor selecione uma cor'))
+            }
+            else {
+               if (Checklogin()) {
+                  var qty = $('.valCardPros_' + id).val()
+                  qty = parseInt(qty)
+                  console.log(qty)
+                  if (avilable > 0) {
+                     if (qty > 0) {
+                        $.ajax({
+                           type: 'GET',
+                           url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+
+                           cache: false,
+
+
+                           success: function (json) {
+                              console.log(json)
+                              //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                              alert(if_lang('your product added successfully ', 'your product added successfully '))
+                              getMyCard()
+                           }
+                        });
+                     }
+                     else {
+                        alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+                     }
+                  }
+                  else {
+                     alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                  }
+
+               }
+               else {
+                  var qty = $('.valCardPros_' + id).val()
+                  qty = parseInt(qty)
+                  console.log(qty)
+                  if (avilable > 0) {
+                     if (qty > 0) {
+                        $.ajax({
+                           type: 'GET',
+                           url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                           cache: false,
+
+
+                           success: function (json) {
+                              console.log(json)
+                              //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                              alert(if_lang('your product added successfully ', 'your product added successfully '))
+                              getMyCard()
+                           }
+                        });
+                     }
+                     else {
+                        alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+                     }
+                  }
+                  else {
+                     alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                  }
+                  // alert(if_lang('please login first', 'faça o login primeiro'))
+                  // go_to_page("Login")
+               }
+            }
+         }
+
+
+
+
+
+
+      }
+
+
+      else if (colorID == 0 && sizeID == 1) {
+
+
+
+         if ($('#size_id').val() == -1 && $('#size_id').val() == '-1') {
+            alert(if_lang('Please select a size', 'Por favor selecione um tamanho'))
+
+
          }
          else {
-            alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+            if (Checklogin()) {
+               var qty = $('.valCardPros_' + id).val()
+               qty = parseInt(qty)
+               console.log(qty)
+               if (avilable > 0) {
+                  if (qty > 0) {
+                     $.ajax({
+                        type: 'GET',
+                        url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+
+                        cache: false,
+
+
+                        success: function (json) {
+                           console.log(json)
+                           //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                           alert(if_lang('your product added successfully ', 'your product added successfully '))
+                           getMyCard()
+                        }
+                     });
+                  }
+                  else {
+                     alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+                  }
+               }
+               else {
+                  alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+               }
+
+            }
+            else {
+               var qty = $('.valCardPros_' + id).val()
+               qty = parseInt(qty)
+               console.log(qty)
+               if (avilable > 0) {
+                  if (qty > 0) {
+                     $.ajax({
+                        type: 'GET',
+                        url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                        cache: false,
+
+
+                        success: function (json) {
+                           console.log(json)
+                           //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                           alert(if_lang('your product added successfully ', 'your product added successfully '))
+                           getMyCard()
+                        }
+                     });
+                  }
+                  else {
+                     alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+                  }
+               }
+               else {
+                  alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+               }
+               // alert(if_lang('please login first', 'faça o login primeiro'))
+               // go_to_page("Login")
+            }
+
+         }
+
+      }
+
+      else {
+         if (Checklogin()) {
+            var qty = $('.valCardPros_' + id).val()
+            qty = parseInt(qty)
+            console.log(qty)
+            if (avilable > 0) {
+               if (qty > 0) {
+                  $.ajax({
+                     type: 'GET',
+                     url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=0&sid=0&cid=0&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+
+                     cache: false,
+
+
+                     success: function (json) {
+                        console.log(json)
+                        //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                        alert(if_lang('your product added successfully ', 'your product added successfully '))
+                        getMyCard()
+                     }
+                  });
+               }
+               else {
+                  alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+               }
+            }
+            else {
+               alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+            }
+
+         }
+         else {
+            var qty = $('.valCardPros_' + id).val()
+            qty = parseInt(qty)
+            console.log(qty)
+            if (avilable > 0) {
+               if (qty > 0) {
+                  $.ajax({
+                     type: 'GET',
+                     url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+
+
+                     success: function (json) {
+                        console.log(json)
+                        //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                        alert(if_lang('your product added successfully ', 'your product added successfully '))
+                        getMyCard()
+                     }
+                  });
+               }
+               else {
+                  alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
+               }
+            }
+            else {
+               alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+            }
+            // alert(if_lang('please login first', 'faça o login primeiro'))
+            // go_to_page("Login")
          }
       }
-      else {
-         alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
-      }
-      // alert(if_lang('please login first', 'faça o login primeiro'))
-      // go_to_page("Login")
    }
+
 }
 
 
@@ -4343,7 +4786,7 @@ function decreaseQty(id, minQty, current) {
       var Rest = (OldQty - qty) * parseFloat(current)
       var AllTotal = $('.TotalA').html()
       var nf = Intl.NumberFormat('fr');
-      
+
       var tot = ''
       for (i = 0; i < AllTotal.length; i++) {
          if (AllTotal[i] != '') {
@@ -4374,7 +4817,7 @@ function decreaseQty(id, minQty, current) {
             $('.totalProduct' + id).html(total + ' KWZ')
 
             $('.TotalA').html(inte + ' KWZ ')
-            constantTotal =  inte + ' KWZ '
+            constantTotal = inte + ' KWZ '
             GetShipping()
          }
       })
@@ -4434,7 +4877,7 @@ function increaseQTy(id, max, current) {
             $('.totalProduct' + id).html(total + ' KWZ')
 
             $('.TotalA').html(inte + ' KWZ ')
-            constantTotal =  inte + ' KWZ '
+            constantTotal = inte + ' KWZ '
             GetShipping()
 
          }
@@ -4521,40 +4964,45 @@ var DeliveryType
 var constantTotal
 
 function getOrderArr() {
-constantTotal =   $('.TotalA').html()
-if (Checklogin()){
-   $('.logoutProfileShop').empty()
-   console.log('in logout')
-   $.ajax({
-      type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
+   constantTotal = $('.TotalA').html()
+   if (Checklogin()) {
+      $('.logoutProfileShop').empty()
+      console.log('in logout')
+      $.ajax({
+         type: 'GET',
+         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
 
-      success: function (json) {
-         arrOrder = []
-         var x
-         for (var i = 0; i < json['posts'].length; i++) {
-            x = {
-               id: json['posts'][i]['deal_info']['id'],
-               qty: json['posts'][i]['qty']
+         success: function (json) {
+            arrOrder = []
+            var x
+            for (var i = 0; i < json['posts'].length; i++) {
+               x = {
+                  id: json['posts'][i]['deal_info']['id'],
+                  qty: json['posts'][i]['qty'] ,
+                  price : json['posts'][i]['deal_info']['current'],
+                  color:json['posts'][i]['deal_info']['color'] ,
+                  size:json['posts'][i]['deal_info']['size'],
+                  sid: json['posts'][i]['sid'] ,
+                  cid :json['posts'][i]['cid'] 
+                             }
+               arrOrder.push(x)
             }
-            arrOrder.push(x)
+
+            //console.log(arrOrder)
          }
-
-         //console.log(arrOrder)
-      }
-   })
-}
-else{
+      })
+   }
+   else {
 
 
-   $('.loginProfileShop').hide()
+      $('.loginProfileShop').hide()
 
 
-}
+   }
    go_to_page('ProfileShop')
- 
-  
+
+
 }
 var notesORder
 function getPersonalDataOrder() {
@@ -4590,7 +5038,7 @@ function getPersonalDataOrder() {
       else {
          console.log(AddressOrder + '     ' + phoneOrder)
          // go_to_page('Delivery')
-          GetShipping()
+         GetShipping()
          go_to_page('SubmitOrder')
 
       }
@@ -4602,7 +5050,7 @@ function getPersonalDataOrder() {
 }
 
 function getDeleiveryType() {
-  
+
    go_to_page('SubmitOrder')
    DeliveryType = $("input[name='my-radio']:checked").val();
    //console.log(DeliveryType)
@@ -4639,13 +5087,13 @@ function SubmitOrder() {
       // },
       success: function (json) {
          //console.log(url)
-          
+
          // console.log(json)
          alert_Reload(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
          // alert()
       }
    })
- }
+}
 
 
 function getInstructions() {
@@ -4687,9 +5135,9 @@ function SubmitRefOrder() {
 }
 
 function goToCheckout() {
-   
-      go_to_page('CheckOutFirst')
-  
+
+   go_to_page('CheckOutFirst')
+
 }
 
 
@@ -4833,8 +5281,7 @@ function getMyOrder(id) {
    $.ajax({
       type: 'GET',
       url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getMyOrders&customer_id=" + localStorage.buitandaUserID + "&format=json",
-
-
+      cache:false,
       success: function (json) {
          console.log(json)
          $('.MyOrderTitle').html(if_lang('Order Details', 'detalhes do pedido'))
@@ -4844,7 +5291,7 @@ function getMyOrder(id) {
 
             for (var i = 0; i < json['posts'].length; i++) {
                if (json['posts'][i]['id'] == id) {
-                  constantTotal=json['posts'][i]['total']
+                  constantTotal = json['posts'][i]['total']
 
                   li = '<div class="block block-strong inv-section">' +
                      '  <div class="inv-logo">' +
@@ -4919,12 +5366,12 @@ function getMyOrder(id) {
 
                      '   <tr>' +
                      '   <td colspan="1"><b>' + if_lang('Total shipping ', ' ENTREGA	') + ':</b></td>' +
-                     ' <td colspan="4" class="TotalShippingA">' +   '  </td>' +
+                     ' <td colspan="4" class="TotalShippingA">' + '  </td>' +
                      ' </tr>' +
 
                      '   <tr>' +
                      '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
-                     ' <td colspan="4" class="TotalWithShippingg">' +   '  </td>' +
+                     ' <td colspan="4" class="TotalWithShippingg">' + '  </td>' +
                      ' </tr>' +
                      ' </tfoot>' +
 
@@ -4934,7 +5381,7 @@ function getMyOrder(id) {
 
                }
             }
-   
+
             $('.allContent').html(li)
 
             GetShipping()
@@ -5022,7 +5469,7 @@ function SearchISIN(idPro, title) {
       }
    });
 
-   
+
 
 
 
@@ -5180,7 +5627,7 @@ function get_timeDifference(strtdatetime) {
          if (days > 1) grammar = "s "
          var hrreset = days * 24;
          hh = hh - hrreset;
-         daylabel = days   + grammar;
+         daylabel = days + grammar;
       }
 
 
@@ -5244,17 +5691,17 @@ function get_timeDifference_Days(strtdatetime) {
       var daylabel = "";
       if (days > 0) {
          var grammar = " ";
-         if (days > 1) 
-         var hrreset = days * 24;
+         if (days > 1)
+            var hrreset = days * 24;
          hh = hh - hrreset;
          daylabel = days + grammar;
       }
-      else{
+      else {
          daylabel = 0
       }
 
 
-       
+
       //  Format Hours
       var hourtext = '00';
       hourtext = String(hh);
@@ -5276,7 +5723,7 @@ function get_timeDifference_Days(strtdatetime) {
       if (msectext.length == 1) { msectext = '0' + msectext };
       console.log(daylabel)
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
-      return daylabel + ' Day ' + hourtext + " h " ;
+      return daylabel + ' Day ' + hourtext + " h ";
    }
 }
 function getPrivacyPolicy() {
@@ -5313,10 +5760,10 @@ function getTermAndCondition() {
       }
    })
 }
-var shipping 
+var shipping
 var totalPlusShiping
 
-function GetShipping (){
+function GetShipping() {
    var tot
    console.log(constantTotal)
    for (i = 0; i < constantTotal.length; i++) {
@@ -5338,29 +5785,29 @@ function GetShipping (){
          var nf = Intl.NumberFormat('fr');
 
          console.log('shipping')
-            
+
          console.log(json)
-         shipping =nf.format( json['posts']['0']['totalShipping'] )
-      
-          totalPlusShiping = nf.format(json['posts']['0']['total'])
+         shipping = nf.format(json['posts']['0']['totalShipping'])
+
+         totalPlusShiping = nf.format(json['posts']['0']['total'])
          console.log(totalPlusShiping)
-         if(shipping == 0 ){
+         if (shipping == 0) {
             $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
          }
-         else{
-            $('.TotalShippingA').html(if_lang( shipping +' KWZ', shipping+' KWZ'))
-         
-         
+         else {
+            $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
+
+
          }
-         $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ') 
-      
+         $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
+
       }
 
 
    });
 
 }
-function getProductCategorySorting (){
+function getProductCategorySorting() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
    console.log($('.Sortprod').val())
@@ -5370,41 +5817,41 @@ function getProductCategorySorting (){
    start = 0
    end = 8
    getCategoryProduct(CategoryIdSearch)
- }
+}
 
 
- function findEmail (email){
-   
+function findEmail(email) {
+
    $.ajax({
       async: false,
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=select&format=json&table=customers&columns=*&condition=email='"+$('.emailPersons').val()+"'",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=select&format=json&table=customers&columns=*&condition=email='" + $('.emailPersons').val() + "'",
 
 
       success: function (json) {
-         
-               if(json['posts']['0']!=0){
-              $('.spanLoginAlert').show()
-              $('.spanLoginAlert').html(if_lang('Email already exists, click here to login','O e-mail já existe, clique aqui para fazer login'))
 
-               $('#NextProfile').attr('disabled','true')
+         if (json['posts']['0'] != 0) {
+            $('.spanLoginAlert').show()
+            $('.spanLoginAlert').html(if_lang('Email already exists, click here to login', 'O e-mail já existe, clique aqui para fazer login'))
 
-               }
-               else{
-                   $('.spanLoginAlert').hide()
-                  $('#NextProfile').removeAttr('disabled','false')
+            $('#NextProfile').attr('disabled', 'true')
 
-               }
-      
+         }
+         else {
+            $('.spanLoginAlert').hide()
+            $('#NextProfile').removeAttr('disabled', 'false')
+
+         }
+
       }
 
 
    });
- }
+}
 
 
 
- function RegisterTillCheckout() {
+function RegisterTillCheckout() {
    showIndicator()
    var name = $('.namePersons').val()
    var Country = $('.CountrySelect').val()
@@ -5420,7 +5867,7 @@ function getProductCategorySorting (){
       alert(if_lang("please enter name", 'por favor digite o nome'))
    }
    else {
-      console.log('name --- >'+name)
+      console.log('name --- >' + name)
       if (adddres == '') {
          alert(if_lang("please enter address", 'digite o endereço'))
       }
@@ -5459,7 +5906,7 @@ function getProductCategorySorting (){
                         } else {
                            $.ajax({
                               type: 'POST',
-                              url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email +  '&version=' + versionApplication + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+                              url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email + '&version=' + versionApplication + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
                               success: function (json) {
@@ -5508,54 +5955,54 @@ function getProductCategorySorting (){
 
 
 
-function popLogin (){
+function popLogin() {
 
 
- 
-      app.popup.create({
-         content: '<div class="popup" style=" overflow-y:scroll; height:46vh;margin-top:28vh">' +
-            '<div style="text-align:end; margin:1vh">' +
-            '<img class="popup-close"  src="img/close.svg">' +
-            '</div>' +
-            '<div class="page-content grey-bk" style="height: 50%; overflow:initial">' +
-            '<div class="list no-hairlines-md" style="margin-left: 3vh;">'+
-          '  <ul  >'+
-             '  <li class="item-content item-input">'+
-               '  <div class="item-inner">'+
-                '  <div class="item-title item-label emailLoginLable">Email</div>'+
 
-                  ' <div class="item-input-wrap">'+
-               '     <input class="emailLogins"  type="text" placeholder="" name="name">'+
-                   ' <span class="input-clear-button"></span>'+
-                '  </div>'+
-               ' </div>'+
-            '  </li>'+
-              
-            
-              ' <li class="item-content item-input">'+
-'                 <div class="item-inner">'+
-                 ' <div class="item-title item-label passwordLoginsLable">password</div>'+
+   app.popup.create({
+      content: '<div class="popup" style=" overflow-y:scroll; height:46vh;margin-top:28vh">' +
+         '<div style="text-align:end; margin:1vh">' +
+         '<img class="popup-close"  src="img/close.svg">' +
+         '</div>' +
+         '<div class="page-content grey-bk" style="height: 50%; overflow:initial">' +
+         '<div class="list no-hairlines-md" style="margin-left: 3vh;">' +
+         '  <ul  >' +
+         '  <li class="item-content item-input">' +
+         '  <div class="item-inner">' +
+         '  <div class="item-title item-label emailLoginLable">Email</div>' +
 
-                  ' <div class="item-input-wrap">'+
-                    '<input class="passwordLoginss"  type="password" placeholder=" " name="name">'+
-                   ' <span class="input-clear-button"></span>'+
-                  '</div>'+
-               ' </div>'+
-            '  </li>'+
-              
-         '   </ul>'+
+         ' <div class="item-input-wrap">' +
+         '     <input class="emailLogins"  type="text" placeholder="" name="name">' +
+         ' <span class="input-clear-button"></span>' +
+         '  </div>' +
+         ' </div>' +
+         '  </li>' +
 
-            
-          '</div> '+
-          '<div style="text-align:-webkit-center">'+
-       '   <button class="col button button-raised button-fill" id="loginbtn" style="width: 26vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="loginTillCheckout()">Login   </button>'+
- '     </div>'+
-            //  '<div class="block block-strong">' + if_lang(json['posts'][0].description, json['posts'][0].ardescription) + '</div>' +
-            '</div>' +
-            '</div>',
-      }).open();
-   
-   
+
+         ' <li class="item-content item-input">' +
+         '                 <div class="item-inner">' +
+         ' <div class="item-title item-label passwordLoginsLable">password</div>' +
+
+         ' <div class="item-input-wrap">' +
+         '<input class="passwordLoginss"  type="password" placeholder=" " name="name">' +
+         ' <span class="input-clear-button"></span>' +
+         '</div>' +
+         ' </div>' +
+         '  </li>' +
+
+         '   </ul>' +
+
+
+         '</div> ' +
+         '<div style="text-align:-webkit-center">' +
+         '   <button class="col button button-raised button-fill" id="loginbtn" style="width: 26vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="loginTillCheckout()">Login   </button>' +
+         '     </div>' +
+         //  '<div class="block block-strong">' + if_lang(json['posts'][0].description, json['posts'][0].ardescription) + '</div>' +
+         '</div>' +
+         '</div>',
+   }).open();
+
+
 }
 
 
@@ -5581,7 +6028,7 @@ function loginTillCheckout() {
       else {
          $.ajax({
             type: 'POST',
-            url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password +  '&version=' + versionApplication + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+            url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=login&email=' + email + '&password=' + password + '&version=' + versionApplication + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
             success: function (json) {
@@ -5594,11 +6041,11 @@ function loginTillCheckout() {
                   // console.log(  localStorage.buitandaUserID)
 
                   notesORder = ''
-                  phoneOrder =  json['posts'][0]['phoneNumber']
+                  phoneOrder = json['posts'][0]['phoneNumber']
                   AddressOrder = json['posts'][0]['address']
                   go_to_page('CheckOutFirst')
 
-                 
+
 
                }
                else {
@@ -5614,3 +6061,44 @@ function loginTillCheckout() {
    }
 
 }
+
+
+function getNewProductDetails() {
+
+   $.ajax({
+      type: 'GET',
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=fetchVariantImage&cid=" + $('#color_id').val() + "&sid=" + $('#size_id').val() + "&pid=" + $('#product_ID').val() + "&format=json",
+      cache: false,
+
+      success: function (json) {
+         console.log('in get new product deatails ')
+         console.log(json['posts']['quantity'])
+         if (json['posts']['image']) {
+            $('#main_img_swiper').attr('src', json['posts']['image'])
+
+         }
+
+         if (json['posts']['price']) {
+            $('.Price_Prod').html(json['posts']['price'] + ' KWZ')
+
+         }
+         else {
+            $('.Price_Prod').html(0 + ' KWZ')
+
+         }
+
+         if (json['posts']['quantity']) {
+            $('.avQuantity').html(json['posts']['quantity'])
+            $('.AddToMax').attr('onclick', 'increaseProduct(' + $('#product_ID').val() + ' , ' + json['posts']['quantity'] + ')')
+         }
+         else {
+            $('.valCardPros_1199').val(0)
+            $('.AddToMax').attr('onclick', 'increaseProduct(' + $('#product_ID').val() + ' , ' + 0 + ')')
+
+            $('.avQuantity').html(0)
+
+         }
+      }
+   });
+}
+
