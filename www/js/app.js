@@ -213,6 +213,13 @@ function onDeviceReady() {
                if (page == 'orders') {
                   getMyOrder(new_id)
                }
+
+               if (page == 'ProductDesc') {
+                  go_to_page_params('CategoryProduct', new_id)
+               }
+               if (page == 'Category') {
+                  go_to_page_params('Category', new_id)
+               }
             }
             // view.router.navigate({name:page,param:{}})
          }
