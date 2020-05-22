@@ -6043,6 +6043,7 @@ function loginTillCheckout() {
                   notesORder = ''
                   phoneOrder = json['posts'][0]['phoneNumber']
                   AddressOrder = json['posts'][0]['address']
+                  updateUUIDtoCustomerID (json['posts'][0]['id'])
                   go_to_page('CheckOutFirst')
 
 
@@ -6102,3 +6103,18 @@ function getNewProductDetails() {
    });
 }
 
+
+
+function updateUUIDtoCustomerID (id){
+   $.ajax({
+      type: 'GET',
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=update&format=json&table=cart&columns=uuid='"+UUID+"'&condition=customer_id="+id+"",
+      cache: false,
+
+      success: function (json) {
+         console.log('uuid ---- > ' + UUID)
+         console.log('id ----- > '+ id)
+        
+      }
+   });
+}
