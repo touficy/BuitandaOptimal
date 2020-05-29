@@ -1,0 +1,115 @@
+<div class="page page-CategoryTag light page-current" data-name="CategoryTag">
+
+    
+    <div class="navbar nav-height">
+
+        <div class="navbar-inner nav-height">
+    
+            <div class="left">
+                <!-- <a href="#" class="back item-link  " style="color: white; margin-left: 1vh;"> -->
+                    <a href="#" class="back item-link  " style="color: white; margin-left: 1vh;">
+                        <i  class="f7-icons">arrow_left</i >
+                            </a>
+            </div>
+    
+            <div class="title width-All "  style="display: contents;
+            text-align: center;"  >
+                <a style="color: white; font-size:  18px; width: -webkit-fill-available;"  href="#" class="center_a titleCategoryTag link ft-1">
+                 </a style="color: white;">
+            </div>
+           
+            <div class="right margin-right-10">
+    
+                <a onclick="goToCheckout()" class="link ft-1" style="margin-right: -3vh;">
+                    <span class="cart_counter" style="display:none"></span>
+
+                    <img src="img/Cart.svg" style="width: 5vh;">
+    
+                </a>
+                <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-componentsCategoryTag" style="margin-bottom: 1vh;">
+                    <i class="f7-icons" style="color: white;">search</i>
+                                </a>
+    
+            </div>
+            <form  onsubmit=" return  SearchISINCat()" data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-componentsCategoryTag searchbar-init">
+                <div class="searchbar-inner">
+                    <div class="searchbar-input-wrap">
+                        <input type="search"   class="Homepage ft-1 SearchCate" placeholder="Search for products" style="text-align: center;" />
+                        <i class="searchbar-icon"></i>
+                        <span class="input-clear-button"></span>
+                    </div>
+                    <span class="searchbar-disable-button if-not-aurora"></span>
+                    <a href="" onclick="SearchISINCat()">
+                        <i class="f7-icons" style="color: #32c2ff;margin-right: 3vw;">search</i>
+                    </a>
+                </div>
+            </form>
+    
+        </div>
+    
+    </div>
+    <!-- <div class="toolbar tabbar toolbar-bottom o-visible" style="font-size: 11px;">
+        <div class="toolBarHome  toolbar-inner ">
+    
+            <a href="/home/" class="tab-link toolbar-title HOME   " ><img  style="width: 4vh;" src="img/Home gray.svg" alt=""><p class="HomeTab" style="margin: unset;"> HOME </p></a>
+            <a href="/AllCategory/" class="tab-link toolbar-title CATEGORY  "  style="color: #32c2ff;"><img  style="width: 4vh;" src="img/Categories Blue.svg" alt=""> <p class="CATEGORYTab" style="margin: unset;"> CATEGORY </p></a>
+            <a href="/AuctionList/" class="tab-link toolbar-title AUCTION  "><img  style="width: 4vh;" src="img/Auction gray.svg" alt=""><p class="AUCTIONTab" style="margin: unset;"> AUCTION </p></a>
+            <a href="/profile/" class="tab-link toolbar-title PROFILE  "><img  style="width: 4vh;" src="img/login gray.svg" alt=""> <p class="PROFILETab" style="margin: unset;"> PROFILE </p></a>
+        </div>
+    </div> -->
+        <div class="page-content infinite-scroll-content" style="background-color: white; margin-top: 1vh;">
+          
+            <!-- <form class="searchbar search" id="searchbar-autocomplete " style="margin: unset;  margin: 1vh 4vh 1vh 4vh; height:12vw" >
+                <div class="searchbar-inner">
+                    <div class="searchbar-input-wrap">
+                        <input type="search" style="text-align: center;" onchange="ReturnValCatProd()" id="ProductCategorySearch" placeholder="Search here for items">
+                        <i class="searchbar-icon"></i>
+                                        <span class="input-clear-button"></span>
+                    </div>
+                    <span class="searchbar-disable-button">Cancel</span>
+                </div>
+            </form> -->
+            <div class="block" style="text-align: right;direction: rtl; margin-top: 10px;  margin-bottom: 0px;">
+                <ul>
+                    <li>
+                        <a class="item-link smart-select smart-select-init" data-open-in="sheet">
+                            <select id="Sortprod" class="Sortprod" name="mac-windows"   onchange="getProductCategorySorting()">
+                                <option class="Relevance sheet-close" value="default">default</option>
+                                <option class="lh sheet-close" value="lh">price from low to high</option>
+                                <option class="hl sheet-close" value="hl">price from high to low </option>
+                             </select>
+                            <div class="item-content sortItemContent">
+                                <div class="item-inner" style="display: inline-flex; width: -webkit-fill-available;">
+                                    <div class="item-after" style="margin:0 2vw 0 2vw">default</div>
+                                    <div class="item-title"><i class="f7-icons size-28">sort_down</i></div>
+                                 
+            
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+<!--            
+            <div class="row CatProd" style="text-align: center;margin: 0 2vh 0 2vh;">
+
+    
+
+
+            </div> -->
+ 
+                <div class="list simple-list">
+                    <ul class="CatProd">
+                       
+                    </ul>
+                </div>
+                <div class="noData">
+                  
+                </div>
+    
+           
+            <!-- <div class="preloader infinite-scroll-preloader"></div> -->
+
+            <div style="margin-top: 4vh;"></div>
+        </div>
+    </div>

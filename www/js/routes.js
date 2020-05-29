@@ -11,7 +11,23 @@ var routes = [
     }
   },
   {
+    path: '/ParentCategoryProduct/:id/',
+    url: './pages/ParentCategoryProduct.html',
+    name: 'ParentCategoryProduct',
+  },
+  
+  {
     path: '/Category/:id/',
+    url: './pages/Category.html',
+    name: 'Category',
+  },
+  {
+    path: '/CategoryBrand/:id/',
+    url: './pages/Category.html',
+    name: 'Category',
+  },
+  {
+    path: '/CategoryTag/:id/',
     url: './pages/Category.html',
     name: 'Category',
   },

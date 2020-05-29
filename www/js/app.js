@@ -905,103 +905,14 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
 
    getMyCard()
    var cat_id = page.route.params.id;
-   // var cat_name = page.route.params.nameCat;
-   //console.log('Cat name ---  > '+ cat_name)
-   // cat_name = cat_name.split('%20')
-   // var n = ''
-   // for (var i = 0; i < cat_name.length; i++) {
-   //    n = n + cat_name[i] + ' '
-   // }
+   
    MainCatID = cat_id
    // MainNameCat = n
 
    getCategoryProduct(cat_id)
 
 
-   var Data = [];
-   var TempRecipe = []
-   // $.ajax({
-   //    type: 'GET',
-   //    url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deals&cat_id=" + CategoryIdSearch + "&format=json",
-
-
-   //    success: function (json) {
-   //       //alert(json['posts'][0]['description']);
-   //       //  //console.log('json ')
-   //       //  //console.log(json)
-
-   //       for (var i = 0; i < json['posts'].length; i++) {
-   //          TempRecipe.push(if_lang(json['posts'][i]['title'], json['posts'][i]['ar_title']) + '%%' + json['posts'][i]['image'] +
-   //             '%%' + json['posts'][i]['id'] + '%%' + json['posts'][i]['current'] + '%%' + json['posts'][i]['desc'])
-   //          Data.push(json['posts'][i]['title'])
-
-
-   //       }
-
-   //       var autocompleteDropdownSimple = app.autocomplete.create({
-   //          inputEl: '#ProductCategorySearch',
-   //          openIn: 'dropdown',
-   //          source: function (query, render) {
-   //             var results = [];
-   //             if (query.length === 0) {
-   //                render(results);
-   //                return;
-   //             }
-   //             //console.log('query --- > '+query)
-   //             // Find matched items
-   //             for (var i = 0; i < Data.length; i++) {
-   //                if (Data[i].toLowerCase().indexOf(query.toLowerCase()) >= 0) results.push(Data[i]);
-   //             }
-   //             // Render items by passing array with result items
-
-   //             render(results);
-   //          },
-   //          on: {
-   //             change: function (value) {
-
-   //                var li = ''
-
-
-   //                var word = value['0']
-   //                var newTemp = []
-   //                for (var i = 0; i < TempRecipe.length; i++) {
-   //                   newTemp.push(TempRecipe[i].split("%%")[0])
-   //                   newTemp.push(TempRecipe[i].split("%%")[1])
-   //                   newTemp.push(TempRecipe[i].split("%%")[2])
-   //                   newTemp.push(TempRecipe[i].split("%%")[3])
-
-
-
-   //                }
-   //                var n = newTemp.indexOf(word)
-
-   //                li = '<div class="col-50" onclick="go_to_page_two_params(' + newTemp[n + 2] + ')" >' +
-   //                   ' <a > ' +
-
-   //                   ' <img class="img-product" src="' + newTemp[n + 1] + '"  style=" ">' +
-
-   //                   '<div class="white" style="margin-bottom:2vh ; margin-top: -4px">' +
-   //                   ' <p class="margin-white paddig-product" style="color:black;"> ' + newTemp[n + 4] + '  <span>' + newTemp[n + 3] + ' KWZ</span> </p>' +
-   //                   ' </div>' +
-   //                   '  </a>' +
-
-   //                   '</div>'
-
-
-   //                $('.CatProd').html(li)
-
-
-   //             },
-   //          },
-   //       });
-
-
-   //    }
-
-
-
-   // });
-
+   
 
 
 
@@ -1019,6 +930,116 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
       }, 1000);
    });
 })
+
+
+$$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', function (e, page) {
+   start = 0
+   end = 8
+   $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
+   $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
+   $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
+   $('.PROFILETab').html(if_lang('PROFILE', 'PERFIL'))
+
+   getMyCard()
+   var cat_id = page.route.params.id;
+   
+   MainCatID = cat_id
+   // MainNameCat = n
+
+   getParentCategoryProduct(cat_id)
+
+
+   
+
+
+
+   var loading = false
+   $$('.infinite-scroll-content').on('infinite', function () {
+      if (loading)
+         return;
+      loading = true;
+      setTimeout(function () {
+         console.log('loading ---- > ', loading)
+
+         loading = false;
+         getParentCategoryProduct(cat_id)
+
+      }, 1000);
+   });
+})
+
+$$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, page) {
+   start = 0
+   end = 8
+   $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
+   $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
+   $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
+   $('.PROFILETab').html(if_lang('PROFILE', 'PERFIL'))
+
+   getMyCard()
+   var cat_id = page.route.params.id;
+   
+   MainCatID = cat_id
+ 
+   getCategoryProductBrand(cat_id)
+
+
+   var Data = [];
+   var TempRecipe = []
+   
+
+
+   var loading = false
+   $$('.infinite-scroll-content').on('infinite', function () {
+      if (loading)
+         return;
+      loading = true;
+      setTimeout(function () {
+         console.log('loading ---- > ', loading)
+
+         loading = false;
+         getCategoryProduct(cat_id, n)
+
+      }, 1000);
+   });
+})
+
+$$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page) {
+   start = 0
+   end = 8
+   $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
+   $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
+   $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
+   $('.PROFILETab').html(if_lang('PROFILE', 'PERFIL'))
+
+   getMyCard()
+   var cat_id = page.route.params.id;
+   
+   MainCatID = cat_id
+ 
+   getCategoryProductTag(cat_id)
+
+
+   var Data = [];
+   var TempRecipe = []
+   
+
+
+   var loading = false
+   $$('.infinite-scroll-content').on('infinite', function () {
+      if (loading)
+         return;
+      loading = true;
+      setTimeout(function () {
+         console.log('loading ---- > ', loading)
+
+         loading = false;
+         getCategoryProductTag(cat_id, n)
+
+      }, 1000);
+   });
+})
+
 var GloCategoryID = undefined
 var GNameID = ''
 var prodFlag = 0
@@ -1749,7 +1770,7 @@ function getAllCategory() {
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             if (i == 0 ){
-               getSubCategory( json['posts'][i]['id'])
+               getSubCategory( json['posts'][i]['id'] )
             }
 
             li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
@@ -1791,9 +1812,8 @@ function getCategoryProduct(id, name) {
 
    $.ajax({
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsBySubCategory&sub_category="+id+"&format=json",
-
-
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsBySubCategory&sub_category="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+ 
       success: function (json) {
          // //console.log(name)
          console.log(json)
@@ -1867,8 +1887,238 @@ if (json['posts'][0] != 0){
 
 
 }
+
+function getParentCategoryProduct(id, name) {
+   CategoryIdSearch = id
+   
+
+   $.ajax({
+      type: 'GET',
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
+      cache:false,
+
+      success: function (json) {
+         // //console.log(name)
+         console.log(json)
+if (json['posts'][0] != 0){ 
+
+         $('.titleParentCategoryProduct').html(if_lang(json['posts'][0]['category_name'], json['posts'][0]['category_name_port']))
+
+         var li = ''
+         for (var i = 0; i < json['posts'].length; i++) {
+            if (json['posts'][0] == 0) {
+               //   endFlash = json['response']['result'].length
+
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
+
+               }
+               // li = li + '<div class="col-30"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['title'], json['posts'][i]['title']) + "'" + ')" >' +
+               //    ' <a > ' +
+
+               //    '<div class="white height_cat_prod" style=" display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+               //    ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style=" ">' +
+               //    '</div>' +
+               //    '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+               //    '   <div class ="length-p">' +
+
+               //    ' <p class=" lineP margin-white paddig-product" style="color:black; font-size:11px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '  </p> ' +
+
+               //    ' </div>' +
+               //    ' <span style="font-size:12px">' + json['posts'][i]['current'] + ' KWZ</span> ' +
+
+               //    ' </div>' +
+
+               //    '  </a>' +
+
+               //    '</div>'
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+            }
+         }
+
+         start = start + 8
+         end = end + 8
+
+         $('.CatProd').html(li)
+      }
+
+      else{
+         console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+   }
+   });
+
+
+}
+
+function getCategoryProductBrand(id, name) {
+   CategoryIdSearch = id
+   
+
+   $.ajax({
+      type: 'GET',
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsByBrand&brandId="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
+
+      success: function (json) {
+         // //console.log(name)
+         console.log(json)
+if (json['posts'][0] != 0){ 
+
+         $('.titleCategoryBrand').html(if_lang(json['posts'][0]['sub_category_name'], json['posts'][0]['sub_category_name_port']))
+
+         var li = ''
+         for (var i = 0; i < json['posts'].length; i++) {
+            if (json['posts'][0] == 0) {
+               //   endFlash = json['response']['result'].length
+
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
+
+               }
+                
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+            }
+         }
+
+         start = start + 8
+         end = end + 8
+
+         $('.CatProd').html(li)
+      }
+
+      else{
+         console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+   }
+   });
+
+
+}
+
+
+function getCategoryProductTag(id, name) {
+   CategoryIdSearch = id
+   
+
+   $.ajax({
+      type: 'GET',
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsByTag&tagId="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
+
+      success: function (json) {
+         // //console.log(name)
+         console.log(json)
+if (json['posts'][0] != 0){ 
+
+         $('.titleCategoryTag').html(if_lang(json['posts'][0]['sub_category_name'], json['posts'][0]['sub_category_name_port']))
+
+         var li = ''
+         for (var i = 0; i < json['posts'].length; i++) {
+            if (json['posts'][0] == 0) {
+               //   endFlash = json['response']['result'].length
+
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
+
+               }
+                
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+            }
+         }
+
+         start = start + 8
+         end = end + 8
+
+         $('.CatProd').html(li)
+      }
+
+      else{
+         console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+   }
+   });
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var colorID = 0
 var sizeID = 0
+
 
 function getProduct(id, title) {
    colorID = 0
@@ -6308,8 +6558,20 @@ function getSubCategory(id){
 
                '</div>'
             }
-            $('.AllCat').html(li)
+            li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'ParentCategoryProduct' + "'" + ',' + id + ')" >' +
+            ' <a style="display:inline-flex;align-items:center;height: 12vh;"> ' +
+
+            ' <p class="margin-white paddig-product textSubCat" style="color:black;"> ' + if_lang('All', 'All') + '  </p>' +
+
+            ' <img class="" src="' +  + '"  style=" width:10vh"  >' +
+
+            '  </a>' +
+
+            '</div>'
+            $('.AllSubCat').html(li)
 
       }
    });
 }
+
+ 
