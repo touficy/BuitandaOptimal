@@ -74,7 +74,7 @@ var versionApplication
 
 
 function showIndicator() {
-   app.preloader.show();
+   app.preloader.show(); 
    setTimeout(function () {
       app.preloader.hide();
    }, 5000);
@@ -707,11 +707,15 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
+   console.log('in profile 5raaa  ====== > ' + Checklogin())
+
    if (Checklogin()) {
       $('.logoutProfileShop').hide()
+      $('.loginProfileShop').show()
+
       console.log('in login ------------------------ ')
 
-       editShop()
+      editShop()
       $('.addressShP').html(if_lang('Address ', '  Endereço'))
       $('.NoteP').html(if_lang('Note ', '  Notas'))
       $('.EditBtn').html(if_lang('Edit Info ', '  Atualizar '))
@@ -720,6 +724,7 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
    }
    else {
       $('.loginProfileShop').hide()
+      $('.logoutProfileShop').show()
 
       $('.spanLoginAlert').hide()
 
@@ -727,6 +732,7 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
       $('.Company').html(if_lang('Company', 'Empresa'))
       $('.CountryNAme').html(if_lang('Country', 'PAíS'))
       $('.addressCompanyLable').html(if_lang('Address', 'ENDEREÇO'));
+      $('.noteShop').html(if_lang('Note ', '  Notas'))
 
       $('.namePersonLable').html(if_lang('Name', 'Nome'));
       $('.emailPersonLable').html(if_lang('EMAIL', 'EMAIL'));
@@ -1743,7 +1749,7 @@ function getAllCategory() {
          for (var i = 0; i < json['posts'].length; i++) {
 
 
-            li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] +  ')" >' +
+            li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
                ' <a > ' +
 
 
@@ -2296,7 +2302,7 @@ function getRegisterForm() {
          '   <div class="item-title item-label emailCompanyLable">' + if_lang('Email', 'Email') + '</div>' +
 
          '  <div class="item-input-wrap">' +
-         ' <input id="emailCompany" class="emailCompany" type="text" placeholder="Email" name="name">' +
+         ' <input id="emailCompany" class="emailCompany" type="text" placeholder=" " name="name">' +
          '  <span class="input-clear-button"></span>' +
          '    </div>' +
          '   </div>' +
@@ -3172,7 +3178,7 @@ function login() {
                   localStorage.buitandaUserType = json['posts'][0]['user_type']
                   // console.log(  localStorage.buitandaUserID)
                   location.reload()
-
+                  updateUUIDtoCustomerID(json['posts'][0]['id'])
 
                }
                else {
@@ -3363,7 +3369,45 @@ function getProfile() {
          $('#phoneShop').val(json['posts'][0]['phoneNumber'])
          $('#AddressShop').val(json['posts'][0]['address'])
 
+        
+      var   li = 
 
+        ' <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; padding-top: 1vh;" id="nameShop">Ahmed Samir sayed </p>'+
+        '<div class="list no-hairlines-md" style="margin:2vh 2vh 0vh  0vh;">'+
+        '  <ul>'+
+          '  <li class="item-content item-input">'+
+             ' <div class="item-inner">'+
+              '  <div class="item-title item-label">'+if_lang('phone ', 'telefone')+'</div>'+
+          '      <div class="item-input-wrap"><input id="phoneShop" value="'+json['posts'][0]['phoneNumber']+'" type="number" placeholder=" " name="name"><span'+
+                  '  class="input-clear-button"></span></div>'+
+            '  </div>'+
+           ' </li>'+
+         ' </ul>'+
+     '   </div>'+
+     '   <div class="list " style="margin:2vh 2vh 0vh  0vh;">'+
+         ' <ul>'+
+            '<li class="item-content item-input">'+
+             ' <div class="item-inner">'+
+              '  <div class="item-title item-label">'+if_lang('Address ', '  Endereço')+'</div>'+
+               ' <div class="item-input-wrap"><input value="'+json['posts'][0]['address']+'" id="AddressShop" type="text" placeholder=" " name="name"><span'+
+                    'class="input-clear-button"></span></div>'+
+            '  </div>'+
+          '  </li>'+
+         ' </ul>'+
+        '</div>'+
+      '  <div class="list " style="margin:2vh 2vh 0vh  0vh;">'+
+         ' <ul>'+
+           ' <li class="item-content item-input">'+
+             ' <div class="item-inner">'+
+               ' <div class="item-title item-label">Note</div>'+
+               ' <div class="item-input-wrap"><input id="noteShop" type="text" placeholder=" " name="name"><span'+
+                   ' class="input-clear-button"></span></div>'+
+             ' </div>'+
+          '  </li>'+
+         ' </ul>'+
+      '  </div>'
+     
+         $('.loginProfileShop').html(li)
          hideIndicator()
       }
    });
@@ -3590,7 +3634,7 @@ function getAuctionsList() {
          if (json['posts'][0] != 0) {
 
 
- 
+
             var li = ''
             for (var i = 0; i < json['posts'].length; i++) {
                var Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
@@ -4227,7 +4271,7 @@ function setbeforeNavigationFlag(id) {
 
 function setSoldFlag(id) {
    soldFlag = id
-}
+} 
 
 
 function getMyCard() {
@@ -4271,7 +4315,7 @@ function getMyCard() {
 
                            '  <td class="ItemOrder" width="15%">' +
                            '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
-                           ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
+                           ' <p style="text-align: center;word-break: break-word;">' +if_lang(json['posts'][i]['deal_info']['title'], json['posts'][i]['deal_info']['sectitle']) + ' </p>' +
 
                            '   </td>' +
 
@@ -4285,15 +4329,15 @@ function getMyCard() {
 
                            '   <div class="row" style="width:12vh">' +
 
-                           '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
+                           '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + json['posts'][i]['cid'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
                            '   <div class="col-40">' +
                            '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
-                           '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
+                           '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
                            ' </div>' +
                            '   </td>' +
 
                            '<td class="text-align-center subTotal_Delviery" width="10%">' +
-                           ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ')" style="width:  3vh" >' +
+                           ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" style="width:  3vh" >' +
 
                            '   </td>' +
 
@@ -4342,21 +4386,23 @@ function getMyCard() {
 
 
    }
-   else {
+   else { 
       $.ajax({
          type: 'GET',
-         url: "   https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&uuid=" + UUID + "&format=json",
+         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&uuid=" + UUID + "&format=json",
 
          cache: false,
          success: function (json) {
 
             if (json['posts'] != undefined) {
-               if (json['posts'][0] != 0) {
+                if (json['posts'][0] != 0) {
                   // console.log(json)
                   var li = ''
                   var nameProduct;
                   var total = 0;
                   var totalAll = 0;
+                  console.log('caaaaaaaaaaaaaaaaart')            
+                               console.log(JSON.stringify(json))
                   li = li + ' <tr>' +
                      '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
                      ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
@@ -4394,15 +4440,15 @@ function getMyCard() {
 
                            '   <div class="row" style="width:12vh">' +
 
-                           '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
+                           '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + json['posts'][i]['cid'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
                            '   <div class="col-40">' +
                            '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
-                           '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
+                           '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
                            ' </div>' +
                            '   </td>' +
 
                            '<td class="text-align-center subTotal_Delviery" width="10%">' +
-                           ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ')" style="width:  3vh" >' +
+                           ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" style="width:  3vh" >' +
 
                            '   </td>' +
 
@@ -4739,7 +4785,7 @@ function addToCard(id, avilable) {
                   $.ajax({
                      type: 'GET',
                      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
-
+                     cache: false,
 
                      success: function (json) {
                         console.log(json)
@@ -4765,22 +4811,37 @@ function addToCard(id, avilable) {
 }
 
 
-function deleteProduct(id) {
+function deleteProduct(id, sid, cid) {
+   if (Checklogin()) {
+      $.ajax({
+         type: 'GET',
+         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deleteFromCart&cid=" + cid + "&sid=" + sid + "&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&format=json",
 
-   $.ajax({
-      type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deleteFromCart&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&format=json",
+         success: function (json) {
+            //console.log(json)
 
-      success: function (json) {
-         //console.log(json)
+            getMyCard()
+         }
+      })
 
-         getMyCard()
-      }
-   })
+   }
+   else {
+      $.ajax({
+         type: 'GET',
+         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deleteFromCart&cid=" + cid + "&sid=" + sid + "&uuid=" + UUID + "&product_id=" + id + "&format=json",
+
+         success: function (json) {
+            //console.log(json)
+
+            getMyCard()
+         }
+      })
+   }
+
 
 }
 
-function decreaseQty(id, minQty, current) {
+function decreaseQty(id, minQty, current, sid, cid) {
    GetShipping()
 
    var qty = parseInt($('.valCardPro_' + id).val())
@@ -4809,29 +4870,50 @@ function decreaseQty(id, minQty, current) {
       console.log('parseFloat(tot) - Rest  --- > ' + inte)
       inte = nf.format(inte);
       total = nf.format(total)
+      if (Checklogin()) {
+         $.ajax({
+            type: 'GET',
 
-      $.ajax({
-         type: 'GET',
+            url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=updateCart&sid=" + sid + "&cid=" + cid + "&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+            cache: false,
 
-         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=updateCart&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+            success: function (json) {
+               //console.log(json)
+               $('.valCardPro_' + id).val(qty)
 
+               $('.totalProduct' + id).html(total + ' KWZ')
 
-         success: function (json) {
-            //console.log(json)
-            $('.valCardPro_' + id).val(qty)
+               $('.TotalA').html(inte + ' KWZ ')
+               constantTotal = inte + ' KWZ '
+               GetShipping()
+            }
+         })
+      }
+      else {
+         $.ajax({
+            type: 'GET',
 
-            $('.totalProduct' + id).html(total + ' KWZ')
+            url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=updateCart&sid=" + sid + "&cid=" + cid + "&uuid=" + UUID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+            cache: false,
 
-            $('.TotalA').html(inte + ' KWZ ')
-            constantTotal = inte + ' KWZ '
-            GetShipping()
-         }
-      })
+            success: function (json) {
+               //console.log(json)
+               $('.valCardPro_' + id).val(qty)
+
+               $('.totalProduct' + id).html(total + ' KWZ')
+
+               $('.TotalA').html(inte + ' KWZ ')
+               constantTotal = inte + ' KWZ '
+               GetShipping()
+            }
+         })
+      }
+
    }
 }
 
 
-function increaseQTy(id, max, current) {
+function increaseQTy(id, max, current, sid, cid) {
    console.log('in increase')
    var OldQty = parseInt($('.valCardPro_' + id).val())
    var total = 0
@@ -4865,29 +4947,61 @@ function increaseQTy(id, max, current) {
       console.log('qty ---- > ' + qty)
       $('.valCardPro_' + id).val(qty)
 
-      $.ajax({
-         type: 'GET',
+      if (Checklogin()) {
+         $.ajax({
+            type: 'GET',
 
-         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=updateCart&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+            url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=updateCart&sid=" + sid + "&cid=" + cid + "&customer_id=" + localStorage.buitandaUserID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+            cache: false,
 
 
-         success: function (json) {
-            console.log(json)
-            console.log('old --- > ' + OldQty)
-            console.log('new --- > ' + qty)
-            console.log('valCardPro_' + id)
+            success: function (json) {
+               console.log(json)
+               console.log('old --- > ' + OldQty)
+               console.log('new --- > ' + qty)
+               console.log('valCardPro_' + id)
 
-            //console.log(json)
-            qty = parseInt(qty)
-            // $('.valCardPro_'+id).val(qty)
-            $('.totalProduct' + id).html(total + ' KWZ')
+               //console.log(json)
+               qty = parseInt(qty)
 
-            $('.TotalA').html(inte + ' KWZ ')
-            constantTotal = inte + ' KWZ '
-            GetShipping()
 
-         }
-      })
+               $('.totalProduct' + id).html(total + ' KWZ')
+
+               $('.TotalA').html(inte + ' KWZ ')
+               constantTotal = inte + ' KWZ '
+               GetShipping()
+
+            }
+         })
+      }
+      else {
+         $.ajax({
+            type: 'GET',
+
+            url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=updateCart&sid=" + sid + "&cid=" + cid + "&uuid=" + UUID + " &product_id=" + id + "&qty=" + qty + "&format=json",
+            cache: false,
+
+
+            success: function (json) {
+               console.log(json)
+               console.log('old --- > ' + OldQty)
+               console.log('new --- > ' + qty)
+               console.log('valCardPro_' + id)
+
+               //console.log(json)
+               qty = parseInt(qty)
+
+
+               $('.totalProduct' + id).html(total + ' KWZ')
+
+               $('.TotalA').html(inte + ' KWZ ')
+               constantTotal = inte + ' KWZ '
+               GetShipping()
+
+            }
+         })
+      }
+
    }
 
 }
@@ -4972,26 +5086,26 @@ var constantTotal
 function getOrderArr() {
    constantTotal = $('.TotalA').html()
    if (Checklogin()) {
-      $('.logoutProfileShop').empty()
+      // $('.logoutProfileShop').hide()
       console.log('in logout')
       $.ajax({
          type: 'GET',
          url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
 
-
+         cache: false,
          success: function (json) {
             arrOrder = []
             var x
             for (var i = 0; i < json['posts'].length; i++) {
                x = {
                   id: json['posts'][i]['deal_info']['id'],
-                  qty: json['posts'][i]['qty'] ,
-                  price : json['posts'][i]['deal_info']['current'],
-                  color:json['posts'][i]['deal_info']['color'] ,
-                  size:json['posts'][i]['deal_info']['size'],
-                  sid: json['posts'][i]['sid'] ,
-                  cid :json['posts'][i]['cid'] 
-                             }
+                  qty: json['posts'][i]['qty'],
+                  price: json['posts'][i]['deal_info']['current'],
+                  color: json['posts'][i]['deal_info']['color'],
+                  size: json['posts'][i]['deal_info']['size'],
+                  sid: json['posts'][i]['sid'],
+                  cid: json['posts'][i]['cid']
+               }
                arrOrder.push(x)
             }
 
@@ -5001,8 +5115,31 @@ function getOrderArr() {
    }
    else {
 
+      $.ajax({
+         type: 'GET',
+         url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCart&uuid=" + UUID + "&format=json",
 
-      $('.loginProfileShop').hide()
+         cache: false,
+         success: function (json) {
+            arrOrder = []
+            var x
+            for (var i = 0; i < json['posts'].length; i++) {
+               x = {
+                  id: json['posts'][i]['deal_info']['id'],
+                  qty: json['posts'][i]['qty'],
+                  price: json['posts'][i]['deal_info']['current'],
+                  color: json['posts'][i]['deal_info']['color'],
+                  size: json['posts'][i]['deal_info']['size'],
+                  sid: json['posts'][i]['sid'],
+                  cid: json['posts'][i]['cid']
+               }
+               arrOrder.push(x)
+            }
+
+            //console.log(arrOrder)
+         }
+      })
+      // $('.loginProfileShop').hide()
 
 
    }
@@ -5093,7 +5230,9 @@ function SubmitOrder() {
       // },
       success: function (json) {
          //console.log(url)
-
+         console.log("https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
+            "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
+            "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json")
          // console.log(json)
          alert_Reload(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
          // alert()
@@ -5287,7 +5426,7 @@ function getMyOrder(id) {
    $.ajax({
       type: 'GET',
       url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getMyOrders&customer_id=" + localStorage.buitandaUserID + "&format=json",
-      cache:false,
+      cache: false,
       success: function (json) {
          console.log(json)
          $('.MyOrderTitle').html(if_lang('Order Details', 'detalhes do pedido'))
@@ -5906,10 +6045,7 @@ function RegisterTillCheckout() {
                         alert(if_lang("please enter password", 'por favor digite a senha'))
                      }
 
-                     else {
-                        if (!$('.conditions').prop('checked')) {
-                           alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
-                        } else {
+                   else {
                            $.ajax({
                               type: 'POST',
                               url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=registration&name=' + name + '&email=' + Email + '&version=' + versionApplication + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
@@ -5934,14 +6070,17 @@ function RegisterTillCheckout() {
                                     notesORder = note
                                     phoneOrder = mobile
                                     AddressOrder = adddres
+                                    updateUUIDtoCustomerID(json['posts'][0])
+                   
+                                    GetShipping()
                                     go_to_page('SubmitOrder')
-
+                  
+ 
                                  }
                                  hideIndicator()
                               }
                            });
-
-                        }
+ 
                      }
 
                   }
@@ -5990,7 +6129,7 @@ function popLogin() {
          ' <div class="item-title item-label passwordLoginsLable">password</div>' +
 
          ' <div class="item-input-wrap">' +
-         '<input class="passwordLoginss"  type="password" placeholder=" " name="name">' +
+         '<input class="passwordLoginss "  type="password" placeholder=" " name="name">' +
          ' <span class="input-clear-button"></span>' +
          '</div>' +
          ' </div>' +
@@ -6001,7 +6140,7 @@ function popLogin() {
 
          '</div> ' +
          '<div style="text-align:-webkit-center">' +
-         '   <button class="col button button-raised button-fill" id="loginbtn" style="width: 26vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="loginTillCheckout()">Login   </button>' +
+         '   <button class="popup-close col button button-raised button-fill" id="loginbtn" style="width: 26vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="loginTillCheckout()">Login   </button>' +
          '     </div>' +
          //  '<div class="block block-strong">' + if_lang(json['posts'][0].description, json['posts'][0].ardescription) + '</div>' +
          '</div>' +
@@ -6049,10 +6188,12 @@ function loginTillCheckout() {
                   notesORder = ''
                   phoneOrder = json['posts'][0]['phoneNumber']
                   AddressOrder = json['posts'][0]['address']
-                  updateUUIDtoCustomerID (json['posts'][0]['id'])
-                  go_to_page('CheckOutFirst')
+                  updateUUIDtoCustomerID(json['posts'][0]['id'])
+                  localStorage.buitandaUserID = json['posts'][0]['id']
+                  localStorage.buitandaUserType = json['posts'][0]['user_type']
 
-
+                  GetShipping()
+                  go_to_page('SubmitOrder')
 
                }
                else {
@@ -6111,16 +6252,16 @@ function getNewProductDetails() {
 
 
 
-function updateUUIDtoCustomerID (id){
+function updateUUIDtoCustomerID(id) {
    $.ajax({
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=update&format=json&table=cart&columns=uuid='"+UUID+"'&condition=customer_id="+id+"",
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=guestToCustomer&uuid=' + UUID + '&id=' + id + '&format=json',
       cache: false,
 
       success: function (json) {
          console.log('uuid ---- > ' + UUID)
-         console.log('id ----- > '+ id)
-        
+         console.log('id ----- > ' + id)
+
       }
    });
 }

@@ -624,8 +624,8 @@ p , h2 , h1 ,h4 , div,  span {
 
 
 .size_box{
-  height: 4vh;
-  width: 4vh;
+  height: auto;
+  width: 5vh;
   margin-right: 2vh;
   border: 1px solid black;
   text-align: center;
