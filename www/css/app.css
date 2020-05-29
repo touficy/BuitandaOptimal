@@ -630,3 +630,44 @@ p , h2 , h1 ,h4 , div,  span {
   border: 1px solid black;
   text-align: center;
 }
+.catParentStyle{
+display: inline-flex;
+overflow-x: scroll;
+height: 24vh;
+margin-top: 0;
+align-items: center;
+overflow-y: hidden;
+
+}
+
+.catChildStyle
+{
+  background-color: #dcf2fc;
+  width:max-content;
+  padding: 5px;
+  
+  border-radius: 11px;
+  height: 8vh;
+}
+
+.containerCat{
+  height: 14vh;
+  margin-left: 4vw;
+}
+
+.TextCat{
+  word-break: break-word;
+  text-align: center;
+  font-size: 10px;
+  margin:0
+}
+.subCat{
+  /* background-color: #dcf2fc; */
+   background-image: url("../img/blue-shape.png");
+  margin-bottom :1vh;
+  border-radius: 10px;
+}
+.textSubCat{
+  word-break: break-word;
+  font-size: 12px;
+}

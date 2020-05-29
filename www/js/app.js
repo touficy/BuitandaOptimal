@@ -1740,6 +1740,7 @@ function getAllCategory() {
 
 
       success: function (json) {
+         console.log('in all cat')
          //alert(json['posts'][0]['description']);
          //  //console.log('json ')
          //  console.log(json)
@@ -1747,24 +1748,35 @@ function getAllCategory() {
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
+            if (i == 0 ){
+               getSubCategory( json['posts'][i]['id'])
+            }
+
+            li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
+          '  <div class="catChildStyle">'+
+          ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
+                      '</div>'+
+          '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>'+
+      '   </div>'
+
+            // li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
+            //    ' <a > ' +
 
 
-            li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
-               ' <a > ' +
+            //    ' <img class="img-cat" src="' + json['posts'][i]['icon'] + '"  style=" "  >' +
 
+            //    // '<div class="white" style="margin-bottom:2vh ; margin-top: -4px">'+
+            //    ' <p class="margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '  </p>' +
+            //    //   ' </div>'+
+            //    '  </a>' +
 
-               ' <img class="img-cat" src="' + json['posts'][i]['icon'] + '"  style=" "  >' +
+            //    '</div>'
 
-               // '<div class="white" style="margin-bottom:2vh ; margin-top: -4px">'+
-               ' <p class="margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '  </p>' +
-               //   ' </div>'+
-               '  </a>' +
-
-               '</div>'
 
          }
 
-         $('.AllCat').append(li)
+         $('.catParentStyle').html(li)
+
       }
    });
 
@@ -1775,19 +1787,19 @@ function getAllCategory() {
 
 function getCategoryProduct(id, name) {
    CategoryIdSearch = id
-
+   
 
    $.ajax({
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsBySubCategory&sub_category="+id+"&format=json",
 
 
       success: function (json) {
          // //console.log(name)
          console.log(json)
+if (json['posts'][0] != 0){ 
 
-
-         $('.titleCategory').html(if_lang(json['posts'][0]['category_name'], json['posts'][0]['category_name_port']))
+         $('.titleCategory').html(if_lang(json['posts'][0]['sub_category_name'], json['posts'][0]['sub_category_name_port']))
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -1843,8 +1855,14 @@ function getCategoryProduct(id, name) {
          start = start + 8
          end = end + 8
 
-         $('.CatProd').append(li)
+         $('.CatProd').html(li)
       }
+
+      else{
+         console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+   }
    });
 
 
@@ -6261,6 +6279,36 @@ function updateUUIDtoCustomerID(id) {
       success: function (json) {
          console.log('uuid ---- > ' + UUID)
          console.log('id ----- > ' + id)
+
+      }
+   });
+}
+
+
+
+function getSubCategory(id){
+   $.ajax({
+      type: 'GET',
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getSubCategories&parent='+id+'&format=json',
+      cache: false,
+
+      success: function (json) {
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+         li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
+               ' <a style="display:inline-flex;align-items:center;height: 12vh;"> ' +
+
+               ' <p class="margin-white paddig-product textSubCat" style="color:black;"> ' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '  </p>' +
+
+               ' <img class="" src="' + json['posts'][i]['icon'] + '"  style=" width:10vh"  >' +
+
+               // '<div class="white" style="margin-bottom:2vh ; margin-top: -4px">'+
+               //   ' </div>'+
+               '  </a>' +
+
+               '</div>'
+            }
+            $('.AllCat').html(li)
 
       }
    });
