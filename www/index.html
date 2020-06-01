@@ -19,7 +19,6 @@
 	<link rel="stylesheet" href="css/framework7-icons.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="apple-touch-icon" href="img/m_favicon.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
 	<link rel="icon" href="img/m_favicon.png">
 	<title>home</title>
 </head>
@@ -118,31 +117,12 @@
 
 				<div class="tabs tabs-routable">
 					<div class="page-content tab tab-active" id="tab1">
-					
 
 						<div class="swiper-container swiper-banners  news-slide">
 							<div class="swiper-wrapper">
 							</div>
 						</div>
-						 
-						<div class="row brands">
-							<!-- <div class="col-20">
-								<img src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/brands/thumb/5ed0f359254a219_brands.jpg" style="width: 100%;">
-							</div>
-							<div class="col-20">
-								<img src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/brands/thumb/5ed0f359254a219_brands.jpg" style="width: 100%;">
-							</div>
-							<div class="col-20">
-								<img src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/brands/thumb/5ed0f359254a219_brands.jpg" style="width: 100%;">
-							</div>
-							<div class="col-20">
-								<img src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/brands/thumb/5ed0f359254a219_brands.jpg" style="width: 100%;">
-							</div>
-							<div class="col-20">
-								<img src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/brands/thumb/5ed0f359254a219_brands.jpg" style="width: 100%;">
-							</div> -->
 
-						</div>
 
 
 
@@ -180,13 +160,7 @@
 
 						</div>
 
-						<div>
-							<div class="row homeboxes" style="justify-content:space-evenly">
-							
-							</div>
-						</div>
-
-						<!-- <div class="padding-swiper ContainerSwiper" style="background-color: white;">
+						<div class="padding-swiper ContainerSwiper" style="background-color: white;">
 							<div class="margin-swip">
 								<h3 style="margin: unset;" class="BEST_SELLER">BEST SELLER </h3>
 								<img src="img/png-black-line.png" class="imageLine">
@@ -198,26 +172,13 @@
 								</div>
 							</div>
 
-						</div> -->
-
-						<div class="padding-swiper ContainerSwiper" style="background-color: white;">
-							<div class="margin-swip">
-								<h3 style="margin: unset;" class="Selected_FOR_YOU">  </h3>
-								<img src="img/png-black-line.png" class="imageLine">
-							</div>
-							<div class="swiper-container swiper-Selected_FOR_YOU  news-slide">
-
-								<div class="swiper-wrapper">
-
-								</div>
-							</div>
-
 						</div>
+
 					</div>
 
 
 					<div class="page-content tab" id="tab2">
-						<div  style="overflow-x: auto;">
+						<div  class="scrollbar" style="overflow-x: auto;">
 						<div class="catParentStyle">
 						 
 							<div class="containerCat">
@@ -469,7 +430,6 @@
 	<script src="js/routes.js"></script>
 
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
 
 	<script src="js/app.js"></script>
@@ -486,13 +446,12 @@
 
 
 		}
-		getbrandHome ()
+
 		getLatestDeal()
-		getHomeBoxes()
-		getSelectedForYOu()
+
 		getBanners()
 		getAuctionHome()
-		// getBestSeller()
+		getBestSeller()
 		//Category
 		getAllCategory()
 		//Auction
@@ -504,9 +463,7 @@
 		$('.PROFILETab').html(if_lang('PROFILE', 'PERFIL'))
 		$('.LATEST_DEALS').html(if_lang('Deals of Day ', 'Ofertas do Dia'))
 		$('.AUCTIONS').html(if_lang('AUCTIONS', 'LEILÕES'))
-		$('.Selected_FOR_YOU').html(if_lang('Selected FOR YOU', 'Selecionado PARA VOCÊ'))
 		$('.BEST_SELLER').html(if_lang('BEST SELLER', 'MAIS VENDIDOS'))
-
 		$('.CLOSED_DEALS').html(if_lang('CLOSED DEALS', 'OFERTAS FECHADAS'))
 		$('.HomePic').attr('src', 'img/Home blue.svg')
 		//profile 
@@ -539,12 +496,6 @@
 		const dateTwoObj = new Date(dateTwo);
 		const milliseconds = Math.abs(dateTwoObj - dateOneObj);
 		const hours = milliseconds / 36e5;
-		$("#rateYo").rateYo({
-                halfStar: true,
-                onSet: function(rating, rateYoInstance) {
-                    $('#rating_input').val(rating); //setting up rating value to hidden field
-                }
-            });
 
 		get_timeDifference()
 		// localStorage.buitandaUserID=162
