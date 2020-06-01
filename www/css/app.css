@@ -634,6 +634,7 @@ p , h2 , h1 ,h4 , div,  span {
 display: inline-flex;
 overflow-x: scroll;
 height: 24vh;
+overflow: visible;
 margin-top: 0;
 align-items: center;
 overflow-y: hidden;
