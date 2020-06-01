@@ -23,13 +23,13 @@ var routes = [
   },
   {
     path: '/CategoryBrand/:id/',
-    url: './pages/Category.html',
-    name: 'Category',
+    url: './pages/CategoryBrand.html',
+    name: 'CategoryBrand',
   },
   {
     path: '/CategoryTag/:id/',
-    url: './pages/Category.html',
-    name: 'Category',
+    url: './pages/CategoryTag.html',
+    name: 'CategoryTag',
   },
   
   {

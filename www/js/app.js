@@ -426,6 +426,7 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
    getBestSeller()
    // getClosettDeal()
    getBanners()
+   getHomeBoxes()
    getMyCard()
    // profile
    if (Checklogin()) {
@@ -1439,30 +1440,95 @@ function getBestSeller() {
 
 
       success: function (json) {
-         //alert(json['posts'][0]['description']);
-         //  //console.log('json ')
-         //console.log(json)
+        
          var mySwiper = app.swiper.create('.swiper-bestSeller', {
             slidesPerView: 'auto',
-            // autoplay: {
-            //     delay: 3000,
-            // },
+       
             speed: 100,
             paginationClickable: true,
             spaceBetween: 10,
             watchSlidesProgress: true
          });
 
-         //  var mySwiper = app.swiper.create('.swiper-letest', {
-         //    slidesPerView: '3',
-         //    // autoplay: {
-         //    //    delay: 3000,
-         //    // }, 
-         //    speed: 50,
-         //    paginationClickable: true,
-         //    spaceBetween: 10,
-         //    watchSlidesProgress: true
-         // });
+       
+         var x = 'ahmed samir'
+
+         if (flagSwip == 0) {
+
+            for (var i = 0; i < json['posts'].length; i++) {
+
+               mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                  '  <img class="imageSwiper" src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
+
+                  '   <div>' +
+                  '   <div class ="length-p">' +
+
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+
+                  '   <span class="spanHome">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+
+
+                  ' </div>' +
+                  '  </div>');
+               mySwiper.update();
+            }
+         }
+         else {
+            for (var i = 0; i < json['posts'].length; i++) {
+
+               mySwiper[flagSwip].addSlide(i, '<div class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                  '  <img class="imageSwiper" src="' + json['posts'][i]['image'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
+
+                  '   <div>' +
+                  '   <div class ="length-p">' +
+
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+
+                  '   <span class="spanHome">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+
+
+                  ' </div>' +
+                  '  </div>');
+               mySwiper[flagSwip].update();
+            }
+         }
+
+      }
+   });
+
+
+}
+
+
+function getSelectedForYOu() {
+   $.ajax({
+      type: 'GET',
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsByTag&tagId=3&format=json",
+      cache: false,
+
+
+      success: function (json) {
+        
+         var mySwiper = app.swiper.create('.swiper-Selected_FOR_YOU', {
+            slidesPerView: 'auto',
+       
+            speed: 100,
+            paginationClickable: true,
+            spaceBetween: 10,
+            watchSlidesProgress: true
+         });
+
+       
          var x = 'ahmed samir'
 
          if (flagSwip == 0) {
@@ -2215,7 +2281,7 @@ function getProduct(id, title) {
                      ' <input type="hidden" id="size_id" name="" value="-1"> ' +
                      '<div style="display:flex; margin-top:2vh" class="descP margin-top-p sizes">  <p class="descP margin-top-p" style="margin-left:0;margin-right:1vh"> size </p> '
                }
-               li = li + '<div class="size_box" data-size="' + json['posts'][0]['colors'][i]['sizeid'] + '" >' + json['posts'][0]['sizes'][i]['sizeName'] + ' </div>'
+               li = li + '<div class="size_box" data-size="' + json['posts'][0]['sizes'][i]['sizeid'] + '" >' + json['posts'][0]['sizes'][i]['sizeName'] + ' </div>'
 
 
 
@@ -6573,5 +6639,60 @@ function getSubCategory(id){
       }
    });
 }
+
+ 
+
+ function getHomeBoxes (){
+   $.ajax({
+      type: 'GET',
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getHomepageBoxes&format=json',
+      cache: false,
+
+      success: function (json) {
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+            if(i == 0 ){
+            li = li+	'<div class="col-100" onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+
+                     }
+       else{
+         li = li +'  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+      }
+            }
+           
+            $('.homeboxes').html(li)
+
+      }
+   });
+   
+
+ 
+ }
+
+ 
+
+ function getbrandHome (){
+   $.ajax({
+      type: 'GET',
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getHomepageBrands&format=json',
+      cache: false,
+
+      success: function (json) {
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+         
+      
+         li = li +'  <div class="col-20"  onclick="go_to_page_two_params(' + "'" + 'CategoryBrand' + "'" + ',' + json['posts'][i]['id'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+    
+            }
+           
+            $('.brands').html(li)
+
+      }
+   });
+   
+
+ 
+ }
 
  
