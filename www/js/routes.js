@@ -39,6 +39,12 @@ var routes = [
   },
   
   {
+    path: '/review/',
+    url: './pages/review.html',
+    name: 'review',
+  },
+  
+  {
     path: '/MyAuction/',
     url: './pages/MyAuction.html',
     name: 'MyAuction',
