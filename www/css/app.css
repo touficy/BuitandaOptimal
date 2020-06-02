@@ -559,7 +559,7 @@ max-width: 120px;
 }
 
 p , h2 , h1 ,h4 , div,  span {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .cart_off_nav{
   width:25px;
@@ -684,4 +684,9 @@ overflow-y: hidden;
  
   background-color: #32c2ff;
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.reviewDesc{
+  margin-bottom: 1vh;
+  font-weight: bolder;
 }

@@ -599,6 +599,14 @@ $$(document).on('page:init', '.page[data-name="ResetPassword"]', function (e) {
 })
 
 
+$$(document).on('page:init', '.page[data-name="review"]', function (e) {
+   
+
+   getProductReview()
+   $('.titlereview').html(if_lang('review ', ' Reveja'))
+   console.log('hello')
+
+})
 $$(document).on('page:init', '.page[data-name="verifyCode"]', function (e) {
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
@@ -1529,26 +1537,25 @@ function getSelectedForYOu() {
          });
 
        
-         var x = 'ahmed samir'
-
+ 
          if (flagSwip == 0) {
-
-            for (var i = 0; i < json['posts'].length; i++) {
-
-               mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+ 
+            for (var i = 0; i < json['posts']['products'].length; i++) {
+               
+               mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                  '  <img class="imageSwiper" src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  '  <img class="imageSwiper" src="' + json['posts']['products'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
 
                   '   <div>' +
                   '   <div class ="length-p">' +
 
-                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' <p class="pSwiper">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '</p>' +
                   ' </div>' +
 
-                  '   <span class="spanHome">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+                  '   <span class="spanHome">  ' + json['posts']['products'][i]['current'] + ' KWZ</span>' +
 
 
                   ' </div>' +
@@ -1556,30 +1563,7 @@ function getSelectedForYOu() {
                mySwiper.update();
             }
          }
-         else {
-            for (var i = 0; i < json['posts'].length; i++) {
-
-               mySwiper[flagSwip].addSlide(i, '<div class="swiper-slide" style="width:34vw; " >' +
-                  '<div class="Height-width" > ' +
-                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                  '  <img class="imageSwiper" src="' + json['posts'][i]['image'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
-                  ' </div>' +
-                  ' </div>' +
-
-                  '   <div>' +
-                  '   <div class ="length-p">' +
-
-                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
-                  ' </div>' +
-
-                  '   <span class="spanHome">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
-
-
-                  ' </div>' +
-                  '  </div>');
-               mySwiper[flagSwip].update();
-            }
-         }
+    
 
       }
    });
@@ -1879,56 +1863,39 @@ function getCategoryProduct(id, name) {
    $.ajax({
       type: 'GET',
       url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsBySubCategory&sub_category="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
- 
+      cache:false,
       success: function (json) {
+         $('.titleCategory').html(if_lang(json['posts']['sub_category_name'], json['posts']['sub_category_name_port']))
+
          // //console.log(name)
          console.log(json)
-if (json['posts'][0] != 0){ 
+if (json['posts']['products'].length != 0){ 
 
-         $('.titleCategory').html(if_lang(json['posts'][0]['sub_category_name'], json['posts'][0]['sub_category_name_port']))
 
          var li = ''
-         for (var i = 0; i < json['posts'].length; i++) {
-            if (json['posts'][0] == 0) {
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
                //   endFlash = json['response']['result'].length
 
                app.infiniteScroll.destroy('.infinite-scroll-content');
                $$('.infinite-scroll-preloader').hide();
             }
             else {
-               if (json['posts'].length < 8) {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
 
                }
-               // li = li + '<div class="col-30"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['title'], json['posts'][i]['title']) + "'" + ')" >' +
-               //    ' <a > ' +
-
-               //    '<div class="white height_cat_prod" style=" display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-               //    ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style=" ">' +
-               //    '</div>' +
-               //    '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-               //    '   <div class ="length-p">' +
-
-               //    ' <p class=" lineP margin-white paddig-product" style="color:black; font-size:11px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '  </p> ' +
-
-               //    ' </div>' +
-               //    ' <span style="font-size:12px">' + json['posts'][i]['current'] + ' KWZ</span> ' +
-
-               //    ' </div>' +
-
-               //    '  </a>' +
-
-               //    '</div>'
-               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+            
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
-                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
                   '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
                   ' </h5>' +
 
                   ' </div>' +
@@ -1966,52 +1933,35 @@ function getParentCategoryProduct(id, name) {
       success: function (json) {
          // //console.log(name)
          console.log(json)
-if (json['posts'][0] != 0){ 
+         $('.titleParentCategoryProduct').html(if_lang(json['posts']['category_name'], json['posts']['category_name_port']))
 
-         $('.titleParentCategoryProduct').html(if_lang(json['posts'][0]['category_name'], json['posts'][0]['category_name_port']))
+if (json['posts']['products'].length != 0){ 
+
 
          var li = ''
-         for (var i = 0; i < json['posts'].length; i++) {
-            if (json['posts'][0] == 0) {
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
                //   endFlash = json['response']['result'].length
 
                app.infiniteScroll.destroy('.infinite-scroll-content');
                $$('.infinite-scroll-preloader').hide();
             }
             else {
-               if (json['posts'].length < 8) {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
 
                }
-               // li = li + '<div class="col-30"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ',' + "'" + if_lang(json['posts'][i]['title'], json['posts'][i]['title']) + "'" + ')" >' +
-               //    ' <a > ' +
-
-               //    '<div class="white height_cat_prod" style=" display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-               //    ' <img class="img-product" src="' + json['posts'][i]['thumb'] + '"  style=" ">' +
-               //    '</div>' +
-               //    '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-               //    '   <div class ="length-p">' +
-
-               //    ' <p class=" lineP margin-white paddig-product" style="color:black; font-size:11px"> ' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '  </p> ' +
-
-               //    ' </div>' +
-               //    ' <span style="font-size:12px">' + json['posts'][i]['current'] + ' KWZ</span> ' +
-
-               //    ' </div>' +
-
-               //    '  </a>' +
-
-               //    '</div>'
-               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+        
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
-                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
                   '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
                   ' </h5>' +
 
                   ' </div>' +
@@ -2047,36 +1997,37 @@ function getCategoryProductBrand(id, name) {
       cache:false,
 
       success: function (json) {
+         $('.titleCategoryBrand').html(json['posts'] ['brand_name'])
+
          // //console.log(name)
          console.log(json)
-if (json['posts'][0] != 0){ 
+if (json['posts']['products'].length != 0){ 
 
-         $('.titleCategoryBrand').html(if_lang(json['posts'][0]['sub_category_name'], json['posts'][0]['sub_category_name_port']))
 
          var li = ''
-         for (var i = 0; i < json['posts'].length; i++) {
-            if (json['posts'][0] == 0) {
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
                //   endFlash = json['response']['result'].length
 
                app.infiniteScroll.destroy('.infinite-scroll-content');
                $$('.infinite-scroll-preloader').hide();
             }
             else {
-               if (json['posts'].length < 8) {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
 
                }
                 
-               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
-                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
                   '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
                   ' </h5>' +
 
                   ' </div>' +
@@ -2109,7 +2060,7 @@ function getCategoryProductTag(id, name) {
 
    $.ajax({
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsByTag&tagId="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsByTag&tagId="+id+"&lang="+localStorage.BuitLang+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
       cache:false,
 
       success: function (json) {
@@ -2117,32 +2068,32 @@ function getCategoryProductTag(id, name) {
          console.log(json)
 if (json['posts'][0] != 0){ 
 
-         $('.titleCategoryTag').html(if_lang(json['posts'][0]['sub_category_name'], json['posts'][0]['sub_category_name_port']))
+         $('.titleCategoryTag').html(json['posts']['tag_name'])
 
          var li = ''
-         for (var i = 0; i < json['posts'].length; i++) {
-            if (json['posts'][0] == 0) {
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
                //   endFlash = json['response']['result'].length
 
                app.infiniteScroll.destroy('.infinite-scroll-content');
                $$('.infinite-scroll-preloader').hide();
             }
             else {
-               if (json['posts'].length < 8) {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
 
                }
                 
-               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
-                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + ' </p>' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
                   '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts'][i]['current'] + ' KWZ</span> ' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
                   ' </h5>' +
 
                   ' </div>' +
@@ -6696,3 +6647,162 @@ function getSubCategory(id){
  }
 
  
+
+ function getProductReview (){
+
+   $.ajax({
+      type: 'GET',
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getCustomerReviews&customerId='+localStorage.buitandaUserID+'&format=json',
+      cache: false,
+
+      success: function (json) {
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+         
+            if (i == 0 ){
+               li = li +   '<div class="reviewDesc col-30">#'+if_lang('produtos','product')+'</div>'+
+           '    <div class="reviewDesc col-30">'+if_lang('review','Reveja')+'</div>'+
+               '<div class="reviewDesc col-20">'+if_lang('rate','taxa')+'</div>'+
+             '  <div class="reviewDesc col-20">'+if_lang('action','açao')+'</div>'
+            }
+            if (json['posts'][i]['review'] == false){
+               li = li +   '<div class="col-30"  style ="margin-bottom:4vh">'+json['posts'][i]['title'] +'</div>'+
+               '  <div class="col-30">'+if_lang('not reviewed yet','ainda não revisado')+'</div>'+
+              '   <div class="col-20">'+if_lang('not rated yet','ainda não avaliado')+'</div>'+
+                ' <div class="col-20"><i class="f7-icons" onclick="popReview('+json['posts'][i]['id']+','+json['posts'][i]['deel_id']+')">star</i></div>'
+         }
+         else {
+            li = li +   '<div class="col-30" style ="margin-bottom:4vh">'+json['posts'][i]['title'] +'</div>'+
+            '  <div class="col-30">'+json['posts'][i]['review']['review'] +'</div>'+
+           '   <div class="col-20">'+json['posts'][i]['review']['rate'] +'</div>'+
+             ' <div class="col-20"><i class="f7-icons" onclick="Deletereviewproduct('+json['posts'][i]['id']+')">star_fill</i></div>'
+          
+         }
+            }
+
+            $('.reviewsClient').html(li)
+ 
+      }
+   });
+   
+
+ 
+
+ }
+
+ 
+var rate =0
+ function reviewproduct (id , deel_id){
+   $.ajax({
+      type: 'GET',
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=addProductReview&productId='+id+'&dealId='+deel_id+'&customerId='+localStorage.buitandaUserID+'&review='+$('.reviewCust').val()+'&rate='+rate+'&format=json',
+      cache: false,
+
+      success: function (json) {
+      
+         getProductReview()
+      }
+   });
+   
+
+ 
+
+ }
+ 
+
+ function Deletereviewproduct (id){
+
+   $.ajax({
+      type: 'GET',
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=removeProductReview&productId='+id+'&customerId='+localStorage.buitandaUserID+'&format=json',
+      cache: false,
+
+      success: function (json) {
+         getProductReview()
+      }
+   });
+   
+
+ 
+
+ }
+
+
+
+
+ 
+function popReview(id ,deal_id) {
+ 
+  
+   app.popup.create({
+      content: '<div class="popup" style=" overflow-y:scroll; height:56vh;margin-top:28vh">' +
+         '<div style="text-align:end; margin:1vh">' +
+         '<img class="popup-close"  src="img/close.svg" onclick="destroy()">' +
+         '</div>' +
+         '<div class="page-content grey-bk" style="height: 50%; overflow:initial">' +
+         //  '<div>product </div>'+
+         //  '<div class="row">'+
+         //  '<div class="col-30"> rate </div>'+
+         // '   <div class="col-70" style="display:inline-block;" id="rateYo"></div>'+
+      	// '<input type="hidden" name="rating" id="rating_input" value="" />'+
+
+         //  '</div>'+
+               '   <div class="card" style="box-shadow:unset">'+
+     '    <div class="card-header">'+if_lang('product review' ,'revisão do Produto')+'</div>'+
+        ' <div class="card-content card-content-padding">'+
+        '<div class="row">'+
+         '<div class="col-30"> rate </div>'+
+        '   <div class="col-70 rateYo" style="display:inline-block;"  id="rateYo"></div>'+
+        '<input type="hidden" name="rating" id="rating_input" value="" />'+
+
+         '</div>'+
+        ' <div class="list no-hairlines-md" style="margin-top: 2vh;">'+
+      '   <ul  >'+
+      '   <li class="item-content item-input">'+
+         '<div class="item-inner">'+
+          '<div class="item-title item-label MsgCLable">Review</div>'+
+
+         '  <div class="item-input-wrap">'+
+          '  <textarea style="border:1px solid gray; margin-top:1vh" rows="4" cols="50" class="reviewCust" placeholder=" "></textarea>'+
+
+         
+        '    <span class="input-clear-button"></span>'+
+  
+         ' </div>'+
+     '   </div>'+
+     ' </li>'+
+      '</ul>'+
+     '</div>'+
+        '</div>'+
+        ' <div class="card-footer">'+
+        '<div style="margin-left:auto">' +
+        '   <button class="popup-close col button button-raised button-fill" id="loginbtn" style="width: 42vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="reviewproduct('+id+','+deal_id+')">'+if_lang('Submit review' ,'Enviar revisão')+'   </button>' +
+        '     </div>' +
+        '</div>'+
+        ' </div>'+
+        
+         //  '<div class="block block-strong">' + if_lang(json['posts'][0].description, json['posts'][0].ardescription) + '</div>' +
+         '</div>' +
+         '</div>',
+         on: {
+            opened: function () {
+               $("#rateYo").rateYo({
+                  halfStar: true,
+                  onChange : function(rating, rateYoInstance) {
+                     rate = rating
+            
+                      $('#rating_input').val(rating); //setting up rating value to hidden field
+                   }
+              });            }
+          },
+   }).open();
+
+
+  
+  
+ 
+
+}
+function destroy (){
+   app.popup.destroy()
+}
