@@ -6667,13 +6667,13 @@ function getSubCategory(id){
              '  <div class="reviewDesc col-20">'+if_lang('action','açao')+'</div>'
             }
             if (json['posts'][i]['review'] == false){
-               li = li +   '<div class="col-30"  style ="margin-bottom:4vh">'+json['posts'][i]['title'] +'</div>'+
+               li = li +   '<div class="col-30"  style ="margin-bottom:4vh"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">'+json['posts'][i]['title'] +'</div>'+
                '  <div class="col-30">'+if_lang('not reviewed yet','ainda não revisado')+'</div>'+
               '   <div class="col-20">'+if_lang('not rated yet','ainda não avaliado')+'</div>'+
                 ' <div class="col-20"><i class="f7-icons" onclick="popReview('+json['posts'][i]['id']+','+json['posts'][i]['deel_id']+')">star</i></div>'
          }
          else {
-            li = li +   '<div class="col-30" style ="margin-bottom:4vh">'+json['posts'][i]['title'] +'</div>'+
+            li = li +   '<div class="col-30" style ="margin-bottom:4vh" onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">'+json['posts'][i]['title'] +'</div>'+
             '  <div class="col-30">'+json['posts'][i]['review']['review'] +'</div>'+
            '   <div class="col-20">'+json['posts'][i]['review']['rate'] +'</div>'+
              ' <div class="col-20"><i class="f7-icons" onclick="Deletereviewproduct('+json['posts'][i]['id']+')">star_fill</i></div>'
