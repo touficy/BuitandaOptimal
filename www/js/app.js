@@ -603,7 +603,7 @@ $$(document).on('page:init', '.page[data-name="review"]', function (e) {
    
 
    getProductReview()
-   $('.titlereview').html(if_lang('review ', ' Reveja'))
+   $('.titlereview').html(if_lang('reviews ', ' Avaliações'))
    console.log('hello')
 
 })
@@ -1347,7 +1347,7 @@ function Checklogin() {
 
 /* ********************************************************************** /* */
 function getLatestDeal() {
-
+   
    $.ajax({
       type: 'GET',
       url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=latest_deals&format=json",
@@ -6697,6 +6697,7 @@ function getSubCategory(id){
 
  
 var rate =0
+
  function reviewproduct (id , deel_id){
    $.ajax({
       type: 'GET',
