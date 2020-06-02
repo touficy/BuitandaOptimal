@@ -6657,6 +6657,7 @@ function getSubCategory(id){
 
       success: function (json) {
          var li=''
+         if (json['posts']!= null ){
          for(var i = 0 ; i < json['posts'].length ; i++){
          
             if (i == 0 ){
@@ -6681,6 +6682,10 @@ function getSubCategory(id){
             }
 
             $('.reviewsClient').html(li)
+         }
+         else{
+            $('.reviewsClient').html('<p>no product to review now </p>')
+         }
  
       }
    });
