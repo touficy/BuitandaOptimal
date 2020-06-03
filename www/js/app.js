@@ -934,7 +934,7 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
          console.log('loading ---- > ', loading)
 
          loading = false;
-         getCategoryProduct(cat_id, n)
+         getCategoryProduct(cat_id)
 
       }, 1000);
    });
@@ -1007,7 +1007,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
          console.log('loading ---- > ', loading)
 
          loading = false;
-         getCategoryProduct(cat_id, n)
+         getCategoryProduct(cat_id)
 
       }, 1000);
    });
@@ -1043,7 +1043,7 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
          console.log('loading ---- > ', loading)
 
          loading = false;
-         getCategoryProductTag(cat_id, n)
+         getCategoryProductTag(cat_id)
 
       }, 1000);
    });
@@ -1985,7 +1985,7 @@ if (json['posts']['products'].length != 0){
          start = start + 8
          end = end + 8
 
-         $('.CatProd').html(li)
+         $('.CatProd').append(li)
       }
 
       else{
@@ -2051,7 +2051,7 @@ if (json['posts']['products'].length != 0){
          start = start + 8
          end = end + 8
 
-         $('.CatProd').html(li)
+         $('.CatProd').append(li)
       }
 
       else{
@@ -2117,7 +2117,7 @@ if (json['posts']['products'].length != 0){
          start = start + 8
          end = end + 8
 
-         $('.CatProd').html(li)
+         $('.CatProd').append(li)
       }
 
       else{
@@ -2183,7 +2183,7 @@ if (json['posts'][0] != 0){
          start = start + 8
          end = end + 8
 
-         $('.CatProd').html(li)
+         $('.CatProd').append(li)
       }
 
       else{
