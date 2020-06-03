@@ -1841,7 +1841,7 @@ function getAllCategory() {
                li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
                '  <div class="catChildStyle" style="border:2px solid rgb(50, 194, 255);cursor:pointer">'+
                ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
-                           '</div>'+
+                           '</div>'+   
                '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>'+
            '   </div>'
             }
@@ -2297,7 +2297,7 @@ function getProduct(id, title) {
                   '  </div>' +
                   ' <div style="text-align:-webkit-center">' +
 
-                  ' <button class="col button button-raised button-fill" style="width: 35vh; margin: 1vh 0 1vh 0; background-color: #32c2ff;" onclick="addToCard(' + json['posts'][0]['id'] + "," + json['posts'][0]['availumquantity'] + ')">' + if_lang('Add to cart', 'Adicionar ao carrinho') + '  </button>';
+                  ' <button class="col button button-raised button-fill" style="width: 35vh; margin: 1vh 0 1vh 0; background-color: #32c2ff;" onclick="addToCard(' + json['posts'][0]['id'] + "," + json['posts'][0]['availumquantity'] +  "," + json['posts'][0]['miniumquantity'] +  ')">' + if_lang('Add to cart', 'Adicionar ao carrinho') + '  </button>';
             }
             li = li +
                ' <p class="descP margin-top-p desc">' + tempimg + ' </p>';
@@ -4944,12 +4944,17 @@ function getMyCard() {
 
 
 
-function addToCard(id, avilable) {
+function addToCard(id, avilable , minQty) {
    var qty = parseInt($('.avQuantity').html())
    console.log('qty --- > ' + qty)
 
    if (qty == 0 || qty < 0) {
       alert(if_lang('Sorry, Item is not available', 'Desculpe, o item não está disponível'))
+   }
+   else if (avilable < minQty){
+
+      alert(if_lang('no enough quantity to order', 'quantidade suficiente para pedir'))
+
    }
    else {
 
