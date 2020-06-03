@@ -642,7 +642,9 @@ overflow-y: hidden;
 
 .catChildStyle
 {
-  background-color: #dcf2fc;
+  /* background-color: #dcf2fc; */
+  border: 1px solid #e9e9e9;
+cursor: pointer;
   width:max-content;
   padding: 5px;
   
@@ -684,4 +686,35 @@ overflow-y: hidden;
  
   background-color: #32c2ff;
   box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+
+
+.r-graph-scroller {
+  color: #333;
+  list-style: none;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+  font-weight: 700;
+  height: 3px;
+  display: block;
+  background-color: #FF4747;
+  width: 100.0%;
+}
+
+.r-graph {
+  color: #333;
+  list-style: none;
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  float: left;
+  vertical-align: middle;
+  width: 200px;
+  margin: 7px 10px 0 0;
+  height: 3px;
+  background-color: #E9E9E9;
 }

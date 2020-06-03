@@ -118,13 +118,13 @@
 
 				<div class="tabs tabs-routable">
 					<div class="page-content tab tab-active" id="tab1">
-					
+
 
 						<div class="swiper-container swiper-banners  news-slide">
 							<div class="swiper-wrapper">
 							</div>
 						</div>
-						 
+
 						<div class="row brands">
 							<!-- <div class="col-20">
 								<img src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/brands/thumb/5ed0f359254a219_brands.jpg" style="width: 100%;">
@@ -148,7 +148,7 @@
 
 						<div class="padding-swiper ContainerSwiper " style="background-color: white;">
 							<div class="margin-swip">
-								<h3 style="margin: unset;" class="LATEST_DEALS">LATEST DEALS </h3>
+								<h3 style="margin: unset;" onclick="go_to_page_two_params('CategoryTag',5)" class="LATEST_DEALS">LATEST DEALS </h3>
 
 								<img src="img/png-black-line.png" class="imageLine">
 
@@ -164,7 +164,11 @@
 
 						</div>
 
+						<div>
+							<div class="row homeboxes" style="justify-content:space-evenly">
 
+							</div>
+						</div>
 
 						<div class="padding-swiper ContainerSwiper AUCTIONSSwiper" style="background-color: white;">
 							<div class="margin-swip">
@@ -180,11 +184,7 @@
 
 						</div>
 
-						<div>
-							<div class="row homeboxes" style="justify-content:space-evenly">
-							
-							</div>
-						</div>
+
 
 						<!-- <div class="padding-swiper ContainerSwiper" style="background-color: white;">
 							<div class="margin-swip">
@@ -202,7 +202,7 @@
 
 						<div class="padding-swiper ContainerSwiper" style="background-color: white;">
 							<div class="margin-swip">
-								<h3 style="margin: unset;" class="Selected_FOR_YOU">  </h3>
+								<h3 style="margin: unset;" class="Selected_FOR_YOU" onclick="go_to_page_two_params('CategoryTag',3)"> </h3>
 								<img src="img/png-black-line.png" class="imageLine">
 							</div>
 							<div class="swiper-container swiper-Selected_FOR_YOU  news-slide">
@@ -217,57 +217,71 @@
 
 
 					<div class="page-content tab" id="tab2">
-						<div  style="overflow-x: auto; margin-bottom: 3vh;">
-						<div class="catParentStyle">
-						 
-							<div class="containerCat">
-							<div class="catChildStyle">
-								<img class="img-cat" src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png" style=" ">
-							</div>
-							<p class="TextCat" >test</p>
-						</div>
+						<div style="overflow-x: auto; margin-bottom: 3vh;">
+							<div class="catParentStyle">
 
-							<div class="containerCat">
-							<div class="catChildStyle">
-								<img class="img-cat" src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png" style=" ">
-							</div>
-							<p class="TextCat" >test</p>
-						</div>
+								<div class="containerCat">
+									<div class="catChildStyle">
+										<img class="img-cat"
+											src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png"
+											style=" ">
+									</div>
+									<p class="TextCat">test</p>
+								</div>
 
-							<div class="containerCat">
-							<div class="catChildStyle">
-								<img class="img-cat" src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png" style=" ">
-							</div>
-							<p class="TextCat" >test</p>
-						</div>
-							<div class="containerCat">
-							<div class="catChildStyle">
-								<img class="img-cat" src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png" style=" ">
-							</div>
-							<p class="TextCat" >test</p>
-						</div>
-							<div class="containerCat">
-							<div class="catChildStyle">
-								<img class="img-cat" src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png" style=" ">
-							</div>
-							<p class="TextCat" >test</p>
-						</div>
-							<div class="containerCat">
-							<div class="catChildStyle">
-								<img class="img-cat" src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png" style=" ">
-							</div>
-							<p class="TextCat" >test</p>
-						</div>
-							<div class="containerCat">
-							<div class="catChildStyle">
-								<img class="img-cat" src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png" style=" ">
-							</div>
-							<p class="TextCat" >test</p>
-						</div>
-						 
+								<div class="containerCat">
+									<div class="catChildStyle">
+										<img class="img-cat"
+											src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png"
+											style=" ">
+									</div>
+									<p class="TextCat">test</p>
+								</div>
 
+								<div class="containerCat">
+									<div class="catChildStyle">
+										<img class="img-cat"
+											src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png"
+											style=" ">
+									</div>
+									<p class="TextCat">test</p>
+								</div>
+								<div class="containerCat">
+									<div class="catChildStyle">
+										<img class="img-cat"
+											src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png"
+											style=" ">
+									</div>
+									<p class="TextCat">test</p>
+								</div>
+								<div class="containerCat">
+									<div class="catChildStyle">
+										<img class="img-cat"
+											src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png"
+											style=" ">
+									</div>
+									<p class="TextCat">test</p>
+								</div>
+								<div class="containerCat">
+									<div class="catChildStyle">
+										<img class="img-cat"
+											src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png"
+											style=" ">
+									</div>
+									<p class="TextCat">test</p>
+								</div>
+								<div class="containerCat">
+									<div class="catChildStyle">
+										<img class="img-cat"
+											src="https://host.optimalsolutionslebanon.com/~buitandatest/cmsadmin/upload/offerscategories/2565ecfb6e126c13_offerscategories.png"
+											style=" ">
+									</div>
+									<p class="TextCat">test</p>
+								</div>
+
+
+							</div>
 						</div>
-					</div>
 						<div class="row AllSubCat" style="text-align: center;margin:1vh 2vh 0 2vh;">
 
 
@@ -278,7 +292,7 @@
 
 
 					<div class="page-content tab" id="tab3">
-					 
+
 
 						<div class="row AuctionProd" style="text-align: center;margin: 0 2vh 0 2vh;">
 
@@ -399,13 +413,14 @@
 							</ul>
 							<ul class="Logedin" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
 								<li>
-								  <a href="/review/" class="item-link item-content">
-									<div class="item-media"><img  class="img-menu" src="img/review-56.svg"></div>
-									<div class="item-inner">
-									  <div class="font-menu item-title review" style="font-size : 17px; font-weight:bolder"></div>
-									  
-									</div>
-								  </a>
+									<a href="/review/" class="item-link item-content">
+										<div class="item-media"><img class="img-menu" src="img/review-56.svg"></div>
+										<div class="item-inner">
+											<div class="font-menu item-title review"
+												style="font-size : 17px; font-weight:bolder"></div>
+
+										</div>
+									</a>
 								</li>
 							</ul>
 							<ul class="Logedin" style="margin-top: 1vh; box-shadow :0 0px 0 2px lightgrey">
@@ -458,11 +473,11 @@
 								</li>
 							</ul>
 						</div>
-					<div>
-						<p class="versionStyle">
+						<div>
+							<p class="versionStyle">
 								V1.2
-						</p>
-					</div>
+							</p>
+						</div>
 						<div style="margin-top: 12vh;"></div>
 					</div>
 
@@ -474,7 +489,7 @@
 
 	<script src="js/framework7.bundle.min.js"></script>
 	<script src="components/loader.js"></script>
-
+	<script src="js/moment.min.js"></script>
 	<script
 		src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDs6edofOa5lBWicki9wLUqQaG4OGZMGX0&libraries=places"></script>
 	<script src="js/routes.js"></script>
@@ -497,7 +512,7 @@
 
 
 		}
-		getbrandHome ()
+		getbrandHome()
 		getLatestDeal()
 		getHomeBoxes()
 		getSelectedForYOu()
@@ -552,14 +567,33 @@
 		const milliseconds = Math.abs(dateTwoObj - dateOneObj);
 		const hours = milliseconds / 36e5;
 		$("#rateYo").rateYo({
-                halfStar: true,
-                onSet: function(rating, rateYoInstance) {
-                    $('#rating_input').val(rating); //setting up rating value to hidden field
-                }
-            });
+			halfStar: true,
+			onSet: function (rating, rateYoInstance) {
+				$('#rating_input').val(rating); //setting up rating value to hidden field
+			}
+		});
 
 		get_timeDifference()
-		// localStorage.buitandaUserID=575 
+
+
+
+		$(document).on('click', '.catChildStyle', function (event) {
+			console.log('clicked')
+			event.preventDefault();
+			var color = $(this).attr('data-color');
+			console.log('color ----> ' + color)
+			$('#color_id').val(color);
+			$(".catChildStyle").css({
+				'border': '1px solid #e9e9e9',
+				'cursor': 'pointer'
+			});
+			// fetchImage();
+			console.log('color id --- > ' + $('#color_id').val())
+			$(this).css('border', '2px solid #32c2ff');
+
+		 
+		});
+		// localStorage.buitandaUserID=575
 	</script>
 </body>
 

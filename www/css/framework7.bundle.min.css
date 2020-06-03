@@ -11351,7 +11351,8 @@ label.item-radio.disabled {
 
 .row {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: flex-start;
     --f7-cols-per-row: 1

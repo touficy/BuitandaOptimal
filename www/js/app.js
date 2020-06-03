@@ -1052,7 +1052,10 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
 var GloCategoryID = undefined
 var GNameID = ''
 var prodFlag = 0
+var offsit = 5;
 $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, page) {
+ offsit = 5
+ app.infiniteScroll.create('.infinite-scroll-content')
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -1080,7 +1083,21 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
    GloCategoryID = cat_id;
    // GNameID = n
    getProduct(cat_id)
+   
+   var loading = false
+   $$('.infinite-scroll-content').on('infinite', function () {
+      if (loading)
+         return;
+      loading = true;
+      setTimeout(function () {
+         console.log('loading ---- > ', loading)
 
+         loading = false;
+         loadMoreReviews(cat_id)
+
+      }, 1000);
+   });
+  
    $(document).on('click', '.color_box', function (event) {
       console.log('clicked')
       event.preventDefault();
@@ -1521,7 +1538,7 @@ function getBestSeller() {
 function getSelectedForYOu() {
    $.ajax({
       type: 'GET',
-      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsByTag&tagId=3&format=json",
+      url: "https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductsByTag&tagId=3&limit=10&format=json",
       cache: false,
 
 
@@ -2138,6 +2155,7 @@ var sizeID = 0
 
 
 function getProduct(id, title) {
+  
    colorID = 0
    sizeID = 0
 
@@ -2279,9 +2297,111 @@ function getProduct(id, title) {
 
             li = li + '    </div>'
 
+            $('.containerProduct').html(li)
+            console.log('review ' +json['posts'][0]['reviews']['averageRate'])
+            $("#averageRating").rateYo({
+               rating: String (json['posts'][0]['reviews']['averageRate']),
+               readOnly: true,
+               starWidth: "20px",
+           });
+            $('.cusReviews').html(if_lang('customer reviews ('+json['posts'][0]['reviews']['reviews'].length+')' ,
+            'Opinião dos consumidores ('+json['posts'][0]['reviews']['reviews'].length+')'))
+
+             li =  ' <div class="row" style="align-items: center;">'+
+            '<div class="col-20">'+
+               ' 5 stars'+
+           ' </div>'+
+           ' <div class="col-50 r-graph" style="">'+
+            '  <b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['5_stars']+'%;"></b>'+
+          '  </div>'+
+            '<div class="col-20">'+
+            '  <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['5_stars']+'</p>'+
+            '</div>'+
+           
+      '  </div>'+
+  
+       ' <div class="row" style="align-items: center;">'+
+        '  <div class="col-20">'+
+             ' 4 stars'+
+       '   </div>'+
+       '   <div class="col-50 r-graph" style="">'+
+          '  <b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['4_stars']+'%;"></b>'+
+        '  </div>'+
+       '   <div class="col-20">'+
+         '   <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['4_stars']+'</p>'+
+         ' </div>'+
+         
+      '</div>'+
+  
+      '<div class="row" style="align-items: center;">'+
+        '  <div class="col-20">'+
+            '  3 stars'+
+         ' </div>'+
+         ' <div class="col-50 r-graph" style="">'+
+           ' <b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['3_stars']+'%;"></b>'+
+          '</div>'+
+      '    <div class="col-20">'+
+            '<p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['3_stars']+'</p>'+
+         ' </div>'+
+         
+    '  </div>'+
+  
+     ' <div class="row" style="align-items: center;">'+
+          '<div class="col-20">'+
+            '  2 stars'+
+         ' </div>'+
+        '  <div class="col-50 r-graph" style="">'+
+            '<b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['2_stars']+'%;"></b>'+
+        '  </div>'+
+        '  <div class="col-20">'+
+           ' <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['2_stars']+'</p>'+
+         ' </div>'+
+         
+    '  </div>'+
+  
+    '  <div class="row" style="align-items: center;">'+
+         ' <div class="col-20">'+
+        '     1 star'+
+       '   </div>'+
+          '<div class="col-50 r-graph" style="">'+
+            '<b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['1_stars']+'%;"></b>'+
+          '</div>'+
+        '  <div class="col-20">'+
+           ' <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['1_stars']+'</p>'+
+         ' </div>'+
+         
+    '  </div>';
+    $('.StarsReviews').html(li)
+    $('.numAvgReview').html(json['posts'][0]['reviews']['averageRate'] + " / 5")
+
+
+            for (var l =0 ; l < json['posts'][0]['reviews']['reviews'].length; l++ ){
+               li=  '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+              ' <div class="col-40" style="font-weight: bolder;">'+json['posts'][0]['reviews']['reviews'][l]['cname']+'</div>'+
+              ' <div class="col-60 customer-rateDesc_'+json['posts'][0]['reviews']['reviews'][l]['id']+'" ></div>'+
+           '</div>'+
+   
+          ' <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+             '  <div class="col-40" style="font-weight: bolder;"></div>'+
+               '<div class="col-60  " style="font-size: 11px;" ><span style="color:black; font-weight:bold"> color : </span>'+json['posts'][0]['reviews']['reviews'][l]['color']+
+               '<span style="color:black; font-weight:bold">  size : </span>'+json['posts'][0]['reviews']['reviews'][l]['size']+'</div>'+
+         '  </div>'+
+         '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+               '<div class="col-40" style="font-weight: bolder;"></div>'+
+              ' <div class="col-60  " style="font-size: 11px;margin-bottom:2vh" >'+json['posts'][0]['reviews']['reviews'][l]['review']+' '+moment().format(json['posts'][0]['reviews']['reviews'][0]['datetime'])+' </div>'+
+           '</div>'
+               $('.containerReview').append(li)
+               
+  $(".customer-rateDesc_"+json['posts'][0]['reviews']['reviews'][l]['id']).rateYo({
+   rating: "4",
+   readOnly: true,
+   starWidth: "20px",
+});
+            }
+
          }
 
-         $('.containerProduct').html(li)
+      
          $('.info_table').css('width', '100%')
 
          // li=                                 '<img class="imageCategoryProduct" src="'+json['posts'][0]['image']+'" style=" ">'
@@ -3121,7 +3241,16 @@ function RegisterPerson() {
 
                   alert(if_lang("please enter email", 'por favor insira o email'))
                }
+
                else {
+                  if(is_email(Email) == false){
+                     hideIndicator()
+
+                     alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
+                  }
+                  else{
+
+                 
                   if (mobile == '') {
                      hideIndicator()
 
@@ -3187,7 +3316,7 @@ function RegisterPerson() {
 
                         }
                      }
-
+ }
                   }
                }
             }
@@ -3257,6 +3386,12 @@ function RegisterCompany() {
                            alert(if_lang("please enter email", 'por favor insira o email'))
                         }
                         else {
+                           if(is_email(Email) == false){
+                              hideIndicator()
+         
+                              alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
+                           }
+                           else{
                            if (phone == '') {
                               alert(if_lang("please choose phone", 'por favor escolha a telefone'))
 
@@ -3314,6 +3449,7 @@ function RegisterCompany() {
                         }
                      }
                   }
+               }
                }
             }
          }
@@ -3376,6 +3512,12 @@ function RegisterSeller() {
                         }
 
                         else {
+                           if(is_email(Email) == false){
+                              hideIndicator()
+         
+                              alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
+                           }
+                           else{
                            if (phone == '') {
                               alert(if_lang("please choose phone", 'por favor escolha a telefone'))
 
@@ -3415,6 +3557,7 @@ function RegisterSeller() {
                            }
                         }
                      }
+                  }
                   }
                }
             }
@@ -3737,6 +3880,12 @@ function updateProfile() {
                alert(if_lang("please enter email", 'por favor insira o email'))
             }
             else {
+               if(is_email(Email) == false){
+                  hideIndicator()
+
+                  alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
+               }
+               else{
                if (mobile == '') {
                   hideIndicator()
 
@@ -3799,6 +3948,7 @@ function updateProfile() {
                      }
                   }
                }
+            }
             }
          }
       }
@@ -6237,6 +6387,7 @@ function GetShipping() {
    });
 
 }
+
 function getProductCategorySorting() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
@@ -6247,6 +6398,32 @@ function getProductCategorySorting() {
    start = 0
    end = 8
    getCategoryProduct(CategoryIdSearch)
+}
+
+
+function getProductCategoryTagSorting() {
+   app.infiniteScroll.create('.infinite-scroll-content')
+   $$('.infinite-scroll-preloader').show()
+   console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   console.log(sort)
+   $('.CatProd').empty()
+   start = 0
+   end = 8
+   getCategoryProductTag(CategoryIdSearch)
+}
+
+
+function getProductCategoryBrandSorting() {
+   app.infiniteScroll.create('.infinite-scroll-content')
+   $$('.infinite-scroll-preloader').show()
+   console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   console.log(sort)
+   $('.CatProd').empty()
+   start = 0
+   end = 8
+   getCategoryProductBrand(CategoryIdSearch)
 }
 
 
@@ -6317,7 +6494,14 @@ function RegisterTillCheckout() {
 
                   alert(if_lang("please enter email", 'por favor insira o email'))
                }
+               
                else {
+                  if(is_email(Email) == false){
+                     hideIndicator()
+
+                     alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
+                  }
+                  else{
                   if (mobile == '') {
                      hideIndicator()
 
@@ -6370,6 +6554,7 @@ function RegisterTillCheckout() {
 
                   }
                }
+            }
             }
          }
       }
@@ -6812,3 +6997,64 @@ function popReview(id ,deal_id) {
 function destroy (){
    app.popup.destroy()
 }
+
+ 
+
+
+function is_email(email) {
+   var atpos = email.indexOf("@");
+   var dotpos = email.lastIndexOf(".");
+   if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+      console.log('wrong email')
+     return false;
+   }else{
+      console.log('right email')
+
+     return true;
+   }
+ }
+ 
+
+ function loadMoreReviews (id){
+   $.ajax({
+      type: 'GET',
+      url: 'https://host.optimalsolutionslebanon.com/~buitandatest/ws.php?type=getProductReviews&deal_id='+id+'&offset='+offsit+'&format=json',
+      cache: false,
+
+      success: function (json) {
+
+         console.log('legth --- > '+json['posts']['reviews'].length)
+         offsit = offsit +5
+         if (json['posts']['reviews'].length > 0){    
+            for (var l =0 ; l < json['posts']['reviews'].length; l++ ){
+            li=  '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+           ' <div class="col-40" style="font-weight: bolder;">'+json['posts']['reviews'][l]['cname']+'</div>'+
+           ' <div class="col-60 customer-rateDesc_'+json['posts']['reviews'][l]['id']+'" ></div>'+
+        '</div>'+
+
+       ' <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+          '  <div class="col-40" style="font-weight: bolder;"></div>'+
+            '<div class="col-60  " style="font-size: 11px;" ><span style="color:black; font-weight:bold"> color : </span>'+json['posts']['reviews'][l]['color']+
+            '<span style="color:black; font-weight:bold">  size : </span>'+json['posts']['reviews'][l]['size']+'</div>'+
+      '  </div>'+
+      '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+            '<div class="col-40" style="font-weight: bolder;"></div>'+
+           ' <div class="col-60  " style="font-size: 11px;margin-bottom:2vh" >'+json['posts']['reviews'][l]['review']+' '+moment().format(json['posts']['reviews']['datetime'])+' </div>'+
+        '</div>'
+            $('.containerReview').append(li)
+            
+$(".customer-rateDesc_"+json['posts']['reviews'][l]['id']).rateYo({
+rating: "4",
+readOnly: true,
+starWidth: "20px",
+});
+         }}
+         else{
+            $$('.infinite-scroll-preloader').hide();
+            app.infiniteScroll.destroy('.infinite-scroll-content');
+         }
+     
+      }
+   });
+   
+ }
