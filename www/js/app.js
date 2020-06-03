@@ -1838,14 +1838,23 @@ function getAllCategory() {
          for (var i = 0; i < json['posts'].length; i++) {
             if (i == 0 ){
                getSubCategory( json['posts'][i]['id'] )
+               li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
+               '  <div class="catChildStyle" style="border:2px solid rgb(50, 194, 255);cursor:pointer">'+
+               ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
+                           '</div>'+
+               '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>'+
+           '   </div>'
             }
-
-            li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
-          '  <div class="catChildStyle">'+
-          ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
-                      '</div>'+
-          '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>'+
-      '   </div>'
+            
+            else{
+               li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
+               '  <div class="catChildStyle">'+
+               ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
+                           '</div>'+
+               '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>'+
+           '   </div>'
+            }
+         
 
             // li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
             //    ' <a > ' +
