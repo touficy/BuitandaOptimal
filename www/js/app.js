@@ -1459,7 +1459,7 @@ function getLatestDeal() {
       else {
          if (flagSwip == 0) {
 
-            mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+            mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
 
                ' </div> ');
@@ -1469,7 +1469,7 @@ function getLatestDeal() {
          }
          else {
 
-            mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+            mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
 
                ' </div> ');
@@ -1612,7 +1612,7 @@ function getSelectedForYOu() {
          else {
             if (flagSwip == 0) {
    
-               mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+               mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                   '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
    
                   ' </div> ');
@@ -1622,7 +1622,7 @@ function getSelectedForYOu() {
             }
             else {
    
-               mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+               mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                   '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
    
                   ' </div> ');
@@ -1843,7 +1843,7 @@ function getAuctionHome() {
          else {
             if (flagSwip == 0) {
 
-               mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+               mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                   '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
 
                   ' </div> ');
@@ -1853,7 +1853,7 @@ function getAuctionHome() {
             }
             else {
 
-               mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+               mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                   '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
 
                   ' </div> ');
