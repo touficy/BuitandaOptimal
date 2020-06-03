@@ -1398,6 +1398,8 @@ function getLatestDeal() {
          //    watchSlidesProgress: true
          // });
          var x = 'ahmed samir'
+         console.log('legnthhh ---- > ' + json['posts'].length)
+         if (json['posts'][0] !=  0){
 
          if (flagSwip == 0) {
             for (var i = 0; i < json['posts'].length; i++) {
@@ -1452,6 +1454,31 @@ function getLatestDeal() {
             }
          }
 
+      }
+      
+      else {
+         if (flagSwip == 0) {
+
+            mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+               '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
+
+               ' </div> ');
+
+
+            mySwiper.update();
+         }
+         else {
+
+            mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+               '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
+
+               ' </div> ');
+
+
+            mySwiper.update();
+         }
+
+      }
       }
    });
 
@@ -1554,7 +1581,7 @@ function getSelectedForYOu() {
          });
 
        
- 
+         if(json['posts']['products'].length > 0){
          if (flagSwip == 0) {
  
             for (var i = 0; i < json['posts']['products'].length; i++) {
@@ -1581,6 +1608,30 @@ function getSelectedForYOu() {
             }
          }
     
+      }
+         else {
+            if (flagSwip == 0) {
+   
+               mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+                  '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
+   
+                  ' </div> ');
+   
+   
+               mySwiper.update();
+            }
+            else {
+   
+               mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
+                  '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
+   
+                  ' </div> ');
+   
+   
+               mySwiper.update();
+            }
+   
+         }
 
       }
    });
@@ -1793,7 +1844,7 @@ function getAuctionHome() {
             if (flagSwip == 0) {
 
                mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
-                  '<p style ="color:red"> ' + if_lang(' Coming Soon ', 'em breve') + '   </p> ' +
+                  '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
 
                   ' </div> ');
 
@@ -1803,7 +1854,7 @@ function getAuctionHome() {
             else {
 
                mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:17vh; ">' +
-                  '<p style ="color:red"> ' + if_lang(' Coming Soon ', 'em breve') + '   </p> ' +
+                  '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
 
                   ' </div> ');
 
@@ -4103,7 +4154,7 @@ function getAuctionsList() {
             $('.AuctionProd').html(li)
          }
          else {
-            li = '<p style ="color:red"> ' + if_lang(' Coming Soon ', 'em breve') + '   </p> '
+            li = '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> '
             $('.AuctionProd').html(li)
 
          }
@@ -6829,7 +6880,8 @@ function getSubCategory(id){
 
       success: function (json) {
          var li=''
-         for(var i = 0 ; i < json['posts'].length ; i++){
+         if (json['posts'][0] !=  0){
+                     for(var i = 0 ; i < json['posts'].length ; i++){
          
       
          li = li +'  <div class="col-20"  onclick="go_to_page_two_params(' + "'" + 'CategoryBrand' + "'" + ',' + json['posts'][i]['id'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
@@ -6837,6 +6889,7 @@ function getSubCategory(id){
             }
            
             $('.brands').html(li)
+         }
 
       }
    });
