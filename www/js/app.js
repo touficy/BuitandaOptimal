@@ -905,6 +905,7 @@ var end
 var sort = 'default'
 
 $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
+   app.infiniteScroll.create('.infinite-scroll-content')
    start = 0
    end = 8
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
@@ -944,6 +945,7 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
 $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', function (e, page) {
    start = 0
    end = 8
+   app.infiniteScroll.create('.infinite-scroll-content')
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -978,6 +980,7 @@ $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', functio
 })
 
 $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, page) {
+   app.infiniteScroll.create('.infinite-scroll-content')
    start = 0
    end = 8
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
@@ -1014,6 +1017,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
 })
 
 $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page) {
+   app.infiniteScroll.create('.infinite-scroll-content')
    start = 0
    end = 8
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
@@ -1989,6 +1993,8 @@ if (json['posts']['products'].length != 0){
       }
 
       else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
@@ -2055,6 +2061,8 @@ if (json['posts']['products'].length != 0){
       }
 
       else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
@@ -2121,6 +2129,8 @@ if (json['posts']['products'].length != 0){
       }
 
       else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
@@ -2187,6 +2197,8 @@ if (json['posts'][0] != 0){
       }
 
       else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
