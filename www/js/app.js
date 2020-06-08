@@ -1010,7 +1010,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
          console.log('loading ---- > ', loading)
 
          loading = false;
-         getCategoryProduct(cat_id)
+         getCategoryProductBrand(cat_id)
 
       }, 1000);
    });
