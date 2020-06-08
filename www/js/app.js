@@ -1179,7 +1179,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
          'cursor': 'pointer'
       });
       // fetchImage();
-      console.log('color id --- > ' + $('#size_id').val())
+      console.log('sizze id --- > ' + $('#size_id').val())
       $(this).css('border', '2px solid #f90');
 
       if (colorID == 1 && sizeID == 1) {
@@ -2300,12 +2300,13 @@ function getProduct(id, title) {
                // +
                // '  <p class="descP margin-top-p"> saving   <span class="blue-span"> ( '+json['posts'][0]['saving']+'%  )</span> </p>'
             }
+            li = li + ' <input type="hidden" id="color_id" name="" value="0"> ' + ' <input type="hidden" id="size_id" name="" value="0"> ' ;
             for (var i = 0; i < json['posts'][0]['colors'].length; i++) {
 
 
                if (i == 0 && json['posts'][0]['colors'].length > 0) {
                   colorID = 1
-                  li = li + ' <input type="hidden" id="color_id" name="" value="-1"> ' +
+                  li = li + 
 
                      '<div style="display:flex" class="descP margin-top-p colors">  <p class="descP margin-top-p" style="margin-left:0;margin-right:1vh"> color </p> '
                }
@@ -2319,7 +2320,7 @@ function getProduct(id, title) {
                if (i == 0 && json['posts'][0]['sizes'].length > 0) {
                   sizeID = 1
                   li = li + ' </div> ' +
-                     ' <input type="hidden" id="size_id" name="" value="-1"> ' +
+                     
                      '<div style="display:flex; margin-top:2vh" class="descP margin-top-p sizes">  <p class="descP margin-top-p" style="margin-left:0;margin-right:1vh"> size </p> '
                }
                li = li + '<div class="size_box" data-size="' + json['posts'][0]['sizes'][i]['sizeid'] + '" >' + json['posts'][0]['sizes'][i]['sizeName'] + ' </div>'
@@ -3872,7 +3873,7 @@ function getProfile() {
         
       var   li = 
 
-        ' <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; padding-top: 1vh;" id="nameShop">Ahmed Samir sayed </p>'+
+        ' <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; padding-top: 1vh;" id="nameShop">'+json['posts'][0]['name']+'</p>'+
         '<div class="list no-hairlines-md" style="margin:2vh 2vh 0vh  0vh;">'+
         '  <ul>'+
           '  <li class="item-content item-input">'+
