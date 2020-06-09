@@ -220,6 +220,15 @@ function onDeviceReady() {
                if (page == 'Category') {
                   go_to_page_params('Category', new_id)
                }
+
+               
+               if (page == 'CategoryBrand') {
+                  go_to_page_params('CategoryBrand', new_id)
+               }
+               if (page == 'CategoryTag') {
+                  go_to_page_params('CategoryTag', new_id)
+               }
+               
             }
             // view.router.navigate({name:page,param:{}})
          }
