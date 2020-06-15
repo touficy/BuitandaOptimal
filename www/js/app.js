@@ -2276,7 +2276,7 @@ function getProduct(id, title) {
             var n = if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).indexOf("http");
             if (if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']) != '') {
                if (n == -1) {
-                  tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://host.optimalsolutionslebanon.com/~buitandatest")
+                  tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://buitanda.com/")
                }
                else {
                   tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'")
@@ -4310,7 +4310,7 @@ function getAuctionProduct(id) {
          var n = if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).indexOf("http");
          if (if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']) != '') {
             if (n == -1) {
-               tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://host.optimalsolutionslebanon.com/~buitandatest")
+               tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'https://buitanda.com/")
             }
             else {
                tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'")
@@ -5773,12 +5773,12 @@ function getInstructions() {
       success: function (json) {
          console.log(json)
          var desc = json['posts'][0]['description'].split("src='")
-         desc = desc[0] + "src='https://host.optimalsolutionslebanon.com/~buitandatest" + desc[1]
+         desc = desc[0] + "src='https://buitanda.com/" + desc[1]
          desc = desc.split("width")
          desc = desc[0] + "width:100% ;text-align:" + desc[1]
 
          var descAr = json['posts'][0]['ardescription'].split("src='")
-         descAr = descAr[0] + "src='https://host.optimalsolutionslebanon.com/~buitandatest" + descAr[1]
+         descAr = descAr[0] + "src='https://buitanda.com/" + descAr[1]
          descAr = descAr.split("width")
          // console.log(descAr[0])
          // console.log(descAr[1])
