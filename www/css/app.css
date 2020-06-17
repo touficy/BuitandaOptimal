@@ -718,3 +718,12 @@ cursor: pointer;
   height: 3px;
   background-color: #E9E9E9;
 }
+
+.titleNav {
+  width:-webkit-fill-available;
+  text-align:center !important;
+}
+.imgLogoNav {
+  height: 100%;
+  width: auto;
+}

@@ -5722,6 +5722,7 @@ function getDeleiveryType() {
 }
 
 function SubmitOrder() {
+   $('#ProccedOrder').hide()
    showIndicator()
 
    console.log(arrOrder)
@@ -5758,6 +5759,10 @@ function SubmitOrder() {
          // console.log(json)
          alert_Reload(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
          // alert()
+      },
+      error : function(err){
+         $('#ProccedOrder').show()
+
       }
    })
 }
