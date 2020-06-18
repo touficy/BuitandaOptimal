@@ -684,8 +684,8 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
 $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
    $('.payment_Method').html(if_lang('Payment Method', 'Opções de pagamentos'))
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
-   $('.Cash_on').html(if_lang('Cash on delivery  <a href="/Cash_on_Deleviry/" style=" color:black "><span style="width: -webkit-fill-available;color:black"> / TPA  </span></a>',
-      'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" color:black "><span style="width: -webkit-fill-available;color:black">  / TPA </span></a>'))
+   $('.Cash_on').html(if_lang('Cash on delivery  <a href="#" style=" color:black "><span style="width: -webkit-fill-available;color:black"> / TPA  </span></a>',
+      'Dinheiro na entrega  <a href="#" style=" color:black "><span style="width: -webkit-fill-available;color:black">  / TPA </span></a>'))
    $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
       'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">   </span></a>'))
    $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href=""#" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
