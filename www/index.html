@@ -75,7 +75,7 @@
 
 						<div class="title titleNav">
 							<a href="#" class="link ft-1">
-								<img src="img/logo.png" class="imgLogoNav" >
+								<img src="img/logo.svg" class="imgLogoNav" >
 							</a>
 						</div>
 
@@ -576,7 +576,9 @@
 		get_timeDifference()
 
 
-
+		if (localStorage.ListThumbnail== 'undefined' || localStorage.ListThumbnail == undefined){
+       localStorage.ListThumbnail = 'List'
+    }
 		$(document).on('click', '.catChildStyle', function (event) {
 			console.log('clicked')
 			event.preventDefault();

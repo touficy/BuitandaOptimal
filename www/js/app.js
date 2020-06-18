@@ -684,12 +684,12 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
 $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
    $('.payment_Method').html(if_lang('Payment Method', 'Opções de pagamentos'))
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
-   $('.Cash_on').html(if_lang('Cash on delivery  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-      'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" margin-left: 25px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
-   $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-      'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
-   $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href="/instructions/" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-      'Transferência Bancária  <a href="/instructions/" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
+   $('.Cash_on').html(if_lang('Cash on delivery  <a href="/Cash_on_Deleviry/" style=" color:black "><span style="width: -webkit-fill-available;color:black"> / TPA  </span></a>',
+      'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" color:black "><span style="width: -webkit-fill-available;color:black">  / TPA </span></a>'))
+   $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
+      'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">   </span></a>'))
+   $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href=""#" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
+      'Transferência Bancária  <a href=""#" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">  </span></a>'))
    // $('.Trans').html(if_lang('<img src="img/TransEn.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;"> ',
    //    '<img src="img/Trans.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;">'))
    // $('.trans2').html(if_lang(' <img src="img/trans2En.jpg "  onclick="SubmitRefOrder()" style="width: 90vw;">',
@@ -992,6 +992,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
    app.infiniteScroll.create('.infinite-scroll-content')
    start = 0
    end = 8
+   
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -1955,6 +1956,16 @@ function getCategoryProduct(id, name) {
       url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsBySubCategory&sub_category="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
       cache:false,
       success: function (json) {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
+
+         }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailCategoryProduct('+id+')')
          $('.titleCategory').html(if_lang(json['posts']['sub_category_name'], json['posts']['sub_category_name_port']))
 
          // //console.log(name)
@@ -1976,7 +1987,8 @@ if (json['posts']['products'].length != 0){
                   $$('.infinite-scroll-preloader').hide();
 
                }
-            
+               if(localStorage.ListThumbnail == 'List'){
+
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
@@ -1992,20 +2004,83 @@ if (json['posts']['products'].length != 0){
 
                   '</div>' +
                   ' </li>'
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+               }
+               else{
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+
+              }
             }
          }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
+            $('.CatProd').append(li)
+
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
+
+            $('.CatProdThumbnail').append(li)
+
+         }
          start = start + 8
          end = end + 8
 
-         $('.CatProd').append(li)
-      }
+       }
 
-      else{
+       else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
       }
    }
    });
@@ -2024,6 +2099,16 @@ function getParentCategoryProduct(id, name) {
 
       success: function (json) {
          // //console.log(name)
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
+
+         }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailParentCategory('+id+')')
          console.log(json)
          $('.titleParentCategoryProduct').html(if_lang(json['posts']['category_name'], json['posts']['category_name_port']))
 
@@ -2044,7 +2129,8 @@ if (json['posts']['products'].length != 0){
                   $$('.infinite-scroll-preloader').hide();
 
                }
-        
+               if(localStorage.ListThumbnail == 'List'){
+
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
@@ -2060,20 +2146,84 @@ if (json['posts']['products'].length != 0){
 
                   '</div>' +
                   ' </li>'
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+               }
+               else{
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+
+              }
+
             }
          }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
+            $('.CatProd').append(li)
+
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
+
+            $('.CatProdThumbnail').append(li)
+
+         }
          start = start + 8
          end = end + 8
 
-         $('.CatProd').append(li)
-      }
+       }
 
-      else{
+      else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
       }
    }
    });
@@ -2091,6 +2241,16 @@ function getCategoryProductBrand(id, name) {
       cache:false,
 
       success: function (json) {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
+
+         }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailBrand('+id+')')
          $('.titleCategoryBrand').html(json['posts'] ['brand_name'])
 
          // //console.log(name)
@@ -2113,6 +2273,7 @@ if (json['posts']['products'].length != 0){
 
                }
                 
+               if(localStorage.ListThumbnail == 'List'){
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
@@ -2128,21 +2289,87 @@ if (json['posts']['products'].length != 0){
 
                   '</div>' +
                   ' </li>'
+ 
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+               }
+               else{
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+
+              }
             }
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
+
+            $('.CatProd').append(li)
+
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
+
+            $('.CatProdThumbnail').append(li)
+
          }
 
          start = start + 8
          end = end + 8
 
-         $('.CatProd').append(li)
       }
 
-      else{
+      else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+
    }
    });
 
@@ -2160,6 +2387,16 @@ function getCategoryProductTag(id, name) {
       cache:false,
 
       success: function (json) {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
+
+         }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailTag('+id+')')
          // //console.log(name)
          console.log(json)
 if (json['posts'][0] != 0){ 
@@ -2180,7 +2417,7 @@ if (json['posts'][0] != 0){
                   $$('.infinite-scroll-preloader').hide();
 
                }
-                
+               if(localStorage.ListThumbnail == 'List'){
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
@@ -2196,20 +2433,83 @@ if (json['posts'][0] != 0){
 
                   '</div>' +
                   ' </li>'
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+               }
+               else{
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+
+              }
             }
          }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
+            $('.CatProd').append(li)
+
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
+
+            $('.CatProdThumbnail').append(li)
+
+         }
          start = start + 8
          end = end + 8
 
-         $('.CatProd').append(li)
-      }
+       }
 
-      else{
+      else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
          console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
       }
    }
    });
@@ -2340,6 +2640,20 @@ function getProduct(id, title) {
 
 
             li = li + '</div> <div class="descP margin-top-p info"> ' + if_lang(json['posts'][0]['info'], json['posts'][0]['secinfo']) + ' </div>';
+            if(json['posts'][0]['descimages'].length > 0 ){
+               for(var n = 0 ; n <  json['posts'][0]['descimages'].length ; n ++ ){
+                  var tempimageDesc =  json['posts'][0]['descimages'][n]['image']
+                  var flagindex= json['posts'][0]['descimages'][n]['image'].indexOf("http");
+                     if (flagindex == -1) {
+
+                        tempimageDesc = 'https://buitanda.com/cmsadmin/upload/deeldescriptionimages/'+ tempimageDesc 
+                     }
+                     
+                  
+                  li = li + '<img src="'+tempimageDesc+'" style ="width:100%"  >'
+
+               }
+            }
             if (json['posts'][0]['availumquantity'] > 0) {
                li = li + '   <p class="descP margin-top-p">' + if_lang('AVAILABLE QUANTITY : ', 'QUANTIDADE DISPONÍVEL : ') + '  <span class="blue-span avQuantity"> ' + json['posts'][0]['availumquantity'] + '</span></p>';
             }
@@ -2464,13 +2778,14 @@ function getProduct(id, title) {
            '</div>'+
    
           ' <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
-             '  <div class="col-40" style="font-weight: bolder;"></div>'+
-               '<div class="col-60  " style="font-size: 11px;" ><span style="color:black; font-weight:bold"> color : </span>'+json['posts'][0]['reviews']['reviews'][l]['color']+
-               '<span style="color:black; font-weight:bold">  size : </span>'+json['posts'][0]['reviews']['reviews'][l]['size']+'</div>'+
+             '  <div class="col-100" >'+json['posts'][0]['reviews']['reviews'][l]['review']+'</div>'+
+               // '<div class="col-60  " style="font-size: 11px;" >'+
+         //       '<span style="color:black; font-weight:bold"> color : </span>'+json['posts'][0]['reviews']['reviews'][l]['color']+
+         //       '<span style="color:black; font-weight:bold">  size : </span>'+json['posts'][0]['reviews']['reviews'][l]['size']+'</div>'+
          '  </div>'+
          '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
-               '<div class="col-40" style="font-weight: bolder;"></div>'+
-              ' <div class="col-60  " style="font-size: 11px;margin-bottom:2vh" >'+json['posts'][0]['reviews']['reviews'][l]['review']+' '+moment().format(json['posts'][0]['reviews']['reviews'][0]['datetime'])+' </div>'+
+               // '<div class="col-40" style="font-weight: bolder;"></div>'+
+              ' <div class="col-100  " style="font-size: 11px;margin-bottom:2vh ; margin-right:2vh; text-align:end;" > '+moment().format(json['posts'][0]['reviews']['reviews'][0]['datetime'])+' </div>'+
            '</div>'
                $('.containerReview').append(li)
                
@@ -6940,19 +7255,19 @@ function getSubCategory(id){
          for(var i = 0 ; i < json['posts'].length ; i++){
          
             if (i == 0 ){
-               li = li +   '<div class="reviewDesc col-30">#'+if_lang('produtos','product')+'</div>'+
-           '    <div class="reviewDesc col-30">'+if_lang('review','Reveja')+'</div>'+
-               '<div class="reviewDesc col-20">'+if_lang('rate','taxa')+'</div>'+
-             '  <div class="reviewDesc col-20">'+if_lang('action','açao')+'</div>'
+               li = li +   '<div class="reviewDesc col-30 bold">#'+if_lang('product',' produtos')+'</div>'+
+           '    <div class="reviewDesc col-30 bold">'+if_lang('review','Reveja')+'</div>'+
+               '<div class="reviewDesc col-20 bold">'+if_lang('rate','taxa')+'</div>'+
+             '  <div class="reviewDesc col-20 bold">'+if_lang('action','açao')+'</div>'
             }
             if (json['posts'][i]['review'] == false){
-               li = li +   '<div class="col-30"  style ="margin-bottom:4vh"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">'+json['posts'][i]['title'] +'</div>'+
+               li = li +   '<div class="col-30"  style ="margin-bottom:4vh"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['deel_id'] + ')">'+json['posts'][i]['title'] +'</div>'+
                '  <div class="col-30">'+if_lang('not reviewed yet','ainda não revisado')+'</div>'+
               '   <div class="col-20">'+if_lang('not rated yet','ainda não avaliado')+'</div>'+
                 ' <div class="col-20"><i class="f7-icons" onclick="popReview('+json['posts'][i]['id']+','+json['posts'][i]['deel_id']+')">star</i></div>'
          }
          else {
-            li = li +   '<div class="col-30" style ="margin-bottom:4vh" onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">'+json['posts'][i]['title'] +'</div>'+
+            li = li +   '<div class="col-30" style ="margin-bottom:4vh" onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['deel_id'] + ')">'+json['posts'][i]['title'] +'</div>'+
             '  <div class="col-30">'+json['posts'][i]['review']['review'] +'</div>'+
            '   <div class="col-20">'+json['posts'][i]['review']['rate'] +'</div>'+
              ' <div class="col-20"><i class="f7-icons" onclick="Deletereviewproduct('+json['posts'][i]['id']+')">star_fill</i></div>'
@@ -7126,15 +7441,26 @@ function is_email(email) {
            ' <div class="col-60 customer-rateDesc_'+json['posts']['reviews'][l]['id']+'" ></div>'+
         '</div>'+
 
-       ' <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
-          '  <div class="col-40" style="font-weight: bolder;"></div>'+
-            '<div class="col-60  " style="font-size: 11px;" ><span style="color:black; font-weight:bold"> color : </span>'+json['posts']['reviews'][l]['color']+
-            '<span style="color:black; font-weight:bold">  size : </span>'+json['posts']['reviews'][l]['size']+'</div>'+
-      '  </div>'+
-      '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
-            '<div class="col-40" style="font-weight: bolder;"></div>'+
-           ' <div class="col-60  " style="font-size: 11px;margin-bottom:2vh" >'+json['posts']['reviews'][l]['review']+' '+moment().format(json['posts']['reviews']['datetime'])+' </div>'+
-        '</div>'
+      //  ' <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+      //     '  <div class="col-40" style="font-weight: bolder;"></div>'+
+      //       '<div class="col-60  " style="font-size: 11px;" >'+
+      //       // '<span style="color:black; font-weight:bold"> color : </span>'+json['posts']['reviews'][l]['color']+
+      //       // '<span style="color:black; font-weight:bold">  size : </span>'+json['posts']['reviews'][l]['size']+'</div>'+
+      // '  </div>'+
+      // '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+      //       '<div class="col-40" style="font-weight: bolder;"></div>'+
+      //      ' <div class="col-60  " style="font-size: 11px;margin-bottom:2vh" >'+json['posts']['reviews'][l]['review']+' '+moment().format(json['posts']['reviews']['datetime'])+' </div>'+
+      //   '</div>'
+      ' <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+             '  <div class="col-100" >'+json['posts'][0]['reviews']['reviews'][l]['review']+'</div>'+
+               // '<div class="col-60  " style="font-size: 11px;" >'+
+         //       '<span style="color:black; font-weight:bold"> color : </span>'+json['posts'][0]['reviews']['reviews'][l]['color']+
+         //       '<span style="color:black; font-weight:bold">  size : </span>'+json['posts'][0]['reviews']['reviews'][l]['size']+'</div>'+
+         '  </div>'+
+         '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+               // '<div class="col-40" style="font-weight: bolder;"></div>'+
+              ' <div class="col-100  " style="font-size: 11px;margin-bottom:2vh ; margin-right:2vh; text-align:end;" > '+moment().format(json['posts'][0]['reviews']['reviews'][0]['datetime'])+' </div>'+
+           '</div>'
             $('.containerReview').append(li)
             
 $(".customer-rateDesc_"+json['posts']['reviews'][l]['id']).rateYo({
@@ -7152,3 +7478,116 @@ starWidth: "20px",
    });
    
  }
+
+ function changeListThumbnailBrand (id){
+    console.log(' Start ----- > '+ localStorage.ListThumbnail)
+    if (localStorage.ListThumbnail=='Thumbnail'){
+       localStorage.ListThumbnail = 'List'
+       $('.list-thumbnail').html('square_list')
+       start = 0
+       end = 8
+       app.infiniteScroll.create('.infinite-scroll-content')
+
+       getCategoryProductBrand(id)
+          }
+    else if  (localStorage.ListThumbnail == 'List'){
+       localStorage.ListThumbnail = 'Thumbnail'
+       $('.list-thumbnail').html('rectangle_grid_2x2')
+       start = 0
+       end = 8
+       console.log(' end ----- > '+ localStorage.ListThumbnail)
+       app.infiniteScroll.create('.infinite-scroll-content')
+
+       getCategoryProductBrand(id)
+
+    }
+    
+ }
+
+ 
+ 
+
+ function changeListThumbnailTag (id){
+   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+      localStorage.ListThumbnail = 'List'
+      $('.list-thumbnail').html('square_list')
+      start = 0
+      end = 8
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getCategoryProductTag(id)
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
+      localStorage.ListThumbnail = 'Thumbnail'
+      $('.list-thumbnail').html('rectangle_grid_2x2')
+      start = 0
+      end = 8
+      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getCategoryProductTag(id)
+
+   }
+   
+}
+
+
+
+function changeListThumbnailParentCategory (id){
+   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+      localStorage.ListThumbnail = 'List'
+      $('.list-thumbnail').html('square_list')
+      start = 0
+      end = 8
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getParentCategoryProduct(id)
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
+      localStorage.ListThumbnail = 'Thumbnail'
+      $('.list-thumbnail').html('rectangle_grid_2x2')
+      start = 0
+      end = 8
+      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getParentCategoryProduct(id)
+
+   }
+   
+}
+
+
+
+function changeListThumbnailCategoryProduct (id){
+   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+      localStorage.ListThumbnail = 'List'
+      $('.list-thumbnail').html('square_list')
+      start = 0
+      end = 8
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getCategoryProduct(id)
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
+      localStorage.ListThumbnail = 'Thumbnail'
+      $('.list-thumbnail').html('rectangle_grid_2x2')
+      start = 0
+      end = 8
+      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getCategoryProduct(id)
+
+   }
+   
+}

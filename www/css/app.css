@@ -727,3 +727,8 @@ cursor: pointer;
   height: 100%;
   width: auto;
 }
+
+.bold{
+  font-weight: bolder;
+  margin-bottom: 2vh;
+}
