@@ -512,6 +512,8 @@
 
 
 		}
+		logFileInsert()
+
 		getbrandHome()
 		getLatestDeal()
 		getHomeBoxes()
@@ -574,7 +576,7 @@
 		});
 
 		get_timeDifference()
-
+		
 
 		if (localStorage.ListThumbnail== 'undefined' || localStorage.ListThumbnail == undefined){
        localStorage.ListThumbnail = 'List'
@@ -592,7 +594,6 @@
 			// fetchImage();
 			console.log('color id --- > ' + $('#color_id').val())
 			$(this).css('border', '2px solid #32c2ff');
-
 		 
 		});
 		// localStorage.buitandaUserID=575

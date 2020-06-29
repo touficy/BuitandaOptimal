@@ -834,8 +834,10 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
 
 $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
    var searchName = page.route.params.searchName;
-   var textSearch = searchName
+   var textSearch = searchName.replace(/%20/g, " ")
+
    console.log(textSearch)
+
    // $('.titleSearch').html(searchName)
    console.log(typeof (localStorage.buitandaUserID))
 
@@ -7270,7 +7272,7 @@ function getSubCategory(id){
             li = li +   '<div class="col-30" style ="margin-bottom:4vh" onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['deel_id'] + ')">'+json['posts'][i]['title'] +'</div>'+
             '  <div class="col-30">'+json['posts'][i]['review']['review'] +'</div>'+
            '   <div class="col-20">'+json['posts'][i]['review']['rate'] +'</div>'+
-             ' <div class="col-20"><i class="f7-icons" onclick="Deletereviewproduct('+json['posts'][i]['id']+')">star_fill</i></div>'
+             ' <div class="col-20"><i class="f7-icons" onclick="Deletereviewproduct('+json['posts'][i]['deel_id']+')">star_fill</i></div>'
           
          }
             }
@@ -7295,7 +7297,7 @@ var rate =0
  function reviewproduct (id , deel_id){
    $.ajax({
       type: 'GET',
-      url: 'https://buitanda.com/ws-v1.3.9.php?type=addProductReview&productId='+id+'&dealId='+deel_id+'&customerId='+localStorage.buitandaUserID+'&review='+$('.reviewCust').val()+'&rate='+rate+'&format=json',
+      url: 'https://buitanda.com/ws-v1.3.9.php?type=addProductReview&productId='+deel_id+'&dealId='+deel_id+'&customerId='+localStorage.buitandaUserID+'&review='+$('.reviewCust').val()+'&rate='+rate+'&format=json',
       cache: false,
 
       success: function (json) {
@@ -7590,4 +7592,26 @@ function changeListThumbnailCategoryProduct (id){
 
    }
    
+}
+
+
+
+
+function logFileInsert( ) {
+
+   $.ajax({
+      async: false,
+      type: 'GET',
+      url: "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json",
+
+
+      success: function (json) {
+ 
+
+         
+
+      }
+ 
+
+   });
 }
