@@ -2792,7 +2792,7 @@ function getProduct(id, title) {
                $('.containerReview').append(li)
                
   $(".customer-rateDesc_"+json['posts'][0]['reviews']['reviews'][l]['id']).rateYo({
-   rating: "4",
+   rating: String( json['posts'][0]['reviews']['reviews'][l]['rate'] ),
    readOnly: true,
    starWidth: "20px",
 });
@@ -7466,7 +7466,7 @@ function is_email(email) {
             $('.containerReview').append(li)
             
 $(".customer-rateDesc_"+json['posts']['reviews'][l]['id']).rateYo({
-rating: "4",
+   rating: String( json['posts']['reviews'][l]['rate'] ),
 readOnly: true,
 starWidth: "20px",
 });
