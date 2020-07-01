@@ -236,7 +236,7 @@ function onDeviceReady() {
       }).endInit();
    window.plugins.OneSignal.getIds(function (ids) {
       UUID = ids.userId;
-
+   console.log('uuid --- > ' +UUID)
       // alert(UUID);
       localStorage.setItem("login_uuid", ids.userId);
 
@@ -7600,13 +7600,13 @@ function changeListThumbnailCategoryProduct (id){
 function logFileInsert( ) {
 
    $.ajax({
-      async: false,
-      type: 'GET',
+       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json",
+      cache : false ,
 
-
-      success: function (json) {
+      success: function (json) { 
  
+         console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json")
 
          
 
