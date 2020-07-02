@@ -6509,7 +6509,8 @@ function showClosedDeal(id, curr, qty, name) {
 function updateApplication() {
    if (Framework7.device.ios) {
       // var link = 'https://apps.apple.com/us/app/ebda-tutor/id1451954033?ls=1';
-      cordova.InAppBrowser.open('https://play.google.com/store/apps/details?id=com.optimalsolutions.Buitandagit&hl=en', '_system', 'location=yes');
+      cordova.InAppBrowser.open('https://apps.apple.com/ai/app/buitanda/id1500280115', '_system', 'location=yes');
+
       /*window.cordova.InAppBrowser.open(
           link,
           "_blank",
@@ -6519,7 +6520,7 @@ function updateApplication() {
 
    if (device.platform.toLowerCase() == "android") {
       // var link = 'https://play.google.com/store/apps/details?id=com.optimalsolutions.ebdaatutor';
-      cordova.InAppBrowser.open('https://apps.apple.com/ai/app/buitanda/id1500280115', '_system', 'location=yes');
+      cordova.InAppBrowser.open('https://play.google.com/store/apps/details?id=com.optimalsolutions.Buitandagit&hl=en', '_system', 'location=yes');
       /*window.cordova.InAppBrowser.open(
           link,
           "_blank",
