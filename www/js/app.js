@@ -682,10 +682,13 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
 
 
 $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
+   // $('.Cash_on').html(if_lang('Cash on delivery  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
+   //    'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" margin-left: 25px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
+   
    $('.payment_Method').html(if_lang('Payment Method', 'Opções de pagamentos'))
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
-   $('.Cash_on').html(if_lang('Cash on delivery  <a href="#" style=" color:black "><span style="width: -webkit-fill-available;color:black"> / TPA  </span></a>',
-      'Dinheiro na entrega  <a href="#" style=" color:black "><span style="width: -webkit-fill-available;color:black">  / TPA </span></a>'))
+   $('.Cash_on').html(if_lang('Cash on delivery <span style="width: -webkit-fill-available;color:black"> / TPA  </span> <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
+      'Dinheiro na entrega <span style="width: -webkit-fill-available;color:black"> / TPA  </span> <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
    $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
       'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">   </span></a>'))
    $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href=""#" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
@@ -2594,14 +2597,14 @@ function getProduct(id, title) {
             li = '  <h3 class="gray  margin-top-p">' + if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle']) + '</h3>' +
                '  <p class="descP margin-top-p"> SKU#' + json['posts'][0]['sku'] + '  </p>';
 
-            if (json['posts'][0]['special'] == "1") {
+            if (json['posts'][0]['original'] != "" && json['posts'][0]['original'] != "0,00")  {
 
 
                li = li + ' <p class="discount-price descP margin-top-p   "  >  ' + if_lang('OLD PRICE ', 'PREÇO ') + json['posts'][i]['original'] + ' KWZ</p>';
             }
 
             // '<p class="descP margin-top-p">Model <span> :'+json['posts'][0]['title']+' </span></p>'+
-            if (json['posts'][0]['saving'] == "") {
+            if (json['posts'][0]['saving'] == "" || json['posts'][0]['saving'] == "0") {
                li = li + '   <p class="descP margin-top-p">Price / Item  <span class="blue-span Price_Prod">:' + json['posts'][0]['current'] + ' KWZ</span></p>'
             }
             else {
@@ -6333,6 +6336,8 @@ function getMyOrder(id) {
                      total = new Intl.NumberFormat('fr').format(total)
                      var quantity = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['qty']))
                      var unit_price = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['unit_price']))
+                     console.log('unit price ---- > '+ unit_price)
+                     // console.log('unit price in app  ---- > '+ unit_price)
 
                      li = li + ' <tr>' +
                         '<td class="ItemOrder">' +
