@@ -236,7 +236,7 @@ function onDeviceReady() {
       }).endInit();
    window.plugins.OneSignal.getIds(function (ids) {
       UUID = ids.userId;
-   console.log('uuid --- > ' +UUID)
+   console.log('uuid --- > ' +ids.userId)
       // alert(UUID);
       localStorage.setItem("login_uuid", ids.userId);
 
