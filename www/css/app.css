@@ -624,11 +624,12 @@ p , h2 , h1 ,h4 , div,  span {
 
 
 .size_box{
-  height: auto;
-  width: 5vh;
-  margin-right: 2vh;
+  /* height: auto; */
+  width:    5vh;
+  margin-right: 5px;
   border: 1px solid black;
   text-align: center;
+  font-size: 12px;
 }
 .catParentStyle{
 display: inline-flex;
