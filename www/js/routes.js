@@ -152,6 +152,12 @@ var routes = [
     url: './pages/instructions.html',
     name: 'instructions',
   },
+  
+  {
+    path: '/instructionsSubmit/',
+    url: './pages/instructionsSubmit.html',
+    name: 'instructionsSubmit',
+  },
   {
     path: '/ProfileShop/',
     url: './pages/ProfileShop.html',

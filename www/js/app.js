@@ -567,6 +567,12 @@ $$(document).on('page:init', '.page[data-name="instructions"]', function (e) {
    getInstructions()
 })
 
+
+$$(document).on('page:init', '.page[data-name="instructionsSubmit"]', function (e) {
+    getMyCard()
+    getInstructionsSubmit()
+})
+
 $$(document).on('page:init', '.page[data-name="Login"]', function (e) {
    $('.emailLoginLable').html(if_lang('Email', 'INSERE O TEU EMAIL'));
    $('.passwordLoginsLable').html(if_lang('Password', 'Digite a senha'));
@@ -689,8 +695,8 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
    $('.Cash_on').html(if_lang('Cash on delivery <span style="width: -webkit-fill-available;color:black"> / TPA  </span>',
       'Dinheiro na entrega <span style="width: -webkit-fill-available;color:black"> / TPA  </span>'))
-   $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
-      'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">   </span></a>'))
+   // $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
+   //    'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">   </span></a>'))
    $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href=""#" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>   <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
       'Transferência Bancária  <a href=""#" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">  </span></a> <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
    // $('.Trans').html(if_lang('<img src="img/TransEn.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;"> ',
@@ -6077,8 +6083,14 @@ function SubmitOrder() {
             "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
             "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json")
          // console.log(json)
+         if ( paymen_type =='PAYEMENT of BANK'){
+            alert(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
+
+            go_to_page('instructionsSubmit')
+         }
+         else{
          alert_Reload(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
-         // alert()
+      }
       },
       error : function(err){
          $('#ProccedOrder').show()
@@ -6088,6 +6100,36 @@ function SubmitOrder() {
 }
 
 
+function getInstructionsSubmit() {
+
+   $.ajax({
+      type: 'GET',
+      url: "https://buitanda.com/ws-v1.3.9.php?type=getPage&page_id=63&format=json",
+
+
+      success: function (json) {
+         console.log(json)
+         var desc = json['posts'][0]['description'].split("src='")
+         desc = desc[0] + "src='https://buitanda.com/" + desc[1]
+         desc = desc.split("width")
+         desc = desc[0] + "width:100% ;text-align:" + desc[1]
+
+         var descAr = json['posts'][0]['ardescription'].split("src='")
+         descAr = descAr[0] + "src='https://buitanda.com/" + descAr[1]
+         descAr = descAr.split("width")
+      
+
+         descAr = descAr[0] + "width:100% ;text-align:'" + descAr[1]
+         $('.instructionsTitle').html(if_lang(json['posts'][0]['name'], json['posts'][0]['arname']))
+         
+
+         //   $('.instruction').html(if_lang(desc, descAr))
+           $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
+
+         //console.log(json)
+      }
+   })
+}
 function getInstructions() {
 
    $.ajax({
@@ -6105,17 +6147,14 @@ function getInstructions() {
          var descAr = json['posts'][0]['ardescription'].split("src='")
          descAr = descAr[0] + "src='https://buitanda.com/" + descAr[1]
          descAr = descAr.split("width")
-         // console.log(descAr[0])
-         // console.log(descAr[1])
+      
 
          descAr = descAr[0] + "width:100% ;text-align:'" + descAr[1]
          $('.instructionsTitle').html(if_lang(json['posts'][0]['name'], json['posts'][0]['arname']))
-         // console.log(descAr[0])
-         // console.log(descAr[1])
+         
 
-         console.log(if_lang(desc, descAr))
-         // $('.instructionName').html(if_lang(json['posts'][0]['name'] ,json['posts'][0]['arname']  ))
-         $('.instruction').html(if_lang(desc, descAr))
+         //   $('.instruction').html(if_lang(desc, descAr))
+           $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
 
          //console.log(json)
       }
@@ -6312,11 +6351,19 @@ function getMyOrder(id) {
                      '   <li>' +
                      '<h5>' + if_lang('Payment Status', 'Estado de pagamento	') + '<span class="paidOrder">' + json['posts'][i]['payment_status'] + '</span></h5></li>' +
                      '  <li>' +
-                     '  <h5>' + if_lang('Delivery  Status', 'Estado de entrega	') + ' <span class="CompleteOrder">' + json['posts'][i]['delivery_status'] + '</span></h5></li>' +
-                     ' <li>' +
-                     '   <h5>' + if_lang('payment type', 'tipo de pagamento   ') + ' <span class="dateOrder">' + json['posts'][i]['paymentType'] + '</span></h5></li>' +
+                     '  <h5>' + if_lang('Delivery  Status', 'Estado de entrega	') + ' <span class="CompleteOrder">' + json['posts'][i]['delivery_status'] + '</span></h5></li>' ;
+                    if ( json['posts'][i]['paymentType'] !='PAYEMENT of BANK'){
+                   li =li+  ' <li>' +
+                     '   <h5>' + if_lang('payment type', 'tipo de pagamento   ') + ' <span class="dateOrder">' + json['posts'][i]['paymentType'] + '</span></h5></li>' 
+                  }
+                  else{
+                     li =li+  ' <li>' +
+                     '   <h5>' + if_lang('payment type', 'tipo de pagamento   ') +
+                      ' <span class="dateOrder" style="color:#32c2ff;text-decoration:underline"> <a href="/instructions/" >' + json['posts'][i]['paymentType'] + '</a></span></h5></li>' 
+          
 
-                     ' </ul>' +
+                  }
+              li = li+       ' </ul>' +
                      '   </div>' +
                      '      </div>' +
                      '    </div>';
@@ -7619,5 +7666,36 @@ function logFileInsert( ) {
       }
  
 
+   });
+}
+
+
+function getHotCategoryHome (){
+
+   $.ajax({
+      type: 'GET',
+      url: 'https://buitanda.com/ws-v1.3.9.php?type=getHotCategories&format=json',
+      cache: false,
+
+      success: function (json) {
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+         li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
+               ' <a style="display:inline-flex;align-items:center;height: 12vh;"> ' +
+
+               ' <p class="margin-white paddig-product textSubCat" style="color:black;"> ' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '  </p>' +
+
+               ' <img class="" src="' + json['posts'][i]['icon'] + '"  style=" width:10vh"  >' +
+
+               // '<div class="white" style="margin-bottom:2vh ; margin-top: -4px">'+
+               //   ' </div>'+
+               '  </a>' +
+
+               '</div>'
+            }
+            
+            $('.HotCat').html(li)
+
+      }
    });
 }
