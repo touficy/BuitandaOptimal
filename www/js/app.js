@@ -697,8 +697,8 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
       'Dinheiro na entrega <span style="width: -webkit-fill-available;color:black"> / TPA  </span>'))
    // $('.Credit_CardP').html(if_lang('Credit Card   <a href="#" style=" margin-left: 93px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>',
    //    'Cartão de crédito   <a href="#" style=" margin-left: 46px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">   </span></a>'))
-   $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href=""#" style=" margin-left: 11vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>   <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
-      'Transferência Bancária  <a href=""#" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">  </span></a> <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
+   $('.Bank_Transfer').html(if_lang('Bank Transfer  <a href=""#" style=" margin-left: 8vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">    </span></a>   <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available ;font-size:14px">know more</span></a>',
+      'Transferência Bancária  <a href=""#" style=" margin-left: 0vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available">  </span></a> <a href="/instructions/" style=" margin-left:2vh;width: -webkit-fill-available "><span style="width: -webkit-fill-available ;font-size:14px">know more</span></a>'))
    // $('.Trans').html(if_lang('<img src="img/TransEn.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;"> ',
    //    '<img src="img/Trans.jpg "  onclick="go_to_page(' + "'instructions'" + ')" style="width: 90vw;">'))
    // $('.trans2').html(if_lang(' <img src="img/trans2En.jpg "  onclick="SubmitRefOrder()" style="width: 90vw;">',
@@ -2615,12 +2615,11 @@ function getProduct(id, title) {
             }
             else {
                li = li + '   <p class="descP margin-top-p">' + if_lang('unit price ', 'Preço unitário') + '  <span class="blue-span Price_Prod">:' + json['posts'][0]['current'] + ' KWZ </span>' +
-                  ' ' + if_lang('saving', 'POUPAR ') + '   <span class="blue-span "> ( ' + json['posts'][0]['saving'] + '%  )</span> </p>' +
-                  '<input type="hidden" id="product_ID" name="" value="' + json['posts'][0]['id'] + '">';
+                  ' ' + if_lang('saving', 'POUPAR ') + '   <span class="blue-span "> ( ' + json['posts'][0]['saving'] + '%  )</span> </p>' 
                // +
                // '  <p class="descP margin-top-p"> saving   <span class="blue-span"> ( '+json['posts'][0]['saving']+'%  )</span> </p>'
             }
-            li = li + ' <input type="hidden" id="color_id" name="" value="0"> ' + ' <input type="hidden" id="size_id" name="" value="0"> ' ;
+            li = li +                  '<input type="hidden" id="product_ID" name="" value="' + json['posts'][0]['id'] + '">'            + ' <input type="hidden" id="color_id" name="" value="0"> ' + ' <input type="hidden" id="size_id" name="" value="0"> ' ;
             for (var i = 0; i < json['posts'][0]['colors'].length; i++) {
 
 
