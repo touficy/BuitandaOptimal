@@ -3988,13 +3988,13 @@ function login() {
    //console.log(email+ '    ' +password)
 
    if (email == '') {
-      alert(if_lang('please enter email', 'من فضلك ادخل البريد الالكتروني'))
+      alert(if_lang('please enter email', 'please enter right email'))
       hideIndicator()
 
    }
    else {
-      if (password == ' ') {
-         alert(if_lang('please enter password', 'من فضلك ادخل الرقم السري'))
+      if (password == '') {
+         alert(if_lang('please enter password', 'please enter right password'))
          hideIndicator()
 
       }
@@ -6310,8 +6310,8 @@ function getMyOrder(id) {
    go_to_page('MyOrder')
    $.ajax({
       type: 'GET',
-      url: "https://buitanda.com/ws-v1.3.9.php?type=getMyOrders&customer_id=" + localStorage.buitandaUserID + "&format=json",
-      cache: false,
+      url: " https://buitanda.com/ws-v1.3.9.php?type=getOrderById&id=" + id + "&format=json",
+       cache: false,
       success: function (json) {
          console.log(json)
          $('.MyOrderTitle').html(if_lang('Order Details', 'detalhes do pedido'))
@@ -6320,8 +6320,7 @@ function getMyOrder(id) {
 
 
             for (var i = 0; i < json['posts'].length; i++) {
-               if (json['posts'][i]['id'] == id) {
-                  constantTotal = json['posts'][i]['total']
+                   constantTotal = json['posts'][i]['total']
 
                   li = '<div class="block block-strong inv-section">' +
                      '  <div class="inv-logo">' +
@@ -6419,7 +6418,7 @@ function getMyOrder(id) {
 
                      '  </div>'
 
-               }
+                
             }
 
             $('.allContent').html(li)
