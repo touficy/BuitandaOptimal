@@ -3438,9 +3438,17 @@ function getProduct(id, title) {
             mySwiper.removeAllSlides();
 
             if (json['posts'][0]['images'].length > 0) {
-               mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
-                            '<img src="img/onpromotion.png" class="onpromotionbig">'+
-               + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+               if (json['posts'][0]['special']=='1'){
+                  mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
+                  '<img src="img/onpromotion.png" class="onpromotionbig">'+
+     + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+
+               }
+               else{
+                  mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
+      + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+
+               }
 
 
 
@@ -3449,21 +3457,37 @@ function getProduct(id, title) {
 
                      console.log('in sold flag')
                      if (i == 0) {
+                        if (json['posts'][0]['special']=='1'){
 
                         mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' +
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
 
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-
+                        }
+                        else{
+                           mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' +
+    
+                           ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+   
+                        }
                      }
                      else {
-                        console.log('else sold flag')
+ 
+                        if (json['posts'][0]['special']=='1'){
 
                         mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
 
                         ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
                      }
+                     else{
+                        
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+ 
+                        ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+             
+                     }
+                  }
                   }
 
                   else {
@@ -3472,19 +3496,33 @@ function getProduct(id, title) {
                      if (i == 0) {
                         console.log('out sold flag')
 
+                        if (json['posts'][0]['special']=='1'){
 
                         mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
 
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
+ 
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                
+                     }
+                  }
                      else {
-                        console.log('else out sold flag')
+                         if (json['posts'][0]['special']=='1'){
 
                         mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
+                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                     }
+                  }
                   }
                   mySwiper.update();
 
@@ -3498,17 +3536,33 @@ function getProduct(id, title) {
                for (var i = 0; i < 3; i++) {
                   if (i == 0) {
                      if (soldFlag == 0) {
+                        if (json['posts'][0]['special']=='1'){
+
                         mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         
                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                     }
+                  }
                      else {
+                        if (json['posts'][0]['special']=='1'){
+
                         mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
+                     else{
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+                     }
+                  }
                      mySwiper.update();
 
                   }
@@ -3528,36 +3582,66 @@ function getProduct(id, title) {
                   if (soldFlag == 1) {
                      //console.log( 'in sold flag')
                      if (i == 0) {
+                        if (json['posts'][0]['special']=='1'){
 
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+
+                     }
+                  }
                      else {
+                        if (json['posts'][0]['special']=='1'){
+
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+                     }
+                  }
                   }
 
                   else {
                      //console.log( 'out sold flag')
 
                      if (i == 0) {
-
+                        if (json['posts'][0]['special']=='1'){
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
-
+                        }
+                        else{
+                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                            ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                              
+                        }
                      }
                      else {
+                        if (json['posts'][0]['special']=='1'){
+
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                   
+                     }
+                  }
                   }
                   mySwiper[mySwiper.length - 1].update();
 
@@ -3571,16 +3655,32 @@ function getProduct(id, title) {
                for (var i = 0; i < 3; i++) {
                   if (i == 0) {
                      if (soldFlag == 0) {
+                        if (json['posts'][0]['special']=='1'){
+
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+              
+                     }
+                  }
                      else {
+                        if (json['posts'][0]['special']=='1'){
+
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+                     }
+                  }
                      mySwiper[mySwiper.length - 1].update();
 
                   }
