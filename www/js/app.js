@@ -3446,7 +3446,7 @@ function getProduct(id, title) {
                }
                else{
                   mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
-      + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+       ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 
                }
 
