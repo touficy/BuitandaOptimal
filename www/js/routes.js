@@ -168,7 +168,11 @@ var routes = [
     url: './pages/CategoryProduct.html',
     name: 'CategoryProduct',
   },
-
+  {
+    path: '/CategoryLastProduct/:id/',
+    url: './pages/CategoryLastProduct.html',
+    name: 'CategoryLastProduct',
+  },
   {
     path: '/profile/',
     url: './pages/profile.html',
