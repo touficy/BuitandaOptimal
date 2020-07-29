@@ -733,3 +733,33 @@ cursor: pointer;
   font-weight: bolder;
   margin-bottom: 2vh;
 }
+
+.onpromotionsmall {
+  display: block;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: 64px;
+}
+
+.onpromotion {
+  position: absolute;
+  right: 30px;
+  margin-bottom: 7vh;
+  width: 19vw;
+}
+
+.onpromotionbig {
+  position: absolute;
+  right: 50px;
+  top: 0;
+  width: 128px;
+}
+
+.onpromotionList {
+  position: absolute;
+  left: 8vh;
+  margin-bottom: 7vh;
+  width: 12vw !important;
+  height: auto !important;
+}

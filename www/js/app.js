@@ -1074,6 +1074,45 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
    });
 })
 
+
+$$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function (e, page) {
+   app.infiniteScroll.create('.infinite-scroll-content')
+   start = 0
+   end = 8
+   $('.titleCategoryLastProduct').html(if_lang('Latest Deals','Produto mais recente'))
+   $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
+   $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
+   $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
+   $('.PROFILETab').html(if_lang('PROFILE', 'PERFIL'))
+
+   getMyCard()
+   var cat_id = page.route.params.id;
+   
+   MainCatID = cat_id
+ 
+   getCategoryLastProduct(cat_id)
+
+
+   var Data = [];
+   var TempRecipe = []
+   
+
+
+   var loading = false
+   $$('.infinite-scroll-content').on('infinite', function () {
+      if (loading)
+         return;
+      loading = true;
+      setTimeout(function () {
+         console.log('loading ---- > ', loading)
+
+         loading = false;
+         getCategoryLastProduct(cat_id)
+
+      }, 1000);
+   });
+})
+
 var GloCategoryID = undefined
 var GNameID = ''
 var prodFlag = 0
@@ -1428,10 +1467,12 @@ function getLatestDeal() {
 
          if (flagSwip == 0) {
             for (var i = 0; i < json['posts'].length; i++) {
-
-               mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+               if(json['posts'][i]['special'] == '1')
+               {
+                  mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                     '<img src="img/onpromotion.png" class="onpromotionsmall">'+
                   '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
@@ -1448,7 +1489,33 @@ function getLatestDeal() {
 
                   ' </div>' +
                   '  </div>');
-               mySwiper.update();
+
+               }
+
+               else{
+                  mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                   '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
+
+                  '   <div>' +
+                  '   <div class ="length-p" >' +
+
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
+
+                  ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+
+
+                  ' </div>' +
+                  '  </div>');
+                  
+               }
+
+                            mySwiper.update();
 
             }
 
@@ -1456,24 +1523,54 @@ function getLatestDeal() {
          else {
             for (var i = 0; i < json['posts'].length; i++) {
                console.log(mySwiper)
-               mySwiper[flagSwip].addSlide(i, '<div class="swiper-slide" style="width:34vw; " >' +
+               if(json['posts'][i]['special'] == '1')
+               {
+                  mySwiper[flagSwip].addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                  '  <img class="imageSwiper" src="' + json['posts'][i]['image'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                     '<img src="img/onpromotion.png" class="onpromotionsmall">'+
+                  '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
 
                   '   <div>' +
-                  '   <div class ="length-p">' +
+                  '   <div class ="length-p" >' +
 
                   ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
                   ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
 
                   ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
 
 
                   ' </div>' +
                   '  </div>');
+
+               }
+
+               else{
+                  mySwiper[flagSwip].addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                   '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
+
+                  '   <div>' +
+                  '   <div class ="length-p" >' +
+
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
+
+                  ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+
+
+                  ' </div>' +
+                  '  </div>');
+                  
+               }
+          
                mySwiper[flagSwip].update();
 
             }
@@ -1614,6 +1711,8 @@ function getSelectedForYOu() {
                mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
                   '<div class="Height-width" > ' +
                   ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+
                   '  <img class="imageSwiper" src="' + json['posts']['products'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   ' </div>' +
                   ' </div>' +
@@ -1999,11 +2098,12 @@ if (json['posts']['products'].length != 0){
 
                }
                if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=='1'){
 
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
                   '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
@@ -2015,15 +2115,36 @@ if (json['posts']['products'].length != 0){
 
                   '</div>' +
                   ' </li>'
+                  }
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
+   
+                  }
                }
                if(localStorage.ListThumbnail == 'Thumbnail'){
                   if(json['posts']['products'].length % 2 == 0){
 
+                     if(json['posts']['products'][i]['special']=="1"){
 
                   li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                  ' <a > ' +
 
                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                  '</div>' +
                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2039,12 +2160,36 @@ if (json['posts']['products'].length != 0){
                  '  </a>' +
 
                  '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
                }
                else{
-                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  if(json['posts']['products'][i]['special']=="1"){
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                   ' <a > ' +
  
                   '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2060,6 +2205,29 @@ if (json['posts']['products'].length != 0){
                   '  </a>' +
  
                   '</div>'
+                  }
+                  else{
+
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                     ' <a > ' +
+    
+                     '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                      ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                     '</div>' +
+                     '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                     '   <div class ="length-p">' +
+    
+                     ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+    
+                     ' </div>' +
+                     ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+    
+                     ' </div>' +
+    
+                     '  </a>' +
+    
+                     '</div>'
+                  }
                }
 
               }
@@ -2141,11 +2309,13 @@ if (json['posts']['products'].length != 0){
 
                }
                if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
+
 
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
                   '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
@@ -2157,15 +2327,35 @@ if (json['posts']['products'].length != 0){
 
                   '</div>' +
                   ' </li>'
+                  }
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
+                  }
                }
                if(localStorage.ListThumbnail == 'Thumbnail'){
                   if(json['posts']['products'].length % 2 == 0){
+                     if(json['posts']['products'][i]['special']=="1"){
 
 
                   li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                  ' <a > ' +
 
                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                  '</div>' +
                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2181,12 +2371,37 @@ if (json['posts']['products'].length != 0){
                  '  </a>' +
 
                  '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
                }
                else{
+                  if(json['posts']['products'][i]['special']=="1"){
+
                   li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                   ' <a > ' +
  
                   '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2202,6 +2417,30 @@ if (json['posts']['products'].length != 0){
                   '  </a>' +
  
                   '</div>'
+
+                  }
+                  else{
+                     
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+                  }
                }
 
               }
@@ -2285,10 +2524,11 @@ if (json['posts']['products'].length != 0){
                }
                 
                if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special'] == "1"){
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
                   '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
@@ -2300,16 +2540,37 @@ if (json['posts']['products'].length != 0){
 
                   '</div>' +
                   ' </li>'
- 
+               }
+               else{
+                  li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+               }
                }
                if(localStorage.ListThumbnail == 'Thumbnail'){
                   if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special'] == "1"){
+
 
 
                   li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                  ' <a > ' +
 
                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                  '</div>' +
                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2326,11 +2587,37 @@ if (json['posts']['products'].length != 0){
 
                  '</div>'
                }
+
                else{
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+               }
+               else{
+                  if(json['posts']['products'][i]['special'] == "1"){
+
                   li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                   ' <a > ' +
  
                   '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2347,7 +2634,28 @@ if (json['posts']['products'].length != 0){
  
                   '</div>'
                }
-
+               else{
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+            }
               }
             }
          }
@@ -2429,10 +2737,11 @@ if (json['posts'][0] != 0){
 
                }
                if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
                li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
                   '  <div class="row width-100">' +
                   '<div class="col-20 align-self-center">' +
-                  ' <figure  class="product-image h-auto"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
                   ' </div>' +
                   '<div class="col-80 padding-left">' +
                   '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
@@ -2445,14 +2754,34 @@ if (json['posts'][0] != 0){
                   '</div>' +
                   ' </li>'
                }
+               else{
+                  li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+               }
+               }
                if(localStorage.ListThumbnail == 'Thumbnail'){
                   if(json['posts']['products'].length % 2 == 0){
 
+                     if(json['posts']['products'][i]['special']=="1"){
 
                   li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                  ' <a > ' +
 
                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                  '</div>' +
                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2468,12 +2797,38 @@ if (json['posts'][0] != 0){
                  '  </a>' +
 
                  '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
                }
                else{
+
+                  if(json['posts']['products'][i]['special']=="1"){
+
                   li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                   ' <a > ' +
  
                   '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
                   '</div>' +
                   '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
@@ -2489,6 +2844,28 @@ if (json['posts'][0] != 0){
                   '  </a>' +
  
                   '</div>'
+                  }
+                  else{
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                     ' <a > ' +
+    
+                     '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                      ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                     '</div>' +
+                     '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                     '   <div class ="length-p">' +
+    
+                     ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+    
+                     ' </div>' +
+                     ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+    
+                     ' </div>' +
+    
+                     '  </a>' +
+    
+                     '</div>'
+                  }
                }
 
               }
@@ -2529,6 +2906,218 @@ if (json['posts'][0] != 0){
 }
 
 
+
+
+
+function getCategoryLastProduct(id, name) {
+   CategoryIdSearch = id
+   
+
+   $.ajax({
+      
+      type: 'GET',
+      url: "https://buitanda.com/ws-v1.3.9.php?type=latestdeals&lang="+localStorage.BuitLang+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
+
+      success: function (json) {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
+
+         }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailLastProduct('+id+')')
+         // //console.log(name)
+         console.log(json)
+if (json['posts'][0] != 0){ 
+
+         $('.titleCategoryTag').html(json['posts']['tag_name'])
+
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
+
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
+
+               }
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
+
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+                  }
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
+                  }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
+               }
+               else{
+                  if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+                  }
+                  else{
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                     ' <a > ' +
+    
+                     '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                      ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                     '</div>' +
+                     '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                     '   <div class ="length-p">' +
+    
+                     ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+    
+                     ' </div>' +
+                     ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+    
+                     ' </div>' +
+    
+                     '  </a>' +
+    
+                     '</div>'
+                  }
+               }
+
+              }
+            }
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
+
+            $('.CatProd').append(li)
+
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
+
+            $('.CatProdThumbnail').append(li)
+
+         }
+         start = start + 8
+         end = end + 8
+
+       }
+
+      else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+   }
+   });
+
+
+}
 
 
 
@@ -2849,7 +3438,9 @@ function getProduct(id, title) {
             mySwiper.removeAllSlides();
 
             if (json['posts'][0]['images'].length > 0) {
-               mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >' + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+               mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
+                            '<img src="img/onpromotion.png" class="onpromotionbig">'+
+               + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 
 
 
@@ -2859,13 +3450,19 @@ function getProduct(id, title) {
                      console.log('in sold flag')
                      if (i == 0) {
 
-                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
                      else {
                         console.log('else sold flag')
 
-                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+
+                        ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
                      }
                   }
 
@@ -2876,12 +3473,17 @@ function getProduct(id, title) {
                         console.log('out sold flag')
 
 
-                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
                      else {
                         console.log('else out sold flag')
 
-                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
                   }
                   mySwiper.update();
@@ -2896,10 +3498,15 @@ function getProduct(id, title) {
                for (var i = 0; i < 3; i++) {
                   if (i == 0) {
                      if (soldFlag == 0) {
-                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
                      else {
-                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
                      mySwiper.update();
@@ -2922,11 +3529,16 @@ function getProduct(id, title) {
                      //console.log( 'in sold flag')
                      if (i == 0) {
 
-                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
                      else {
-                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
                      }
                   }
 
@@ -2935,11 +3547,16 @@ function getProduct(id, title) {
 
                      if (i == 0) {
 
-                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
 
                      }
                      else {
-                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
                   }
                   mySwiper[mySwiper.length - 1].update();
@@ -2954,10 +3571,14 @@ function getProduct(id, title) {
                for (var i = 0; i < 3; i++) {
                   if (i == 0) {
                      if (soldFlag == 0) {
-                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
                      else {
-                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
                      }
                      mySwiper[mySwiper.length - 1].update();
@@ -6328,8 +6949,6 @@ function getMyOrder(id) {
                      ' </div>' +
                      '  <div class="row">' +
                      ' <div class="col-50">' +
-
-
                      '  <div class="invoice-details">' +
                      ' <ul>' +
                      ' <li>' +
@@ -6874,6 +7493,19 @@ function getProductCategoryTagSorting() {
 }
 
 
+function getProductCategoryLastProduct() {
+   app.infiniteScroll.create('.infinite-scroll-content')
+   $$('.infinite-scroll-preloader').show()
+   console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   console.log(sort)
+   $('.CatProd').empty()
+   start = 0
+   end = 8
+   getCategoryLastProduct(CategoryIdSearch)
+}
+
+
 function getProductCategoryBrandSorting() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
@@ -7252,7 +7884,14 @@ function getSubCategory(id){
 
                      }
        else{
-         li = li +'  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+          if( json['posts'][i]['id'] == '78' ){
+            li = li +'  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryLastProduct' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+
+          }
+          else{
+            li = li +'  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+
+          }
       }
             }
            
@@ -7558,6 +8197,33 @@ starWidth: "20px",
  }
 
  
+ 
+ function changeListThumbnailLastProduct (id){
+   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+      localStorage.ListThumbnail = 'List'
+      $('.list-thumbnail').html('square_list')
+      start = 0
+      end = 8
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getCategoryLastProduct(id)
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
+      localStorage.ListThumbnail = 'Thumbnail'
+      $('.list-thumbnail').html('rectangle_grid_2x2')
+      start = 0
+      end = 8
+      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      app.infiniteScroll.create('.infinite-scroll-content')
+      $$('.infinite-scroll-preloader').show();
+
+      getCategoryLastProduct(id)
+
+   }
+   
+}
  
 
  function changeListThumbnailTag (id){
