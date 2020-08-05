@@ -105,7 +105,7 @@ function hideIndicator() {
 }
 
 function reloadPage() {
-   //console.log('in reloade func')
+   ////console.log('in reloade func')
    view.router.refreshPage();
 }
 var PLATFORM = '';
@@ -126,14 +126,14 @@ function onDeviceReady() {
                var text = if_lang('we have update in Buitanda, do you want to get it ? ', 'temos atualização em Buitanda, você deseja obtê-la?')
                app.dialog.confirm(text, 'Buitanda', updateApplication())
             }
-            //console.log(json)
+            ////console.log(json)
 
 
 
 
          }
       });
-      //console.log('V' + version)
+      ////console.log('V' + version)
    });
 
    // $('.HomeTab').html(if_lang('HOME','INICIAR'))
@@ -144,7 +144,7 @@ function onDeviceReady() {
 
    if (Framework7.device.ios) {
       var mob_model = device.model;
-      // console.log(device.model);
+      // //console.log(device.model);
       var mob_model_num = mob_model.split("e")[1].split(",");
       if (mob_model_num[0] > 10 || (mob_model_num[0] == 10 && (mob_model_num[1] == 3) || mob_model_num[1] == 6)) {
          // alert("iphone x");         
@@ -192,16 +192,16 @@ function onDeviceReady() {
    }
 
    PLATFORM = device.platform;
-   console.log(PLATFORM)
+   //console.log(PLATFORM)
    // alert("hi");
-   // //console.log('device ready --- > ' + localStorage, mercadoLanguage)
+   // ////console.log('device ready --- > ' + localStorage, mercadoLanguage)
 
    // use_touchid(1234);
    // delete_pass();
    window.plugins.OneSignal
       .startInit("77d5e885-c96a-4342-b141-4efcadb9c1e8")
       .handleNotificationOpened(function (jsonData) {
-         console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+         //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
          var new_id = jsonData.notification.payload.additionalData.id;
          var page = jsonData.notification.payload.additionalData.page;
 
@@ -241,15 +241,15 @@ function onDeviceReady() {
       localStorage.setItem("login_uuid", ids.userId);
 
       localStorage.MercardoUUID = ids.userId
-      // //console.log('getIds: ' + JSON.stringify(ids));
+      // ////console.log('getIds: ' + JSON.stringify(ids));
    });
 
    document.addEventListener("backbutton", onBackKeyDown, false);
 
    function onBackKeyDown(e) {
       var att = $$(".page-current").attr("data-name");
-      //console.log('att ------ > '+ att)
-      //console.log(view.history)
+      ////console.log('att ------ > '+ att)
+      ////console.log(view.history)
       if (att == "index" || att == "home") {
          app.dialog.confirm(if_lang('Are you sure want to quit?', 'Você tem certeza que quer sair?'), 'Buitanda',
             function () {
@@ -341,7 +341,7 @@ function login_using_touchid() {
             alert("no Touch ID available");
          });
       } else if (PLATFORM.toLowerCase() == "android") {
-         // //console.log(token);
+         // ////console.log(token);
          // var decryptConfig = {
          //   clientId: "user_pass",
          //   username: "currentUser",
@@ -351,24 +351,24 @@ function login_using_touchid() {
          // FingerprintAuth.decrypt(decryptConfig, successCallback2, errorCallback2);
          //
          // function successCallback2(result) {
-         //   //console.log("successCallback(): " + JSON.stringify(result));
+         //   ////console.log("successCallback(): " + JSON.stringify(result));
          //   if (result.withFingerprint) {
-         //     //console.log("Successful biometric authentication.");
+         //     ////console.log("Successful biometric authentication.");
          //     if (result.password) {
-         //       //console.log("Successfully decrypted credential token.");
-         //       //console.log("password: " + result.password);
+         //       ////console.log("Successfully decrypted credential token.");
+         //       ////console.log("password: " + result.password);
          //       login(email, result.password);
          //     }
          //   } else if (result.withBackup) {
-         //     //console.log("Authenticated with backup password");
+         //     ////console.log("Authenticated with backup password");
          //   }
          // }
          //
          // function errorCallback2(error) {
          //   if (error === FingerprintAuth.ERRORS.FINGERPRINT_CANCELLED) {
-         //     //console.log("FingerprintAuth Dialog Cancelled!");
+         //     ////console.log("FingerprintAuth Dialog Cancelled!");
          //   } else {
-         //     //console.log("FingerprintAuth Error: " + error);
+         //     ////console.log("FingerprintAuth Error: " + error);
          //   }
          // }
       }
@@ -380,7 +380,7 @@ function login_using_touchid() {
 
 var picEditProfile
 $$(document).on('page:init', '.page[data-name="profile"]', function (e) {
-   console.log(localStorage.buitandaUserID)
+   //console.log(localStorage.buitandaUserID)
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -415,7 +415,7 @@ $$(document).on('page:init', '.page[data-name="profile"]', function (e) {
 var flagSwip = 0
 var flagAcution = 0
 $$(document).on('page:init', '.page[data-name="home"]', function (e) {
-   console.log('home')
+   //console.log('home')
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -429,7 +429,7 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
    // $('.swiper-container').empty()
    // flagSwip = flagSwip + 1
    flagSwip = 0
-   console.log('home')
+   //console.log('home')
    getLatestDeal()
    getAuctionHome()
    getBestSeller()
@@ -525,7 +525,7 @@ $$(document).on('page:init', '.page[data-name="MyOrder"]', function (e) {
 
 
 $$(document).on('page:init', '.page[data-name="Register-Company"]', function (e) {
-   console.log('inRegisterComant')
+   //console.log('inRegisterComant')
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -619,7 +619,7 @@ $$(document).on('page:init', '.page[data-name="review"]', function (e) {
 
    getProductReview()
    $('.titlereview').html(if_lang('reviews ', ' Avaliações'))
-   console.log('hello')
+   //console.log('hello')
 
 })
 $$(document).on('page:init', '.page[data-name="verifyCode"]', function (e) {
@@ -734,13 +734,13 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
-   console.log('in profile 5raaa  ====== > ' + Checklogin())
+   //console.log('in profile 5raaa  ====== > ' + Checklogin())
 
    if (Checklogin()) {
       $('.logoutProfileShop').hide()
       $('.loginProfileShop').show()
 
-      console.log('in login ------------------------ ')
+      //console.log('in login ------------------------ ')
 
       editShop()
       $('.addressShP').html(if_lang('Address ', '  Endereço'))
@@ -818,11 +818,11 @@ $$(document).on('page:init', '.page[data-name="selcLang"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
-   console.log(PLATFORM)
+   //console.log(PLATFORM)
    if (localStorage.buitandaUserType != 'Company') {
       $('.userType').hide()
    }
-   console.log('user type ----- >' + localStorage.buitandaUserType)
+   //console.log('user type ----- >' + localStorage.buitandaUserType)
    $('.addressCompanyLable').html(if_lang('Address', 'ENDEREÇO'));
 
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
@@ -845,10 +845,10 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
    var searchName = page.route.params.searchName;
    var textSearch = searchName.replace(/%20/g, " ")
 
-   console.log(textSearch)
+   //console.log(textSearch)
 
    // $('.titleSearch').html(searchName)
-   console.log(typeof (localStorage.buitandaUserID))
+   //console.log(typeof (localStorage.buitandaUserID))
 
    $.ajax({
       async: false,
@@ -890,7 +890,7 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
                   '</div>'
 
             }
-            // console.log(li)
+            // //console.log(li)
          }
          else {
             li = if_lang('<p>   not found </p> ', '<p>   not found </p> ')
@@ -952,7 +952,7 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
          return;
       loading = true;
       setTimeout(function () {
-         console.log('loading ---- > ', loading)
+         //console.log('loading ---- > ', loading)
 
          loading = false;
          getCategoryProduct(cat_id)
@@ -990,7 +990,7 @@ $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', functio
          return;
       loading = true;
       setTimeout(function () {
-         console.log('loading ---- > ', loading)
+         //console.log('loading ---- > ', loading)
 
          loading = false;
          getParentCategoryProduct(cat_id)
@@ -1028,7 +1028,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
          return;
       loading = true;
       setTimeout(function () {
-         console.log('loading ---- > ', loading)
+         //console.log('loading ---- > ', loading)
 
          loading = false;
          getCategoryProductBrand(cat_id)
@@ -1065,7 +1065,7 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
          return;
       loading = true;
       setTimeout(function () {
-         console.log('loading ---- > ', loading)
+         //console.log('loading ---- > ', loading)
 
          loading = false;
          getCategoryProductTag(cat_id)
@@ -1104,7 +1104,7 @@ $$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function 
          return;
       loading = true;
       setTimeout(function () {
-         console.log('loading ---- > ', loading)
+         //console.log('loading ---- > ', loading)
 
          loading = false;
          getCategoryLastProduct(cat_id)
@@ -1134,7 +1134,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 
       '   </div>'
    $('.swi').html(swi)
-   //console.log(swi)
+   ////console.log(swi)
    $('.RecomendedForYOU').html(if_lang('RECOMMENDED ITEMS', 'ITENS RECOMENDADOS'))
    var cat_id = page.route.params.id;
    // var cat_name = page.route.params.nameCat;
@@ -1154,7 +1154,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
          return;
       loading = true;
       setTimeout(function () {
-         console.log('loading ---- > ', loading)
+         //console.log('loading ---- > ', loading)
 
          loading = false;
          loadMoreReviews(cat_id)
@@ -1163,27 +1163,27 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
    });
   
    $(document).on('click', '.color_box', function (event) {
-      console.log('clicked')
+      //console.log('clicked')
       event.preventDefault();
       var color = $(this).attr('data-color');
-      console.log('color ----> ' + color)
+      //console.log('color ----> ' + color)
       $('#color_id').val(color);
       $(".color_box").css({
          'border': '1px solid #e9e9e9',
          'cursor': 'pointer'
       });
       // fetchImage();
-      console.log('color id --- > ' + $('#color_id').val())
+      //console.log('color id --- > ' + $('#color_id').val())
       $(this).css('border', '2px solid #f90');
 
       if (colorID == 1 && sizeID == 1) {
          if (colorID == 1) {
 
             if (sizeID == 1) {
-               console.log('looooooog')
-               console.log($('#size_id').val())
+               //console.log('looooooog')
+               //console.log($('#size_id').val())
 
-               console.log($('#color_id').val())
+               //console.log($('#color_id').val())
 
                if ($('#size_id').val() != -1 && $('#color_id').val() != -1) {
                   getNewProductDetails()
@@ -1230,7 +1230,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 
 
    $(document).on('click', '.size_box', function (event) {
-      console.log('clicked')
+      //console.log('clicked')
       event.preventDefault();
       var size = $(this).attr('data-size');
       $('#size_id').val(size);
@@ -1239,17 +1239,17 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
          'cursor': 'pointer'
       });
       // fetchImage();
-      console.log('sizze id --- > ' + $('#size_id').val())
+      //console.log('sizze id --- > ' + $('#size_id').val())
       $(this).css('border', '2px solid #f90');
 
       if (colorID == 1 && sizeID == 1) {
          if (colorID == 1) {
 
             if (sizeID == 1) {
-               console.log('looooooog')
-               console.log($('#size_id').val())
+               //console.log('looooooog')
+               //console.log($('#size_id').val())
 
-               console.log($('#color_id').val())
+               //console.log($('#color_id').val())
 
                if ($('#size_id').val() != -1 && $('#color_id').val() != -1) {
                   getNewProductDetails()
@@ -1307,8 +1307,8 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 
       '   </div>'
    $('.swiAs').html(swi)
-   //console.log('caat name ---- > '+ n )
-   //console.log('id  ---- > '+ cat_id )
+   ////console.log('caat name ---- > '+ n )
+   ////console.log('id  ---- > '+ cat_id )
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -1320,8 +1320,8 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
    // for(var i = 0 ; i < cat_name.length ; i ++){
    //    n = n + cat_name[i] +' '
    // }
-   //console.log('caat name ---- > '+ n )
-   //console.log('id  ---- > '+ cat_id )
+   ////console.log('caat name ---- > '+ n )
+   ////console.log('id  ---- > '+ cat_id )
    GloCategoryID = cat_id;
    GNameID = n
 
@@ -1342,7 +1342,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 //          //    n = n + cat_name[i] +' ' 
 //          // }
 //          // getAuctionProduct(cat_id , n)
-// //console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
+// ////console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
 
 //         })
 
@@ -1356,7 +1356,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 //          //    n = n + cat_name[i] +' '
 //          // }
 //          // getAuctionProduct(cat_id , n)
-// //console.log('================================================= Auctiooooooooooooooooooooon =================================================')
+// ////console.log('================================================= Auctiooooooooooooooooooooon =================================================')
 
 //         })
 
@@ -1381,8 +1381,8 @@ function go_to_page_two_params(name, id, nameCat) {
 }
 
 function go_to_page_params(name, id) {
-   //console.log(name)
-   //console.log(params)
+   ////console.log(name)
+   ////console.log(params)
 
    view.router.navigate({
       name: name,
@@ -1398,7 +1398,7 @@ function go_to_page(pg_name) {
       name: pg_name
    });
    if (pg_name == 'not-found') {
-      //console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
+      ////console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
 
    }
 
@@ -1437,8 +1437,8 @@ function getLatestDeal() {
 
       success: function (json) {
          //alert(json['posts'][0]['description']);
-         //  //console.log('json ')
-         //  console.log(json)
+         //  ////console.log('json ')
+         //  //console.log(json)
          var mySwiper = app.swiper.create('.swiper-letest', {
             slidesPerView: 'auto',
             // autoplay: {
@@ -1462,7 +1462,7 @@ function getLatestDeal() {
          //    watchSlidesProgress: true
          // });
          var x = 'ahmed samir'
-         console.log('legnthhh ---- > ' + json['posts'].length)
+         //console.log('legnthhh ---- > ' + json['posts'].length)
          if (json['posts'][0] !=  0){
 
          if (flagSwip == 0) {
@@ -1522,7 +1522,7 @@ function getLatestDeal() {
          }
          else {
             for (var i = 0; i < json['posts'].length; i++) {
-               console.log(mySwiper)
+               //console.log(mySwiper)
                if(json['posts'][i]['special'] == '1')
                {
                   mySwiper[flagSwip].addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
@@ -1770,8 +1770,8 @@ function getClosettDeal() {
 
       success: function (json) {
          //alert(json['posts'][0]['description']);
-         //  console.log('json ')
-         console.log(json)
+         //  //console.log('json ')
+         //console.log(json)
          var mySwiper = app.swiper.create('.swiper-closed', {
             slidesPerView: 'auto',
             // autoplay: {
@@ -1869,7 +1869,7 @@ function getClosettDeal() {
 }
 function getAuctionHome() {
    var att = $$(".page-current").attr("data-name");
-   console.log('att ------ > ' + att)
+   //console.log('att ------ > ' + att)
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=auctions_home&format=json",
@@ -1889,9 +1889,9 @@ function getAuctionHome() {
          if (json['posts'][0] != 0) {
 
             //alert(json['posts'][0]['description']);
-            //  //console.log('json ')
-            //console.log('auction Home')
-            //console.log(json)
+            //  ////console.log('json ')
+            ////console.log('auction Home')
+            ////console.log(json)
             var mySwiper = app.swiper.create('.swiper-auction', {
                slidesPerView: 'auto',
                // autoplay: {
@@ -1906,7 +1906,7 @@ function getAuctionHome() {
             if (flagSwip == 0) {
                for (var i = 0; i < json['posts'].length; i++) {
                   var Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
-                  // console.log(Remaining_time)
+                  // //console.log(Remaining_time)
                   go_to_page_params
 
                   mySwiper.addSlide(i, '  <div class="swiper-slide" onclick="go_to_page_params(' + "'" + 'Auction' + "'" + ',' + json['posts'][i]['id'] + ')" style="width:17vh; ">' +
@@ -2003,11 +2003,11 @@ function getAllCategory() {
 
 
       success: function (json) {
-         console.log('in all cat')
+         //console.log('in all cat')
          //alert(json['posts'][0]['description']);
-         //  //console.log('json ')
-         //  console.log(json)
-         //  console.log(localStorage.BuitLang)
+         //  ////console.log('json ')
+         //  //console.log(json)
+         //  //console.log(localStorage.BuitLang)
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -2078,8 +2078,8 @@ function getCategoryProduct(id, name) {
          $('.list-thumbnail').attr('onclick','changeListThumbnailCategoryProduct('+id+')')
          $('.titleCategory').html(if_lang(json['posts']['sub_category_name'], json['posts']['sub_category_name_port']))
 
-         // //console.log(name)
-         console.log(json)
+         // ////console.log(name)
+         //console.log(json)
 if (json['posts']['products'].length != 0){ 
 
 
@@ -2253,7 +2253,7 @@ if (json['posts']['products'].length != 0){
        else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
-         console.log('in else product')
+         //console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
       else{
@@ -2277,7 +2277,7 @@ function getParentCategoryProduct(id, name) {
       cache:false,
 
       success: function (json) {
-         // //console.log(name)
+         // ////console.log(name)
          if (localStorage.ListThumbnail=='Thumbnail'){ 
             $('.list-thumbnail').html('square_list')
 
@@ -2288,7 +2288,7 @@ function getParentCategoryProduct(id, name) {
          }
  
          $('.list-thumbnail').attr('onclick','changeListThumbnailParentCategory('+id+')')
-         console.log(json)
+         //console.log(json)
          $('.titleParentCategoryProduct').html(if_lang(json['posts']['category_name'], json['posts']['category_name_port']))
 
 if (json['posts']['products'].length != 0){ 
@@ -2467,7 +2467,7 @@ if (json['posts']['products'].length != 0){
       else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
-         console.log('in else product')
+         //console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
       else{
@@ -2503,8 +2503,8 @@ function getCategoryProductBrand(id, name) {
          $('.list-thumbnail').attr('onclick','changeListThumbnailBrand('+id+')')
          $('.titleCategoryBrand').html(json['posts'] ['brand_name'])
 
-         // //console.log(name)
-         console.log(json)
+         // ////console.log(name)
+         //console.log(json)
 if (json['posts']['products'].length != 0){ 
 
 
@@ -2680,7 +2680,7 @@ if (json['posts']['products'].length != 0){
       else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
-         console.log('in else product')
+         //console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
       else{
@@ -2716,8 +2716,8 @@ function getCategoryProductTag(id, name) {
          }
  
          $('.list-thumbnail').attr('onclick','changeListThumbnailTag('+id+')')
-         // //console.log(name)
-         console.log(json)
+         // ////console.log(name)
+         //console.log(json)
 if (json['posts'][0] != 0){ 
 
          $('.titleCategoryTag').html(json['posts']['tag_name'])
@@ -2891,7 +2891,7 @@ if (json['posts'][0] != 0){
       else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
-         console.log('in else product')
+         //console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
       else{
@@ -2930,8 +2930,8 @@ function getCategoryLastProduct(id, name) {
          }
  
          $('.list-thumbnail').attr('onclick','changeListThumbnailLastProduct('+id+')')
-         // //console.log(name)
-         console.log(json)
+         // ////console.log(name)
+         //console.log(json)
 if (json['posts'][0] != 0){ 
 
          $('.titleCategoryTag').html(json['posts']['tag_name'])
@@ -3105,7 +3105,7 @@ if (json['posts'][0] != 0){
       else if (start == 0 && json['posts'][0] == 0 ){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
-         console.log('in else product')
+         //console.log('in else product')
          $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
       else{
@@ -3146,7 +3146,7 @@ function getProduct(id, title) {
       cache: false,
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          // getRecomendedCategory(id, json['posts'][0]['category'])
 
 
@@ -3181,11 +3181,11 @@ function getProduct(id, title) {
                else {
                   tempimg = tempimg + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']).replace(/src='/g, "style='width:100%; height:auto' src=\'")
                }
-               console.log('n --- > ' + n)
+               //console.log('n --- > ' + n)
 
             }
-            // //console.log(n)
-            // //console.log(img)
+            // ////console.log(n)
+            // ////console.log(img)
 
 
 
@@ -3293,7 +3293,7 @@ function getProduct(id, title) {
             li = li + '    </div>'
 
             $('.containerProduct').html(li)
-            console.log('review ' +json['posts'][0]['reviews']['averageRate'])
+            //console.log('review ' +json['posts'][0]['reviews']['averageRate'])
             $("#averageRating").rateYo({
                rating: String (json['posts'][0]['reviews']['averageRate']),
                readOnly: true,
@@ -3428,12 +3428,12 @@ function getProduct(id, title) {
 
          //  mySwiper.removeAllSlides();	
 
-         //   console.log(mySwiper)
-         //   console.log(mySwiper.length)
+         //   //console.log(mySwiper)
+         //   //console.log(mySwiper.length)
 
-         //console.log(json)
+         ////console.log(json)
 
-         // //console.log(json['posts'][0] ['image'].length)
+         // ////console.log(json['posts'][0] ['image'].length)
          if (mySwiper.length == undefined) {
             mySwiper.removeAllSlides();
 
@@ -3455,7 +3455,7 @@ function getProduct(id, title) {
                for (var i = 0; i < json['posts'][0]['images'].length; i++) {
                   if (soldFlag == 1) {
 
-                     console.log('in sold flag')
+                     //console.log('in sold flag')
                      if (i == 0) {
                         if (json['posts'][0]['special']=='1'){
 
@@ -3491,10 +3491,10 @@ function getProduct(id, title) {
                   }
 
                   else {
-                     //console.log( 'out sold flag')
+                     ////console.log( 'out sold flag')
 
                      if (i == 0) {
-                        console.log('out sold flag')
+                        //console.log('out sold flag')
 
                         if (json['posts'][0]['special']=='1'){
 
@@ -3574,13 +3574,13 @@ function getProduct(id, title) {
          else {
             mySwiper[mySwiper.length - 1].removeAllSlides();
 
-            console.log('in else')
+            //console.log('in else')
             if (json['posts'][0]['images'].length > 0) {
 
 
                for (var i = 0; i < json['posts'][0]['images'].length; i++) {
                   if (soldFlag == 1) {
-                     //console.log( 'in sold flag')
+                     ////console.log( 'in sold flag')
                      if (i == 0) {
                         if (json['posts'][0]['special']=='1'){
 
@@ -3613,7 +3613,7 @@ function getProduct(id, title) {
                   }
 
                   else {
-                     //console.log( 'out sold flag')
+                     ////console.log( 'out sold flag')
 
                      if (i == 0) {
                         if (json['posts'][0]['special']=='1'){
@@ -3712,7 +3712,7 @@ function ReturnValCatProd() {
 
 function getValudBid() {
    var data = $("input[name='my-radioBid']:checked").val();
-   console.log(data)
+   //console.log(data)
    $('.bidbackGroundBid').css('background-color', '#32c2ff');
    $('.Text-Color').css('color', 'white');
    $('.bidbackGroundBid_' + data).css('background-color', 'white');
@@ -3725,7 +3725,7 @@ function getRegisterForm() {
 
    var data = $("input[name='my-radio']:checked").val();
    $('#bidbackGround_' + data).css('background', 'black')
-   console.log(data)
+   //console.log(data)
    var li = ''
    if (data == 'Company') {
       getCountryCompany()
@@ -4018,7 +4018,7 @@ function getRegisterForm() {
 function getBidDiv() {
 
    var data = $("input[name='my-radio']:checked").val();
-   console.log(data)
+   //console.log(data)
 
 }
 function getCountry() {
@@ -4028,7 +4028,7 @@ function getCountry() {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + json['posts'][i]['name'] + '</option>'
@@ -4051,7 +4051,7 @@ function getBusinessType() {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + if_lang(json['posts'][i]['name'], json['posts'][i]['secname']) + '</option>'
@@ -4074,7 +4074,7 @@ function getBusinessTypeByID(id) {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -4109,7 +4109,7 @@ function getProductType() {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</option>'
@@ -4131,7 +4131,7 @@ function getProductTypeByID(id) {
 
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -4166,7 +4166,7 @@ function getCountryCompany() {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + json['posts'][i]['name'] + '</option>'
@@ -4213,7 +4213,7 @@ function getCountryByID(id) {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -4242,16 +4242,16 @@ function getCountryByID(id) {
 
 function getCity() {
 
-   //console.log($('#CountrySelect').val())
+   ////console.log($('#CountrySelect').val())
    var id = $('.CountrySelect').val()
-   console.log(id)
+   //console.log(id)
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          var li = ''
          if (json['posts'][0] != 0) {
             for (var i = 0; i < json['posts'].length; i++) {
@@ -4276,16 +4276,16 @@ function getCity() {
 
 function getCityCompany() {
 
-   //console.log($('#CountrySelect').val())
+   ////console.log($('#CountrySelect').val())
    var id = $('#CountrySelectCompany').val()
-   console.log(id)
+   //console.log(id)
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          var li = ''
          if (json['posts'][0] != 0) {
             for (var i = 0; i < json['posts'].length; i++) {
@@ -4314,8 +4314,8 @@ function getCityByID(id, Cityid) {
 
 
       success: function (json) {
-         console.log('city')
-         console.log(json)
+         //console.log('city')
+         //console.log(json)
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             if (Cityid == json['posts'][i]['id']) {
@@ -4418,7 +4418,7 @@ function RegisterPerson() {
                               //          platform :PLATFORM
                               //       },
                               success: function (json) {
-                                 console.log(json)
+                                 //console.log(json)
                                  if (json['posts'][0] == -1) {
                                     alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
                                  }
@@ -4432,8 +4432,8 @@ function RegisterPerson() {
                                     localStorage.buitandaUserID = json['posts'][0]
                                     localStorage.buitandaUserType = json['posts'][1]
 
-                                    console.log(localStorage.buitandaUserID)
-                                    console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
+                                    //console.log(localStorage.buitandaUserID)
+                                    //console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
 
                                     location.reload()
 
@@ -4453,7 +4453,7 @@ function RegisterPerson() {
    }
 
 
-   //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 
 
    hideIndicator()
@@ -4536,9 +4536,9 @@ function RegisterCompany() {
                                     if (!$('.conditions').prop('checked')) {
                                        alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                     } else {
-                                       console.log('city ---- > ' + City)
-                                       console.log('Countery ---- > ' + Country)
-                                       console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+                                       //console.log('city ---- > ' + City)
+                                       //console.log('Countery ---- > ' + Country)
+                                       //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                                        $.ajax({
                                           type: 'POST',
@@ -4546,7 +4546,7 @@ function RegisterCompany() {
                                              '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
                                           success: function (json) {
-                                             console.log(json)
+                                             //console.log(json)
                                              if (json['posts'][0] == -1) {
                                                 alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
                                              }
@@ -4560,7 +4560,7 @@ function RegisterCompany() {
 
                                                 localStorage.buitandaUserID = json['posts'][0]
                                                 localStorage.buitandaUserType = 'Company'
-                                                console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
+                                                //console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
 
                                                 location.reload()
                                              }
@@ -4584,7 +4584,7 @@ function RegisterCompany() {
       }
    }
 
-   //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 
    hideIndicator()
 }
@@ -4658,7 +4658,7 @@ function RegisterSeller() {
                                  if (!$('.conditions').prop('checked')) {
                                     alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                  } else {
-                                    console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+                                    //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
                                        '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
 
                                     $.ajax({
@@ -4667,7 +4667,7 @@ function RegisterSeller() {
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json',
 
                                        success: function (json) {
-                                          console.log(json)
+                                          //console.log(json)
                                           if (json['posts'][0] != 0) {
                                              alert(if_lang('Request Sent , we will contact your briefly . ', 'Pedido enviado, entraremos em contato brevemente.'))
                                              location.reload()
@@ -4693,7 +4693,7 @@ function RegisterSeller() {
       }
    }
 
-   //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 
    hideIndicator()
 }
@@ -4706,7 +4706,7 @@ function login() {
    showIndicator()
    var email = $('#emailLogin').val()
    var password = $('#passwordLogins').val()
-   //console.log(email+ '    ' +password)
+   ////console.log(email+ '    ' +password)
 
    if (email == '') {
       alert(if_lang('please enter email', 'please enter right email'))
@@ -4726,13 +4726,13 @@ function login() {
 
 
             success: function (json) {
-               console.log(PLATFORM)
-               console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
-               console.log(json)
+               //console.log(PLATFORM)
+               //console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               //console.log(json)
                if (json['posts'][0] != 0) {
                   localStorage.buitandaUserID = json['posts'][0]['id']
                   localStorage.buitandaUserType = json['posts'][0]['user_type']
-                  // console.log(  localStorage.buitandaUserID)
+                  // //console.log(  localStorage.buitandaUserID)
                   location.reload()
                   updateUUIDtoCustomerID(json['posts'][0]['id'])
 
@@ -4742,7 +4742,7 @@ function login() {
 
                }
                // if(json['posts'][0]  == 0){
-               // //console.log('nice')}
+               // ////console.log('nice')}
                hideIndicator()
             }
          });
@@ -4779,7 +4779,7 @@ function resetPassword() {
 
 
          success: function (json) {
-            console.log(json)
+            //console.log(json)
 
 
 
@@ -4787,7 +4787,7 @@ function resetPassword() {
                go_to_page("verifyCode")
                localStorage.buitandaTemp = json['posts']['0']['id']
 
-               //console.log('nice')
+               ////console.log('nice')
             }
             else {
                alert(if_lang('this email dosn\'t exist'))
@@ -4810,7 +4810,7 @@ function checkCode() {
 
    }
    else {
-      //console.log(localStorage.buitandaTemp)
+      ////console.log(localStorage.buitandaTemp)
 
       $.ajax({
          type: 'POST',
@@ -4818,7 +4818,7 @@ function checkCode() {
 
 
          success: function (json) {
-            //console.log(json)
+            ////console.log(json)
             if (json['posts'][0] != 0) {
                go_to_page("ResetPassword")
 
@@ -4830,7 +4830,7 @@ function checkCode() {
 
 
             // if(json['posts'][0]  == 0){
-            // //console.log('nice')}
+            // ////console.log('nice')}
             hideIndicator()
          }
       });
@@ -4839,7 +4839,7 @@ function checkCode() {
 
 
 function setNewPassword() {
-   //console.log(localStorage.buitandaTemp)
+   ////console.log(localStorage.buitandaTemp)
 
    showIndicator()
    var cpassword = $('#cPasswordReset').val()
@@ -4867,7 +4867,7 @@ function setNewPassword() {
          }
          else {
 
-            //console.log(localStorage.buitandaTemp)
+            ////console.log(localStorage.buitandaTemp)
 
             $.ajax({
                type: 'POST',
@@ -4875,7 +4875,7 @@ function setNewPassword() {
 
 
                success: function (json) {
-                  //console.log(json)
+                  ////console.log(json)
 
                   localStorage.buitandaUserID = localStorage.buitandaTemp
 
@@ -4897,9 +4897,9 @@ function getProfile() {
 
 
       success: function (json) {
-         console.log(json)
-         // console.log($('#namePerson'))
-         // console.log(json['posts'][0]['name'])
+         //console.log(json)
+         // //console.log($('#namePerson'))
+         // //console.log(json['posts'][0]['name'])
 
          getCountryByID(json['posts'][0]['country_id'])
          getCityByID(json['posts'][0]['country_id'], json['posts'][0]['city_id'])
@@ -5046,7 +5046,7 @@ function updateProfile() {
                               else {
 
 
-                                 console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
+                                 //console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
                                     ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
 
                                  $.ajax({
@@ -5056,7 +5056,7 @@ function updateProfile() {
 
 
                                     success: function (json) {
-                                       console.log(json)
+                                       //console.log(json)
                                        AnotherAlert(if_lang("your profile updated successfully", 'seu perfil foi atualizado com sucesso'))
 
                                        // location.reload();
@@ -5083,7 +5083,7 @@ function updateProfile() {
    }
 
 
-   //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 
 
    hideIndicator()
@@ -5097,13 +5097,13 @@ function getLang() {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + '<li>' +
                '            <label class="item-radio item-content">';
-            //console.log(localStorage.BuitLang) 
-            //console.log(json['posts'][i]['name']) 
+            ////console.log(localStorage.BuitLang) 
+            ////console.log(json['posts'][i]['name']) 
 
             if (localStorage.BuitLang == json['posts'][i]['name']) {
                li = li + '   <input type="radio" name="demo-radio" checked value="' + json['posts'][i]['name'] + '" id="buitanda' + i + '">'
@@ -5119,7 +5119,7 @@ function getLang() {
                '  </li>'
 
          }
-         // //console.log(li)
+         // ////console.log(li)
          $('.CounteryHome').html(li)
 
 
@@ -5131,9 +5131,9 @@ function getLang() {
 
 
 function setLang() {
-   //console.log($("input[name='demo-radio']:checked").val())
+   ////console.log($("input[name='demo-radio']:checked").val())
    localStorage.BuitLang = $("input[name='demo-radio']:checked").val();
-   //console.log(localStorage.BuitLang)
+   ////console.log(localStorage.BuitLang)
    // go_to_page("profile")
    location.reload();
 
@@ -5158,7 +5158,7 @@ function getBanners() {
             spaceBetween: 10,
             watchSlidesProgress: true
          });
-         //console.log(json)
+         ////console.log(json)
          if (flagSwip == 0) {
 
             for (var i = 0; i < json['posts'].length; i++) {
@@ -5193,7 +5193,7 @@ function getAuctionsList() {
 
 
       success: function (json) {
-         //console.log(json)
+         ////console.log(json)
          if (json['posts'][0] != 0) {
 
 
@@ -5235,7 +5235,7 @@ function getAuctionsList() {
 
 function getAuctionProduct(id) {
 
-   //console.log(id)
+   ////console.log(id)
    //  $('.imgSwi').empty();
 
 
@@ -5247,16 +5247,16 @@ function getAuctionProduct(id) {
       success: function (json) {
 
          $('.RecomendedForYOU').html(if_lang('RECOMMENDED ITEMS', 'ITENS RECOMENDADOS'))
-         console.log(json)
+         //console.log(json)
          var title = if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle'])
-         // console.log('str --- > '+title)
+         // //console.log('str --- > '+title)
          var lenString = title.length
 
-         //console.log(title[2])
+         ////console.log(title[2])
          var str = ''
-         console.log('length --- > ' + lenString)
+         //console.log('length --- > ' + lenString)
          if (lenString > 17) {
-            console.log('ttile --- > ' + title)
+            //console.log('ttile --- > ' + title)
             for (var x = 0; x < 15; x++) {
                str = str + title[x]
             }
@@ -5265,7 +5265,7 @@ function getAuctionProduct(id) {
          else {
             str = title
          }
-         console.log('str --- > ' + str)
+         //console.log('str --- > ' + str)
 
          $('.titleAuction').html(str);
 
@@ -5294,12 +5294,12 @@ function getAuctionProduct(id) {
             '<p class=" descP margin-top-p" >' + if_lang('Market Price: ' + json['posts'][0]['originalprice'], 'Preço de Mercado:  ' + json['posts'][0]['originalprice']) + '</p>' +
             '     <p class="pRedCat timer_' + json['posts'][0]['id'] + '" >' + timer(json['posts'][0]['endauctionDate'], json['posts'][0]['id'], json['posts'][0]['server_time']) + '</p>';
          if ($('.timer_' + id).html() != 'EXPIRED') {
-            console.log($('.timer_' + id).html())
+            //console.log($('.timer_' + id).html())
 
             li = li + '<p class="descP margin-top-p Current_Bid_' + json['posts'][0]['id'] + ' ">' + if_lang('Current Bid ', 'Oferta atual ') + '<span> :' + json['posts'][0]['bid']['bidcoins'] + ' KWZ</span></p>';
          }
          if ($('.timer_' + id).html() == 'EXPIRED') {
-            console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
+            //console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
             li = li + '<p class="descP margin-top-p Current_Bid_' + json['posts'][0]['id'] + ' ">' + if_lang('Closed Bid ', 'Oferta Fechada ') + '<span> :' + json['posts'][0]['bid']['bidcoins'] + ' KWZ</span></p>';
 
          }
@@ -5308,8 +5308,8 @@ function getAuctionProduct(id) {
             '<div class="bid_' + json['posts'][0]['id'] + '">' + '<div class="list list-box" style="display: flex;  "  >' +
             '<div class="row"  style="width: -webkit-fill-available;" >';
          if ($('.timer_' + id).html() != 'EXPIRED') {
-            console.log($('.timer_' + id).html())
-            console.log('Trueeeeeeeeeeeeeeeeee')
+            //console.log($('.timer_' + id).html())
+            //console.log('Trueeeeeeeeeeeeeeeeee')
             for (var i = 0; i < json['posts']['suggestions'].length; i++) {
 
 
@@ -5329,7 +5329,7 @@ function getAuctionProduct(id) {
             }
          }
          else {
-            console.log('in else')
+            //console.log('in else')
             $('.Current_Bid_' + json['posts'][0]['id']).html(if_lang('Closed Bid ', 'Oferta Fechada  ') + '<span> :' + json['posts'][0]['bid']['bidcoins'] + ' KWZ')
          }
          li = li + '</div>' +
@@ -5342,9 +5342,9 @@ function getAuctionProduct(id) {
             '<p class="descP margin-top-p">' + if_lang('info ', 'informação ') + ' <span> :' + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']) + '</span></p>' +
 
             '<div style="text-align:-webkit-center" >';
-         console.log(TimerFlag)
+         //console.log(TimerFlag)
          if ($('.timer_' + id).html() != 'EXPIRED') {
-            console.log(TimerFlag)
+            //console.log(TimerFlag)
             li = li + '                          <div style="text-align:-webkit-center">' +
                ' <button id="bidBtn_' + json['posts'][0]['id'] + '" class="col button button-raised button-fill bidBtn_' + json['posts'][0]['id'] + '" style="width: 20vh; margin: 1vh 0 1vh 0; background-color: red;" onclick="SubmitAuction(' + id + ',' + "'" + title + "'" + ')">' + if_lang('Bid', 'Oferta') + '   </button>';
             + '</div>'
@@ -5385,8 +5385,8 @@ function getAuctionProduct(id) {
             watchSlidesProgress: true
          });
          //   mySwiper.removeAllSlides();	
-         // console.log(mySwiper)
-         // console.log(mySwiper.length)
+         // //console.log(mySwiper)
+         // //console.log(mySwiper.length)
 
 
 
@@ -5394,12 +5394,12 @@ function getAuctionProduct(id) {
          if (mySwiper.length == undefined) {
             mySwiper.removeAllSlides()
 
-            // console.log('in iff ')
-            // console.log(flagAcution)
-            // console.log()
+            // //console.log('in iff ')
+            // //console.log(flagAcution)
+            // //console.log()
             if (json['posts'][0]['images'] != undefined) {
                for (var i = 0; i < json['posts'][0]['images'].length; i++) {
-                  //console.log( 'in sold flag')
+                  ////console.log( 'in sold flag')
                   if (i == 0) {
 
                      mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
@@ -5433,7 +5433,7 @@ function getAuctionProduct(id) {
             if (json['posts'][0]['images'] != undefined) {
 
                for (var i = 0; i < json['posts'][0]['images'].length; i++) {
-                  //console.log( 'in sold flag')
+                  ////console.log( 'in sold flag')
                   if (i == 0) {
 
                      mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
@@ -5475,7 +5475,7 @@ function bidSetIntreval(id) {
 
 
          success: function (json) {
-            // console.log(json)
+            // //console.log(json)
             if ($('.timer_' + id).html() != 'EXPIRED') {
 
                $('.Current_Bid_' + id).html(if_lang('Current Bid ', 'Oferta atual ') + '<span> :' + json['posts']['bid'] + '  </span>')
@@ -5503,7 +5503,7 @@ function bidSetIntreval(id) {
 }
 
 function timer(date, id, server_time) {
-   // console.log(id)
+   // //console.log(id)
    clearInterval(x)
 
    var countDownDate = new Date(date).getTime();
@@ -5539,7 +5539,7 @@ function timer(date, id, server_time) {
          //  document.getElementById("timer_"+id).innerHTML = "EXPIRED";
          $('.timer_' + id).html("EXPIRED")
          TimerFlag = 0
-         // console.log('timer flaag ---  > '+ TimerFlag)
+         // //console.log('timer flaag ---  > '+ TimerFlag)
          $('.bid_' + id).hide()
          $('.bidBtn_' + id).hide()
          clearInterval(x)
@@ -5558,8 +5558,8 @@ function getRecomendedCategory(idprod, idCat) {
 
       success: function (json) {
          //alert(json['posts'][0]['description']);
-         //  //console.log('json ')
-         //  console.log(json)
+         //  ////console.log('json ')
+         //  //console.log(json)
          if (json['posts'][0] != 0) {
 
             var mySwiper = app.swiper.create('.swiper-category', {
@@ -5584,9 +5584,9 @@ function getRecomendedCategory(idprod, idCat) {
             // });
             var x = 'ahmed samir'
 
-            // //console.log(json['posts'].length)
-            console.log(mySwiper)
-            console.log(mySwiper.length)
+            // ////console.log(json['posts'].length)
+            //console.log(mySwiper)
+            //console.log(mySwiper.length)
             for (var i = 0; i < json['posts'].length; i++) {
                if (mySwiper.length == undefined) {
                   mySwiper.addSlide(i, '<div class="swiper-slide" style="width:19vh; ">' +
@@ -5646,7 +5646,7 @@ function getRecomendedCategory(idprod, idCat) {
 }
 
 function getRecomendedAuction(id) {
-   // //console.log('in auction')
+   // ////console.log('in auction')
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=like&auc_id=" + id + "&format=json",
@@ -5654,8 +5654,8 @@ function getRecomendedAuction(id) {
       success: function (json) {
          if (json['posts'][0] != 0) {
             //alert(json['posts'][0]['description']);
-            console.log('json ')
-            console.log(json)
+            //console.log('json ')
+            //console.log(json)
             var mySwiper = app.swiper.create('.swiper-RecomendedAuction', {
                slidesPerView: '3',
                // autoplay: {
@@ -5750,10 +5750,10 @@ function contact() {
    var name = $('.NameC').val()
    var sub = $('.SubjectC').val()
    var msg = $('.MsgC').val()
-   //console.log(name)
-   //console.log('email --- > '+ email) 
-   //console.log('sub --- > '+ sub) 
-   //console.log('msg --- > '+ msg) 
+   ////console.log(name)
+   ////console.log('email --- > '+ email) 
+   ////console.log('sub --- > '+ sub) 
+   ////console.log('msg --- > '+ msg) 
 
 
    if (name == '') {
@@ -5786,7 +5786,7 @@ function contact() {
                   url: "https://buitanda.com/ws-v1.3.9.php?type=contactus&format=json&name=" + name + "&email=" + email + "&subject=" + sub + "&message=" + msg + "",
 
                   success: function (json) {
-                     //console.log(json)
+                     ////console.log(json)
                      alert('your message send sucssefully ')
                      location.reload()
 
@@ -5838,7 +5838,7 @@ function setSoldFlag(id) {
 
 
 function getMyCard() {
-   // console.log('im get my card')
+   // //console.log('im get my card')
    if (Checklogin()) {
 
       $.ajax({
@@ -5850,7 +5850,7 @@ function getMyCard() {
 
             if (json['posts'] != undefined) {
                if (json['posts'][0] != 0) {
-                  // console.log(json)
+                  // //console.log(json)
                   var li = ''
                   var nameProduct;
                   var total = 0;
@@ -5862,7 +5862,7 @@ function getMyCard() {
                      ' <th class="text-align-center" width="10%"> </th>' +
                      ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
                      '      </tr>'
-                  //console.log(json['posts'].length)
+                  ////console.log(json['posts'].length)
                   if (json['posts']['0'] != 0) {
                      for (var i = 0; i < json['posts'].length; i++) {
 
@@ -5870,7 +5870,7 @@ function getMyCard() {
                         total = parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
                         totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
                         var nf = Intl.NumberFormat('fr');
-                        // console.log(nf.format(total)); // 42,000,000 in many locales
+                        // //console.log(nf.format(total)); // 42,000,000 in many locales
                         total = nf.format(total)
 
                         nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
@@ -5917,7 +5917,7 @@ function getMyCard() {
                   var nf = Intl.NumberFormat('fr');
                   totalAll = nf.format(totalAll)
                   $('.TotalA').html(totalAll + ' KWZ')
-                  // console.log('i ---- >'+i)
+                  // //console.log('i ---- >'+i)
                   if (i > 0) {
                      $('.cart_counter').css('display', 'block')
                      $('.cart_counter').html(i)
@@ -5927,7 +5927,7 @@ function getMyCard() {
 
                   }
                   else {
-                     console.log('in else getCard')
+                     //console.log('in else getCard')
                      $('.cart_counter').css('display', 'none')
                      $("#nextCheckout").attr("disabled", true);
                      $("#nextCheckout").css("background", 'gray');
@@ -5959,13 +5959,13 @@ function getMyCard() {
 
             if (json['posts'] != undefined) {
                 if (json['posts'][0] != 0) {
-                  // console.log(json)
+                  // //console.log(json)
                   var li = ''
                   var nameProduct;
                   var total = 0;
                   var totalAll = 0;
-                  console.log('caaaaaaaaaaaaaaaaart')            
-                               console.log(JSON.stringify(json))
+                  //console.log('caaaaaaaaaaaaaaaaart')            
+                               //console.log(JSON.stringify(json))
                   li = li + ' <tr>' +
                      '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
                      ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
@@ -5973,7 +5973,7 @@ function getMyCard() {
                      ' <th class="text-align-center" width="10%"> </th>' +
                      ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
                      '      </tr>'
-                  //console.log(json['posts'].length)
+                  ////console.log(json['posts'].length)
                   if (json['posts']['0'] != 0) {
                      for (var i = 0; i < json['posts'].length; i++) {
 
@@ -5981,7 +5981,7 @@ function getMyCard() {
                         total = parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
                         totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
                         var nf = Intl.NumberFormat('fr');
-                        // console.log(nf.format(total)); // 42,000,000 in many locales
+                        // //console.log(nf.format(total)); // 42,000,000 in many locales
                         total = nf.format(total)
 
                         nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
@@ -6028,7 +6028,7 @@ function getMyCard() {
                   var nf = Intl.NumberFormat('fr');
                   totalAll = nf.format(totalAll)
                   $('.TotalA').html(totalAll + ' KWZ')
-                  // console.log('i ---- >'+i)
+                  // //console.log('i ---- >'+i)
                   if (i > 0) {
                      $('.cart_counter').css('display', 'block')
                      $('.cart_counter').html(i)
@@ -6038,7 +6038,7 @@ function getMyCard() {
 
                   }
                   else {
-                     console.log('in else getCard')
+                     //console.log('in else getCard')
                      $('.cart_counter').css('display', 'none')
                      $("#nextCheckout").attr("disabled", true);
                      $("#nextCheckout").css("background", 'gray');
@@ -6065,7 +6065,7 @@ function getMyCard() {
 
 function addToCard(id, avilable , minQty) {
    var qty = parseInt($('.avQuantity').html())
-   console.log('qty --- > ' + qty)
+   //console.log('qty --- > ' + qty)
 
    if (qty == 0 || qty < 0) {
       alert(if_lang('Sorry, Item is not available', 'Desculpe, o item não está disponível'))
@@ -6097,7 +6097,7 @@ function addToCard(id, avilable , minQty) {
                      if (Checklogin()) {
                         var qty = $('.valCardPros_' + id).val()
                         qty = parseInt(qty)
-                        console.log(qty)
+                        //console.log(qty)
                         if (avilable > 0) {
                            if (qty > 0) {
                               $.ajax({
@@ -6107,8 +6107,8 @@ function addToCard(id, avilable , minQty) {
                                  cache: false,
 
                                  success: function (json) {
-                                    console.log(json)
-                                    //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                                    //console.log(json)
+                                    ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                                     alert(if_lang('your product added successfully ', 'your product added successfully '))
                                     getMyCard()
                                  }
@@ -6126,7 +6126,7 @@ function addToCard(id, avilable , minQty) {
                      else {
                         var qty = $('.valCardPros_' + id).val()
                         qty = parseInt(qty)
-                        console.log(qty)
+                        //console.log(qty)
                         if (avilable > 0) {
                            if (qty > 0) {
                               $.ajax({
@@ -6136,8 +6136,8 @@ function addToCard(id, avilable , minQty) {
 
 
                                  success: function (json) {
-                                    console.log(json)
-                                    //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                                    //console.log(json)
+                                    ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                                     alert(if_lang('your product added successfully ', 'your product added successfully '))
                                     getMyCard()
                                  }
@@ -6170,7 +6170,7 @@ function addToCard(id, avilable , minQty) {
                if (Checklogin()) {
                   var qty = $('.valCardPros_' + id).val()
                   qty = parseInt(qty)
-                  console.log(qty)
+                  //console.log(qty)
                   if (avilable > 0) {
                      if (qty > 0) {
                         $.ajax({
@@ -6181,8 +6181,8 @@ function addToCard(id, avilable , minQty) {
 
 
                            success: function (json) {
-                              console.log(json)
-                              //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                              //console.log(json)
+                              ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                               alert(if_lang('your product added successfully ', 'your product added successfully '))
                               getMyCard()
                            }
@@ -6200,7 +6200,7 @@ function addToCard(id, avilable , minQty) {
                else {
                   var qty = $('.valCardPros_' + id).val()
                   qty = parseInt(qty)
-                  console.log(qty)
+                  //console.log(qty)
                   if (avilable > 0) {
                      if (qty > 0) {
                         $.ajax({
@@ -6210,8 +6210,8 @@ function addToCard(id, avilable , minQty) {
 
 
                            success: function (json) {
-                              console.log(json)
-                              //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                              //console.log(json)
+                              ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                               alert(if_lang('your product added successfully ', 'your product added successfully '))
                               getMyCard()
                            }
@@ -6251,7 +6251,7 @@ function addToCard(id, avilable , minQty) {
             if (Checklogin()) {
                var qty = $('.valCardPros_' + id).val()
                qty = parseInt(qty)
-               console.log(qty)
+               //console.log(qty)
                if (avilable > 0) {
                   if (qty > 0) {
                      $.ajax({
@@ -6262,8 +6262,8 @@ function addToCard(id, avilable , minQty) {
 
 
                         success: function (json) {
-                           console.log(json)
-                           //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                           //console.log(json)
+                           ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                            alert(if_lang('your product added successfully ', 'your product added successfully '))
                            getMyCard()
                         }
@@ -6281,7 +6281,7 @@ function addToCard(id, avilable , minQty) {
             else {
                var qty = $('.valCardPros_' + id).val()
                qty = parseInt(qty)
-               console.log(qty)
+               //console.log(qty)
                if (avilable > 0) {
                   if (qty > 0) {
                      $.ajax({
@@ -6291,8 +6291,8 @@ function addToCard(id, avilable , minQty) {
 
 
                         success: function (json) {
-                           console.log(json)
-                           //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                           //console.log(json)
+                           ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                            alert(if_lang('your product added successfully ', 'your product added successfully '))
                            getMyCard()
                         }
@@ -6317,7 +6317,7 @@ function addToCard(id, avilable , minQty) {
          if (Checklogin()) {
             var qty = $('.valCardPros_' + id).val()
             qty = parseInt(qty)
-            console.log(qty)
+            //console.log(qty)
             if (avilable > 0) {
                if (qty > 0) {
                   $.ajax({
@@ -6328,8 +6328,8 @@ function addToCard(id, avilable , minQty) {
 
 
                      success: function (json) {
-                        console.log(json)
-                        //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                        //console.log(json)
+                        ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                         alert(if_lang('your product added successfully ', 'your product added successfully '))
                         getMyCard()
                      }
@@ -6347,7 +6347,7 @@ function addToCard(id, avilable , minQty) {
          else {
             var qty = $('.valCardPros_' + id).val()
             qty = parseInt(qty)
-            console.log(qty)
+            //console.log(qty)
             if (avilable > 0) {
                if (qty > 0) {
                   $.ajax({
@@ -6356,8 +6356,8 @@ function addToCard(id, avilable , minQty) {
                      cache: false,
 
                      success: function (json) {
-                        console.log(json)
-                        //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+                        //console.log(json)
+                        ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
                         alert(if_lang('your product added successfully ', 'your product added successfully '))
                         getMyCard()
                      }
@@ -6386,7 +6386,7 @@ function deleteProduct(id, sid, cid) {
          url: "https://buitanda.com/ws-v1.3.9.php?type=deleteFromCart&cid=" + cid + "&sid=" + sid + "&customer_id=" + localStorage.buitandaUserID + "&product_id=" + id + "&format=json",
 
          success: function (json) {
-            //console.log(json)
+            ////console.log(json)
 
             getMyCard()
          }
@@ -6399,7 +6399,7 @@ function deleteProduct(id, sid, cid) {
          url: "https://buitanda.com/ws-v1.3.9.php?type=deleteFromCart&cid=" + cid + "&sid=" + sid + "&uuid=" + UUID + "&product_id=" + id + "&format=json",
 
          success: function (json) {
-            //console.log(json)
+            ////console.log(json)
 
             getMyCard()
          }
@@ -6425,17 +6425,17 @@ function decreaseQty(id, minQty, current, sid, cid) {
       var tot = ''
       for (i = 0; i < AllTotal.length; i++) {
          if (AllTotal[i] != '') {
-            console.log('if')
+            //console.log('if')
             tot = tot + AllTotal[i]
          }
       }
       tot = AllTotal.replace(/\s/g, '')
       tot = tot.replace('KWZ', '')
-      console.log(tot)
-      console.log('parseFloat(tot) --- > ' + parseFloat(tot))
-      console.log('Rest  --- > ' + Rest)
+      //console.log(tot)
+      //console.log('parseFloat(tot) --- > ' + parseFloat(tot))
+      //console.log('Rest  --- > ' + Rest)
       var inte = parseFloat(tot) - Rest
-      console.log('parseFloat(tot) - Rest  --- > ' + inte)
+      //console.log('parseFloat(tot) - Rest  --- > ' + inte)
       inte = nf.format(inte);
       total = nf.format(total)
       if (Checklogin()) {
@@ -6446,7 +6446,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
             cache: false,
 
             success: function (json) {
-               //console.log(json)
+               ////console.log(json)
                $('.valCardPro_' + id).val(qty)
 
                $('.totalProduct' + id).html(total + ' KWZ')
@@ -6465,7 +6465,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
             cache: false,
 
             success: function (json) {
-               //console.log(json)
+               ////console.log(json)
                $('.valCardPro_' + id).val(qty)
 
                $('.totalProduct' + id).html(total + ' KWZ')
@@ -6482,10 +6482,10 @@ function decreaseQty(id, minQty, current, sid, cid) {
 
 
 function increaseQTy(id, max, current, sid, cid) {
-   console.log('in increase')
+   //console.log('in increase')
    var OldQty = parseInt($('.valCardPro_' + id).val())
    var total = 0
-   console.log(OldQty + '   <   ' + max)
+   //console.log(OldQty + '   <   ' + max)
    if (OldQty < max) {
 
       var qty = OldQty + 1
@@ -6503,16 +6503,16 @@ function increaseQTy(id, max, current, sid, cid) {
          }
       }
 
-      console.log(tot)
+      //console.log(tot)
       tot = AllTotal.replace(/\s/g, '')
       tot = tot.replace('KWZ', '')
-      //  console.log
+      //  //console.log
 
 
       var inte = parseFloat(tot) + Rest
       inte = nf.format(inte);
       total = nf.format(total)
-      console.log('qty ---- > ' + qty)
+      //console.log('qty ---- > ' + qty)
       $('.valCardPro_' + id).val(qty)
 
       if (Checklogin()) {
@@ -6524,12 +6524,12 @@ function increaseQTy(id, max, current, sid, cid) {
 
 
             success: function (json) {
-               console.log(json)
-               console.log('old --- > ' + OldQty)
-               console.log('new --- > ' + qty)
-               console.log('valCardPro_' + id)
-
                //console.log(json)
+               //console.log('old --- > ' + OldQty)
+               //console.log('new --- > ' + qty)
+               //console.log('valCardPro_' + id)
+
+               ////console.log(json)
                qty = parseInt(qty)
 
 
@@ -6551,12 +6551,12 @@ function increaseQTy(id, max, current, sid, cid) {
 
 
             success: function (json) {
-               console.log(json)
-               console.log('old --- > ' + OldQty)
-               console.log('new --- > ' + qty)
-               console.log('valCardPro_' + id)
-
                //console.log(json)
+               //console.log('old --- > ' + OldQty)
+               //console.log('new --- > ' + qty)
+               //console.log('valCardPro_' + id)
+
+               ////console.log(json)
                qty = parseInt(qty)
 
 
@@ -6655,7 +6655,7 @@ function getOrderArr() {
    constantTotal = $('.TotalA').html()
    if (Checklogin()) {
       // $('.logoutProfileShop').hide()
-      console.log('in logout')
+      //console.log('in logout')
       $.ajax({
          type: 'GET',
          url: "https://buitanda.com/ws-v1.3.9.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
@@ -6677,7 +6677,7 @@ function getOrderArr() {
                arrOrder.push(x)
             }
 
-            //console.log(arrOrder)
+            ////console.log(arrOrder)
          }
       })
    }
@@ -6704,7 +6704,7 @@ function getOrderArr() {
                arrOrder.push(x)
             }
 
-            //console.log(arrOrder)
+            ////console.log(arrOrder)
          }
       })
       // $('.loginProfileShop').hide()
@@ -6720,15 +6720,15 @@ function getPersonalDataOrder() {
    notesORder = $('#noteShop').val()
 
    if ($('#phoneShop').html() != undefined && $('#phoneShop').html() != '') {
-      //console.log('in if')
-      //console.log($('#phoneShop').html())
+      ////console.log('in if')
+      ////console.log($('#phoneShop').html())
 
       phoneOrder = $('#phoneShop').html()
       AddressOrder = $('#AddressShop').html()
 
    }
    else if ($('#phoneShop').val() != undefined && $('#phoneShop').val() != '') {
-      //console.log('in else')
+      ////console.log('in else')
 
       phoneOrder = $('#phoneShop').val()
       AddressOrder = $('#AddressShop').val()
@@ -6741,13 +6741,13 @@ function getPersonalDataOrder() {
 
    }
    else {
-      console.log('addr --- >' + AddressOrder)
+      //console.log('addr --- >' + AddressOrder)
       if (AddressOrder == ' ' || AddressOrder == '' || AddressOrder == undefined) {
          alert(if_lang('Please enter Address  ', 'Digite o ENDEREÇO'))
 
       }
       else {
-         console.log(AddressOrder + '     ' + phoneOrder)
+         //console.log(AddressOrder + '     ' + phoneOrder)
          // go_to_page('Delivery')
          GetShipping()
          go_to_page('SubmitOrder')
@@ -6755,27 +6755,27 @@ function getPersonalDataOrder() {
       }
 
    }
-   //console.log($('#phoneShop').val())
+   ////console.log($('#phoneShop').val())
 
-   //console.log(AddressOrder + '       ' +phoneOrder)
+   ////console.log(AddressOrder + '       ' +phoneOrder)
 }
 
 function getDeleiveryType() {
 
    go_to_page('SubmitOrder')
    DeliveryType = $("input[name='my-radio']:checked").val();
-   //console.log(DeliveryType)
+   ////console.log(DeliveryType)
 }
 
 function SubmitOrder() {
    $('#ProccedOrder').hide()
    showIndicator()
 
-   console.log(arrOrder)
+   //console.log(arrOrder)
    var paymen_type = $("input[name='my-radio']:checked").val();
 
    arrOrder = encodeURIComponent(JSON.stringify(arrOrder));
-   console.log(arrOrder)
+   //console.log(arrOrder)
 
    var url = "https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
       "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
@@ -6798,11 +6798,11 @@ function SubmitOrder() {
       //          payment_type : paymen_type
       // },
       success: function (json) {
-         //console.log(url)
-         console.log("https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
+         ////console.log(url)
+         //console.log("https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
             "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
             "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json")
-         // console.log(json)
+         // //console.log(json)
          if ( paymen_type =='PAYEMENT of BANK'){
             alert(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
 
@@ -6828,7 +6828,7 @@ function getInstructionsSubmit() {
 
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          var desc = json['posts'][0]['description'].split("src='")
          desc = desc[0] + "src='https://buitanda.com/" + desc[1]
          desc = desc.split("width")
@@ -6846,7 +6846,7 @@ function getInstructionsSubmit() {
          //   $('.instruction').html(if_lang(desc, descAr))
            $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
 
-         //console.log(json)
+         ////console.log(json)
       }
    })
 }
@@ -6858,7 +6858,7 @@ function getInstructions() {
 
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          var desc = json['posts'][0]['description'].split("src='")
          desc = desc[0] + "src='https://buitanda.com/" + desc[1]
          desc = desc.split("width")
@@ -6876,12 +6876,12 @@ function getInstructions() {
          //   $('.instruction').html(if_lang(desc, descAr))
            $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
 
-         //console.log(json)
+         ////console.log(json)
       }
    })
 }
 function SubmitRefOrder() {
-   //console.log(localStorage.BuitLang)
+   ////console.log(localStorage.BuitLang)
    alert(if_lang('Comming Soon ', 'Comming Soon'))
 }
 
@@ -6899,7 +6899,7 @@ function getOrders() {
 
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          if (json['posts'][0] != 0) {
             var li = ''
             var nf = Intl.NumberFormat('fr');
@@ -6919,7 +6919,7 @@ function getOrders() {
                   ' </div>' +
                   '   <div class="item-subtitle m-t-5"><span class="inv-client text-green">' + json['posts'][i]['delivery_status'] + '</span>';
                if (json['posts'][i]['payment_status'] != "Pending" && json['posts'][i]['payment_status'] != "pending" && json['posts'][i]['payment_status'] != "Cancelled" && json['posts'][i]['payment_status'] != "cancelled") {
-                  //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
+                  //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
                   li = li + '<span class="badge color-green inv-badge fl-right">' + json['posts'][i]['payment_status'] + '</span></div>'
                } else if (json['posts'][i]['payment_status'] != "Cancelled" && json['posts'][i]['payment_status'] != "cancelled") {
                   li = li + '</span> <span class="badge  inv-badge fl-right" style="background:orange">' + json['posts'][i]['payment_status'] + '</span></div>'
@@ -6950,7 +6950,7 @@ function getOrders() {
 
             $('.OrderList').append('<p style="text-align:center">' + if_lang('no orders data ', 'dados de pedidos') + '</p>')
          }
-         //console.log(json)
+         ////console.log(json)
 
 
 
@@ -6966,7 +6966,7 @@ function getMyAuction() {
 
 
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          if (json['posts'][0] != 0) {
             var li = ''
             var nf = Intl.NumberFormat('fr');
@@ -6987,7 +6987,7 @@ function getMyAuction() {
                   ' </div>' +
                   '   <div class="item-subtitle m-t-5"><span class="inv-client text-green">' + Remaining_time + '</span>';
                if (json['posts'][i]['winner_id'] != 0 && json['posts'][i]['winner_id'] != localStorage.buitandaUserID) {
-                  //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
+                  //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
                   li = li + '<span class="badge red-color   inv-badge fl-right">' + if_lang('lost ', 'perder') + '</span></div>'
                } else if (json['posts'][i]['winner_id'] == 0) {
                   li = li + '</span> <span class="badge  inv-badge fl-right" style="background:orange">' + if_lang('Running', 'Corrida') + '</span></div>'
@@ -7017,7 +7017,7 @@ function getMyAuction() {
 
             $('.AuctionList').append('<p style="text-align:center">' + if_lang('no data Auction for you ', 'sem dados Leilão para você') + '</p>')
          }
-         //console.log(json)
+         ////console.log(json)
 
 
 
@@ -7034,7 +7034,7 @@ function getMyOrder(id) {
       url: " https://buitanda.com/ws-v1.3.9.php?type=getOrderById&id=" + id + "&format=json",
        cache: false,
       success: function (json) {
-         console.log(json)
+         //console.log(json)
          $('.MyOrderTitle').html(if_lang('Order Details', 'detalhes do pedido'))
          if (json[0] != 0) {
             var li
@@ -7100,8 +7100,8 @@ function getMyOrder(id) {
                      total = new Intl.NumberFormat('fr').format(total)
                      var quantity = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['qty']))
                      var unit_price = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['unit_price']))
-                     console.log('unit price ---- > '+ unit_price)
-                     // console.log('unit price in app  ---- > '+ unit_price)
+                     //console.log('unit price ---- > '+ unit_price)
+                     // //console.log('unit price in app  ---- > '+ unit_price)
 
                      li = li + ' <tr>' +
                         '<td class="ItemOrder">' +
@@ -7149,7 +7149,7 @@ function getMyOrder(id) {
          else {
 
          }
-         //console.log(json)
+         ////console.log(json)
       }
    })
 }
@@ -7159,18 +7159,18 @@ function getMyOrder(id) {
 
 function callNum() {
    var num = $('.PhoneNumbContact').html()
-   console.log(num)
+   //console.log(num)
    if (num) {
       window.plugins.CallNumber.callNumber(onSuccess222, onError222, num, true);
    } else {
       // ons.notification.alert('')
    }
    function onSuccess222(result) {
-      console.log("Success:" + result);
+      //console.log("Success:" + result);
    }
 
    function onError222(result) {
-      console.log("Error:" + result);
+      //console.log("Error:" + result);
    }
 
 }
@@ -7188,9 +7188,9 @@ function SubmitAuction(idPro, title) {
 
          success: function (json) {
             if (json['posts'][0] != -1) {
-               console.log("https://buitanda.com/ws-v1.3.9.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
+               //console.log("https://buitanda.com/ws-v1.3.9.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
 
-               console.log(json)
+               //console.log(json)
                alert(if_lang('bid added successfully', 'lance adicionado com sucesso'))
 
             }
@@ -7217,8 +7217,8 @@ function SubmitAuction(idPro, title) {
 function SearchISIN(idPro, title) {
    showIndicator()
    var text = $('.SearchHome').val()
-   console.log(text)
-   console.log(typeof (text))
+   //console.log(text)
+   //console.log(typeof (text))
 
    view.router.navigate({
       name: 'Search',
@@ -7239,8 +7239,8 @@ function SearchISIN(idPro, title) {
 function SearchISINCat(idPro, title) {
    showIndicator()
    var text = $('.SearchCate').val()
-   console.log(text)
-   console.log(typeof (text))
+   //console.log(text)
+   //console.log(typeof (text))
 
    view.router.navigate({
       name: 'Search',
@@ -7308,7 +7308,7 @@ $("input").bind("click", function () {
 
 
 function ToolbarCategory() {
-   console.log('in cat bar cat')
+   //console.log('in cat bar cat')
    // $('#tab2').css('color','#32c2ff')
    $('.catpic').attr('src', 'img/Categories Blue.svg')
    $('.HomePic').attr('src', 'img/Home gray.svg')
@@ -7356,7 +7356,7 @@ function get_timeDifference(strtdatetime) {
       return "";
    }
 
-   //console.log(datetime + " " + now);
+   ////console.log(datetime + " " + now);
 
    if (datetime < now) {
       return 'Expired';
@@ -7409,7 +7409,7 @@ function get_timeDifference(strtdatetime) {
       msectext = String(msec);
       msectext = msectext.substring(0, 1);
       if (msectext.length == 1) { msectext = '0' + msectext };
-      // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
+      // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
       return daylabel + ' Day ' + hourtext + " h " + mintext + " m " + sectext + ' sec ';
    }
 }
@@ -7423,7 +7423,7 @@ function get_timeDifference_Days(strtdatetime) {
       return "";
    }
 
-   //console.log(datetime + " " + now);
+   ////console.log(datetime + " " + now);
 
    if (datetime < now) {
       return 'Expired';
@@ -7480,8 +7480,8 @@ function get_timeDifference_Days(strtdatetime) {
       msectext = String(msec);
       msectext = msectext.substring(0, 1);
       if (msectext.length == 1) { msectext = '0' + msectext };
-      console.log(daylabel)
-      // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
+      //console.log(daylabel)
+      // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
       return daylabel + ' Day ' + hourtext + " h ";
    }
 }
@@ -7524,16 +7524,16 @@ var totalPlusShiping
 
 function GetShipping() {
    var tot
-   console.log(constantTotal)
+   //console.log(constantTotal)
    for (i = 0; i < constantTotal.length; i++) {
       if (constantTotal[i] != '') {
-         console.log('if')
+         //console.log('if')
          tot = tot + constantTotal[i]
       }
    }
    tot = constantTotal.replace(/\s/g, '')
    tot = tot.replace('KWZ', '')
-   console.log(tot)
+   //console.log(tot)
    $.ajax({
       async: false,
       type: 'GET',
@@ -7543,13 +7543,13 @@ function GetShipping() {
       success: function (json) {
          var nf = Intl.NumberFormat('fr');
 
-         console.log('shipping')
+         //console.log('shipping')
 
-         console.log(json)
+         //console.log(json)
          shipping = nf.format(json['posts']['0']['totalShipping'])
 
          totalPlusShiping = nf.format(json['posts']['0']['total'])
-         console.log(totalPlusShiping)
+         //console.log(totalPlusShiping)
          if (shipping == 0) {
             $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
          }
@@ -7570,9 +7570,9 @@ function GetShipping() {
 function getProductCategorySorting() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
-   console.log($('.Sortprod').val())
+   //console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
-   console.log(sort)
+   //console.log(sort)
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -7583,9 +7583,9 @@ function getProductCategorySorting() {
 function getProductCategoryTagSorting() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
-   console.log($('.Sortprod').val())
+   //console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
-   console.log(sort)
+   //console.log(sort)
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -7596,9 +7596,9 @@ function getProductCategoryTagSorting() {
 function getProductCategoryLastProduct() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
-   console.log($('.Sortprod').val())
+   //console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
-   console.log(sort)
+   //console.log(sort)
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -7609,9 +7609,9 @@ function getProductCategoryLastProduct() {
 function getProductCategoryBrandSorting() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
-   console.log($('.Sortprod').val())
+   //console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
-   console.log(sort)
+   //console.log(sort)
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -7666,7 +7666,7 @@ function RegisterTillCheckout() {
       alert(if_lang("please enter name", 'por favor digite o nome'))
    }
    else {
-      console.log('name --- >' + name)
+      //console.log('name --- >' + name)
       if (adddres == '') {
          alert(if_lang("please enter address", 'digite o endereço'))
       }
@@ -7713,7 +7713,7 @@ function RegisterTillCheckout() {
 
 
                               success: function (json) {
-                                 console.log(json)
+                                 //console.log(json)
                                  if (json['posts'][0] == -1) {
                                     alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
                                  }
@@ -7727,7 +7727,7 @@ function RegisterTillCheckout() {
                                     localStorage.buitandaUserID = json['posts'][0]
                                     localStorage.buitandaUserType = json['posts'][1]
 
-                                    console.log(localStorage.buitandaUserID)
+                                    //console.log(localStorage.buitandaUserID)
                                     notesORder = note
                                     phoneOrder = mobile
                                     AddressOrder = adddres
@@ -7753,7 +7753,7 @@ function RegisterTillCheckout() {
    }
 
 
-   //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 
 
    hideIndicator()
@@ -7819,7 +7819,7 @@ function loginTillCheckout() {
    showIndicator()
    var email = $('.emailLogins').val()
    var password = $('.passwordLoginss').val()
-   //console.log(email+ '    ' +password)
+   ////console.log(email+ '    ' +password)
 
    if (email == '') {
       alert(if_lang('please enter email', 'من فضلك ادخل البريد الالكتروني'))
@@ -7839,13 +7839,13 @@ function loginTillCheckout() {
 
 
             success: function (json) {
-               console.log(PLATFORM)
-               console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
-               console.log(json)
+               //console.log(PLATFORM)
+               //console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               //console.log(json)
                if (json['posts'][0] != 0) {
                   localStorage.buitandaUserID = json['posts'][0]['id']
                   localStorage.buitandaUserType = json['posts'][0]['user_type']
-                  // console.log(  localStorage.buitandaUserID)
+                  // //console.log(  localStorage.buitandaUserID)
 
                   notesORder = ''
                   phoneOrder = json['posts'][0]['phoneNumber']
@@ -7863,7 +7863,7 @@ function loginTillCheckout() {
 
                }
                // if(json['posts'][0]  == 0){
-               // //console.log('nice')}
+               // ////console.log('nice')}
                hideIndicator()
             }
          });
@@ -7881,8 +7881,8 @@ function getNewProductDetails() {
       cache: false,
 
       success: function (json) {
-         console.log('in get new product deatails ')
-         console.log(json['posts']['quantity'])
+         //console.log('in get new product deatails ')
+         //console.log(json['posts']['quantity'])
          if (json['posts']['image']) {
             $('#main_img_swiper').attr('src', json['posts']['image'])
 
@@ -7921,8 +7921,8 @@ function updateUUIDtoCustomerID(id) {
       cache: false,
 
       success: function (json) {
-         console.log('uuid ---- > ' + UUID)
-         console.log('id ----- > ' + id)
+         //console.log('uuid ---- > ' + UUID)
+         //console.log('id ----- > ' + id)
 
       }
    });
@@ -8206,10 +8206,10 @@ function is_email(email) {
    var atpos = email.indexOf("@");
    var dotpos = email.lastIndexOf(".");
    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
-      console.log('wrong email')
+      //console.log('wrong email')
      return false;
    }else{
-      console.log('right email')
+      //console.log('right email')
 
      return true;
    }
@@ -8224,7 +8224,7 @@ function is_email(email) {
 
       success: function (json) {
 
-         console.log('legth --- > '+json['posts']['reviews'].length)
+         //console.log('legth --- > '+json['posts']['reviews'].length)
          offsit = offsit +5
          if (json['posts']['reviews'].length > 0){    
             for (var l =0 ; l < json['posts']['reviews'].length; l++ ){
@@ -8272,7 +8272,7 @@ starWidth: "20px",
  }
 
  function changeListThumbnailBrand (id){
-    console.log(' Start ----- > '+ localStorage.ListThumbnail)
+    //console.log(' Start ----- > '+ localStorage.ListThumbnail)
     if (localStorage.ListThumbnail=='Thumbnail'){
        localStorage.ListThumbnail = 'List'
        $('.list-thumbnail').html('square_list')
@@ -8287,7 +8287,7 @@ starWidth: "20px",
        $('.list-thumbnail').html('rectangle_grid_2x2')
        start = 0
        end = 8
-       console.log(' end ----- > '+ localStorage.ListThumbnail)
+       //console.log(' end ----- > '+ localStorage.ListThumbnail)
        app.infiniteScroll.create('.infinite-scroll-content')
 
        getCategoryProductBrand(id)
@@ -8299,7 +8299,7 @@ starWidth: "20px",
  
  
  function changeListThumbnailLastProduct (id){
-   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
@@ -8315,7 +8315,7 @@ starWidth: "20px",
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
-      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
@@ -8327,7 +8327,7 @@ starWidth: "20px",
  
 
  function changeListThumbnailTag (id){
-   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
@@ -8343,7 +8343,7 @@ starWidth: "20px",
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
-      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
@@ -8356,7 +8356,7 @@ starWidth: "20px",
 
 
 function changeListThumbnailParentCategory (id){
-   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
@@ -8372,7 +8372,7 @@ function changeListThumbnailParentCategory (id){
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
-      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
@@ -8385,7 +8385,7 @@ function changeListThumbnailParentCategory (id){
 
 
 function changeListThumbnailCategoryProduct (id){
-   console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
@@ -8401,7 +8401,7 @@ function changeListThumbnailCategoryProduct (id){
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
-      console.log(' end ----- > '+ localStorage.ListThumbnail)
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
@@ -8423,7 +8423,7 @@ function logFileInsert( ) {
 
       success: function (json) { 
  
-         console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json")
+         //console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json")
 
          
 
