@@ -108,6 +108,7 @@ function reloadPage() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log('in reloade func')
 =======
    //console.log('in reloade func')
@@ -115,6 +116,9 @@ function reloadPage() {
 =======
    //console.log('in reloade func')
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log('in reloade func')
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log('in reloade func')
 >>>>>>> parent of c100eb4... monaca
@@ -141,6 +145,7 @@ function onDeviceReady() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -148,6 +153,9 @@ function onDeviceReady() {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -160,6 +168,7 @@ function onDeviceReady() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //////console.log('V' + version)
 =======
       //console.log('V' + version)
@@ -167,6 +176,9 @@ function onDeviceReady() {
 =======
       //console.log('V' + version)
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('V' + version)
+>>>>>>> parent of c100eb4... monaca
 =======
       ////console.log('V' + version)
 >>>>>>> parent of c100eb4... monaca
@@ -183,6 +195,7 @@ function onDeviceReady() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       // ////console.log(device.model);
 =======
       // console.log(device.model);
@@ -190,6 +203,9 @@ function onDeviceReady() {
 =======
       // console.log(device.model);
 >>>>>>> parent of 40b1156... monaca
+=======
+      // //console.log(device.model);
+>>>>>>> parent of c100eb4... monaca
 =======
       // //console.log(device.model);
 >>>>>>> parent of c100eb4... monaca
@@ -243,6 +259,7 @@ function onDeviceReady() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(PLATFORM)
    // alert("hi");
    // //////console.log('device ready --- > ' + localStorage, mercadoLanguage)
@@ -261,12 +278,18 @@ function onDeviceReady() {
    // alert("hi");
    // ////console.log('device ready --- > ' + localStorage, mercadoLanguage)
 >>>>>>> parent of c100eb4... monaca
+=======
+   //console.log(PLATFORM)
+   // alert("hi");
+   // ////console.log('device ready --- > ' + localStorage, mercadoLanguage)
+>>>>>>> parent of c100eb4... monaca
 
    // use_touchid(1234);
    // delete_pass();
    window.plugins.OneSignal
       .startInit("77d5e885-c96a-4342-b141-4efcadb9c1e8")
       .handleNotificationOpened(function (jsonData) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -277,6 +300,9 @@ function onDeviceReady() {
 =======
          console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
 >>>>>>> parent of c100eb4... monaca
@@ -322,6 +348,7 @@ function onDeviceReady() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       // //////console.log('getIds: ' + JSON.stringify(ids));
 =======
       // //console.log('getIds: ' + JSON.stringify(ids));
@@ -332,12 +359,16 @@ function onDeviceReady() {
 =======
       // ////console.log('getIds: ' + JSON.stringify(ids));
 >>>>>>> parent of c100eb4... monaca
+=======
+      // ////console.log('getIds: ' + JSON.stringify(ids));
+>>>>>>> parent of c100eb4... monaca
    });
 
    document.addEventListener("backbutton", onBackKeyDown, false);
 
    function onBackKeyDown(e) {
       var att = $$(".page-current").attr("data-name");
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -351,6 +382,10 @@ function onDeviceReady() {
       //console.log('att ------ > '+ att)
       //console.log(view.history)
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('att ------ > '+ att)
+      ////console.log(view.history)
+>>>>>>> parent of c100eb4... monaca
 =======
       ////console.log('att ------ > '+ att)
       ////console.log(view.history)
@@ -449,6 +484,7 @@ function login_using_touchid() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // //////console.log(token);
 =======
          // //console.log(token);
@@ -456,6 +492,9 @@ function login_using_touchid() {
 =======
          // //console.log(token);
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(token);
+>>>>>>> parent of c100eb4... monaca
 =======
          // ////console.log(token);
 >>>>>>> parent of c100eb4... monaca
@@ -471,7 +510,11 @@ function login_using_touchid() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //   //////console.log("successCallback(): " + JSON.stringify(result));
+=======
+         //   ////console.log("successCallback(): " + JSON.stringify(result));
+>>>>>>> parent of c100eb4... monaca
 =======
          //   ////console.log("successCallback(): " + JSON.stringify(result));
 >>>>>>> parent of c100eb4... monaca
@@ -483,6 +526,7 @@ function login_using_touchid() {
          //       login(email, result.password);
          //     }
          //   } else if (result.withBackup) {
+<<<<<<< HEAD
 <<<<<<< HEAD
          //     //////console.log("Authenticated with backup password");
 =======
@@ -505,11 +549,15 @@ function login_using_touchid() {
 =======
          //     ////console.log("Authenticated with backup password");
 >>>>>>> parent of c100eb4... monaca
+=======
+         //     ////console.log("Authenticated with backup password");
+>>>>>>> parent of c100eb4... monaca
          //   }
          // }
          //
          // function errorCallback2(error) {
          //   if (error === FingerprintAuth.ERRORS.FINGERPRINT_CANCELLED) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -531,6 +579,11 @@ function login_using_touchid() {
          //   } else {
          //     ////console.log("FingerprintAuth Error: " + error);
 >>>>>>> parent of c100eb4... monaca
+=======
+         //     ////console.log("FingerprintAuth Dialog Cancelled!");
+         //   } else {
+         //     ////console.log("FingerprintAuth Error: " + error);
+>>>>>>> parent of c100eb4... monaca
          //   }
          // }
       }
@@ -545,6 +598,7 @@ $$(document).on('page:init', '.page[data-name="profile"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(localStorage.buitandaUserID)
 =======
    console.log(localStorage.buitandaUserID)
@@ -552,6 +606,9 @@ $$(document).on('page:init', '.page[data-name="profile"]', function (e) {
 =======
    console.log(localStorage.buitandaUserID)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(localStorage.buitandaUserID)
 >>>>>>> parent of c100eb4... monaca
@@ -592,6 +649,7 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('home')
 =======
    console.log('home')
@@ -599,6 +657,9 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 =======
    console.log('home')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('home')
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('home')
 >>>>>>> parent of c100eb4... monaca
@@ -618,6 +679,7 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('home')
 =======
    console.log('home')
@@ -625,6 +687,9 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 =======
    console.log('home')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('home')
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('home')
 >>>>>>> parent of c100eb4... monaca
@@ -726,6 +791,7 @@ $$(document).on('page:init', '.page[data-name="Register-Company"]', function (e)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('inRegisterComant')
 =======
    console.log('inRegisterComant')
@@ -733,6 +799,9 @@ $$(document).on('page:init', '.page[data-name="Register-Company"]', function (e)
 =======
    console.log('inRegisterComant')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('inRegisterComant')
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('inRegisterComant')
 >>>>>>> parent of c100eb4... monaca
@@ -832,6 +901,7 @@ $$(document).on('page:init', '.page[data-name="review"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('hello')
 =======
    console.log('hello')
@@ -839,6 +909,9 @@ $$(document).on('page:init', '.page[data-name="review"]', function (e) {
 =======
    console.log('hello')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('hello')
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('hello')
 >>>>>>> parent of c100eb4... monaca
@@ -959,6 +1032,7 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('in profile 5raaa  ====== > ' + Checklogin())
 =======
    console.log('in profile 5raaa  ====== > ' + Checklogin())
@@ -966,6 +1040,9 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 =======
    console.log('in profile 5raaa  ====== > ' + Checklogin())
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('in profile 5raaa  ====== > ' + Checklogin())
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('in profile 5raaa  ====== > ' + Checklogin())
 >>>>>>> parent of c100eb4... monaca
@@ -977,6 +1054,7 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('in login ------------------------ ')
 =======
       console.log('in login ------------------------ ')
@@ -984,6 +1062,9 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 =======
       console.log('in login ------------------------ ')
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('in login ------------------------ ')
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log('in login ------------------------ ')
 >>>>>>> parent of c100eb4... monaca
@@ -1067,6 +1148,7 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(PLATFORM)
    if (localStorage.buitandaUserType != 'Company') {
       $('.userType').hide()
@@ -1084,6 +1166,13 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(PLATFORM)
+   if (localStorage.buitandaUserType != 'Company') {
+      $('.userType').hide()
+   }
+   //console.log('user type ----- >' + localStorage.buitandaUserType)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(PLATFORM)
    if (localStorage.buitandaUserType != 'Company') {
@@ -1116,6 +1205,7 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(textSearch)
 
    // $('.titleSearch').html(searchName)
@@ -1131,6 +1221,12 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(textSearch)
+
+   // $('.titleSearch').html(searchName)
+   //console.log(typeof (localStorage.buitandaUserID))
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(textSearch)
 
@@ -1181,6 +1277,7 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // ////console.log(li)
 =======
             // console.log(li)
@@ -1188,6 +1285,9 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 =======
             // console.log(li)
 >>>>>>> parent of 40b1156... monaca
+=======
+            // //console.log(li)
+>>>>>>> parent of c100eb4... monaca
 =======
             // //console.log(li)
 >>>>>>> parent of c100eb4... monaca
@@ -1255,6 +1355,7 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1262,6 +1363,9 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('loading ---- > ', loading)
 >>>>>>> parent of c100eb4... monaca
@@ -1305,6 +1409,7 @@ $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', functio
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1312,6 +1417,9 @@ $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', functio
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('loading ---- > ', loading)
 >>>>>>> parent of c100eb4... monaca
@@ -1355,6 +1463,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1362,6 +1471,9 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('loading ---- > ', loading)
 >>>>>>> parent of c100eb4... monaca
@@ -1404,6 +1516,7 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1411,6 +1524,9 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('loading ---- > ', loading)
 >>>>>>> parent of c100eb4... monaca
@@ -1455,6 +1571,7 @@ $$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1462,6 +1579,9 @@ $$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function 
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('loading ---- > ', loading)
 >>>>>>> parent of c100eb4... monaca
@@ -1497,6 +1617,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(swi)
 =======
    //console.log(swi)
@@ -1504,6 +1625,9 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
    //console.log(swi)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(swi)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(swi)
 >>>>>>> parent of c100eb4... monaca
@@ -1529,6 +1653,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1536,6 +1661,9 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('loading ---- > ', loading)
 >>>>>>> parent of c100eb4... monaca
@@ -1547,6 +1675,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
    });
   
    $(document).on('click', '.color_box', function (event) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1571,12 +1700,19 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
       var color = $(this).attr('data-color');
       //console.log('color ----> ' + color)
 >>>>>>> parent of c100eb4... monaca
+=======
+      //console.log('clicked')
+      event.preventDefault();
+      var color = $(this).attr('data-color');
+      //console.log('color ----> ' + color)
+>>>>>>> parent of c100eb4... monaca
       $('#color_id').val(color);
       $(".color_box").css({
          'border': '1px solid #e9e9e9',
          'cursor': 'pointer'
       });
       // fetchImage();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1590,12 +1726,16 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
       //console.log('color id --- > ' + $('#color_id').val())
 >>>>>>> parent of c100eb4... monaca
+=======
+      //console.log('color id --- > ' + $('#color_id').val())
+>>>>>>> parent of c100eb4... monaca
       $(this).css('border', '2px solid #f90');
 
       if (colorID == 1 && sizeID == 1) {
          if (colorID == 1) {
 
             if (sizeID == 1) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1614,6 +1754,12 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log('looooooog')
+               //console.log($('#size_id').val())
+
+               //console.log($('#color_id').val())
+>>>>>>> parent of c100eb4... monaca
 =======
                //console.log('looooooog')
                //console.log($('#size_id').val())
@@ -1669,6 +1815,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('clicked')
 =======
       console.log('clicked')
@@ -1676,6 +1823,9 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
       console.log('clicked')
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('clicked')
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log('clicked')
 >>>>>>> parent of c100eb4... monaca
@@ -1690,6 +1840,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('sizze id --- > ' + $('#size_id').val())
 =======
       console.log('sizze id --- > ' + $('#size_id').val())
@@ -1700,12 +1851,16 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
       //console.log('sizze id --- > ' + $('#size_id').val())
 >>>>>>> parent of c100eb4... monaca
+=======
+      //console.log('sizze id --- > ' + $('#size_id').val())
+>>>>>>> parent of c100eb4... monaca
       $(this).css('border', '2px solid #f90');
 
       if (colorID == 1 && sizeID == 1) {
          if (colorID == 1) {
 
             if (sizeID == 1) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1725,6 +1880,12 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 
                console.log($('#color_id').val())
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log('looooooog')
+               //console.log($('#size_id').val())
+
+               //console.log($('#color_id').val())
+>>>>>>> parent of c100eb4... monaca
 =======
                //console.log('looooooog')
                //console.log($('#size_id').val())
@@ -1791,6 +1952,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log('caat name ---- > '+ n )
    //////console.log('id  ---- > '+ cat_id )
 =======
@@ -1801,6 +1963,10 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
    //console.log('caat name ---- > '+ n )
    //console.log('id  ---- > '+ cat_id )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log('caat name ---- > '+ n )
+   ////console.log('id  ---- > '+ cat_id )
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log('caat name ---- > '+ n )
    ////console.log('id  ---- > '+ cat_id )
@@ -1819,6 +1985,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log('caat name ---- > '+ n )
    //////console.log('id  ---- > '+ cat_id )
 =======
@@ -1829,6 +1996,10 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
    //console.log('caat name ---- > '+ n )
    //console.log('id  ---- > '+ cat_id )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log('caat name ---- > '+ n )
+   ////console.log('id  ---- > '+ cat_id )
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log('caat name ---- > '+ n )
    ////console.log('id  ---- > '+ cat_id )
@@ -1856,6 +2027,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // //////console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
 =======
 // //console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
@@ -1863,6 +2035,9 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 =======
 // //console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
 >>>>>>> parent of 40b1156... monaca
+=======
+// ////console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
+>>>>>>> parent of c100eb4... monaca
 =======
 // ////console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
 >>>>>>> parent of c100eb4... monaca
@@ -1882,6 +2057,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // //////console.log('================================================= Auctiooooooooooooooooooooon =================================================')
 =======
 // //console.log('================================================= Auctiooooooooooooooooooooon =================================================')
@@ -1889,6 +2065,9 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 =======
 // //console.log('================================================= Auctiooooooooooooooooooooon =================================================')
 >>>>>>> parent of 40b1156... monaca
+=======
+// ////console.log('================================================= Auctiooooooooooooooooooooon =================================================')
+>>>>>>> parent of c100eb4... monaca
 =======
 // ////console.log('================================================= Auctiooooooooooooooooooooon =================================================')
 >>>>>>> parent of c100eb4... monaca
@@ -1919,6 +2098,7 @@ function go_to_page_params(name, id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name)
    //////console.log(params)
 =======
@@ -1929,6 +2109,10 @@ function go_to_page_params(name, id) {
    //console.log(name)
    //console.log(params)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name)
+   ////console.log(params)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(name)
    ////console.log(params)
@@ -1951,6 +2135,7 @@ function go_to_page(pg_name) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //////console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
 =======
       //console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
@@ -1958,6 +2143,9 @@ function go_to_page(pg_name) {
 =======
       //console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
+>>>>>>> parent of c100eb4... monaca
 =======
       ////console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
 >>>>>>> parent of c100eb4... monaca
@@ -2002,6 +2190,7 @@ function getLatestDeal() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //  //////console.log('json ')
          //  ////console.log(json)
 =======
@@ -2012,6 +2201,10 @@ function getLatestDeal() {
          //  //console.log('json ')
          //  console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //  ////console.log('json ')
+         //  //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //  ////console.log('json ')
          //  //console.log(json)
@@ -2042,6 +2235,7 @@ function getLatestDeal() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('legnthhh ---- > ' + json['posts'].length)
          if (json['posts'][0] != 0) {
 =======
@@ -2061,6 +2255,10 @@ function getLatestDeal() {
                         '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                         ' </div>' +
                         ' </div>' +
+=======
+         //console.log('legnthhh ---- > ' + json['posts'].length)
+         if (json['posts'][0] !=  0){
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('legnthhh ---- > ' + json['posts'].length)
          if (json['posts'][0] !=  0){
@@ -2117,6 +2315,7 @@ function getLatestDeal() {
                }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             }
             else {
                for (var i = 0; i < json['posts'].length; i++) {
@@ -2148,6 +2347,9 @@ function getLatestDeal() {
                   ' </div>' +
                   ' </div>' +
 >>>>>>> parent of 40b1156... monaca
+=======
+                            mySwiper.update();
+>>>>>>> parent of c100eb4... monaca
 =======
                             mySwiper.update();
 >>>>>>> parent of c100eb4... monaca
@@ -2408,6 +2610,7 @@ function getClosettDeal() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //  ////console.log('json ')
          ////console.log(json)
 =======
@@ -2418,6 +2621,10 @@ function getClosettDeal() {
          //  console.log('json ')
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //  //console.log('json ')
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //  //console.log('json ')
          //console.log(json)
@@ -2522,6 +2729,7 @@ function getAuctionHome() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('att ------ > ' + att)
 =======
    console.log('att ------ > ' + att)
@@ -2529,6 +2737,9 @@ function getAuctionHome() {
 =======
    console.log('att ------ > ' + att)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('att ------ > ' + att)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('att ------ > ' + att)
 >>>>>>> parent of c100eb4... monaca
@@ -2554,6 +2765,7 @@ function getAuctionHome() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //  //////console.log('json ')
             //////console.log('auction Home')
             //////console.log(json)
@@ -2567,6 +2779,11 @@ function getAuctionHome() {
             //console.log('auction Home')
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //  ////console.log('json ')
+            ////console.log('auction Home')
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             //  ////console.log('json ')
             ////console.log('auction Home')
@@ -2589,6 +2806,7 @@ function getAuctionHome() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   // ////console.log(Remaining_time)
 =======
                   // console.log(Remaining_time)
@@ -2596,6 +2814,9 @@ function getAuctionHome() {
 =======
                   // console.log(Remaining_time)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  // //console.log(Remaining_time)
+>>>>>>> parent of c100eb4... monaca
 =======
                   // //console.log(Remaining_time)
 >>>>>>> parent of c100eb4... monaca
@@ -2698,6 +2919,7 @@ function getAllCategory() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('in all cat')
          //alert(json['posts'][0]['description']);
          //  //////console.log('json ')
@@ -2717,6 +2939,13 @@ function getAllCategory() {
          //  console.log(json)
          //  console.log(localStorage.BuitLang)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('in all cat')
+         //alert(json['posts'][0]['description']);
+         //  ////console.log('json ')
+         //  //console.log(json)
+         //  //console.log(localStorage.BuitLang)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('in all cat')
          //alert(json['posts'][0]['description']);
@@ -2797,6 +3026,7 @@ function getCategoryProduct(id, name) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // //////console.log(name)
          ////console.log(json)
          if (json['posts']['products'].length != 0) {
@@ -2807,6 +3037,11 @@ function getCategoryProduct(id, name) {
          console.log(json)
 if (json['posts']['products'].length != 0){ 
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(name)
+         //console.log(json)
+if (json['posts']['products'].length != 0){ 
+>>>>>>> parent of c100eb4... monaca
 =======
          // ////console.log(name)
          //console.log(json)
@@ -2826,6 +3061,7 @@ if (json['posts']['products'].length != 0){
                if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
+<<<<<<< HEAD
 
                }
                if(localStorage.ListThumbnail == 'List'){
@@ -3153,6 +3389,387 @@ if (json['posts']['products'].length != 0){
 
                  '  </a>' +
 
+=======
+
+               }
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=='1'){
+
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+                  }
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
+   
+                  }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+>>>>>>> parent of c100eb4... monaca
+                 '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
+               }
+               else{
+                  if(json['posts']['products'][i]['special']=="1"){
+<<<<<<< HEAD
+
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+=======
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+>>>>>>> parent of c100eb4... monaca
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+<<<<<<< HEAD
+
+=======
+                  }
+                  else{
+
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                     ' <a > ' +
+    
+                     '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                      ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                     '</div>' +
+                     '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                     '   <div class ="length-p">' +
+    
+                     ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+    
+                     ' </div>' +
+                     ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+    
+                     ' </div>' +
+    
+                     '  </a>' +
+    
+                     '</div>'
+>>>>>>> parent of c100eb4... monaca
+                  }
+                  else{
+                     
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+                  }
+               }
+<<<<<<< HEAD
+
+              }
+=======
+>>>>>>> parent of c100eb4... monaca
+
+              }
+            }
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
+
+            $('.CatProd').append(li)
+
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+         else if (start == 0 && json['posts'][0] == 0) {
+            app.infiniteScroll.destroy('.infinite-scroll-content');
+            $$('.infinite-scroll-preloader').hide();
+            ////console.log('in else product')
+            $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+         }
+         else {
+            app.infiniteScroll.destroy('.infinite-scroll-content');
+            $$('.infinite-scroll-preloader').hide();
+=======
+      else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+>>>>>>> parent of 40b1156... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
+
+         }
+         start = start + 8
+         end = end + 8
+
+       }
+
+<<<<<<< HEAD
+      else if (start == 0 && json['posts'][0] == 0 ){
+=======
+       else if (start == 0 && json['posts'][0] == 0 ){
+>>>>>>> parent of c100eb4... monaca
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         //console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+   }
+   });
+
+
+}
+
+function getCategoryProductBrand(id, name) {
+   CategoryIdSearch = id
+   
+
+   $.ajax({
+      type: 'GET',
+<<<<<<< HEAD
+      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsByBrand&brandId="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
+
+      success: function (json) {
+=======
+      url: "https://buitanda.com/ws-v1.3.9.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
+      cache:false,
+
+      success: function (json) {
+         // ////console.log(name)
+>>>>>>> parent of c100eb4... monaca
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
+
+         }
+ 
+<<<<<<< HEAD
+         $('.list-thumbnail').attr('onclick','changeListThumbnailBrand('+id+')')
+         $('.titleCategoryBrand').html(json['posts'] ['brand_name'])
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+         $('.list-thumbnail').attr('onclick', 'changeListThumbnailBrand(' + id + ')')
+         $('.titleCategoryBrand').html(json['posts']['brand_name'])
+=======
+=======
+>>>>>>> parent of 40b1156... monaca
+         // //console.log(name)
+         console.log(json)
+if (json['posts']['products'].length != 0){ 
+>>>>>>> parent of 40b1156... monaca
+
+         // //////console.log(name)
+         ////console.log(json)
+         if (json['posts']['products'].length != 0) {
+=======
+         // ////console.log(name)
+         //console.log(json)
+if (json['posts']['products'].length != 0){ 
+>>>>>>> parent of c100eb4... monaca
+=======
+         $('.list-thumbnail').attr('onclick','changeListThumbnailParentCategory('+id+')')
+         //console.log(json)
+         $('.titleParentCategoryProduct').html(if_lang(json['posts']['category_name'], json['posts']['category_name_port']))
+
+if (json['posts']['products'].length != 0){ 
+>>>>>>> parent of c100eb4... monaca
+
+
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
+
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
+<<<<<<< HEAD
+=======
+
+               }
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
+
+
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+                  }
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
+                  }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+                     if(json['posts']['products'][i]['special']=="1"){
+
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
                  '</div>'
                      }
                      else{
@@ -3200,6 +3817,7 @@ if (json['posts']['products'].length != 0){
                   '  </a>' +
  
                   '</div>'
+>>>>>>> parent of c100eb4... monaca
 
                   }
                   else{
@@ -3225,6 +3843,24 @@ if (json['posts']['products'].length != 0){
                   '</div>'
                   }
                }
+<<<<<<< HEAD
+                
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special'] == "1"){
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+=======
 
               }
 
@@ -3239,31 +3875,7 @@ if (json['posts']['products'].length != 0){
          if(localStorage.ListThumbnail == 'Thumbnail'){
             $('.CatProd').empty()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-         else if (start == 0 && json['posts'][0] == 0) {
-            app.infiniteScroll.destroy('.infinite-scroll-content');
-            $$('.infinite-scroll-preloader').hide();
-            ////console.log('in else product')
-            $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
-         }
-         else {
-            app.infiniteScroll.destroy('.infinite-scroll-content');
-            $$('.infinite-scroll-preloader').hide();
-=======
-      else if (start == 0 && json['posts'][0] == 0 ){
-         app.infiniteScroll.destroy('.infinite-scroll-content');
-         $$('.infinite-scroll-preloader').hide();
-         console.log('in else product')
-         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
-      }
-      else{
-         app.infiniteScroll.destroy('.infinite-scroll-content');
-         $$('.infinite-scroll-preloader').hide();
->>>>>>> parent of 40b1156... monaca
-=======
             $('.CatProdThumbnail').append(li)
->>>>>>> parent of c100eb4... monaca
 
          }
          start = start + 8
@@ -3310,27 +3922,9 @@ function getCategoryProductBrand(id, name) {
          $('.list-thumbnail').attr('onclick','changeListThumbnailBrand('+id+')')
          $('.titleCategoryBrand').html(json['posts'] ['brand_name'])
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-         $('.list-thumbnail').attr('onclick', 'changeListThumbnailBrand(' + id + ')')
-         $('.titleCategoryBrand').html(json['posts']['brand_name'])
-=======
-=======
->>>>>>> parent of 40b1156... monaca
-         // //console.log(name)
-         console.log(json)
-if (json['posts']['products'].length != 0){ 
->>>>>>> parent of 40b1156... monaca
-
-         // //////console.log(name)
-         ////console.log(json)
-         if (json['posts']['products'].length != 0) {
-=======
          // ////console.log(name)
          //console.log(json)
 if (json['posts']['products'].length != 0){ 
->>>>>>> parent of c100eb4... monaca
 
 
          var li = ''
@@ -3363,6 +3957,7 @@ if (json['posts']['products'].length != 0){
 
                   ' </div>' +
 
+>>>>>>> parent of c100eb4... monaca
                   '</div>' +
                   ' </li>'
                }
@@ -3377,6 +3972,114 @@ if (json['posts']['products'].length != 0){
                   '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
                   '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
                   ' </h5>' +
+<<<<<<< HEAD
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+               }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special'] == "1"){
+
+
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+               }
+
+               else{
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+               }
+               else{
+                  if(json['posts']['products'][i]['special'] == "1"){
+
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+               else{
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+            }
+              }
+            }
+=======
 
                   ' </div>' +
 
@@ -3487,6 +4190,20 @@ if (json['posts']['products'].length != 0){
          if(localStorage.ListThumbnail == 'List'){
             $('.CatProdThumbnail').empty()
 
+            $('.CatProd').append(li)
+
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
+
+            $('.CatProdThumbnail').append(li)
+
+>>>>>>> parent of c100eb4... monaca
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
+
+<<<<<<< HEAD
             $('.CatProd').append(li)
 
          }
@@ -3648,6 +4365,132 @@ if (json['posts'][0] != 0){
 
                  '  </a>' +
 
+=======
+         start = start + 8
+         end = end + 8
+
+      }
+
+      else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         //console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+
+   }
+   });
+
+
+}
+
+
+function getCategoryProductTag(id, name) {
+   CategoryIdSearch = id
+   
+
+   $.ajax({
+      type: 'GET',
+      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsByTag&tagId="+id+"&lang="+localStorage.BuitLang+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
+
+      success: function (json) {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
+
+         }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailTag('+id+')')
+         // ////console.log(name)
+         //console.log(json)
+if (json['posts'][0] != 0){ 
+
+         $('.titleCategoryTag').html(json['posts']['tag_name'])
+
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
+
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
+
+               }
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+               }
+               else{
+                  li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+               }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+>>>>>>> parent of c100eb4... monaca
                  '</div>'
                      }
                      else{
@@ -3673,9 +4516,15 @@ if (json['posts'][0] != 0){
                      }
                }
                else{
+<<<<<<< HEAD
 
                   if(json['posts']['products'][i]['special']=="1"){
 
+=======
+
+                  if(json['posts']['products'][i]['special']=="1"){
+
+>>>>>>> parent of c100eb4... monaca
                   li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
                   ' <a > ' +
  
@@ -3734,6 +4583,7 @@ if (json['posts'][0] != 0){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          else if (start == 0 && json['posts'][0] == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
             $$('.infinite-scroll-preloader').hide();
@@ -3754,6 +4604,9 @@ if (json['posts'][0] != 0){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
 >>>>>>> parent of 40b1156... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
 =======
             $('.CatProdThumbnail').append(li)
 >>>>>>> parent of c100eb4... monaca
@@ -3795,6 +4648,7 @@ function getCategoryLastProduct(id, name) {
       url: "https://buitanda.com/ws-v1.3.9.php?type=latestdeals&lang="+localStorage.BuitLang+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
       cache:false,
 
+<<<<<<< HEAD
 <<<<<<< HEAD
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=latestdeals&lang=" + localStorage.BuitLang + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
@@ -3919,11 +4773,17 @@ if (json['posts'][0] != 0){
          if (localStorage.ListThumbnail=='Thumbnail'){ 
             $('.list-thumbnail').html('square_list')
 >>>>>>> parent of c100eb4... monaca
+=======
+      success: function (json) {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+>>>>>>> parent of c100eb4... monaca
 
          }
          else{
             $('.list-thumbnail').html('square_grid_2x2')
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                               ' </div>' +
 =======
@@ -3934,12 +4794,17 @@ if (json['posts'][0] != 0){
 if (json['posts'][0] != 0){ 
 >>>>>>> parent of 40b1156... monaca
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
          }
  
          $('.list-thumbnail').attr('onclick','changeListThumbnailLastProduct('+id+')')
          // ////console.log(name)
          //console.log(json)
 if (json['posts'][0] != 0){ 
+<<<<<<< HEAD
+>>>>>>> parent of c100eb4... monaca
+=======
 >>>>>>> parent of c100eb4... monaca
 
          $('.titleCategoryTag').html(json['posts']['tag_name'])
@@ -4104,6 +4969,7 @@ if (json['posts'][0] != 0){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          else if (start == 0 && json['posts'][0] == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
             $$('.infinite-scroll-preloader').hide();
@@ -4124,6 +4990,9 @@ if (json['posts'][0] != 0){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
 >>>>>>> parent of 40b1156... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
 =======
             $('.CatProdThumbnail').append(li)
 >>>>>>> parent of c100eb4... monaca
@@ -4181,6 +5050,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -4188,6 +5058,9 @@ function getProduct(id, title) {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -4228,6 +5101,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log('n --- > ' + n)
 
             }
@@ -4245,6 +5119,13 @@ function getProduct(id, title) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log('n --- > ' + n)
+
+            }
+            // ////console.log(n)
+            // ////console.log(img)
+>>>>>>> parent of c100eb4... monaca
 =======
                //console.log('n --- > ' + n)
 
@@ -4362,6 +5243,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('review ' +json['posts'][0]['reviews']['averageRate'])
 =======
             console.log('review ' +json['posts'][0]['reviews']['averageRate'])
@@ -4369,6 +5251,9 @@ function getProduct(id, title) {
 =======
             console.log('review ' +json['posts'][0]['reviews']['averageRate'])
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('review ' +json['posts'][0]['reviews']['averageRate'])
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log('review ' +json['posts'][0]['reviews']['averageRate'])
 >>>>>>> parent of c100eb4... monaca
@@ -4509,6 +5394,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //   ////console.log(mySwiper)
          //   ////console.log(mySwiper.length)
 =======
@@ -4539,6 +5425,14 @@ function getProduct(id, title) {
 =======
          // ////console.log(json['posts'][0] ['image'].length)
 >>>>>>> parent of c100eb4... monaca
+=======
+         //   //console.log(mySwiper)
+         //   //console.log(mySwiper.length)
+
+         ////console.log(json)
+
+         // ////console.log(json['posts'][0] ['image'].length)
+>>>>>>> parent of c100eb4... monaca
          if (mySwiper.length == undefined) {
             mySwiper.removeAllSlides();
 
@@ -4549,6 +5443,7 @@ function getProduct(id, title) {
      + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 
                }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                else {
@@ -4570,6 +5465,11 @@ function getProduct(id, title) {
                   mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
        ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 >>>>>>> parent of c100eb4... monaca
+=======
+               else{
+                  mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
+       ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+>>>>>>> parent of c100eb4... monaca
 
                }
 
@@ -4581,6 +5481,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      ////console.log('in sold flag')
 =======
                      console.log('in sold flag')
@@ -4588,6 +5489,9 @@ function getProduct(id, title) {
 =======
                      console.log('in sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     //console.log('in sold flag')
+>>>>>>> parent of c100eb4... monaca
 =======
                      //console.log('in sold flag')
 >>>>>>> parent of c100eb4... monaca
@@ -4626,6 +5530,7 @@ function getProduct(id, title) {
                   }
 
                   else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4670,6 +5575,26 @@ function getProduct(id, title) {
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                 
                      }
+=======
+                     ////console.log( 'out sold flag')
+
+                     if (i == 0) {
+                        //console.log('out sold flag')
+
+                        if (json['posts'][0]['special']=='1'){
+
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                     }
+                     else{
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
+ 
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                
+                     }
+>>>>>>> parent of c100eb4... monaca
                   }
                      else {
                          if (json['posts'][0]['special']=='1'){
@@ -4677,12 +5602,21 @@ function getProduct(id, title) {
                         mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+<<<<<<< HEAD
+                     }
+                     else{
+                        
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
+                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+=======
+>>>>>>> parent of c100eb4... monaca
                      }
                      else{
                         
                         mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
                          ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                  }
                   }
                   }
                   mySwiper.update();
@@ -4703,12 +5637,21 @@ function getProduct(id, title) {
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         
                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+<<<<<<< HEAD
                      }
                      else{
                         mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                          
                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+=======
+                     }
+                     else{
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                     }
+>>>>>>> parent of c100eb4... monaca
                   }
                      else {
                         if (json['posts'][0]['special']=='1'){
@@ -4738,6 +5681,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('in else')
 =======
             console.log('in else')
@@ -4745,6 +5689,9 @@ function getProduct(id, title) {
 =======
             console.log('in else')
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('in else')
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log('in else')
 >>>>>>> parent of c100eb4... monaca
@@ -4756,6 +5703,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      //////console.log( 'in sold flag')
 =======
                      //console.log( 'in sold flag')
@@ -4763,6 +5711,9 @@ function getProduct(id, title) {
 =======
                      //console.log( 'in sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     ////console.log( 'in sold flag')
+>>>>>>> parent of c100eb4... monaca
 =======
                      ////console.log( 'in sold flag')
 >>>>>>> parent of c100eb4... monaca
@@ -4801,6 +5752,7 @@ function getProduct(id, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      //////console.log( 'out sold flag')
 =======
                      //console.log( 'out sold flag')
@@ -4808,6 +5760,9 @@ function getProduct(id, title) {
 =======
                      //console.log( 'out sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     ////console.log( 'out sold flag')
+>>>>>>> parent of c100eb4... monaca
 =======
                      ////console.log( 'out sold flag')
 >>>>>>> parent of c100eb4... monaca
@@ -4831,6 +5786,15 @@ function getProduct(id, title) {
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+<<<<<<< HEAD
+                     }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                   
+=======
+>>>>>>> parent of c100eb4... monaca
                      }
                      else{
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
@@ -4838,6 +5802,7 @@ function getProduct(id, title) {
                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                    
                      }
+                  }
                   }
                   }
                   mySwiper[mySwiper.length - 1].update();
@@ -4857,12 +5822,21 @@ function getProduct(id, title) {
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                         '<img src="img/onpromotion.png" class="onpromotionbig">'+
                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+<<<<<<< HEAD
                      }
                      else{
                         mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
                          ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
               
                      }
+=======
+                     }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+              
+                     }
+>>>>>>> parent of c100eb4... monaca
                   }
                      else {
                         if (json['posts'][0]['special']=='1'){
@@ -4912,6 +5886,7 @@ function getValudBid() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(data)
 =======
    console.log(data)
@@ -4919,6 +5894,9 @@ function getValudBid() {
 =======
    console.log(data)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(data)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(data)
 >>>>>>> parent of c100eb4... monaca
@@ -4937,6 +5915,7 @@ function getRegisterForm() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(data)
 =======
    console.log(data)
@@ -4944,6 +5923,9 @@ function getRegisterForm() {
 =======
    console.log(data)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(data)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(data)
 >>>>>>> parent of c100eb4... monaca
@@ -5242,6 +6224,7 @@ function getBidDiv() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(data)
 =======
    console.log(data)
@@ -5249,6 +6232,9 @@ function getBidDiv() {
 =======
    console.log(data)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(data)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(data)
 >>>>>>> parent of c100eb4... monaca
@@ -5264,6 +6250,7 @@ function getCountry() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -5271,6 +6258,9 @@ function getCountry() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5299,6 +6289,7 @@ function getBusinessType() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -5306,6 +6297,9 @@ function getBusinessType() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5334,6 +6328,7 @@ function getBusinessTypeByID(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -5341,6 +6336,9 @@ function getBusinessTypeByID(id) {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5381,6 +6379,7 @@ function getProductType() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -5388,6 +6387,9 @@ function getProductType() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5415,6 +6417,7 @@ function getProductTypeByID(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -5422,6 +6425,9 @@ function getProductTypeByID(id) {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5462,6 +6468,7 @@ function getCountryCompany() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -5469,6 +6476,9 @@ function getCountryCompany() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5521,6 +6531,7 @@ function getCountryByID(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -5528,6 +6539,9 @@ function getCountryByID(id) {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5562,6 +6576,7 @@ function getCity() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log($('#CountrySelect').val())
    var id = $('.CountrySelect').val()
    ////console.log(id)
@@ -5580,12 +6595,18 @@ function getCity() {
    var id = $('.CountrySelect').val()
    //console.log(id)
 >>>>>>> parent of c100eb4... monaca
+=======
+   ////console.log($('#CountrySelect').val())
+   var id = $('.CountrySelect').val()
+   //console.log(id)
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5596,6 +6617,9 @@ function getCity() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5626,6 +6650,7 @@ function getCityCompany() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log($('#CountrySelect').val())
    var id = $('#CountrySelectCompany').val()
    ////console.log(id)
@@ -5644,12 +6669,18 @@ function getCityCompany() {
    var id = $('#CountrySelectCompany').val()
    //console.log(id)
 >>>>>>> parent of c100eb4... monaca
+=======
+   ////console.log($('#CountrySelect').val())
+   var id = $('#CountrySelectCompany').val()
+   //console.log(id)
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5660,6 +6691,9 @@ function getCityCompany() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -5694,6 +6728,7 @@ function getCityByID(id, Cityid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('city')
          ////console.log(json)
 =======
@@ -5704,6 +6739,10 @@ function getCityByID(id, Cityid) {
          console.log('city')
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('city')
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('city')
          //console.log(json)
@@ -5783,6 +6822,7 @@ function RegisterPerson() {
                         alert(if_lang("please enter password", 'por favor digite a senha'))
                      }
 <<<<<<< HEAD
+<<<<<<< HEAD
                      else {
                         if (password == '') {
                            hideIndicator()
@@ -5823,6 +6863,8 @@ function RegisterPerson() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 
                      else {
                         if (!$('.conditions').prop('checked')) {
@@ -5860,6 +6902,7 @@ function RegisterPerson() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     }
                                     else {
                                        // alert(if_lang('The account has been successfully created congratulations ' , 'A conta foi criada com sucesso parabéns'))
@@ -5890,6 +6933,18 @@ function RegisterPerson() {
                                     //console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
 >>>>>>> parent of c100eb4... monaca
 
+=======
+                                 }
+                                 else {
+                                    // alert(if_lang('The account has been successfully created congratulations ' , 'A conta foi criada com sucesso parabéns'))
+
+                                    localStorage.buitandaUserID = json['posts'][0]
+                                    localStorage.buitandaUserType = json['posts'][1]
+
+                                    //console.log(localStorage.buitandaUserID)
+                                    //console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
+
+>>>>>>> parent of c100eb4... monaca
                                     location.reload()
 
                                  }
@@ -5911,6 +6966,7 @@ function RegisterPerson() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -5918,6 +6974,9 @@ function RegisterPerson() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of c100eb4... monaca
@@ -6002,6 +7061,7 @@ function RegisterCompany() {
                                  else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     if (password == '') {
                                        alert(if_lang("please enter password", 'por favor digite a senha'))
                                     }
@@ -6013,6 +7073,8 @@ function RegisterCompany() {
                                           ////console.log('Countery ---- > ' + Country)
                                           ////console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
                                     if (!$('.conditions').prop('checked')) {
                                        alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                     } else {
@@ -6020,11 +7082,15 @@ function RegisterCompany() {
                                        //console.log('Countery ---- > ' + Country)
                                        //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of c100eb4... monaca
                                           // '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
 =======
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
 >>>>>>> parent of 100d6cb... push
+=======
+                                          // '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+>>>>>>> parent of c100eb4... monaca
                                        $.ajax({
                                           type: 'POST',
                                           url: 'https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&version=' + versionApplication + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
@@ -6047,6 +7113,7 @@ function RegisterCompany() {
                                                 localStorage.buitandaUserType = 'Company'
                                                 //console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                                                 hideIndicator()
 =======
@@ -6098,6 +7165,11 @@ function RegisterCompany() {
 >>>>>>> parent of c100eb4... monaca
                                              }
 
+=======
+                                                location.reload()
+                                             }
+
+>>>>>>> parent of c100eb4... monaca
                                              hideIndicator()
                                           }
                                        });
@@ -6120,6 +7192,7 @@ function RegisterCompany() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -6127,6 +7200,9 @@ function RegisterCompany() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of c100eb4... monaca
@@ -6202,6 +7278,7 @@ function RegisterSeller() {
                               else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  if (mobile == '') {
                                     alert(if_lang("please enter mobile", 'por favor entre no celular'))
                                  }
@@ -6211,10 +7288,13 @@ function RegisterSeller() {
                                     } else {
                                        ////console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
                                  if (!$('.conditions').prop('checked')) {
                                     alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                  } else {
                                     //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of c100eb4... monaca
                                        // '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
@@ -6258,10 +7338,17 @@ function RegisterSeller() {
                                              location.reload()
 >>>>>>> parent of 40b1156... monaca
 =======
+=======
+                                       // '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
+
+>>>>>>> parent of c100eb4... monaca
                                     $.ajax({
                                        type: 'POST',
                                        url: 'https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json',
+<<<<<<< HEAD
+>>>>>>> parent of c100eb4... monaca
+=======
 >>>>>>> parent of c100eb4... monaca
 
                                        success: function (json) {
@@ -6294,6 +7381,7 @@ function RegisterSeller() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -6301,6 +7389,9 @@ function RegisterSeller() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of c100eb4... monaca
@@ -6319,6 +7410,7 @@ function login() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(email+ '    ' +password)
 =======
    //console.log(email+ '    ' +password)
@@ -6326,6 +7418,9 @@ function login() {
 =======
    //console.log(email+ '    ' +password)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(email+ '    ' +password)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(email+ '    ' +password)
 >>>>>>> parent of c100eb4... monaca
@@ -6348,6 +7443,7 @@ function login() {
 
 
             success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6381,6 +7477,15 @@ function login() {
                   localStorage.buitandaUserType = json['posts'][0]['user_type']
                   // //console.log(  localStorage.buitandaUserID)
 >>>>>>> parent of c100eb4... monaca
+=======
+               //console.log(PLATFORM)
+               //console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               //console.log(json)
+               if (json['posts'][0] != 0) {
+                  localStorage.buitandaUserID = json['posts'][0]['id']
+                  localStorage.buitandaUserType = json['posts'][0]['user_type']
+                  // //console.log(  localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
                   location.reload()
                   updateUUIDtoCustomerID(json['posts'][0]['id'])
 
@@ -6393,6 +7498,7 @@ function login() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                // //////console.log('nice')}
 =======
                // //console.log('nice')}
@@ -6400,6 +7506,9 @@ function login() {
 =======
                // //console.log('nice')}
 >>>>>>> parent of 40b1156... monaca
+=======
+               // ////console.log('nice')}
+>>>>>>> parent of c100eb4... monaca
 =======
                // ////console.log('nice')}
 >>>>>>> parent of c100eb4... monaca
@@ -6442,6 +7551,7 @@ function resetPassword() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log(json)
 =======
             console.log(json)
@@ -6449,6 +7559,9 @@ function resetPassword() {
 =======
             console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -6462,6 +7575,7 @@ function resetPassword() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                //////console.log('nice')
 =======
                //console.log('nice')
@@ -6469,6 +7583,9 @@ function resetPassword() {
 =======
                //console.log('nice')
 >>>>>>> parent of 40b1156... monaca
+=======
+               ////console.log('nice')
+>>>>>>> parent of c100eb4... monaca
 =======
                ////console.log('nice')
 >>>>>>> parent of c100eb4... monaca
@@ -6497,6 +7614,7 @@ function checkCode() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //////console.log(localStorage.buitandaTemp)
 =======
       //console.log(localStorage.buitandaTemp)
@@ -6504,6 +7622,9 @@ function checkCode() {
 =======
       //console.log(localStorage.buitandaTemp)
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log(localStorage.buitandaTemp)
+>>>>>>> parent of c100eb4... monaca
 =======
       ////console.log(localStorage.buitandaTemp)
 >>>>>>> parent of c100eb4... monaca
@@ -6517,6 +7638,7 @@ function checkCode() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -6524,6 +7646,9 @@ function checkCode() {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -6541,6 +7666,7 @@ function checkCode() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // //////console.log('nice')}
 =======
             // //console.log('nice')}
@@ -6548,6 +7674,9 @@ function checkCode() {
 =======
             // //console.log('nice')}
 >>>>>>> parent of 40b1156... monaca
+=======
+            // ////console.log('nice')}
+>>>>>>> parent of c100eb4... monaca
 =======
             // ////console.log('nice')}
 >>>>>>> parent of c100eb4... monaca
@@ -6562,6 +7691,7 @@ function setNewPassword() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(localStorage.buitandaTemp)
 =======
    //console.log(localStorage.buitandaTemp)
@@ -6569,6 +7699,9 @@ function setNewPassword() {
 =======
    //console.log(localStorage.buitandaTemp)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(localStorage.buitandaTemp)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(localStorage.buitandaTemp)
 >>>>>>> parent of c100eb4... monaca
@@ -6602,6 +7735,7 @@ function setNewPassword() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(localStorage.buitandaTemp)
 =======
             //console.log(localStorage.buitandaTemp)
@@ -6609,6 +7743,9 @@ function setNewPassword() {
 =======
             //console.log(localStorage.buitandaTemp)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(localStorage.buitandaTemp)
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(localStorage.buitandaTemp)
 >>>>>>> parent of c100eb4... monaca
@@ -6622,6 +7759,7 @@ function setNewPassword() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //////console.log(json)
 =======
                   //console.log(json)
@@ -6629,6 +7767,9 @@ function setNewPassword() {
 =======
                   //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                   ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -6656,6 +7797,7 @@ function getProfile() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
          // ////console.log($('#namePerson'))
          // ////console.log(json['posts'][0]['name'])
@@ -6669,6 +7811,11 @@ function getProfile() {
          // console.log($('#namePerson'))
          // console.log(json['posts'][0]['name'])
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+         // //console.log($('#namePerson'))
+         // //console.log(json['posts'][0]['name'])
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
          // //console.log($('#namePerson'))
@@ -6837,6 +7984,12 @@ function updateProfile() {
                                  //console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
                                     ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
 
+<<<<<<< HEAD
+=======
+                                 //console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
+                                    // ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
+
+>>>>>>> parent of c100eb4... monaca
                                  $.ajax({
                                     type: 'POST',
                                     url: 'https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&mobile=' + mobile + '&email=' + Email +
@@ -6880,6 +8033,7 @@ function updateProfile() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -6887,6 +8041,9 @@ function updateProfile() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of c100eb4... monaca
@@ -6906,6 +8063,7 @@ function getLang() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -6916,10 +8074,14 @@ function getLang() {
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + '<li>' +
                '            <label class="item-radio item-content">';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6933,6 +8095,10 @@ function getLang() {
             //console.log(localStorage.BuitLang) 
             //console.log(json['posts'][i]['name']) 
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(localStorage.BuitLang) 
+            ////console.log(json['posts'][i]['name']) 
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(localStorage.BuitLang) 
             ////console.log(json['posts'][i]['name']) 
@@ -6955,6 +8121,7 @@ function getLang() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // //////console.log(li)
 =======
          // //console.log(li)
@@ -6962,6 +8129,9 @@ function getLang() {
 =======
          // //console.log(li)
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(li)
+>>>>>>> parent of c100eb4... monaca
 =======
          // ////console.log(li)
 >>>>>>> parent of c100eb4... monaca
@@ -6979,6 +8149,7 @@ function setLang() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log($("input[name='demo-radio']:checked").val())
    localStorage.BuitLang = $("input[name='demo-radio']:checked").val();
    //////console.log(localStorage.BuitLang)
@@ -6992,6 +8163,11 @@ function setLang() {
    localStorage.BuitLang = $("input[name='demo-radio']:checked").val();
    //console.log(localStorage.BuitLang)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log($("input[name='demo-radio']:checked").val())
+   localStorage.BuitLang = $("input[name='demo-radio']:checked").val();
+   ////console.log(localStorage.BuitLang)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log($("input[name='demo-radio']:checked").val())
    localStorage.BuitLang = $("input[name='demo-radio']:checked").val();
@@ -7024,6 +8200,7 @@ function getBanners() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -7031,6 +8208,9 @@ function getBanners() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -7071,6 +8251,7 @@ function getAuctionsList() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -7078,6 +8259,9 @@ function getAuctionsList() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -7125,6 +8309,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(id)
 =======
    //console.log(id)
@@ -7132,6 +8317,9 @@ function getAuctionProduct(id) {
 =======
    //console.log(id)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(id)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(id)
 >>>>>>> parent of c100eb4... monaca
@@ -7149,7 +8337,11 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -7161,6 +8353,7 @@ function getAuctionProduct(id) {
          var str = ''
          //console.log('length --- > ' + lenString)
          if (lenString > 17) {
+<<<<<<< HEAD
 <<<<<<< HEAD
             ////console.log('ttile --- > ' + title)
 =======
@@ -7183,6 +8376,9 @@ function getAuctionProduct(id) {
 =======
             //console.log('ttile --- > ' + title)
 >>>>>>> parent of c100eb4... monaca
+=======
+            //console.log('ttile --- > ' + title)
+>>>>>>> parent of c100eb4... monaca
             for (var x = 0; x < 15; x++) {
                str = str + title[x]
             }
@@ -7194,6 +8390,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('str --- > ' + str)
 =======
          console.log('str --- > ' + str)
@@ -7201,6 +8398,9 @@ function getAuctionProduct(id) {
 =======
          console.log('str --- > ' + str)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('str --- > ' + str)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('str --- > ' + str)
 >>>>>>> parent of c100eb4... monaca
@@ -7235,6 +8435,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log($('.timer_' + id).html())
 =======
             console.log($('.timer_' + id).html())
@@ -7245,10 +8446,14 @@ function getAuctionProduct(id) {
 =======
             //console.log($('.timer_' + id).html())
 >>>>>>> parent of c100eb4... monaca
+=======
+            //console.log($('.timer_' + id).html())
+>>>>>>> parent of c100eb4... monaca
 
             li = li + '<p class="descP margin-top-p Current_Bid_' + json['posts'][0]['id'] + ' ">' + if_lang('Current Bid ', 'Oferta atual ') + '<span> :' + json['posts'][0]['bid']['bidcoins'] + ' KWZ</span></p>';
          }
          if ($('.timer_' + id).html() == 'EXPIRED') {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7259,6 +8464,9 @@ function getAuctionProduct(id) {
 =======
             console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
 >>>>>>> parent of c100eb4... monaca
@@ -7273,6 +8481,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log($('.timer_' + id).html())
             ////console.log('Trueeeeeeeeeeeeeeeeee')
 =======
@@ -7283,6 +8492,10 @@ function getAuctionProduct(id) {
             console.log($('.timer_' + id).html())
             console.log('Trueeeeeeeeeeeeeeeeee')
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log($('.timer_' + id).html())
+            //console.log('Trueeeeeeeeeeeeeeeeee')
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log($('.timer_' + id).html())
             //console.log('Trueeeeeeeeeeeeeeeeee')
@@ -7309,6 +8522,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('in else')
 =======
             console.log('in else')
@@ -7316,6 +8530,9 @@ function getAuctionProduct(id) {
 =======
             console.log('in else')
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('in else')
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log('in else')
 >>>>>>> parent of c100eb4... monaca
@@ -7334,6 +8551,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(TimerFlag)
          if ($('.timer_' + id).html() != 'EXPIRED') {
             ////console.log(TimerFlag)
@@ -7347,6 +8565,11 @@ function getAuctionProduct(id) {
          if ($('.timer_' + id).html() != 'EXPIRED') {
             console.log(TimerFlag)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(TimerFlag)
+         if ($('.timer_' + id).html() != 'EXPIRED') {
+            //console.log(TimerFlag)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(TimerFlag)
          if ($('.timer_' + id).html() != 'EXPIRED') {
@@ -7395,6 +8618,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // ////console.log(mySwiper)
          // ////console.log(mySwiper.length)
 =======
@@ -7409,6 +8633,10 @@ function getAuctionProduct(id) {
          // //console.log(mySwiper)
          // //console.log(mySwiper.length)
 >>>>>>> parent of c100eb4... monaca
+=======
+         // //console.log(mySwiper)
+         // //console.log(mySwiper.length)
+>>>>>>> parent of c100eb4... monaca
 
 
 
@@ -7416,6 +8644,7 @@ function getAuctionProduct(id) {
          if (mySwiper.length == undefined) {
             mySwiper.removeAllSlides()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7438,6 +8667,14 @@ function getAuctionProduct(id) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+            // //console.log('in iff ')
+            // //console.log(flagAcution)
+            // //console.log()
+            if (json['posts'][0]['images'] != undefined) {
+               for (var i = 0; i < json['posts'][0]['images'].length; i++) {
+                  ////console.log( 'in sold flag')
+>>>>>>> parent of c100eb4... monaca
 =======
             // //console.log('in iff ')
             // //console.log(flagAcution)
@@ -7482,6 +8719,7 @@ function getAuctionProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //////console.log( 'in sold flag')
 =======
                   //console.log( 'in sold flag')
@@ -7489,6 +8727,9 @@ function getAuctionProduct(id) {
 =======
                   //console.log( 'in sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                  ////console.log( 'in sold flag')
+>>>>>>> parent of c100eb4... monaca
 =======
                   ////console.log( 'in sold flag')
 >>>>>>> parent of c100eb4... monaca
@@ -7536,6 +8777,7 @@ function bidSetIntreval(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // ////console.log(json)
 =======
             // console.log(json)
@@ -7543,6 +8785,9 @@ function bidSetIntreval(id) {
 =======
             // console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            // //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             // //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -7576,6 +8821,7 @@ function timer(date, id, server_time) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    // ////console.log(id)
 =======
    // console.log(id)
@@ -7583,6 +8829,9 @@ function timer(date, id, server_time) {
 =======
    // console.log(id)
 >>>>>>> parent of 40b1156... monaca
+=======
+   // //console.log(id)
+>>>>>>> parent of c100eb4... monaca
 =======
    // //console.log(id)
 >>>>>>> parent of c100eb4... monaca
@@ -7624,6 +8873,7 @@ function timer(date, id, server_time) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // ////console.log('timer flaag ---  > '+ TimerFlag)
 =======
          // console.log('timer flaag ---  > '+ TimerFlag)
@@ -7631,6 +8881,9 @@ function timer(date, id, server_time) {
 =======
          // console.log('timer flaag ---  > '+ TimerFlag)
 >>>>>>> parent of 40b1156... monaca
+=======
+         // //console.log('timer flaag ---  > '+ TimerFlag)
+>>>>>>> parent of c100eb4... monaca
 =======
          // //console.log('timer flaag ---  > '+ TimerFlag)
 >>>>>>> parent of c100eb4... monaca
@@ -7655,6 +8908,7 @@ function getRecomendedCategory(idprod, idCat) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //  //////console.log('json ')
          //  ////console.log(json)
 =======
@@ -7665,6 +8919,10 @@ function getRecomendedCategory(idprod, idCat) {
          //  //console.log('json ')
          //  console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //  ////console.log('json ')
+         //  //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //  ////console.log('json ')
          //  //console.log(json)
@@ -7696,6 +8954,7 @@ function getRecomendedCategory(idprod, idCat) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // //////console.log(json['posts'].length)
             ////console.log(mySwiper)
             ////console.log(mySwiper.length)
@@ -7709,6 +8968,11 @@ function getRecomendedCategory(idprod, idCat) {
             console.log(mySwiper)
             console.log(mySwiper.length)
 >>>>>>> parent of 40b1156... monaca
+=======
+            // ////console.log(json['posts'].length)
+            //console.log(mySwiper)
+            //console.log(mySwiper.length)
+>>>>>>> parent of c100eb4... monaca
 =======
             // ////console.log(json['posts'].length)
             //console.log(mySwiper)
@@ -7776,6 +9040,7 @@ function getRecomendedAuction(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    // //////console.log('in auction')
 =======
    // //console.log('in auction')
@@ -7783,6 +9048,9 @@ function getRecomendedAuction(id) {
 =======
    // //console.log('in auction')
 >>>>>>> parent of 40b1156... monaca
+=======
+   // ////console.log('in auction')
+>>>>>>> parent of c100eb4... monaca
 =======
    // ////console.log('in auction')
 >>>>>>> parent of c100eb4... monaca
@@ -7796,6 +9064,7 @@ function getRecomendedAuction(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('json ')
             ////console.log(json)
 =======
@@ -7806,6 +9075,10 @@ function getRecomendedAuction(id) {
             console.log('json ')
             console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('json ')
+            //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log('json ')
             //console.log(json)
@@ -7907,6 +9180,7 @@ function contact() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name)
    //////console.log('email --- > '+ email) 
    //////console.log('sub --- > '+ sub) 
@@ -7923,10 +9197,15 @@ function contact() {
 =======
 >>>>>>> parent of 40b1156... monaca
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
    ////console.log(name)
    ////console.log('email --- > '+ email) 
    ////console.log('sub --- > '+ sub) 
    ////console.log('msg --- > '+ msg) 
+<<<<<<< HEAD
+>>>>>>> parent of c100eb4... monaca
+=======
 >>>>>>> parent of c100eb4... monaca
 
 
@@ -7963,6 +9242,7 @@ function contact() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      //////console.log(json)
 =======
                      //console.log(json)
@@ -7970,6 +9250,9 @@ function contact() {
 =======
                      //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                     ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                      ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -8027,6 +9310,7 @@ function getMyCard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    // ////console.log('im get my card')
 =======
    // console.log('im get my card')
@@ -8034,6 +9318,9 @@ function getMyCard() {
 =======
    // console.log('im get my card')
 >>>>>>> parent of 40b1156... monaca
+=======
+   // //console.log('im get my card')
+>>>>>>> parent of c100eb4... monaca
 =======
    // //console.log('im get my card')
 >>>>>>> parent of c100eb4... monaca
@@ -8051,6 +9338,7 @@ function getMyCard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   // ////console.log(json)
 =======
                   // console.log(json)
@@ -8058,6 +9346,9 @@ function getMyCard() {
 =======
                   // console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  // //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                   // //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -8075,6 +9366,7 @@ function getMyCard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //////console.log(json['posts'].length)
 =======
                   //console.log(json['posts'].length)
@@ -8082,6 +9374,9 @@ function getMyCard() {
 =======
                   //console.log(json['posts'].length)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  ////console.log(json['posts'].length)
+>>>>>>> parent of c100eb4... monaca
 =======
                   ////console.log(json['posts'].length)
 >>>>>>> parent of c100eb4... monaca
@@ -8095,6 +9390,7 @@ function getMyCard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         // ////console.log(nf.format(total)); // 42,000,000 in many locales
 =======
                         // console.log(nf.format(total)); // 42,000,000 in many locales
@@ -8102,6 +9398,9 @@ function getMyCard() {
 =======
                         // console.log(nf.format(total)); // 42,000,000 in many locales
 >>>>>>> parent of 40b1156... monaca
+=======
+                        // //console.log(nf.format(total)); // 42,000,000 in many locales
+>>>>>>> parent of c100eb4... monaca
 =======
                         // //console.log(nf.format(total)); // 42,000,000 in many locales
 >>>>>>> parent of c100eb4... monaca
@@ -8154,6 +9453,7 @@ function getMyCard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   // ////console.log('i ---- >'+i)
 =======
                   // console.log('i ---- >'+i)
@@ -8161,6 +9461,9 @@ function getMyCard() {
 =======
                   // console.log('i ---- >'+i)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  // //console.log('i ---- >'+i)
+>>>>>>> parent of c100eb4... monaca
 =======
                   // //console.log('i ---- >'+i)
 >>>>>>> parent of c100eb4... monaca
@@ -8176,6 +9479,7 @@ function getMyCard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      ////console.log('in else getCard')
 =======
                      console.log('in else getCard')
@@ -8183,6 +9487,9 @@ function getMyCard() {
 =======
                      console.log('in else getCard')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     //console.log('in else getCard')
+>>>>>>> parent of c100eb4... monaca
 =======
                      //console.log('in else getCard')
 >>>>>>> parent of c100eb4... monaca
@@ -8207,6 +9514,7 @@ function getMyCard() {
 
 
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
    else {
       if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
@@ -8238,15 +9546,21 @@ function getMyCard() {
                      if (json['posts']['0'] != 0) {
                         for (var i = 0; i < json['posts'].length; i++) {
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
    else { 
       $.ajax({
          type: 'GET',
          url: "https://buitanda.com/ws-v1.3.9.php?type=getCart&uuid=" + UUID + "&format=json",
+<<<<<<< HEAD
+>>>>>>> parent of c100eb4... monaca
+=======
 >>>>>>> parent of c100eb4... monaca
 
          cache: false,
          success: function (json) {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                            total = parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
                            totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
@@ -8262,13 +9576,23 @@ function getMyCard() {
                 if (json['posts'][0] != 0) {
                   // //console.log(json)
 >>>>>>> parent of c100eb4... monaca
+=======
+            if (json['posts'] != undefined) {
+                if (json['posts'][0] != 0) {
+                  // //console.log(json)
+>>>>>>> parent of c100eb4... monaca
                   var li = ''
                   var nameProduct;
                   var total = 0;
                   var totalAll = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
                   console.log('caaaaaaaaaaaaaaaaart')            
                                console.log(JSON.stringify(json))
+=======
+                  //console.log('caaaaaaaaaaaaaaaaart')            
+                               //console.log(JSON.stringify(json))
+>>>>>>> parent of c100eb4... monaca
 =======
                   //console.log('caaaaaaaaaaaaaaaaart')            
                                //console.log(JSON.stringify(json))
@@ -8281,6 +9605,7 @@ function getMyCard() {
                      ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
                      '      </tr>'
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //console.log(json['posts'].length)
                   if (json['posts']['0'] != 0) {
                      for (var i = 0; i < json['posts'].length; i++) {
@@ -8292,6 +9617,11 @@ function getMyCard() {
                         // console.log(nf.format(total)); // 42,000,000 in many locales
                         total = nf.format(total)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  ////console.log(json['posts'].length)
+                  if (json['posts']['0'] != 0) {
+                     for (var i = 0; i < json['posts'].length; i++) {
+>>>>>>> parent of c100eb4... monaca
 =======
                   ////console.log(json['posts'].length)
                   if (json['posts']['0'] != 0) {
@@ -8338,6 +9668,7 @@ function getMyCard() {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                               '  </tr>'
                         }
                      }
@@ -8356,11 +9687,16 @@ function getMyCard() {
                            '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
                            '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
 >>>>>>> parent of c100eb4... monaca
+=======
+                           '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
+                           '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+>>>>>>> parent of c100eb4... monaca
 
                            '   </td>' +
 
                            '  </tr>'
                      }
+<<<<<<< HEAD
 <<<<<<< HEAD
                      else {
                         ////console.log('in else getCard')
@@ -8371,13 +9707,19 @@ function getMyCard() {
 =======
 =======
 >>>>>>> parent of c100eb4... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
                   }
                   $('.DataItem').html(li)
                   var nf = Intl.NumberFormat('fr');
                   totalAll = nf.format(totalAll)
                   $('.TotalA').html(totalAll + ' KWZ')
 <<<<<<< HEAD
+<<<<<<< HEAD
                   // console.log('i ---- >'+i)
+=======
+                  // //console.log('i ---- >'+i)
+>>>>>>> parent of c100eb4... monaca
 =======
                   // //console.log('i ---- >'+i)
 >>>>>>> parent of c100eb4... monaca
@@ -8387,7 +9729,10 @@ function getMyCard() {
                      $("#nextCheckout").removeAttr("disabled");
                      $("#nextCheckout").css("background", '#32c2ff');
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
 
@@ -8397,12 +9742,16 @@ function getMyCard() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                      console.log('in else getCard')
 >>>>>>> parent of 40b1156... monaca
 =======
                      console.log('in else getCard')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     //console.log('in else getCard')
+>>>>>>> parent of c100eb4... monaca
 =======
                      //console.log('in else getCard')
 >>>>>>> parent of c100eb4... monaca
@@ -8435,6 +9784,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('qty --- > ' + qty)
 =======
    console.log('qty --- > ' + qty)
@@ -8442,6 +9792,9 @@ function addToCard(id, avilable , minQty) {
 =======
    console.log('qty --- > ' + qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('qty --- > ' + qty)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('qty --- > ' + qty)
 >>>>>>> parent of c100eb4... monaca
@@ -8479,6 +9832,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ////console.log(qty)
 =======
                         console.log(qty)
@@ -8486,6 +9840,9 @@ function addToCard(id, avilable , minQty) {
 =======
                         console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                        //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                         //console.log(qty)
 >>>>>>> parent of c100eb4... monaca
@@ -8501,6 +9858,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     ////console.log(json)
                                     //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 =======
@@ -8511,6 +9869,10 @@ function addToCard(id, avilable , minQty) {
                                     console.log(json)
                                     //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                                    //console.log(json)
+                                    ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                                     //console.log(json)
                                     ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
@@ -8532,11 +9894,17 @@ function addToCard(id, avilable , minQty) {
                      else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
 =======
                         var qty = $('.valCardPros_' + id).val()
                         qty = parseInt(qty)
                         console.log(qty)
+=======
+                        var qty = $('.valCardPros_' + id).val()
+                        qty = parseInt(qty)
+                        //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                         var qty = $('.valCardPros_' + id).val()
                         qty = parseInt(qty)
@@ -8548,6 +9916,7 @@ function addToCard(id, avilable , minQty) {
                                  type: 'GET',
                                  url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
                                  cache: false,
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
 
@@ -8562,9 +9931,12 @@ function addToCard(id, avilable , minQty) {
                                     cache: false,
 =======
 >>>>>>> parent of c100eb4... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     success: function (json) {
                                        ////console.log(json)
@@ -8586,12 +9958,20 @@ function addToCard(id, avilable , minQty) {
                                     //console.log(json)
                                     ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of c100eb4... monaca
+=======
+                                 success: function (json) {
+                                    //console.log(json)
+                                    ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                                     alert(if_lang('your product added successfully ', 'your product added successfully '))
                                     getMyCard()
                                  }
                               });
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
                            }
@@ -8625,6 +10005,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   ////console.log(qty)
 =======
                   console.log(qty)
@@ -8632,6 +10013,9 @@ function addToCard(id, avilable , minQty) {
 =======
                   console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                   //console.log(qty)
 >>>>>>> parent of c100eb4... monaca
@@ -8648,6 +10032,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               ////console.log(json)
                               //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 =======
@@ -8658,6 +10043,10 @@ function addToCard(id, avilable , minQty) {
                               console.log(json)
                               //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                              //console.log(json)
+                              ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                               //console.log(json)
                               ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
@@ -8677,6 +10066,7 @@ function addToCard(id, avilable , minQty) {
 
                }
                else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                   if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
@@ -8734,12 +10124,31 @@ function addToCard(id, avilable , minQty) {
                               //console.log(json)
                               ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of c100eb4... monaca
+=======
+                  var qty = $('.valCardPros_' + id).val()
+                  qty = parseInt(qty)
+                  //console.log(qty)
+                  if (avilable > 0) {
+                     if (qty > 0) {
+                        $.ajax({
+                           type: 'GET',
+                           url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                           cache: false,
+
+
+                           success: function (json) {
+                              //console.log(json)
+                              ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                               alert(if_lang('your product added successfully ', 'your product added successfully '))
                               getMyCard()
                            }
                         });
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
                      }
@@ -8780,6 +10189,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log(qty)
 =======
                console.log(qty)
@@ -8787,6 +10197,9 @@ function addToCard(id, avilable , minQty) {
 =======
                console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                //console.log(qty)
 >>>>>>> parent of c100eb4... monaca
@@ -8803,6 +10216,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            ////console.log(json)
                            //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 =======
@@ -8813,6 +10227,10 @@ function addToCard(id, avilable , minQty) {
                            console.log(json)
                            //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                           //console.log(json)
+                           ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                            //console.log(json)
                            ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
@@ -8832,6 +10250,7 @@ function addToCard(id, avilable , minQty) {
 
             }
             else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
@@ -8889,12 +10308,31 @@ function addToCard(id, avilable , minQty) {
                            //console.log(json)
                            ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of c100eb4... monaca
+=======
+               var qty = $('.valCardPros_' + id).val()
+               qty = parseInt(qty)
+               //console.log(qty)
+               if (avilable > 0) {
+                  if (qty > 0) {
+                     $.ajax({
+                        type: 'GET',
+                        url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                        cache: false,
+
+
+                        success: function (json) {
+                           //console.log(json)
+                           ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                            alert(if_lang('your product added successfully ', 'your product added successfully '))
                            getMyCard()
                         }
                      });
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
                   }
@@ -8920,6 +10358,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log(qty)
 =======
             console.log(qty)
@@ -8927,6 +10366,9 @@ function addToCard(id, avilable , minQty) {
 =======
             console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
 =======
             //console.log(qty)
 >>>>>>> parent of c100eb4... monaca
@@ -8943,6 +10385,7 @@ function addToCard(id, avilable , minQty) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ////console.log(json)
                         //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 =======
@@ -8953,6 +10396,10 @@ function addToCard(id, avilable , minQty) {
                         console.log(json)
                         //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                        //console.log(json)
+                        ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
 =======
                         //console.log(json)
                         ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
@@ -8972,6 +10419,7 @@ function addToCard(id, avilable , minQty) {
 
          }
          else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
@@ -9026,12 +10474,30 @@ function addToCard(id, avilable , minQty) {
                         //console.log(json)
                         ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of c100eb4... monaca
+=======
+            var qty = $('.valCardPros_' + id).val()
+            qty = parseInt(qty)
+            //console.log(qty)
+            if (avilable > 0) {
+               if (qty > 0) {
+                  $.ajax({
+                     type: 'GET',
+                     url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                     cache: false,
+
+                     success: function (json) {
+                        //console.log(json)
+                        ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                         alert(if_lang('your product added successfully ', 'your product added successfully '))
                         getMyCard()
                      }
                   });
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
                }
@@ -9061,6 +10527,7 @@ function deleteProduct(id, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -9068,6 +10535,9 @@ function deleteProduct(id, sid, cid) {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -9086,6 +10556,7 @@ function deleteProduct(id, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -9093,6 +10564,9 @@ function deleteProduct(id, sid, cid) {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -9124,6 +10598,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('if')
 =======
             console.log('if')
@@ -9134,11 +10609,15 @@ function decreaseQty(id, minQty, current, sid, cid) {
 =======
             //console.log('if')
 >>>>>>> parent of c100eb4... monaca
+=======
+            //console.log('if')
+>>>>>>> parent of c100eb4... monaca
             tot = tot + AllTotal[i]
          }
       }
       tot = AllTotal.replace(/\s/g, '')
       tot = tot.replace('KWZ', '')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9166,6 +10645,13 @@ function decreaseQty(id, minQty, current, sid, cid) {
       var inte = parseFloat(tot) - Rest
       //console.log('parseFloat(tot) - Rest  --- > ' + inte)
 >>>>>>> parent of c100eb4... monaca
+=======
+      //console.log(tot)
+      //console.log('parseFloat(tot) --- > ' + parseFloat(tot))
+      //console.log('Rest  --- > ' + Rest)
+      var inte = parseFloat(tot) - Rest
+      //console.log('parseFloat(tot) - Rest  --- > ' + inte)
+>>>>>>> parent of c100eb4... monaca
       inte = nf.format(inte);
       total = nf.format(total)
       if (Checklogin()) {
@@ -9179,6 +10665,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                //////console.log(json)
 =======
                //console.log(json)
@@ -9186,6 +10673,9 @@ function decreaseQty(id, minQty, current, sid, cid) {
 =======
                //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -9210,6 +10700,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                //////console.log(json)
 =======
                //console.log(json)
@@ -9217,6 +10708,9 @@ function decreaseQty(id, minQty, current, sid, cid) {
 =======
                //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -9239,6 +10733,7 @@ function increaseQTy(id, max, current, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    showIndicator()
    ////console.log('in increase')
    var OldQty = parseInt($('.valCardPro_' + id).val())
@@ -9255,6 +10750,12 @@ function increaseQTy(id, max, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('in increase')
+   var OldQty = parseInt($('.valCardPro_' + id).val())
+   var total = 0
+   //console.log(OldQty + '   <   ' + max)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('in increase')
    var OldQty = parseInt($('.valCardPro_' + id).val())
@@ -9281,6 +10782,7 @@ function increaseQTy(id, max, current, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(tot)
       tot = AllTotal.replace(/\s/g, '')
       tot = tot.replace('KWZ', '')
@@ -9302,11 +10804,18 @@ function increaseQTy(id, max, current, sid, cid) {
       tot = tot.replace('KWZ', '')
       //  //console.log
 >>>>>>> parent of c100eb4... monaca
+=======
+      //console.log(tot)
+      tot = AllTotal.replace(/\s/g, '')
+      tot = tot.replace('KWZ', '')
+      //  //console.log
+>>>>>>> parent of c100eb4... monaca
 
 
       var inte = parseFloat(tot) + Rest
       inte = nf.format(inte);
       total = nf.format(total)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9317,6 +10826,9 @@ function increaseQTy(id, max, current, sid, cid) {
 =======
       console.log('qty ---- > ' + qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('qty ---- > ' + qty)
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log('qty ---- > ' + qty)
 >>>>>>> parent of c100eb4... monaca
@@ -9331,6 +10843,7 @@ function increaseQTy(id, max, current, sid, cid) {
 
 
             success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9353,6 +10866,14 @@ function increaseQTy(id, max, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(json)
+               //console.log('old --- > ' + OldQty)
+               //console.log('new --- > ' + qty)
+               //console.log('valCardPro_' + id)
+
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                //console.log(json)
                //console.log('old --- > ' + OldQty)
@@ -9385,6 +10906,7 @@ function increaseQTy(id, max, current, sid, cid) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log(json)
                ////console.log('old --- > ' + OldQty)
                ////console.log('new --- > ' + qty)
@@ -9404,6 +10926,14 @@ function increaseQTy(id, max, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(json)
+               //console.log('old --- > ' + OldQty)
+               //console.log('new --- > ' + qty)
+               //console.log('valCardPro_' + id)
+
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                //console.log(json)
                //console.log('old --- > ' + OldQty)
@@ -9513,6 +11043,7 @@ function getOrderArr() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('in logout')
 =======
       console.log('in logout')
@@ -9520,6 +11051,9 @@ function getOrderArr() {
 =======
       console.log('in logout')
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('in logout')
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log('in logout')
 >>>>>>> parent of c100eb4... monaca
@@ -9547,6 +11081,7 @@ function getOrderArr() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(arrOrder)
 =======
             //console.log(arrOrder)
@@ -9554,6 +11089,9 @@ function getOrderArr() {
 =======
             //console.log(arrOrder)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(arrOrder)
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(arrOrder)
 >>>>>>> parent of c100eb4... monaca
@@ -9586,6 +11124,7 @@ function getOrderArr() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(arrOrder)
 =======
             //console.log(arrOrder)
@@ -9593,6 +11132,9 @@ function getOrderArr() {
 =======
             //console.log(arrOrder)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(arrOrder)
+>>>>>>> parent of c100eb4... monaca
 =======
             ////console.log(arrOrder)
 >>>>>>> parent of c100eb4... monaca
@@ -9614,6 +11156,7 @@ function getPersonalDataOrder() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //////console.log('in if')
       //////console.log($('#phoneShop').html())
 =======
@@ -9628,12 +11171,17 @@ function getPersonalDataOrder() {
       ////console.log('in if')
       ////console.log($('#phoneShop').html())
 >>>>>>> parent of c100eb4... monaca
+=======
+      ////console.log('in if')
+      ////console.log($('#phoneShop').html())
+>>>>>>> parent of c100eb4... monaca
 
       phoneOrder = $('#phoneShop').html()
       AddressOrder = $('#AddressShop').html()
 
    }
    else if ($('#phoneShop').val() != undefined && $('#phoneShop').val() != '') {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9644,6 +11192,9 @@ function getPersonalDataOrder() {
 =======
       //console.log('in else')
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('in else')
+>>>>>>> parent of c100eb4... monaca
 =======
       ////console.log('in else')
 >>>>>>> parent of c100eb4... monaca
@@ -9662,6 +11213,7 @@ function getPersonalDataOrder() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('addr --- >' + AddressOrder)
 =======
       console.log('addr --- >' + AddressOrder)
@@ -9672,11 +11224,15 @@ function getPersonalDataOrder() {
 =======
       //console.log('addr --- >' + AddressOrder)
 >>>>>>> parent of c100eb4... monaca
+=======
+      //console.log('addr --- >' + AddressOrder)
+>>>>>>> parent of c100eb4... monaca
       if (AddressOrder == ' ' || AddressOrder == '' || AddressOrder == undefined) {
          alert(if_lang('Please enter Address  ', 'Digite o ENDEREÇO'))
 
       }
       else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9692,15 +11248,21 @@ function getPersonalDataOrder() {
          go_to_page('SubmitOrder')
 >>>>>>> parent of 40b1156... monaca
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
          //console.log(AddressOrder + '     ' + phoneOrder)
          // go_to_page('Delivery')
          GetShipping()
          go_to_page('SubmitOrder')
+<<<<<<< HEAD
+>>>>>>> parent of c100eb4... monaca
+=======
 >>>>>>> parent of c100eb4... monaca
 
       }
 
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9722,12 +11284,18 @@ function getPersonalDataOrder() {
 
    ////console.log(AddressOrder + '       ' +phoneOrder)
 >>>>>>> parent of c100eb4... monaca
+=======
+   ////console.log($('#phoneShop').val())
+
+   ////console.log(AddressOrder + '       ' +phoneOrder)
+>>>>>>> parent of c100eb4... monaca
 }
 
 function getDeleiveryType() {
 
    go_to_page('SubmitOrder')
    DeliveryType = $("input[name='my-radio']:checked").val();
+<<<<<<< HEAD
 <<<<<<< HEAD
    //console.log(DeliveryType)
 <<<<<<< HEAD
@@ -9747,6 +11315,9 @@ function getDeleiveryType() {
 =======
    ////console.log(DeliveryType)
 >>>>>>> parent of c100eb4... monaca
+=======
+   ////console.log(DeliveryType)
+>>>>>>> parent of c100eb4... monaca
 }
 
 function SubmitOrder() {
@@ -9756,6 +11327,7 @@ function SubmitOrder() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(arrOrder)
    var paymen_type = $("input[name='my-radio']:checked").val();
 
@@ -9773,6 +11345,13 @@ function SubmitOrder() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(arrOrder)
+   var paymen_type = $("input[name='my-radio']:checked").val();
+
+   arrOrder = encodeURIComponent(JSON.stringify(arrOrder));
+   //console.log(arrOrder)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(arrOrder)
    var paymen_type = $("input[name='my-radio']:checked").val();
@@ -9802,6 +11381,7 @@ function SubmitOrder() {
       //          payment_type : paymen_type
       // },
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9844,6 +11424,14 @@ function SubmitOrder() {
          // //console.log(json)
          if ( paymen_type =='PAYEMENT of BANK'){
 >>>>>>> parent of c100eb4... monaca
+=======
+         ////console.log(url)
+         //console.log("https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
+            // "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
+            // "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json")
+         // //console.log(json)
+         if ( paymen_type =='PAYEMENT of BANK'){
+>>>>>>> parent of c100eb4... monaca
             alert(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
 
             go_to_page('instructionsSubmit')
@@ -9871,6 +11459,7 @@ function getInstructionsSubmit() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -9878,6 +11467,9 @@ function getInstructionsSubmit() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -9901,6 +11493,7 @@ function getInstructionsSubmit() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -9908,6 +11501,9 @@ function getInstructionsSubmit() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -9925,6 +11521,7 @@ function getInstructions() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -9932,6 +11529,9 @@ function getInstructions() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -9955,6 +11555,7 @@ function getInstructions() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -9965,10 +11566,14 @@ function getInstructions() {
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
       }
    })
 }
 function SubmitRefOrder() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9979,6 +11584,9 @@ function SubmitRefOrder() {
 =======
    //console.log(localStorage.BuitLang)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(localStorage.BuitLang)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(localStorage.BuitLang)
 >>>>>>> parent of c100eb4... monaca
@@ -10002,6 +11610,7 @@ function getOrders() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -10009,6 +11618,9 @@ function getOrders() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -10034,6 +11646,7 @@ function getOrders() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //   ////console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
@@ -10041,6 +11654,9 @@ function getOrders() {
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 >>>>>>> parent of 40b1156... monaca
+=======
+                  //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
+>>>>>>> parent of c100eb4... monaca
 =======
                   //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 >>>>>>> parent of c100eb4... monaca
@@ -10077,6 +11693,7 @@ function getOrders() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -10084,6 +11701,9 @@ function getOrders() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -10105,6 +11725,7 @@ function getMyAuction() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -10112,6 +11733,9 @@ function getMyAuction() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -10138,6 +11762,7 @@ function getMyAuction() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //   ////console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
@@ -10145,6 +11770,9 @@ function getMyAuction() {
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 >>>>>>> parent of 40b1156... monaca
+=======
+                  //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
+>>>>>>> parent of c100eb4... monaca
 =======
                   //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 >>>>>>> parent of c100eb4... monaca
@@ -10180,6 +11808,7 @@ function getMyAuction() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -10187,6 +11816,9 @@ function getMyAuction() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -10209,6 +11841,7 @@ function getMyOrder(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -10216,6 +11849,9 @@ function getMyOrder(id) {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -10282,6 +11918,7 @@ function getMyOrder(id) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   var total = parseFloat(json['posts'][i]['products'][x]['qty']) * parseFloat(json['posts'][i]['products'][x]['unit_price'])
                   total = new Intl.NumberFormat('fr').format(total)
                   var quantity = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['qty']))
@@ -10291,10 +11928,13 @@ function getMyOrder(id) {
 =======
 =======
 >>>>>>> parent of c100eb4... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
                      var total = parseFloat(json['posts'][i]['products'][x]['qty']) * parseFloat(json['posts'][i]['products'][x]['unit_price'])
                      total = new Intl.NumberFormat('fr').format(total)
                      var quantity = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['qty']))
                      var unit_price = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['unit_price']))
+<<<<<<< HEAD
 <<<<<<< HEAD
                      console.log('unit price ---- > '+ unit_price)
                      // console.log('unit price in app  ---- > '+ unit_price)
@@ -10311,6 +11951,10 @@ function getMyOrder(id) {
                      '  <td class="text-align-center  QtyOrder">' + quantity + '</td>' +
                      '  <td class="text-align-center subTotal_Delviery">' + total + ' KWZ</td>' +
                      ' </tr>'
+=======
+                     //console.log('unit price ---- > '+ unit_price)
+                     // //console.log('unit price in app  ---- > '+ unit_price)
+>>>>>>> parent of c100eb4... monaca
 =======
                      //console.log('unit price ---- > '+ unit_price)
                      // //console.log('unit price in app  ---- > '+ unit_price)
@@ -10365,6 +12009,7 @@ function getMyOrder(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -10372,6 +12017,9 @@ function getMyOrder(id) {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
          ////console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -10387,6 +12035,7 @@ function callNum() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(num)
 =======
    console.log(num)
@@ -10397,12 +12046,16 @@ function callNum() {
 =======
    //console.log(num)
 >>>>>>> parent of c100eb4... monaca
+=======
+   //console.log(num)
+>>>>>>> parent of c100eb4... monaca
    if (num) {
       window.plugins.CallNumber.callNumber(onSuccess222, onError222, num, true);
    } else {
       // ons.notification.alert('')
    }
    function onSuccess222(result) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -10430,6 +12083,13 @@ function callNum() {
    function onError222(result) {
       //console.log("Error:" + result);
 >>>>>>> parent of c100eb4... monaca
+=======
+      //console.log("Success:" + result);
+   }
+
+   function onError222(result) {
+      //console.log("Error:" + result);
+>>>>>>> parent of c100eb4... monaca
    }
 
 }
@@ -10450,6 +12110,7 @@ function SubmitAuction(idPro, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log("https://buitanda.com/ws-v1.3.9.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
 
                ////console.log(json)
@@ -10463,6 +12124,11 @@ function SubmitAuction(idPro, title) {
 
                console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log("https://buitanda.com/ws-v1.3.9.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
+
+               //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                //console.log("https://buitanda.com/ws-v1.3.9.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
 
@@ -10497,6 +12163,7 @@ function SearchISIN(idPro, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(text)
    ////console.log(typeof (text))
 =======
@@ -10507,6 +12174,10 @@ function SearchISIN(idPro, title) {
    console.log(text)
    console.log(typeof (text))
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(text)
+   //console.log(typeof (text))
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(text)
    //console.log(typeof (text))
@@ -10534,6 +12205,7 @@ function SearchISINCat(idPro, title) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(text)
    ////console.log(typeof (text))
 =======
@@ -10544,6 +12216,10 @@ function SearchISINCat(idPro, title) {
    console.log(text)
    console.log(typeof (text))
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(text)
+   //console.log(typeof (text))
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log(text)
    //console.log(typeof (text))
@@ -10618,6 +12294,7 @@ function ToolbarCategory() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('in cat bar cat')
 =======
    console.log('in cat bar cat')
@@ -10625,6 +12302,9 @@ function ToolbarCategory() {
 =======
    console.log('in cat bar cat')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('in cat bar cat')
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log('in cat bar cat')
 >>>>>>> parent of c100eb4... monaca
@@ -10678,6 +12358,7 @@ function get_timeDifference(strtdatetime) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(datetime + " " + now);
 =======
    //console.log(datetime + " " + now);
@@ -10685,6 +12366,9 @@ function get_timeDifference(strtdatetime) {
 =======
    //console.log(datetime + " " + now);
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(datetime + " " + now);
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(datetime + " " + now);
 >>>>>>> parent of c100eb4... monaca
@@ -10743,6 +12427,7 @@ function get_timeDifference(strtdatetime) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       // ////console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 =======
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
@@ -10750,6 +12435,9 @@ function get_timeDifference(strtdatetime) {
 =======
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 >>>>>>> parent of 40b1156... monaca
+=======
+      // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
+>>>>>>> parent of c100eb4... monaca
 =======
       // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 >>>>>>> parent of c100eb4... monaca
@@ -10769,6 +12457,7 @@ function get_timeDifference_Days(strtdatetime) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(datetime + " " + now);
 =======
    //console.log(datetime + " " + now);
@@ -10776,6 +12465,9 @@ function get_timeDifference_Days(strtdatetime) {
 =======
    //console.log(datetime + " " + now);
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(datetime + " " + now);
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(datetime + " " + now);
 >>>>>>> parent of c100eb4... monaca
@@ -10838,6 +12530,7 @@ function get_timeDifference_Days(strtdatetime) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(daylabel)
       // ////console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 =======
@@ -10848,6 +12541,10 @@ function get_timeDifference_Days(strtdatetime) {
       console.log(daylabel)
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(daylabel)
+      // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log(daylabel)
       // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
@@ -10897,6 +12594,7 @@ function GetShipping() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(constantTotal)
    for (i = 0; i < constantTotal.length; i++) {
       if (constantTotal[i] != '') {
@@ -10918,11 +12616,18 @@ function GetShipping() {
       if (constantTotal[i] != '') {
          //console.log('if')
 >>>>>>> parent of c100eb4... monaca
+=======
+   //console.log(constantTotal)
+   for (i = 0; i < constantTotal.length; i++) {
+      if (constantTotal[i] != '') {
+         //console.log('if')
+>>>>>>> parent of c100eb4... monaca
          tot = tot + constantTotal[i]
       }
    }
    tot = constantTotal.replace(/\s/g, '')
    tot = tot.replace('KWZ', '')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -10936,6 +12641,9 @@ function GetShipping() {
 =======
    //console.log(tot)
 >>>>>>> parent of c100eb4... monaca
+=======
+   //console.log(tot)
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       async: false,
       type: 'GET',
@@ -10944,9 +12652,12 @@ function GetShipping() {
 
       success: function (json) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                $('.PaidDeleivery').html(json['posts']['0']['totalShipping']+ ' kwz ' )
 
 <<<<<<< HEAD
+=======
+>>>>>>> parent of c100eb4... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
          var nf = Intl.NumberFormat('fr');
@@ -10956,6 +12667,7 @@ function GetShipping() {
          //console.log(json)
          shipping = nf.format(json['posts']['0']['totalShipping'])
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          // totalPlusShiping = nf.format(json['posts']['0']['total'])
@@ -10979,13 +12691,22 @@ function GetShipping() {
          totalPlusShiping = nf.format(json['posts']['0']['total'])
          //console.log(totalPlusShiping)
 >>>>>>> parent of c100eb4... monaca
+=======
+         totalPlusShiping = nf.format(json['posts']['0']['total'])
+         //console.log(totalPlusShiping)
+>>>>>>> parent of c100eb4... monaca
          if (shipping == 0) {
             $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
          }
          else {
             $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> parent of c100eb4... monaca
          }
          $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
@@ -11002,6 +12723,7 @@ function getProductCategorySorting() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
    ////console.log(sort)
@@ -11015,6 +12737,11 @@ function getProductCategorySorting() {
    sort = $('.Sortprod').val()
    console.log(sort)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
@@ -11033,6 +12760,7 @@ function getProductCategoryTagSorting() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
    ////console.log(sort)
@@ -11046,6 +12774,11 @@ function getProductCategoryTagSorting() {
    sort = $('.Sortprod').val()
    console.log(sort)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
@@ -11064,6 +12797,7 @@ function getProductCategoryLastProduct() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
    ////console.log(sort)
@@ -11082,6 +12816,11 @@ function getProductCategoryLastProduct() {
    sort = $('.Sortprod').val()
    //console.log(sort)
 >>>>>>> parent of c100eb4... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -11092,6 +12831,7 @@ function getProductCategoryLastProduct() {
 function getProductCategoryBrandSorting() {
    app.infiniteScroll.create('.infinite-scroll-content')
    $$('.infinite-scroll-preloader').show()
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11108,6 +12848,11 @@ function getProductCategoryBrandSorting() {
    sort = $('.Sortprod').val()
    console.log(sort)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
 =======
    //console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
@@ -11170,6 +12915,7 @@ function RegisterTillCheckout() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('name --- >' + name)
 =======
       console.log('name --- >' + name)
@@ -11177,6 +12923,9 @@ function RegisterTillCheckout() {
 =======
       console.log('name --- >' + name)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('name --- >' + name)
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log('name --- >' + name)
 >>>>>>> parent of c100eb4... monaca
@@ -11229,6 +12978,7 @@ function RegisterTillCheckout() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  ////console.log(json)
 =======
                                  console.log(json)
@@ -11236,6 +12986,9 @@ function RegisterTillCheckout() {
 =======
                                  console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                                 //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 =======
                                  //console.log(json)
 >>>>>>> parent of c100eb4... monaca
@@ -11255,6 +13008,7 @@ function RegisterTillCheckout() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     ////console.log(localStorage.buitandaUserID)
 =======
                                     console.log(localStorage.buitandaUserID)
@@ -11262,6 +13016,9 @@ function RegisterTillCheckout() {
 =======
                                     console.log(localStorage.buitandaUserID)
 >>>>>>> parent of 40b1156... monaca
+=======
+                                    //console.log(localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
 =======
                                     //console.log(localStorage.buitandaUserID)
 >>>>>>> parent of c100eb4... monaca
@@ -11293,6 +13050,7 @@ function RegisterTillCheckout() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -11300,6 +13058,9 @@ function RegisterTillCheckout() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of c100eb4... monaca
@@ -11371,6 +13132,7 @@ function loginTillCheckout() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(email+ '    ' +password)
 =======
    //console.log(email+ '    ' +password)
@@ -11378,6 +13140,9 @@ function loginTillCheckout() {
 =======
    //console.log(email+ '    ' +password)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(email+ '    ' +password)
+>>>>>>> parent of c100eb4... monaca
 =======
    ////console.log(email+ '    ' +password)
 >>>>>>> parent of c100eb4... monaca
@@ -11400,6 +13165,7 @@ function loginTillCheckout() {
 
 
             success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11437,6 +13203,15 @@ function loginTillCheckout() {
                   localStorage.buitandaUserType = json['posts'][0]['user_type']
                   // //console.log(  localStorage.buitandaUserID)
 >>>>>>> parent of c100eb4... monaca
+=======
+               //console.log(PLATFORM)
+               //console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               //console.log(json)
+               if (json['posts'][0] != 0) {
+                  localStorage.buitandaUserID = json['posts'][0]['id']
+                  localStorage.buitandaUserType = json['posts'][0]['user_type']
+                  // //console.log(  localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
 
                   notesORder = ''
                   phoneOrder = json['posts'][0]['phoneNumber']
@@ -11457,6 +13232,7 @@ function loginTillCheckout() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                // //////console.log('nice')}
 =======
                // //console.log('nice')}
@@ -11464,6 +13240,9 @@ function loginTillCheckout() {
 =======
                // //console.log('nice')}
 >>>>>>> parent of 40b1156... monaca
+=======
+               // ////console.log('nice')}
+>>>>>>> parent of c100eb4... monaca
 =======
                // ////console.log('nice')}
 >>>>>>> parent of c100eb4... monaca
@@ -11487,6 +13266,7 @@ function getNewProductDetails() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('in get new product deatails ')
          ////console.log(json['posts']['quantity'])
 =======
@@ -11497,6 +13277,10 @@ function getNewProductDetails() {
          console.log('in get new product deatails ')
          console.log(json['posts']['quantity'])
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('in get new product deatails ')
+         //console.log(json['posts']['quantity'])
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('in get new product deatails ')
          //console.log(json['posts']['quantity'])
@@ -11542,6 +13326,7 @@ function updateUUIDtoCustomerID(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('uuid ---- > ' + UUID)
          ////console.log('id ----- > ' + id)
 =======
@@ -11552,6 +13337,10 @@ function updateUUIDtoCustomerID(id) {
          console.log('uuid ---- > ' + UUID)
          console.log('id ----- > ' + id)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('uuid ---- > ' + UUID)
+         //console.log('id ----- > ' + id)
+>>>>>>> parent of c100eb4... monaca
 =======
          //console.log('uuid ---- > ' + UUID)
          //console.log('id ----- > ' + id)
@@ -11842,6 +13631,7 @@ function is_email(email) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('wrong email')
       return false;
    } else {
@@ -11858,10 +13648,15 @@ function is_email(email) {
 =======
 >>>>>>> parent of 40b1156... monaca
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
       //console.log('wrong email')
      return false;
    }else{
       //console.log('right email')
+<<<<<<< HEAD
+>>>>>>> parent of c100eb4... monaca
+=======
 >>>>>>> parent of c100eb4... monaca
 
      return true;
@@ -11877,6 +13672,7 @@ function is_email(email) {
 
       success: function (json) {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11926,6 +13722,9 @@ function is_email(email) {
 =======
          //console.log('legth --- > '+json['posts']['reviews'].length)
 >>>>>>> parent of c100eb4... monaca
+=======
+         //console.log('legth --- > '+json['posts']['reviews'].length)
+>>>>>>> parent of c100eb4... monaca
          offsit = offsit +5
          if (json['posts']['reviews'].length > 0){    
             for (var l =0 ; l < json['posts']['reviews'].length; l++ ){
@@ -11964,7 +13763,10 @@ starWidth: "20px",
          }}
          else{
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 =======
 >>>>>>> parent of c100eb4... monaca
             $$('.infinite-scroll-preloader').hide();
@@ -11973,6 +13775,7 @@ starWidth: "20px",
      
       }
    });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -12072,11 +13875,44 @@ function changeListThumbnailLastProduct(id) {
     
  }
 
+=======
+   
+ }
+
+ function changeListThumbnailBrand (id){
+    //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+    if (localStorage.ListThumbnail=='Thumbnail'){
+       localStorage.ListThumbnail = 'List'
+       $('.list-thumbnail').html('square_list')
+       start = 0
+       end = 8
+       app.infiniteScroll.create('.infinite-scroll-content')
+
+       getCategoryProductBrand(id)
+          }
+    else if  (localStorage.ListThumbnail == 'List'){
+       localStorage.ListThumbnail = 'Thumbnail'
+       $('.list-thumbnail').html('rectangle_grid_2x2')
+       start = 0
+       end = 8
+       //console.log(' end ----- > '+ localStorage.ListThumbnail)
+       app.infiniteScroll.create('.infinite-scroll-content')
+
+       getCategoryProductBrand(id)
+
+    }
+    
+ }
+
+>>>>>>> parent of c100eb4... monaca
  
  
  function changeListThumbnailLastProduct (id){
    //console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
+<<<<<<< HEAD
+>>>>>>> parent of c100eb4... monaca
+=======
 >>>>>>> parent of c100eb4... monaca
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
@@ -12095,6 +13931,7 @@ function changeListThumbnailLastProduct(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -12102,6 +13939,9 @@ function changeListThumbnailLastProduct(id) {
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of c100eb4... monaca
@@ -12115,6 +13955,7 @@ function changeListThumbnailLastProduct(id) {
 }
  
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -12131,6 +13972,11 @@ function changeListThumbnailTag(id) {
    //console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
 >>>>>>> parent of c100eb4... monaca
+=======
+ function changeListThumbnailTag (id){
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+>>>>>>> parent of c100eb4... monaca
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
       start = 0
@@ -12148,6 +13994,7 @@ function changeListThumbnailTag(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -12155,6 +14002,9 @@ function changeListThumbnailTag(id) {
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of c100eb4... monaca
@@ -12171,6 +14021,7 @@ function changeListThumbnailTag(id) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function changeListThumbnailParentCategory(id) {
    ////console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail == 'Thumbnail') {
@@ -12179,6 +14030,11 @@ function changeListThumbnailParentCategory (id){
    console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
 >>>>>>> parent of 40b1156... monaca
+=======
+function changeListThumbnailParentCategory (id){
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+>>>>>>> parent of c100eb4... monaca
 =======
 function changeListThumbnailParentCategory (id){
    //console.log(' Start ----- > '+ localStorage.ListThumbnail)
@@ -12201,6 +14057,7 @@ function changeListThumbnailParentCategory (id){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -12208,6 +14065,9 @@ function changeListThumbnailParentCategory (id){
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of c100eb4... monaca
@@ -12224,6 +14084,7 @@ function changeListThumbnailParentCategory (id){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function changeListThumbnailCategoryProduct(id) {
    ////console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail == 'Thumbnail') {
@@ -12232,6 +14093,11 @@ function changeListThumbnailCategoryProduct (id){
    console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
 >>>>>>> parent of 40b1156... monaca
+=======
+function changeListThumbnailCategoryProduct (id){
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+>>>>>>> parent of c100eb4... monaca
 =======
 function changeListThumbnailCategoryProduct (id){
    //console.log(' Start ----- > '+ localStorage.ListThumbnail)
@@ -12254,6 +14120,7 @@ function changeListThumbnailCategoryProduct (id){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -12261,6 +14128,9 @@ function changeListThumbnailCategoryProduct (id){
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
 =======
       //console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of c100eb4... monaca
@@ -12286,6 +14156,7 @@ function logFileInsert( ) {
       success: function (json) { 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //console.log('platform ---- > ' + PLATFORM)
    //console.log(versionApplication)
 =======
@@ -12295,6 +14166,10 @@ function logFileInsert( ) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+ 
+         //console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json")
+>>>>>>> parent of c100eb4... monaca
 =======
  
          //console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json")
