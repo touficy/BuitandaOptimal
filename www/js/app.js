@@ -5098,9 +5098,15 @@ function RegisterCompany() {
                                     if (!$('.conditions').prop('checked')) {
                                        alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                     } else {
+<<<<<<< HEAD
                                        console.log('city ---- > ' + City)
                                        console.log('Countery ---- > ' + Country)
                                        console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+=======
+                                       //console.log('city ---- > ' + City)
+                                       //console.log('Countery ---- > ' + Country)
+                                       //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+>>>>>>> parent of 100d6cb... push
                                           '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
                                        $.ajax({
                                           type: 'POST',
@@ -5229,9 +5235,14 @@ function RegisterSeller() {
                                  if (!$('.conditions').prop('checked')) {
                                     alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                  } else {
+<<<<<<< HEAD
                                     console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
                                        '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
 >>>>>>> parent of 40b1156... monaca
+=======
+                                    //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+                                       '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
+>>>>>>> parent of 100d6cb... push
 
                                        $.ajax({
                                           type: 'POST',
@@ -5686,10 +5697,15 @@ function updateProfile() {
                                  else {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                                  console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
                                     ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
 >>>>>>> parent of 40b1156... monaca
+=======
+                                 //console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
+                                    ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
+>>>>>>> parent of 100d6cb... push
 
                                     ////console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
                                     // ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
@@ -7920,6 +7936,7 @@ function SubmitOrder() {
       success: function (json) {
 <<<<<<< HEAD
          //console.log("https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
+<<<<<<< HEAD
          //    "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
          //    "&delivery_type=" + DeliveryType + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json"
          // )
@@ -7935,6 +7952,11 @@ function SubmitOrder() {
             "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
             "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json")
          // console.log(json)
+=======
+            "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
+            "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json")
+         // //console.log(json)
+>>>>>>> parent of 100d6cb... push
          if ( paymen_type =='PAYEMENT of BANK'){
 >>>>>>> parent of 40b1156... monaca
             alert(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
