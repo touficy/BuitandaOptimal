@@ -7174,7 +7174,7 @@ function getMyOrder(id) {
                   '   <tr>' +
                   '   <td colspan="1"><b>' + if_lang('Total shipping ', ' ENTREGA	') + ':</b></td>' +
                   // ' <td colspan="4" class="TotalShippingA">' + nf.format(json['posts']['0']['totalShipping']) + 'KWZ  </td>' +
-                  ' <td colspan="4" class="TotalShippingA">'   +json['posts'][i]['totalShipping']+ 'KWZ  </td>' +
+                  ' <td colspan="4" class="TotalShippingA">'   +json['posts'][i]['totalShipping']+ ' KWZ  </td>' +
                   ' </tr>' +
 
                   '   <tr>' +
