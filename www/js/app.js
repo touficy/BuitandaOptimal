@@ -7594,8 +7594,13 @@ function GetShipping() {
 
 
       success: function (json) {
+         if(json['posts']['0']['totalShipping'] != 0 && json['posts']['0']['totalShipping'] != '0' ){
                $('.PaidDeleivery').html(json['posts']['0']['totalShipping']+ ' kwz ' )
+         }
+         else{
+               $('.PaidDeleivery').html( ' FREE ' )
 
+         }
          var nf = Intl.NumberFormat('fr');
          var
             ////console.log('shipping')
