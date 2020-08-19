@@ -3457,7 +3457,7 @@ function getProduct(id, title) {
                if (json['posts'][0]['special'] == '1') {
                   mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >' +
                      '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                       ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+                     + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 
                }
                else {
@@ -7173,12 +7173,14 @@ function getMyOrder(id) {
 
                   '   <tr>' +
                   '   <td colspan="1"><b>' + if_lang('Total shipping ', ' ENTREGA	') + ':</b></td>' +
-                  ' <td colspan="4" class="TotalShippingA">' + nf.format(json['posts']['0']['totalShipping']) + 'KWZ  </td>' +
+                  // ' <td colspan="4" class="TotalShippingA">' + nf.format(json['posts']['0']['totalShipping']) + 'KWZ  </td>' +
+                  ' <td colspan="4" class="TotalShippingA">'   +json['posts'][i]['totalShipping']+ 'KWZ  </td>' +
                   ' </tr>' +
 
                   '   <tr>' +
                   '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
-                  ' <td colspan="4" class="TotalWithShippingg">' + totalS + '  KWZ </td>' +
+                  // ' <td colspan="4" class="TotalWithShippingg">' + totalS + '  KWZ </td>' +
+                  ' <td colspan="4" class="TotalWithShippingg">' + (json['posts'][i]['total'] + json['posts'][i]['totalShipping']) +'  KWZ </td>' +
                   ' </tr>' +
                   ' </tfoot>' +
 
@@ -7608,21 +7610,30 @@ function GetShipping() {
             ////console.log(json)
             // shipping = nf.format(json['posts']['0']['totalShipping'])
             shipping = json['posts']['0']['totalShipping']
-
+ 
          // totalPlusShiping = nf.format(json['posts']['0']['total'])
-         totalPlusShiping = json['posts']['0']['total']
+         totalPlusShiping = parseFloat( json['posts']['0']['total'] ) + parseFloat(json['posts']['0']['totalShipping'])
          ////console.log(totalPlusShiping)
          if (shipping == 0) {
-            //console.log('shiping is ---- > ' + shipping)
-            $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+            console.log('totalPlusShiping in shipping 0 --- > '+ totalPlusShiping)
+               // totalPlusShiping = nf.format(totalPlusShiping)
+
+             $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+                               $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
+
          }
          else {
             if (shippingType == 'Pick_Up') {
+                           console.log('totalPlusShiping in Pick_Up --- > '+ totalPlusShiping)
+
+               
                shipping = 0
                if (json['posts']['0']['total'] > json['posts']['0']['totalShipping']) {
                   totalPlusShiping = parseFloat(json['posts']['0']['total']) - parseFloat(json['posts']['0']['totalShipping'])
-                  totalPlusShiping = nf.format(totalPlusShiping)
+                  // totalPlusShiping = nf.format(totalPlusShiping)
                   $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+                                             console.log('totalPlusShiping in Pick_Up --- > '+ totalPlusShiping)
+
                   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
                }
@@ -7630,8 +7641,10 @@ function GetShipping() {
                   shipping = 0
 
                   totalPlusShiping = parseFloat(json['posts']['0']['total']) - parseFloat(json['posts']['0']['total'])
-                  totalPlusShiping = nf.format(totalPlusShiping)
+                  // totalPlusShiping = nf.format(totalPlusShiping)
                   $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+                                             console.log('totalPlusShiping in Pick_Up down --- > '+ totalPlusShiping)
+
                   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
                }
@@ -7639,7 +7652,8 @@ function GetShipping() {
                //console.log('in if --- > ' + shippingType)
             }
             else {
-               totalPlusShiping = nf.format(totalPlusShiping)
+               // totalPlusShiping = nf.format(totalPlusShiping)
+                           console.log('totalPlusShiping in else final  --- > '+ totalPlusShiping)
 
                $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
                $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
