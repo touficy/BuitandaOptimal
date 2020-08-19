@@ -3457,7 +3457,7 @@ function getProduct(id, title) {
                if (json['posts'][0]['special'] == '1') {
                   mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >' +
                      '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                     + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+                       ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 
                }
                else {
