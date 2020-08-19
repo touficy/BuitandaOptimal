@@ -74,7 +74,7 @@ var versionApplication
 
 
 function showIndicator() {
-   app.preloader.show();
+   app.preloader.show(); 
    setTimeout(function () {
       app.preloader.hide();
    }, 5000);
@@ -107,6 +107,7 @@ function hideIndicator() {
 function reloadPage() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log('in reloade func')
 =======
    //console.log('in reloade func')
@@ -114,6 +115,9 @@ function reloadPage() {
 =======
    //console.log('in reloade func')
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log('in reloade func')
+>>>>>>> parent of c100eb4... monaca
    view.router.refreshPage();
 }
 var PLATFORM = '';
@@ -136,6 +140,7 @@ function onDeviceReady() {
             }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -143,12 +148,16 @@ function onDeviceReady() {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
 
 
 
          }
       });
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       //////console.log('V' + version)
@@ -158,6 +167,9 @@ function onDeviceReady() {
 =======
       //console.log('V' + version)
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('V' + version)
+>>>>>>> parent of c100eb4... monaca
    });
 
    // $('.HomeTab').html(if_lang('HOME','INICIAR'))
@@ -170,6 +182,7 @@ function onDeviceReady() {
       var mob_model = device.model;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       // ////console.log(device.model);
 =======
       // console.log(device.model);
@@ -177,6 +190,9 @@ function onDeviceReady() {
 =======
       // console.log(device.model);
 >>>>>>> parent of 40b1156... monaca
+=======
+      // //console.log(device.model);
+>>>>>>> parent of c100eb4... monaca
       var mob_model_num = mob_model.split("e")[1].split(",");
       if (mob_model_num[0] > 10 || (mob_model_num[0] == 10 && (mob_model_num[1] == 3) || mob_model_num[1] == 6)) {
          // alert("iphone x");         
@@ -226,6 +242,7 @@ function onDeviceReady() {
    PLATFORM = device.platform;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(PLATFORM)
    // alert("hi");
    // //////console.log('device ready --- > ' + localStorage, mercadoLanguage)
@@ -239,12 +256,18 @@ function onDeviceReady() {
    // alert("hi");
    // //console.log('device ready --- > ' + localStorage, mercadoLanguage)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(PLATFORM)
+   // alert("hi");
+   // ////console.log('device ready --- > ' + localStorage, mercadoLanguage)
+>>>>>>> parent of c100eb4... monaca
 
    // use_touchid(1234);
    // delete_pass();
    window.plugins.OneSignal
       .startInit("77d5e885-c96a-4342-b141-4efcadb9c1e8")
       .handleNotificationOpened(function (jsonData) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
@@ -254,6 +277,9 @@ function onDeviceReady() {
 =======
          console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+>>>>>>> parent of c100eb4... monaca
          var new_id = jsonData.notification.payload.additionalData.id;
          var page = jsonData.notification.payload.additionalData.page;
 
@@ -273,14 +299,14 @@ function onDeviceReady() {
                   go_to_page_params('Category', new_id)
                }
 
-
+               
                if (page == 'CategoryBrand') {
                   go_to_page_params('CategoryBrand', new_id)
                }
                if (page == 'CategoryTag') {
                   go_to_page_params('CategoryTag', new_id)
                }
-
+               
             }
             // view.router.navigate({name:page,param:{}})
          }
@@ -288,11 +314,12 @@ function onDeviceReady() {
       }).endInit();
    window.plugins.OneSignal.getIds(function (ids) {
       UUID = ids.userId;
-      //console.log('uuid --- > ' + ids.userId)
+   console.log('uuid --- > ' +ids.userId)
       // alert(UUID);
       localStorage.setItem("login_uuid", ids.userId);
 
       localStorage.MercardoUUID = ids.userId
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       // //////console.log('getIds: ' + JSON.stringify(ids));
@@ -302,12 +329,16 @@ function onDeviceReady() {
 =======
       // //console.log('getIds: ' + JSON.stringify(ids));
 >>>>>>> parent of 40b1156... monaca
+=======
+      // ////console.log('getIds: ' + JSON.stringify(ids));
+>>>>>>> parent of c100eb4... monaca
    });
 
    document.addEventListener("backbutton", onBackKeyDown, false);
 
    function onBackKeyDown(e) {
       var att = $$(".page-current").attr("data-name");
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       //////console.log('att ------ > '+ att)
@@ -320,6 +351,10 @@ function onDeviceReady() {
       //console.log('att ------ > '+ att)
       //console.log(view.history)
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('att ------ > '+ att)
+      ////console.log(view.history)
+>>>>>>> parent of c100eb4... monaca
       if (att == "index" || att == "home") {
          app.dialog.confirm(if_lang('Are you sure want to quit?', 'Você tem certeza que quer sair?'), 'Buitanda',
             function () {
@@ -384,16 +419,12 @@ function onDeviceReady() {
          view.router.back();
       }
    }
-
-   setTimeout(logFileInsert, 7000)
-
-
 }
 
 /*************LOGIN FACE ID SECTION **************/
 var biometryType;
 var token = "";
- 
+
 function login_using_touchid() {
    if (window.plugins) {
       if (Framework7.device.ios) {
@@ -417,6 +448,7 @@ function login_using_touchid() {
       } else if (PLATFORM.toLowerCase() == "android") {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // //////console.log(token);
 =======
          // //console.log(token);
@@ -424,6 +456,9 @@ function login_using_touchid() {
 =======
          // //console.log(token);
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(token);
+>>>>>>> parent of c100eb4... monaca
          // var decryptConfig = {
          //   clientId: "user_pass",
          //   username: "currentUser",
@@ -435,15 +470,20 @@ function login_using_touchid() {
          // function successCallback2(result) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //   //////console.log("successCallback(): " + JSON.stringify(result));
+=======
+         //   ////console.log("successCallback(): " + JSON.stringify(result));
+>>>>>>> parent of c100eb4... monaca
          //   if (result.withFingerprint) {
-         //     //////console.log("Successful biometric authentication.");
+         //     ////console.log("Successful biometric authentication.");
          //     if (result.password) {
-         //       //////console.log("Successfully decrypted credential token.");
-         //       //////console.log("password: " + result.password);
+         //       ////console.log("Successfully decrypted credential token.");
+         //       ////console.log("password: " + result.password);
          //       login(email, result.password);
          //     }
          //   } else if (result.withBackup) {
+<<<<<<< HEAD
          //     //////console.log("Authenticated with backup password");
 =======
 =======
@@ -462,11 +502,15 @@ function login_using_touchid() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+         //     ////console.log("Authenticated with backup password");
+>>>>>>> parent of c100eb4... monaca
          //   }
          // }
          //
          // function errorCallback2(error) {
          //   if (error === FingerprintAuth.ERRORS.FINGERPRINT_CANCELLED) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          //     //////console.log("FingerprintAuth Dialog Cancelled!");
@@ -482,6 +526,11 @@ function login_using_touchid() {
          //   } else {
          //     //console.log("FingerprintAuth Error: " + error);
 >>>>>>> parent of 40b1156... monaca
+=======
+         //     ////console.log("FingerprintAuth Dialog Cancelled!");
+         //   } else {
+         //     ////console.log("FingerprintAuth Error: " + error);
+>>>>>>> parent of c100eb4... monaca
          //   }
          // }
       }
@@ -495,6 +544,7 @@ var picEditProfile
 $$(document).on('page:init', '.page[data-name="profile"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(localStorage.buitandaUserID)
 =======
    console.log(localStorage.buitandaUserID)
@@ -502,6 +552,9 @@ $$(document).on('page:init', '.page[data-name="profile"]', function (e) {
 =======
    console.log(localStorage.buitandaUserID)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -538,6 +591,7 @@ var flagAcution = 0
 $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('home')
 =======
    console.log('home')
@@ -545,6 +599,9 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 =======
    console.log('home')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('home')
+>>>>>>> parent of c100eb4... monaca
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -560,6 +617,7 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
    flagSwip = 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('home')
 =======
    console.log('home')
@@ -567,6 +625,9 @@ $$(document).on('page:init', '.page[data-name="home"]', function (e) {
 =======
    console.log('home')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('home')
+>>>>>>> parent of c100eb4... monaca
    getLatestDeal()
    getAuctionHome()
    getBestSeller()
@@ -653,7 +714,6 @@ $$(document).on('page:init', '.page[data-name="MyOrder"]', function (e) {
       $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
    }
    else {
-
       $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
 
 
@@ -665,6 +725,7 @@ $$(document).on('page:init', '.page[data-name="MyOrder"]', function (e) {
 $$(document).on('page:init', '.page[data-name="Register-Company"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('inRegisterComant')
 =======
    console.log('inRegisterComant')
@@ -672,6 +733,9 @@ $$(document).on('page:init', '.page[data-name="Register-Company"]', function (e)
 =======
    console.log('inRegisterComant')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('inRegisterComant')
+>>>>>>> parent of c100eb4... monaca
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -715,8 +779,8 @@ $$(document).on('page:init', '.page[data-name="instructions"]', function (e) {
 
 
 $$(document).on('page:init', '.page[data-name="instructionsSubmit"]', function (e) {
-   getMyCard()
-   getInstructionsSubmit()
+    getMyCard()
+    getInstructionsSubmit()
 })
 
 $$(document).on('page:init', '.page[data-name="Login"]', function (e) {
@@ -761,10 +825,11 @@ $$(document).on('page:init', '.page[data-name="ResetPassword"]', function (e) {
 
 
 $$(document).on('page:init', '.page[data-name="review"]', function (e) {
-
+   
 
    getProductReview()
    $('.titlereview').html(if_lang('reviews ', ' Avaliações'))
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    ////console.log('hello')
@@ -774,6 +839,9 @@ $$(document).on('page:init', '.page[data-name="review"]', function (e) {
 =======
    console.log('hello')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('hello')
+>>>>>>> parent of c100eb4... monaca
 
 })
 $$(document).on('page:init', '.page[data-name="verifyCode"]', function (e) {
@@ -817,12 +885,9 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
    $('.TotalProductFirst').html(if_lang('Total products ', ' Total produtos	'))
    $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
    if (shipping == 0) {
-      //console.log('shiping in checout --- > ' + shipping)
       $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
    }
    else {
-      //console.log('shiping in else checkout --- > ' + shipping)
-
       $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
 
 
@@ -847,8 +912,7 @@ $$(document).on('page:init', '.page[data-name="CheckOutFirst"]', function (e) {
 $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
    // $('.Cash_on').html(if_lang('Cash on delivery  <a href="/Cash_on_Deleviry/" style=" margin-left: 48px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>',
    //    'Dinheiro na entrega  <a href="/Cash_on_Deleviry/" style=" margin-left: 25px;width: -webkit-fill-available "><span style="width: -webkit-fill-available">know more</span></a>'))
-   GetShipping()
-
+   
    $('.payment_Method').html(if_lang('Payment Method', 'Opções de pagamentos'))
    $('#ProccedOrder').html(if_lang('proceed order', 'continuar ordem'))
    $('.Cash_on').html(if_lang('Cash on delivery <span style="width: -webkit-fill-available;color:black"> / TPA  </span>',
@@ -862,7 +926,7 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
    // $('.trans2').html(if_lang(' <img src="img/trans2En.jpg "  onclick="SubmitRefOrder()" style="width: 90vw;">',
    //    ' <img src="img/trans2.jpg "  onclick="SubmitRefOrder()" style="width: 90vw;">'))
 
-   //    $('.trans3').html(if_lang(' <img src="img/Delv-En.jpg "  onclick="go_to_page(' + "'Cash_on_Deleviry'" + ')" style="width: 90vw;">',
+    //    $('.trans3').html(if_lang(' <img src="img/Delv-En.jpg "  onclick="go_to_page(' + "'Cash_on_Deleviry'" + ')" style="width: 90vw;">',
    //    ' <img src="img/Delv-pur.jpg "  onclick="go_to_page(' + "'Cash_on_Deleviry'" + ')" style="width: 90vw;">'))
 
    $('.SHOPINGCheckout').html(if_lang('CART ', 'CARRINHO'))
@@ -875,17 +939,14 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
    $('.TotalShippingQ').html(if_lang('Total shipping ', ' ENTREGA	'))
    $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
-   // if (shipping == 0) {
-   //    //console.log('shiping in Submit if --- > ' + shipping)
-   //    $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
-   // }
-   // else {
-   //    //console.log('shiping in checout else --- > ' + shipping)
-
-   //    $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
+   if (shipping == 0) {
+      $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+   }
+   else {
+      $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
 
 
-   // }
+   }
    $('.TotalQ').html(if_lang('Total ', ' Total'))
    $('.TAXESQ').html(if_lang('ALL VAT TAXES ARE INCLUDED ', ' Preço com IVA incluido à taxa em vigor'))
    $("#nextCheckout").html(if_lang('Next ', ' Seguinte  '))
@@ -897,6 +958,7 @@ $$(document).on('page:init', '.page[data-name="SubmitOrder"]', function (e) {
 $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('in profile 5raaa  ====== > ' + Checklogin())
 =======
    console.log('in profile 5raaa  ====== > ' + Checklogin())
@@ -904,11 +966,15 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 =======
    console.log('in profile 5raaa  ====== > ' + Checklogin())
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('in profile 5raaa  ====== > ' + Checklogin())
+>>>>>>> parent of c100eb4... monaca
 
    if (Checklogin()) {
       $('.logoutProfileShop').hide()
       $('.loginProfileShop').show()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log('in login ------------------------ ')
@@ -918,6 +984,9 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 =======
       console.log('in login ------------------------ ')
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('in login ------------------------ ')
+>>>>>>> parent of c100eb4... monaca
 
       editShop()
       $('.addressShP').html(if_lang('Address ', '  Endereço'))
@@ -956,22 +1025,16 @@ $$(document).on('page:init', '.page[data-name="ProfileShop"]', function (e) {
 })
 
 $$(document).on('page:init', '.page[data-name="Delivery"]', function (e) {
-   GetShipping()
    $('.SHOPINGCheckout').html(if_lang('CART ', 'CARRINHO'))
    $('.AddressCheckout').html(if_lang('ADDRESS ', '  ENDEREÇO  '))
    $('.DeliveryCheckout').html(if_lang('DELIVERY ', '  ENTREGA   '))
    $('.PaymentCHECKOUT').html(if_lang('PAYMENT ', '  PAGAMENTO'))
- 
+
    $('.HomeDelivery').html(if_lang('Home / Office Delivery Shipping Time : Delivery within 48th after payment - Buissiness Days from 8am to 6pm and Saturday until 1pm Best Price and speed ',
       '  Entrega em Casa / Escritório Tempo de envio: Entrega até 48h após pagamento - Dias úteis das 8h às 18h e Sábados até às 13h O melhor preço e velocidade'))
-   $('.pickupDEliivery').html(if_lang('Pick up : 9:00 -16:00 ' +
-      'Address :Rua veriador azevedo franco n 3 ingombota  luanda'
-      ,
-
-      'Levantamento : 9:00 -16:00 ' +
-      'Endereço :Rua veriador azevedo franco n 3 ingombota  luanda '))
+   $('.pickupDEliivery').html(if_lang('Pick Up In Store - Buitanda | Monday to Friday - 8th to 17th|Address - 9am to 10pm Shipping Time : Wait for "available for Pickup"email ',
+      '  Levantar na Loja - Buitanda | Segunda a sexta – 8h às 17h | Sábado – 9h às 13h Tempo de envio: Aguarde pelo email "Disponível para Levantamento"'))
    $('.FreeDeleivery').html(if_lang('Free ', '  Grátis'))
-
    $("#DelvieryNext").html(if_lang('Next ', ' Seguinte  '))
 
 
@@ -1003,6 +1066,7 @@ $$(document).on('page:init', '.page[data-name="selcLang"]', function (e) {
 $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(PLATFORM)
    if (localStorage.buitandaUserType != 'Company') {
       $('.userType').hide()
@@ -1020,6 +1084,13 @@ $$(document).on('page:init', '.page[data-name="EditProfile"]', function (e) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(PLATFORM)
+   if (localStorage.buitandaUserType != 'Company') {
+      $('.userType').hide()
+   }
+   //console.log('user type ----- >' + localStorage.buitandaUserType)
+>>>>>>> parent of c100eb4... monaca
    $('.addressCompanyLable').html(if_lang('Address', 'ENDEREÇO'));
 
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
@@ -1044,6 +1115,7 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(textSearch)
 
    // $('.titleSearch').html(searchName)
@@ -1059,6 +1131,12 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(textSearch)
+
+   // $('.titleSearch').html(searchName)
+   //console.log(typeof (localStorage.buitandaUserID))
+>>>>>>> parent of c100eb4... monaca
 
    $.ajax({
       async: false,
@@ -1102,6 +1180,7 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
             }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // ////console.log(li)
 =======
             // console.log(li)
@@ -1109,6 +1188,9 @@ $$(document).on('page:init', '.page[data-name="Search"]', function (e, page) {
 =======
             // console.log(li)
 >>>>>>> parent of 40b1156... monaca
+=======
+            // //console.log(li)
+>>>>>>> parent of c100eb4... monaca
          }
          else {
             li = if_lang('<p>   not found </p> ', '<p>   not found </p> ')
@@ -1153,14 +1235,14 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
 
    getMyCard()
    var cat_id = page.route.params.id;
-
+   
    MainCatID = cat_id
    // MainNameCat = n
 
    getCategoryProduct(cat_id)
 
 
-
+   
 
 
 
@@ -1172,6 +1254,7 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
       setTimeout(function () {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1179,6 +1262,9 @@ $$(document).on('page:init', '.page[data-name="Category"]', function (e, page) {
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 
          loading = false;
          getCategoryProduct(cat_id)
@@ -1199,14 +1285,14 @@ $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', functio
 
    getMyCard()
    var cat_id = page.route.params.id;
-
+   
    MainCatID = cat_id
    // MainNameCat = n
 
    getParentCategoryProduct(cat_id)
 
 
-
+   
 
 
 
@@ -1218,6 +1304,7 @@ $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', functio
       setTimeout(function () {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1225,6 +1312,9 @@ $$(document).on('page:init', '.page[data-name="ParentCategoryProduct"]', functio
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 
          loading = false;
          getParentCategoryProduct(cat_id)
@@ -1237,7 +1327,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
    app.infiniteScroll.create('.infinite-scroll-content')
    start = 0
    end = 8
-
+   
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -1245,15 +1335,15 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
 
    getMyCard()
    var cat_id = page.route.params.id;
-
+   
    MainCatID = cat_id
-
+ 
    getCategoryProductBrand(cat_id)
 
 
    var Data = [];
    var TempRecipe = []
-
+   
 
 
    var loading = false
@@ -1264,6 +1354,7 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
       setTimeout(function () {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1271,6 +1362,9 @@ $$(document).on('page:init', '.page[data-name="CategoryBrand"]', function (e, pa
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 
          loading = false;
          getCategoryProductBrand(cat_id)
@@ -1290,15 +1384,15 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
 
    getMyCard()
    var cat_id = page.route.params.id;
-
+   
    MainCatID = cat_id
-
+ 
    getCategoryProductTag(cat_id)
 
 
    var Data = [];
    var TempRecipe = []
-
+   
 
 
    var loading = false
@@ -1309,6 +1403,7 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
       setTimeout(function () {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1316,6 +1411,9 @@ $$(document).on('page:init', '.page[data-name="CategoryTag"]', function (e, page
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 
          loading = false;
          getCategoryProductTag(cat_id)
@@ -1329,7 +1427,7 @@ $$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function 
    app.infiniteScroll.create('.infinite-scroll-content')
    start = 0
    end = 8
-   $('.titleCategoryLastProduct').html(if_lang('Latest Deals', 'Produto mais recente'))
+   $('.titleCategoryLastProduct').html(if_lang('Latest Deals','Produto mais recente'))
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -1337,15 +1435,15 @@ $$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function 
 
    getMyCard()
    var cat_id = page.route.params.id;
-
+   
    MainCatID = cat_id
-
+ 
    getCategoryLastProduct(cat_id)
 
 
    var Data = [];
    var TempRecipe = []
-
+   
 
 
    var loading = false
@@ -1356,6 +1454,7 @@ $$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function 
       setTimeout(function () {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
 =======
          console.log('loading ---- > ', loading)
@@ -1363,6 +1462,9 @@ $$(document).on('page:init', '.page[data-name="CategoryLastProduct"]', function 
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 
          loading = false;
          getCategoryLastProduct(cat_id)
@@ -1376,8 +1478,8 @@ var GNameID = ''
 var prodFlag = 0
 var offsit = 5;
 $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, page) {
-   offsit = 5
-   app.infiniteScroll.create('.infinite-scroll-content')
+ offsit = 5
+ app.infiniteScroll.create('.infinite-scroll-content')
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -1394,6 +1496,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
    $('.swi').html(swi)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(swi)
 =======
    //console.log(swi)
@@ -1401,6 +1504,9 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
    //console.log(swi)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(swi)
+>>>>>>> parent of c100eb4... monaca
    $('.RecomendedForYOU').html(if_lang('RECOMMENDED ITEMS', 'ITENS RECOMENDADOS'))
    var cat_id = page.route.params.id;
    // var cat_name = page.route.params.nameCat;
@@ -1413,13 +1519,14 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
    GloCategoryID = cat_id;
    // GNameID = n
    getProduct(cat_id)
-
+   
    var loading = false
    $$('.infinite-scroll-content').on('infinite', function () {
       if (loading)
          return;
       loading = true;
       setTimeout(function () {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log('loading ---- > ', loading)
@@ -1429,14 +1536,18 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
          console.log('loading ---- > ', loading)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('loading ---- > ', loading)
+>>>>>>> parent of c100eb4... monaca
 
          loading = false;
          loadMoreReviews(cat_id)
 
       }, 1000);
    });
-
+  
    $(document).on('click', '.color_box', function (event) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log('clicked')
@@ -1454,12 +1565,19 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('clicked')
+      event.preventDefault();
+      var color = $(this).attr('data-color');
+      //console.log('color ----> ' + color)
+>>>>>>> parent of c100eb4... monaca
       $('#color_id').val(color);
       $(".color_box").css({
          'border': '1px solid #e9e9e9',
          'cursor': 'pointer'
       });
       // fetchImage();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log('color id --- > ' + $('#color_id').val())
@@ -1469,12 +1587,16 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
       console.log('color id --- > ' + $('#color_id').val())
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('color id --- > ' + $('#color_id').val())
+>>>>>>> parent of c100eb4... monaca
       $(this).css('border', '2px solid #f90');
 
       if (colorID == 1 && sizeID == 1) {
          if (colorID == 1) {
 
             if (sizeID == 1) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                ////console.log('looooooog')
@@ -1492,6 +1614,12 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log('looooooog')
+               //console.log($('#size_id').val())
+
+               //console.log($('#color_id').val())
+>>>>>>> parent of c100eb4... monaca
 
                if ($('#size_id').val() != -1 && $('#color_id').val() != -1) {
                   getNewProductDetails()
@@ -1540,6 +1668,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
    $(document).on('click', '.size_box', function (event) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('clicked')
 =======
       console.log('clicked')
@@ -1547,6 +1676,9 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
       console.log('clicked')
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('clicked')
+>>>>>>> parent of c100eb4... monaca
       event.preventDefault();
       var size = $(this).attr('data-size');
       $('#size_id').val(size);
@@ -1557,6 +1689,7 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
       // fetchImage();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('sizze id --- > ' + $('#size_id').val())
 =======
       console.log('sizze id --- > ' + $('#size_id').val())
@@ -1564,12 +1697,16 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 =======
       console.log('sizze id --- > ' + $('#size_id').val())
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('sizze id --- > ' + $('#size_id').val())
+>>>>>>> parent of c100eb4... monaca
       $(this).css('border', '2px solid #f90');
 
       if (colorID == 1 && sizeID == 1) {
          if (colorID == 1) {
 
             if (sizeID == 1) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                ////console.log('looooooog')
@@ -1588,6 +1725,12 @@ $$(document).on('page:init', '.page[data-name="CategoryProduct"]', function (e, 
 
                console.log($('#color_id').val())
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log('looooooog')
+               //console.log($('#size_id').val())
+
+               //console.log($('#color_id').val())
+>>>>>>> parent of c100eb4... monaca
 
                if ($('#size_id').val() != -1 && $('#color_id').val() != -1) {
                   getNewProductDetails()
@@ -1647,6 +1790,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
    $('.swiAs').html(swi)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log('caat name ---- > '+ n )
    //////console.log('id  ---- > '+ cat_id )
 =======
@@ -1657,6 +1801,10 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
    //console.log('caat name ---- > '+ n )
    //console.log('id  ---- > '+ cat_id )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log('caat name ---- > '+ n )
+   ////console.log('id  ---- > '+ cat_id )
+>>>>>>> parent of c100eb4... monaca
    $('.HomeTab').html(if_lang('HOME', 'INICIAR'))
    $('.CATEGORYTab').html(if_lang(' CATEGORY', ' CATEGORIAS'))
    $('.AUCTIONTab').html(if_lang('AUCTION', 'LEILÕES'))
@@ -1670,6 +1818,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
    // }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log('caat name ---- > '+ n )
    //////console.log('id  ---- > '+ cat_id )
 =======
@@ -1680,6 +1829,10 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
    //console.log('caat name ---- > '+ n )
    //console.log('id  ---- > '+ cat_id )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log('caat name ---- > '+ n )
+   ////console.log('id  ---- > '+ cat_id )
+>>>>>>> parent of c100eb4... monaca
    GloCategoryID = cat_id;
    GNameID = n
 
@@ -1702,6 +1855,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 //          // getAuctionProduct(cat_id , n)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // //////console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
 =======
 // //console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
@@ -1709,6 +1863,9 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 =======
 // //console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
 >>>>>>> parent of 40b1156... monaca
+=======
+// ////console.log('=================================================Before Auctiooooooooooooooooooooon =================================================')
+>>>>>>> parent of c100eb4... monaca
 
 //         })
 
@@ -1724,6 +1881,7 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 //          // getAuctionProduct(cat_id , n)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // //////console.log('================================================= Auctiooooooooooooooooooooon =================================================')
 =======
 // //console.log('================================================= Auctiooooooooooooooooooooon =================================================')
@@ -1731,6 +1889,9 @@ $$(document).on('page:init', '.page[data-name="Auction"]', function (e, page) {
 =======
 // //console.log('================================================= Auctiooooooooooooooooooooon =================================================')
 >>>>>>> parent of 40b1156... monaca
+=======
+// ////console.log('================================================= Auctiooooooooooooooooooooon =================================================')
+>>>>>>> parent of c100eb4... monaca
 
 //         })
 
@@ -1757,6 +1918,7 @@ function go_to_page_two_params(name, id, nameCat) {
 function go_to_page_params(name, id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name)
    //////console.log(params)
 =======
@@ -1767,6 +1929,10 @@ function go_to_page_params(name, id) {
    //console.log(name)
    //console.log(params)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name)
+   ////console.log(params)
+>>>>>>> parent of c100eb4... monaca
 
    view.router.navigate({
       name: name,
@@ -1784,6 +1950,7 @@ function go_to_page(pg_name) {
    if (pg_name == 'not-found') {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //////console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
 =======
       //console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
@@ -1791,6 +1958,9 @@ function go_to_page(pg_name) {
 =======
       //console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees')
+>>>>>>> parent of c100eb4... monaca
 
    }
 
@@ -1820,7 +1990,7 @@ function Checklogin() {
 
 /* ********************************************************************** /* */
 function getLatestDeal() {
-
+   
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=latest_deals&format=json",
@@ -1829,6 +1999,7 @@ function getLatestDeal() {
 
       success: function (json) {
          //alert(json['posts'][0]['description']);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          //  //////console.log('json ')
@@ -1841,6 +2012,10 @@ function getLatestDeal() {
          //  //console.log('json ')
          //  console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //  ////console.log('json ')
+         //  //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var mySwiper = app.swiper.create('.swiper-letest', {
             slidesPerView: 'auto',
             // autoplay: {
@@ -1866,6 +2041,7 @@ function getLatestDeal() {
          var x = 'ahmed samir'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('legnthhh ---- > ' + json['posts'].length)
          if (json['posts'][0] != 0) {
 =======
@@ -1885,49 +2061,62 @@ function getLatestDeal() {
                         '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
                         ' </div>' +
                         ' </div>' +
+=======
+         //console.log('legnthhh ---- > ' + json['posts'].length)
+         if (json['posts'][0] !=  0){
+>>>>>>> parent of c100eb4... monaca
 
-                        '   <div>' +
-                        '   <div class ="length-p" >' +
+         if (flagSwip == 0) {
+            for (var i = 0; i < json['posts'].length; i++) {
+               if(json['posts'][i]['special'] == '1')
+               {
+                  mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                     '<img src="img/onpromotion.png" class="onpromotionsmall">'+
+                  '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
 
-                        ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
-                        ' </div>' +
-                        ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
+                  '   <div>' +
+                  '   <div class ="length-p" >' +
 
-                        ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
 
-
-                        ' </div>' +
-                        '  </div>');
-
-                  }
-
-                  else {
-                     mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
-                        '<div class="Height-width" > ' +
-                        ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                        '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
-                        ' </div>' +
-                        ' </div>' +
-
-                        '   <div>' +
-                        '   <div class ="length-p" >' +
-
-                        ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
-                        ' </div>' +
-                        ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
-
-                        ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+                  ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
 
 
-                        ' </div>' +
-                        '  </div>');
-
-                  }
-
-                  mySwiper.update();
+                  ' </div>' +
+                  '  </div>');
 
                }
 
+               else{
+                  mySwiper.addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                   '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
+
+                  '   <div>' +
+                  '   <div class ="length-p" >' +
+
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
+
+                  ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+
+
+                  ' </div>' +
+                  '  </div>');
+                  
+               }
+
+<<<<<<< HEAD
             }
             else {
                for (var i = 0; i < json['posts'].length; i++) {
@@ -1959,72 +2148,94 @@ function getLatestDeal() {
                   ' </div>' +
                   ' </div>' +
 >>>>>>> parent of 40b1156... monaca
+=======
+                            mySwiper.update();
+>>>>>>> parent of c100eb4... monaca
 
-                        ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
-                        ' </div>' +
-                        ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
+            }
 
-                        ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+         }
+         else {
+            for (var i = 0; i < json['posts'].length; i++) {
+               //console.log(mySwiper)
+               if(json['posts'][i]['special'] == '1')
+               {
+                  mySwiper[flagSwip].addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                     '<img src="img/onpromotion.png" class="onpromotionsmall">'+
+                  '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
 
+                  '   <div>' +
+                  '   <div class ="length-p" >' +
 
-                        ' </div>' +
-                        '  </div>');
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
 
-                  }
-
-                  else {
-                     mySwiper[flagSwip].addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
-                        '<div class="Height-width" > ' +
-                        ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                        '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
-                        ' </div>' +
-                        ' </div>' +
-
-                        '   <div>' +
-                        '   <div class ="length-p" >' +
-
-                        ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
-                        ' </div>' +
-                        ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
-
-                        ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+                  ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
 
 
-                        ' </div>' +
-                        '  </div>');
-
-                  }
-
-                  mySwiper[flagSwip].update();
+                  ' </div>' +
+                  '  </div>');
 
                }
-            }
 
+               else{
+                  mySwiper[flagSwip].addSlide(i, '<div onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                   '  <img class=" " src="' + json['posts'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
+
+                  '   <div>' +
+                  '   <div class ="length-p" >' +
+
+                  ' <p class="pSwiper">' + if_lang(json['posts'][i]['title'], json['posts'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
+                  ' <span class="discount-price"  style="text-align:center; display:block; color:red">  ' + json['posts'][i]['original'] + ' KWZ</span>' +
+
+                  ' <span style="text-align:center; display:block">  ' + json['posts'][i]['current'] + ' KWZ</span>' +
+
+
+                  ' </div>' +
+                  '  </div>');
+                  
+               }
+          
+               mySwiper[flagSwip].update();
+
+            }
          }
 
+      }
+      
+      else {
+         if (flagSwip == 0) {
+
+            mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
+               '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
+
+               ' </div> ');
+
+
+            mySwiper.update();
+         }
          else {
-            if (flagSwip == 0) {
 
-               mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
-                  '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
+            mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
+               '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
 
-                  ' </div> ');
-
-
-               mySwiper.update();
-            }
-            else {
-
-               mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
-                  '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
-
-                  ' </div> ');
+               ' </div> ');
 
 
-               mySwiper.update();
-            }
-
+            mySwiper.update();
          }
+
+      }
       }
    });
 
@@ -2038,17 +2249,17 @@ function getBestSeller() {
 
 
       success: function (json) {
-
+        
          var mySwiper = app.swiper.create('.swiper-bestSeller', {
             slidesPerView: 'auto',
-
+       
             speed: 100,
             paginationClickable: true,
             spaceBetween: 10,
             watchSlidesProgress: true
          });
 
-
+       
          var x = 'ahmed samir'
 
          if (flagSwip == 0) {
@@ -2116,69 +2327,69 @@ function getSelectedForYOu() {
 
 
       success: function (json) {
-
+        
          var mySwiper = app.swiper.create('.swiper-Selected_FOR_YOU', {
             slidesPerView: 'auto',
-
+       
             speed: 100,
             paginationClickable: true,
             spaceBetween: 10,
             watchSlidesProgress: true
          });
 
+       
+         if(json['posts']['products'].length > 0){
+         if (flagSwip == 0) {
+ 
+            for (var i = 0; i < json['posts']['products'].length; i++) {
+               
+               mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
+                  '<div class="Height-width" > ' +
+                  ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
 
-         if (json['posts']['products'].length > 0) {
-            if (flagSwip == 0) {
+                  '  <img class="imageSwiper" src="' + json['posts']['products'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  ' </div>' +
+                  ' </div>' +
 
-               for (var i = 0; i < json['posts']['products'].length; i++) {
+                  '   <div>' +
+                  '   <div class ="length-p">' +
 
-                  mySwiper.addSlide(i, '<div  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')" class="swiper-slide" style="width:34vw; " >' +
-                     '<div class="Height-width" > ' +
-                     ' <div class="divImgSwiper" onclick="setbeforeNavigationFlag(1)">' +
-                     '<img src="img/onpromotion.png" class="onpromotion">' +
+                  ' <p class="pSwiper">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '</p>' +
+                  ' </div>' +
 
-                     '  <img class="imageSwiper" src="' + json['posts']['products'][i]['thumb'] + '"  style=" "  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                     ' </div>' +
-                     ' </div>' +
-
-                     '   <div>' +
-                     '   <div class ="length-p">' +
-
-                     ' <p class="pSwiper">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '</p>' +
-                     ' </div>' +
-
-                     '   <span class="spanHome">  ' + json['posts']['products'][i]['current'] + ' KWZ</span>' +
+                  '   <span class="spanHome">  ' + json['posts']['products'][i]['current'] + ' KWZ</span>' +
 
 
-                     ' </div>' +
-                     '  </div>');
-                  mySwiper.update();
-               }
+                  ' </div>' +
+                  '  </div>');
+               mySwiper.update();
             }
-
          }
+    
+      }
          else {
             if (flagSwip == 0) {
-
+   
                mySwiper.addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                   '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
-
+   
                   ' </div> ');
-
-
+   
+   
                mySwiper.update();
             }
             else {
-
+   
                mySwiper[flagSwip].addSlide(0, '  <div class="swiper-slide"  style="width:24vh; ">' +
                   '<p style ="color:red"> ' + if_lang(' No Data Available ', 'Não há dados disponíveis') + '   </p> ' +
-
+   
                   ' </div> ');
-
-
+   
+   
                mySwiper.update();
             }
-
+   
          }
 
       }
@@ -2196,6 +2407,7 @@ function getClosettDeal() {
          //alert(json['posts'][0]['description']);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //  ////console.log('json ')
          ////console.log(json)
 =======
@@ -2206,6 +2418,10 @@ function getClosettDeal() {
          //  console.log('json ')
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //  //console.log('json ')
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var mySwiper = app.swiper.create('.swiper-closed', {
             slidesPerView: 'auto',
             // autoplay: {
@@ -2305,6 +2521,7 @@ function getAuctionHome() {
    var att = $$(".page-current").attr("data-name");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('att ------ > ' + att)
 =======
    console.log('att ------ > ' + att)
@@ -2312,6 +2529,9 @@ function getAuctionHome() {
 =======
    console.log('att ------ > ' + att)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('att ------ > ' + att)
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=auctions_home&format=json",
@@ -2333,6 +2553,7 @@ function getAuctionHome() {
             //alert(json['posts'][0]['description']);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //  //////console.log('json ')
             //////console.log('auction Home')
             //////console.log(json)
@@ -2346,6 +2567,11 @@ function getAuctionHome() {
             //console.log('auction Home')
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //  ////console.log('json ')
+            ////console.log('auction Home')
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
             var mySwiper = app.swiper.create('.swiper-auction', {
                slidesPerView: 'auto',
                // autoplay: {
@@ -2362,6 +2588,7 @@ function getAuctionHome() {
                   var Remaining_time = get_timeDifference_Days(json['posts'][i]['endauctionDate'])
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   // ////console.log(Remaining_time)
 =======
                   // console.log(Remaining_time)
@@ -2369,6 +2596,9 @@ function getAuctionHome() {
 =======
                   // console.log(Remaining_time)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  // //console.log(Remaining_time)
+>>>>>>> parent of c100eb4... monaca
                   go_to_page_params
 
                   mySwiper.addSlide(i, '  <div class="swiper-slide" onclick="go_to_page_params(' + "'" + 'Auction' + "'" + ',' + json['posts'][i]['id'] + ')" style="width:17vh; ">' +
@@ -2467,6 +2697,7 @@ function getAllCategory() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('in all cat')
          //alert(json['posts'][0]['description']);
          //  //////console.log('json ')
@@ -2486,28 +2717,35 @@ function getAllCategory() {
          //  console.log(json)
          //  console.log(localStorage.BuitLang)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('in all cat')
+         //alert(json['posts'][0]['description']);
+         //  ////console.log('json ')
+         //  //console.log(json)
+         //  //console.log(localStorage.BuitLang)
+>>>>>>> parent of c100eb4... monaca
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
-            if (i == 0) {
-               getSubCategory(json['posts'][i]['id'])
-               li = li + '<div  class="containerCat"  onclick="getSubCategory(' + json['posts'][i]['id'] + ')">' +
-                  '  <div class="catChildStyle" style="border:2px solid rgb(50, 194, 255);cursor:pointer">' +
-                  ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
-                  '</div>' +
-                  '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>' +
-                  '   </div>'
+            if (i == 0 ){
+               getSubCategory( json['posts'][i]['id'] )
+               li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
+               '  <div class="catChildStyle" style="border:2px solid rgb(50, 194, 255);cursor:pointer">'+
+               ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
+                           '</div>'+   
+               '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>'+
+           '   </div>'
             }
-
-            else {
-               li = li + '<div  class="containerCat"  onclick="getSubCategory(' + json['posts'][i]['id'] + ')">' +
-                  '  <div class="catChildStyle">' +
-                  ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
-                  '</div>' +
-                  '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>' +
-                  '   </div>'
+            
+            else{
+               li = li +'<div  class="containerCat"  onclick="getSubCategory('+json['posts'][i]['id']+')">'+
+               '  <div class="catChildStyle">'+
+               ' <img  src="' + json['posts'][i]['icon'] + '"  style="width:8vh "  >' +
+                           '</div>'+
+               '  <p class="TextCat" >' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</p>'+
+           '   </div>'
             }
-
+         
 
             // li = li + '<div class="col-50" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
             //    ' <a > ' +
@@ -2537,25 +2775,26 @@ function getAllCategory() {
 
 function getCategoryProduct(id, name) {
    CategoryIdSearch = id
-
+   
 
    $.ajax({
       type: 'GET',
-      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsBySubCategory&sub_category=" + id + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
-      cache: false,
+      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsBySubCategory&sub_category="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
       success: function (json) {
-         if (localStorage.ListThumbnail == 'Thumbnail') {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
             $('.list-thumbnail').html('square_list')
 
          }
-         else {
+         else{
             $('.list-thumbnail').html('square_grid_2x2')
 
          }
-
-         $('.list-thumbnail').attr('onclick', 'changeListThumbnailCategoryProduct(' + id + ')')
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailCategoryProduct('+id+')')
          $('.titleCategory').html(if_lang(json['posts']['sub_category_name'], json['posts']['sub_category_name_port']))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          // //////console.log(name)
@@ -2568,175 +2807,173 @@ function getCategoryProduct(id, name) {
          console.log(json)
 if (json['posts']['products'].length != 0){ 
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(name)
+         //console.log(json)
+if (json['posts']['products'].length != 0){ 
+>>>>>>> parent of c100eb4... monaca
 
 
-            var li = ''
-            for (var i = 0; i < json['posts']['products'].length; i++) {
-               if (json['posts']['products'].length == 0) {
-                  //   endFlash = json['response']['result'].length
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
 
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
+
                }
-               else {
-                  if (json['posts']['products'].length < 8) {
-                     app.infiniteScroll.destroy('.infinite-scroll-content');
-                     $$('.infinite-scroll-preloader').hide();
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=='1'){
 
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
                   }
-                  if (localStorage.ListThumbnail == 'List') {
-                     if (json['posts']['products'][i]['special'] == '1') {
-
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
-
-                           ' </div>' +
-
-                           '</div>' +
-                           ' </li>'
-                     }
-                     else {
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
-
-                           ' </div>' +
-
-                           '</div>' +
-                           ' </li>'
-
-                     }
-                  }
-                  if (localStorage.ListThumbnail == 'Thumbnail') {
-                     if (json['posts']['products'].length % 2 == 0) {
-
-                        if (json['posts']['products'][i]['special'] == "1") {
-
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                        else {
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-                     else {
-                        if (json['posts']['products'][i]['special'] == "1") {
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                        else {
-
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
+   
                   }
                }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
+               }
+               else{
+                  if(json['posts']['products'][i]['special']=="1"){
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+                  }
+                  else{
+
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                     ' <a > ' +
+    
+                     '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                      ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                     '</div>' +
+                     '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                     '   <div class ="length-p">' +
+    
+                     ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+    
+                     ' </div>' +
+                     ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+    
+                     ' </div>' +
+    
+                     '  </a>' +
+    
+                     '</div>'
+                  }
+               }
+
+              }
             }
-            if (localStorage.ListThumbnail == 'List') {
-               $('.CatProdThumbnail').empty()
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
-               $('.CatProd').append(li)
-
-            }
-            if (localStorage.ListThumbnail == 'Thumbnail') {
-               $('.CatProd').empty()
-
-               $('.CatProdThumbnail').append(li)
-
-            }
-            start = start + 8
-            end = end + 8
+            $('.CatProd').append(li)
 
          }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
          else if (start == 0 && json['posts'][0] == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
@@ -2758,9 +2995,28 @@ if (json['posts']['products'].length != 0){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
 >>>>>>> parent of 40b1156... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
 
          }
+         start = start + 8
+         end = end + 8
+
+       }
+
+       else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         //console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+   }
    });
 
 
@@ -2768,14 +3024,15 @@ if (json['posts']['products'].length != 0){
 
 function getParentCategoryProduct(id, name) {
    CategoryIdSearch = id
-
+   
 
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=deals&cat_id=" + id + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
-      cache: false,
+      cache:false,
 
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          // //////console.log(name)
@@ -2786,13 +3043,18 @@ function getParentCategoryProduct(id, name) {
          // //console.log(name)
          if (localStorage.ListThumbnail=='Thumbnail'){ 
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(name)
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+>>>>>>> parent of c100eb4... monaca
             $('.list-thumbnail').html('square_list')
 
          }
-         else {
+         else{
             $('.list-thumbnail').html('square_grid_2x2')
 
          }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
          $('.list-thumbnail').attr('onclick', 'changeListThumbnailParentCategory(' + id + ')')
@@ -2805,181 +3067,179 @@ function getParentCategoryProduct(id, name) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailParentCategory('+id+')')
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          $('.titleParentCategoryProduct').html(if_lang(json['posts']['category_name'], json['posts']['category_name_port']))
 
-         if (json['posts']['products'].length != 0) {
+if (json['posts']['products'].length != 0){ 
 
 
-            var li = ''
-            for (var i = 0; i < json['posts']['products'].length; i++) {
-               if (json['posts']['products'].length == 0) {
-                  //   endFlash = json['response']['result'].length
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
 
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
-               }
-               else {
-                  if (json['posts']['products'].length < 8) {
-                     app.infiniteScroll.destroy('.infinite-scroll-content');
-                     $$('.infinite-scroll-preloader').hide();
-
-                  }
-                  if (localStorage.ListThumbnail == 'List') {
-                     if (json['posts']['products'][i]['special'] == "1") {
-
-
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
-
-                           ' </div>' +
-
-                           '</div>' +
-                           ' </li>'
-                     }
-                     else {
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
-
-                           ' </div>' +
-
-                           '</div>' +
-                           ' </li>'
-                     }
-                  }
-                  if (localStorage.ListThumbnail == 'Thumbnail') {
-                     if (json['posts']['products'].length % 2 == 0) {
-                        if (json['posts']['products'][i]['special'] == "1") {
-
-
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                        else {
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-                     else {
-                        if (json['posts']['products'][i]['special'] == "1") {
-
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-
-                        }
-                        else {
-
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-
-                  }
 
                }
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
+
+
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+                  }
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
+                  }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+                     if(json['posts']['products'][i]['special']=="1"){
+
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
+               }
+               else{
+                  if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+
+                  }
+                  else{
+                     
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+                  }
+               }
+
+              }
+
             }
-            if (localStorage.ListThumbnail == 'List') {
-               $('.CatProdThumbnail').empty()
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
-               $('.CatProd').append(li)
-
-            }
-            if (localStorage.ListThumbnail == 'Thumbnail') {
-               $('.CatProd').empty()
-
-               $('.CatProdThumbnail').append(li)
-
-            }
-            start = start + 8
-            end = end + 8
+            $('.CatProd').append(li)
 
          }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
          else if (start == 0 && json['posts'][0] == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
@@ -3001,9 +3261,28 @@ function getParentCategoryProduct(id, name) {
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
 >>>>>>> parent of 40b1156... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
 
          }
+         start = start + 8
+         end = end + 8
+
+       }
+
+      else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         //console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+   }
    });
 
 
@@ -3011,23 +3290,27 @@ function getParentCategoryProduct(id, name) {
 
 function getCategoryProductBrand(id, name) {
    CategoryIdSearch = id
-
+   
 
    $.ajax({
       type: 'GET',
-      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsByBrand&brandId=" + id + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
-      cache: false,
+      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsByBrand&brandId="+id+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
 
       success: function (json) {
-         if (localStorage.ListThumbnail == 'Thumbnail') {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
             $('.list-thumbnail').html('square_list')
 
          }
-         else {
+         else{
             $('.list-thumbnail').html('square_grid_2x2')
 
          }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailBrand('+id+')')
+         $('.titleCategoryBrand').html(json['posts'] ['brand_name'])
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          $('.list-thumbnail').attr('onclick', 'changeListThumbnailBrand(' + id + ')')
@@ -3043,187 +3326,181 @@ if (json['posts']['products'].length != 0){
          // //////console.log(name)
          ////console.log(json)
          if (json['posts']['products'].length != 0) {
+=======
+         // ////console.log(name)
+         //console.log(json)
+if (json['posts']['products'].length != 0){ 
+>>>>>>> parent of c100eb4... monaca
 
 
-            var li = ''
-            for (var i = 0; i < json['posts']['products'].length; i++) {
-               if (json['posts']['products'].length == 0) {
-                  //   endFlash = json['response']['result'].length
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
 
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
+
                }
-               else {
-                  if (json['posts']['products'].length < 8) {
-                     app.infiniteScroll.destroy('.infinite-scroll-content');
-                     $$('.infinite-scroll-preloader').hide();
+                
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special'] == "1"){
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
 
-                  }
+                  ' </div>' +
 
-                  if (localStorage.ListThumbnail == 'List') {
-                     if (json['posts']['products'][i]['special'] == "1") {
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
+                  '</div>' +
+                  ' </li>'
+               }
+               else{
+                  li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
 
-                           ' </div>' +
+                  ' </div>' +
 
-                           '</div>' +
-                           ' </li>'
-                     }
-                     else {
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
+                  '</div>' +
+                  ' </li>'
+               }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
 
-                           ' </div>' +
-
-                           '</div>' +
-                           ' </li>'
-                     }
-                  }
-                  if (localStorage.ListThumbnail == 'Thumbnail') {
-                     if (json['posts']['products'].length % 2 == 0) {
-
-                        if (json['posts']['products'][i]['special'] == "1") {
+                     if(json['posts']['products'][i]['special'] == "1"){
 
 
 
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
 
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
 
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
 
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
 
-                              ' </div>' +
+                 ' </div>' +
 
-                              '  </a>' +
+                 '  </a>' +
 
-                              '</div>'
-                        }
+                 '</div>'
+               }
 
-                        else {
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
+               else{
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+               }
+               else{
+                  if(json['posts']['products'][i]['special'] == "1"){
 
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-                     else {
-                        if (json['posts']['products'][i]['special'] == "1") {
-
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                        else {
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-                  }
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+               }
+               else{
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                   ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
                }
             }
-            if (localStorage.ListThumbnail == 'List') {
-               $('.CatProdThumbnail').empty()
-
-               $('.CatProd').append(li)
-
+              }
             }
-            if (localStorage.ListThumbnail == 'Thumbnail') {
-               $('.CatProd').empty()
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
-               $('.CatProdThumbnail').append(li)
+            $('.CatProd').append(li)
 
-            }
+         }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
 
-            start = start + 8
-            end = end + 8
+            $('.CatProdThumbnail').append(li)
 
          }
 
-         else if (start == 0 && json['posts'][0] == 0) {
-            app.infiniteScroll.destroy('.infinite-scroll-content');
-            $$('.infinite-scroll-preloader').hide();
-            ////console.log('in else product')
-            $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
-         }
-         else {
-            app.infiniteScroll.destroy('.infinite-scroll-content');
-            $$('.infinite-scroll-preloader').hide();
+         start = start + 8
+         end = end + 8
 
+<<<<<<< HEAD
 <<<<<<< HEAD
          }
 =======
@@ -3237,8 +3514,23 @@ if (json['posts']['products'].length != 0){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
 >>>>>>> parent of 40b1156... monaca
+=======
+      }
+>>>>>>> parent of c100eb4... monaca
+
+      else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         //console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
+      }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
 
       }
+
+   }
    });
 
 
@@ -3247,22 +3539,23 @@ if (json['posts']['products'].length != 0){
 
 function getCategoryProductTag(id, name) {
    CategoryIdSearch = id
-
+   
 
    $.ajax({
       type: 'GET',
-      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsByTag&tagId=" + id + "&lang=" + localStorage.BuitLang + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
-      cache: false,
+      url: "https://buitanda.com/ws-v1.3.9.php?type=getProductsByTag&tagId="+id+"&lang="+localStorage.BuitLang+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
 
       success: function (json) {
-         if (localStorage.ListThumbnail == 'Thumbnail') {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
             $('.list-thumbnail').html('square_list')
 
          }
-         else {
+         else{
             $('.list-thumbnail').html('square_grid_2x2')
 
          }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  
@@ -3271,180 +3564,175 @@ function getCategoryProductTag(id, name) {
          console.log(json)
 if (json['posts'][0] != 0){ 
 >>>>>>> parent of 40b1156... monaca
+=======
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailTag('+id+')')
+         // ////console.log(name)
+         //console.log(json)
+if (json['posts'][0] != 0){ 
+>>>>>>> parent of c100eb4... monaca
 
-         $('.list-thumbnail').attr('onclick', 'changeListThumbnailTag(' + id + ')')
-         // //////console.log(name)
-         ////console.log(json)
-         if (json['posts'][0] != 0) {
+         $('.titleCategoryTag').html(json['posts']['tag_name'])
 
-            $('.titleCategoryTag').html(json['posts']['tag_name'])
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
 
-            var li = ''
-            for (var i = 0; i < json['posts']['products'].length; i++) {
-               if (json['posts']['products'].length == 0) {
-                  //   endFlash = json['response']['result'].length
-
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
                   app.infiniteScroll.destroy('.infinite-scroll-content');
                   $$('.infinite-scroll-preloader').hide();
+
                }
-               else {
-                  if (json['posts']['products'].length < 8) {
-                     app.infiniteScroll.destroy('.infinite-scroll-content');
-                     $$('.infinite-scroll-preloader').hide();
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
 
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+               }
+               else{
+                  li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
+
+                  ' </div>' +
+
+                  '</div>' +
+                  ' </li>'
+               }
+               }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
+               }
+               else{
+
+                  if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
                   }
-                  if (localStorage.ListThumbnail == 'List') {
-                     if (json['posts']['products'][i]['special'] == "1") {
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
-
-                           ' </div>' +
-
-                           '</div>' +
-                           ' </li>'
-                     }
-                     else {
-                        li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
-                           '  <div class="row width-100">' +
-                           '<div class="col-20 align-self-center">' +
-                           ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
-                           ' </div>' +
-                           '<div class="col-80 padding-left">' +
-                           '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
-                           '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
-                           '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-                           ' </h5>' +
-
-                           ' </div>' +
-
-                           '</div>' +
-                           ' </li>'
-                     }
-                  }
-                  if (localStorage.ListThumbnail == 'Thumbnail') {
-                     if (json['posts']['products'].length % 2 == 0) {
-
-                        if (json['posts']['products'][i]['special'] == "1") {
-
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                        else {
-                           li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-                     else {
-
-                        if (json['posts']['products'][i]['special'] == "1") {
-
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                        else {
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-
+                  else{
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                     ' <a > ' +
+    
+                     '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                      ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                     '</div>' +
+                     '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                     '   <div class ="length-p">' +
+    
+                     ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+    
+                     ' </div>' +
+                     ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+    
+                     ' </div>' +
+    
+                     '  </a>' +
+    
+                     '</div>'
                   }
                }
+
+              }
             }
-            if (localStorage.ListThumbnail == 'List') {
-               $('.CatProdThumbnail').empty()
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
-               $('.CatProd').append(li)
-
-            }
-            if (localStorage.ListThumbnail == 'Thumbnail') {
-               $('.CatProd').empty()
-
-               $('.CatProdThumbnail').append(li)
-
-            }
-            start = start + 8
-            end = end + 8
+            $('.CatProd').append(li)
 
          }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
          else if (start == 0 && json['posts'][0] == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
@@ -3466,9 +3754,28 @@ if (json['posts'][0] != 0){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
 >>>>>>> parent of 40b1156... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
 
          }
+         start = start + 8
+         end = end + 8
+
+       }
+
+      else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         //console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+   }
    });
 
 
@@ -3480,10 +3787,15 @@ if (json['posts'][0] != 0){
 
 function getCategoryLastProduct(id, name) {
    CategoryIdSearch = id
-
+   
 
    $.ajax({
+      
+      type: 'GET',
+      url: "https://buitanda.com/ws-v1.3.9.php?type=latestdeals&lang="+localStorage.BuitLang+"&limit=" + start + ",8" + "&sort=" + sort +"&format=json",
+      cache:false,
 
+<<<<<<< HEAD
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=latestdeals&lang=" + localStorage.BuitLang + "&limit=" + start + ",8" + "&sort=" + sort + "&format=json",
       cache: false,
@@ -3602,10 +3914,17 @@ if (json['posts'][0] != 0){
                               '   <div class ="length-p">' +
 
                               ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+=======
+      success: function (json) {
+         if (localStorage.ListThumbnail=='Thumbnail'){ 
+            $('.list-thumbnail').html('square_list')
+>>>>>>> parent of c100eb4... monaca
 
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+         }
+         else{
+            $('.list-thumbnail').html('square_grid_2x2')
 
+<<<<<<< HEAD
                               ' </div>' +
 =======
  
@@ -3614,79 +3933,176 @@ if (json['posts'][0] != 0){
          console.log(json)
 if (json['posts'][0] != 0){ 
 >>>>>>> parent of 40b1156... monaca
+=======
+         }
+ 
+         $('.list-thumbnail').attr('onclick','changeListThumbnailLastProduct('+id+')')
+         // ////console.log(name)
+         //console.log(json)
+if (json['posts'][0] != 0){ 
+>>>>>>> parent of c100eb4... monaca
 
-                              '  </a>' +
+         $('.titleCategoryTag').html(json['posts']['tag_name'])
 
-                              '</div>'
-                        }
-                     }
-                     else {
-                        if (json['posts']['products'][i]['special'] == "1") {
+         var li = ''
+         for (var i = 0; i < json['posts']['products'].length; i++) {
+            if (json['posts']['products'].length == 0) {
+               //   endFlash = json['response']['result'].length
 
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
+               app.infiniteScroll.destroy('.infinite-scroll-content');
+               $$('.infinite-scroll-preloader').hide();
+            }
+            else {
+               if (json['posts']['products'].length < 8) {
+                  app.infiniteScroll.destroy('.infinite-scroll-content');
+                  $$('.infinite-scroll-preloader').hide();
 
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              '<img src="img/onpromotion.png" class="onpromotion">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
+               }
+               if(localStorage.ListThumbnail == 'List'){
+                  if(json['posts']['products'][i]['special']=="1"){
 
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+               li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                  '  <div class="row width-100">' +
+                  '<div class="col-20 align-self-center">' +
+                  ' <figure  class="product-image h-auto"><img src="img/onpromotion.png" class="onpromotionList"><img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                  ' </div>' +
+                  '<div class="col-80 padding-left">' +
+                  '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                  '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                  '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </h5>' +
 
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                  ' </div>' +
 
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                        else {
-                           li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
-                              ' <a > ' +
-
-                              '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
-                              ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
-                              '</div>' +
-                              '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
-                              '   <div class ="length-p">' +
-
-                              ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
-
-                              ' </div>' +
-                              ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
-
-                              ' </div>' +
-
-                              '  </a>' +
-
-                              '</div>'
-                        }
-                     }
-
+                  '</div>' +
+                  ' </li>'
+                  }
+                  else{
+                     li = li + ' <li onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ')">' +
+                     '  <div class="row width-100">' +
+                     '<div class="col-20 align-self-center">' +
+                     ' <figure  class="product-image h-auto"> <img src="' + json['posts']['products'][i]['thumb'] + '" alt="" class=""></figure>' +
+                     ' </div>' +
+                     '<div class="col-80 padding-left">' +
+                     '<p style="white-space:break-spaces; margin-top:2vh">' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + ' </p>' +
+                     '<p class="text-secondary small text-mute no-margin">' + ' </p>' +
+                     '<h5 class="text-green font-weight-normal no-margin"><span class=" ">' + ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+                     ' </h5>' +
+   
+                     ' </div>' +
+   
+                     '</div>' +
+                     ' </li>'
                   }
                }
+               if(localStorage.ListThumbnail == 'Thumbnail'){
+                  if(json['posts']['products'].length % 2 == 0){
+
+                     if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                 ' <a > ' +
+
+                 '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                 '<img src="img/onpromotion.png" class="onpromotion">'+
+                 ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                 '</div>' +
+                 '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                 '   <div class ="length-p">' +
+
+                 ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+
+                 ' </div>' +
+                 ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+
+                 ' </div>' +
+
+                 '  </a>' +
+
+                 '</div>'
+                     }
+                     else{
+                        li = li + '<div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                        ' <a > ' +
+       
+                        '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                         ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                        '</div>' +
+                        '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                        '   <div class ="length-p">' +
+       
+                        ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+       
+                        ' </div>' +
+                        ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+       
+                        ' </div>' +
+       
+                        '  </a>' +
+       
+                        '</div>'
+                     }
+               }
+               else{
+                  if(json['posts']['products'][i]['special']=="1"){
+
+                  li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                  ' <a > ' +
+ 
+                  '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                  '<img src="img/onpromotion.png" class="onpromotion">'+
+                  ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                  '</div>' +
+                  '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                  '   <div class ="length-p">' +
+ 
+                  ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+ 
+                  ' </div>' +
+                  ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+ 
+                  ' </div>' +
+ 
+                  '  </a>' +
+ 
+                  '</div>'
+                  }
+                  else{
+                     li = li + '<div class="col-50" style="margin-right:auto"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts']['products'][i]['id'] + ',' + "'" + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['title']) + "'" + ')" >' +
+                     ' <a > ' +
+    
+                     '<div class="white" style="height:26vh ; display:flex ;align-items:center " onclick="setbeforeNavigationFlag(2)">' +
+                      ' <img class="img-product" src="' + json['posts']['products'][i]['thumb'] + '"  style=" ">' +
+                     '</div>' +
+                     '<div class="white" style="margin-bottom:2vh ; margin-top: 1px">' +
+                     '   <div class ="length-p">' +
+    
+                     ' <p class=" lineP margin-white paddig-product" style="color:black;"> ' + if_lang(json['posts']['products'][i]['title'], json['posts']['products'][i]['sectitle']) + '  </p> ' +
+    
+                     ' </div>' +
+                     ' <span>' + json['posts']['products'][i]['current'] + ' KWZ</span> ' +
+    
+                     ' </div>' +
+    
+                     '  </a>' +
+    
+                     '</div>'
+                  }
+               }
+
+              }
             }
-            if (localStorage.ListThumbnail == 'List') {
-               $('.CatProdThumbnail').empty()
+         }
+         if(localStorage.ListThumbnail == 'List'){
+            $('.CatProdThumbnail').empty()
 
-               $('.CatProd').append(li)
-
-            }
-            if (localStorage.ListThumbnail == 'Thumbnail') {
-               $('.CatProd').empty()
-
-               $('.CatProdThumbnail').append(li)
-
-            }
-            start = start + 8
-            end = end + 8
+            $('.CatProd').append(li)
 
          }
+         if(localStorage.ListThumbnail == 'Thumbnail'){
+            $('.CatProd').empty()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
          else if (start == 0 && json['posts'][0] == 0) {
             app.infiniteScroll.destroy('.infinite-scroll-content');
@@ -3708,9 +4124,28 @@ if (json['posts'][0] != 0){
          app.infiniteScroll.destroy('.infinite-scroll-content');
          $$('.infinite-scroll-preloader').hide();
 >>>>>>> parent of 40b1156... monaca
+=======
+            $('.CatProdThumbnail').append(li)
+>>>>>>> parent of c100eb4... monaca
 
          }
+         start = start + 8
+         end = end + 8
+
+       }
+
+      else if (start == 0 && json['posts'][0] == 0 ){
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+         //console.log('in else product')
+         $('.noData').html('<p>' + if_lang('no data ', 'sem dados') + '</p>')
       }
+      else{
+         app.infiniteScroll.destroy('.infinite-scroll-content');
+         $$('.infinite-scroll-preloader').hide();
+
+      }
+   }
    });
 
 
@@ -3733,7 +4168,7 @@ var sizeID = 0
 
 
 function getProduct(id, title) {
-
+  
    colorID = 0
    sizeID = 0
 
@@ -3745,6 +4180,7 @@ function getProduct(id, title) {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -3752,6 +4188,9 @@ function getProduct(id, title) {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          // getRecomendedCategory(id, json['posts'][0]['category'])
 
 
@@ -3788,6 +4227,7 @@ function getProduct(id, title) {
                }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log('n --- > ' + n)
 
             }
@@ -3805,13 +4245,20 @@ function getProduct(id, title) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log('n --- > ' + n)
+
+            }
+            // ////console.log(n)
+            // ////console.log(img)
+>>>>>>> parent of c100eb4... monaca
 
 
 
             li = '  <h3 class="gray  margin-top-p">' + if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle']) + '</h3>' +
                '  <p class="descP margin-top-p"> SKU#' + json['posts'][0]['sku'] + '  </p>';
 
-            if (json['posts'][0]['original'] != "" && json['posts'][0]['original'] != "0,00") {
+            if (json['posts'][0]['original'] != "" && json['posts'][0]['original'] != "0,00")  {
 
 
                li = li + ' <p class="discount-price descP margin-top-p   "  >  ' + if_lang('OLD PRICE ', 'PREÇO ') + json['posts'][i]['original'] + ' KWZ</p>';
@@ -3823,17 +4270,17 @@ function getProduct(id, title) {
             }
             else {
                li = li + '   <p class="descP margin-top-p">' + if_lang('unit price ', 'Preço unitário') + '  <span class="blue-span Price_Prod">:' + json['posts'][0]['current'] + ' KWZ </span>' +
-                  ' ' + if_lang('saving', 'POUPAR ') + '   <span class="blue-span "> ( ' + json['posts'][0]['saving'] + '%  )</span> </p>'
+                  ' ' + if_lang('saving', 'POUPAR ') + '   <span class="blue-span "> ( ' + json['posts'][0]['saving'] + '%  )</span> </p>' 
                // +
                // '  <p class="descP margin-top-p"> saving   <span class="blue-span"> ( '+json['posts'][0]['saving']+'%  )</span> </p>'
             }
-            li = li + '<input type="hidden" id="product_ID" name="" value="' + json['posts'][0]['id'] + '">' + ' <input type="hidden" id="color_id" name="" value="0"> ' + ' <input type="hidden" id="size_id" name="" value="0"> ';
+            li = li +                  '<input type="hidden" id="product_ID" name="" value="' + json['posts'][0]['id'] + '">'            + ' <input type="hidden" id="color_id" name="" value="0"> ' + ' <input type="hidden" id="size_id" name="" value="0"> ' ;
             for (var i = 0; i < json['posts'][0]['colors'].length; i++) {
 
 
                if (i == 0 && json['posts'][0]['colors'].length > 0) {
                   colorID = 1
-                  li = li +
+                  li = li + 
 
                      '<div style="display:flex" class="descP margin-top-p colors">  <p class="descP margin-top-p" style="margin-left:0;margin-right:1vh"> color </p> '
                }
@@ -3847,7 +4294,7 @@ function getProduct(id, title) {
                if (i == 0 && json['posts'][0]['sizes'].length > 0) {
                   sizeID = 1
                   li = li + ' </div> ' +
-
+                     
                      '<div style="display:flex; margin-top:2vh" class="descP margin-top-p sizes">  <p class="descP margin-top-p" style="margin-left:0;margin-right:1vh"> size </p> '
                }
                li = li + '<div class="size_box" data-size="' + json['posts'][0]['sizes'][i]['sizeid'] + '" >' + json['posts'][0]['sizes'][i]['sizeName'] + ' </div>'
@@ -3858,17 +4305,17 @@ function getProduct(id, title) {
 
 
             li = li + '</div> <div class="descP margin-top-p info"> ' + if_lang(json['posts'][0]['info'], json['posts'][0]['secinfo']) + ' </div>';
-            if (json['posts'][0]['descimages'].length > 0) {
-               for (var n = 0; n < json['posts'][0]['descimages'].length; n++) {
-                  var tempimageDesc = json['posts'][0]['descimages'][n]['image']
-                  var flagindex = json['posts'][0]['descimages'][n]['image'].indexOf("http");
-                  if (flagindex == -1) {
+            if(json['posts'][0]['descimages'].length > 0 ){
+               for(var n = 0 ; n <  json['posts'][0]['descimages'].length ; n ++ ){
+                  var tempimageDesc =  json['posts'][0]['descimages'][n]['image']
+                  var flagindex= json['posts'][0]['descimages'][n]['image'].indexOf("http");
+                     if (flagindex == -1) {
 
-                     tempimageDesc = 'https://buitanda.com/cmsadmin/upload/deeldescriptionimages/' + tempimageDesc
-                  }
-
-
-                  li = li + '<img src="' + tempimageDesc + '" style ="width:100%"  >'
+                        tempimageDesc = 'https://buitanda.com/cmsadmin/upload/deeldescriptionimages/'+ tempimageDesc 
+                     }
+                     
+                  
+                  li = li + '<img src="'+tempimageDesc+'" style ="width:100%"  >'
 
                }
             }
@@ -3902,7 +4349,7 @@ function getProduct(id, title) {
                   '  </div>' +
                   ' <div style="text-align:-webkit-center">' +
 
-                  ' <button class="col button button-raised button-fill" style="width: 35vh; margin: 1vh 0 1vh 0; background-color: #32c2ff;" onclick="addToCard(' + json['posts'][0]['id'] + "," + json['posts'][0]['availumquantity'] + "," + json['posts'][0]['miniumquantity'] + ')">' + if_lang('Add to cart', 'Adicionar ao carrinho') + '  </button>';
+                  ' <button class="col button button-raised button-fill" style="width: 35vh; margin: 1vh 0 1vh 0; background-color: #32c2ff;" onclick="addToCard(' + json['posts'][0]['id'] + "," + json['posts'][0]['availumquantity'] +  "," + json['posts'][0]['miniumquantity'] +  ')">' + if_lang('Add to cart', 'Adicionar ao carrinho') + '  </button>';
             }
             li = li +
                ' <p class="descP margin-top-p desc">' + tempimg + ' </p>';
@@ -3914,6 +4361,7 @@ function getProduct(id, title) {
             $('.containerProduct').html(li)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('review ' +json['posts'][0]['reviews']['averageRate'])
 =======
             console.log('review ' +json['posts'][0]['reviews']['averageRate'])
@@ -3921,110 +4369,113 @@ function getProduct(id, title) {
 =======
             console.log('review ' +json['posts'][0]['reviews']['averageRate'])
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('review ' +json['posts'][0]['reviews']['averageRate'])
+>>>>>>> parent of c100eb4... monaca
             $("#averageRating").rateYo({
-               rating: String(json['posts'][0]['reviews']['averageRate']),
+               rating: String (json['posts'][0]['reviews']['averageRate']),
                readOnly: true,
                starWidth: "20px",
-            });
-            $('.cusReviews').html(if_lang('customer reviews (' + json['posts'][0]['reviews']['reviews'].length + ')',
-               'Opinião dos consumidores (' + json['posts'][0]['reviews']['reviews'].length + ')'))
+           });
+            $('.cusReviews').html(if_lang('customer reviews ('+json['posts'][0]['reviews']['reviews'].length+')' ,
+            'Opinião dos consumidores ('+json['posts'][0]['reviews']['reviews'].length+')'))
 
-            li = ' <div class="row" style="align-items: center;">' +
-               '<div class="col-20">' +
-               ' 5 stars' +
-               ' </div>' +
-               ' <div class="col-50 r-graph" style="">' +
-               '  <b class="r-graph-scroller" style="width:' + json['posts'][0]['reviews']['5_stars'] + '%;"></b>' +
-               '  </div>' +
-               '<div class="col-20">' +
-               '  <p style="border: 2px gray solid; text-align: center;">' + json['posts'][0]['reviews']['5_stars'] + '</p>' +
-               '</div>' +
+             li =  ' <div class="row" style="align-items: center;">'+
+            '<div class="col-20">'+
+               ' 5 stars'+
+           ' </div>'+
+           ' <div class="col-50 r-graph" style="">'+
+            '  <b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['5_stars']+'%;"></b>'+
+          '  </div>'+
+            '<div class="col-20">'+
+            '  <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['5_stars']+'</p>'+
+            '</div>'+
+           
+      '  </div>'+
+  
+       ' <div class="row" style="align-items: center;">'+
+        '  <div class="col-20">'+
+             ' 4 stars'+
+       '   </div>'+
+       '   <div class="col-50 r-graph" style="">'+
+          '  <b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['4_stars']+'%;"></b>'+
+        '  </div>'+
+       '   <div class="col-20">'+
+         '   <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['4_stars']+'</p>'+
+         ' </div>'+
+         
+      '</div>'+
+  
+      '<div class="row" style="align-items: center;">'+
+        '  <div class="col-20">'+
+            '  3 stars'+
+         ' </div>'+
+         ' <div class="col-50 r-graph" style="">'+
+           ' <b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['3_stars']+'%;"></b>'+
+          '</div>'+
+      '    <div class="col-20">'+
+            '<p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['3_stars']+'</p>'+
+         ' </div>'+
+         
+    '  </div>'+
+  
+     ' <div class="row" style="align-items: center;">'+
+          '<div class="col-20">'+
+            '  2 stars'+
+         ' </div>'+
+        '  <div class="col-50 r-graph" style="">'+
+            '<b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['2_stars']+'%;"></b>'+
+        '  </div>'+
+        '  <div class="col-20">'+
+           ' <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['2_stars']+'</p>'+
+         ' </div>'+
+         
+    '  </div>'+
+  
+    '  <div class="row" style="align-items: center;">'+
+         ' <div class="col-20">'+
+        '     1 star'+
+       '   </div>'+
+          '<div class="col-50 r-graph" style="">'+
+            '<b class="r-graph-scroller" style="width:'+json['posts'][0]['reviews']['1_stars']+'%;"></b>'+
+          '</div>'+
+        '  <div class="col-20">'+
+           ' <p style="border: 2px gray solid; text-align: center;">'+json['posts'][0]['reviews']['1_stars']+'</p>'+
+         ' </div>'+
+         
+    '  </div>';
+    $('.StarsReviews').html(li)
+    $('.numAvgReview').html(json['posts'][0]['reviews']['averageRate'] + " / 5")
 
-               '  </div>' +
 
-               ' <div class="row" style="align-items: center;">' +
-               '  <div class="col-20">' +
-               ' 4 stars' +
-               '   </div>' +
-               '   <div class="col-50 r-graph" style="">' +
-               '  <b class="r-graph-scroller" style="width:' + json['posts'][0]['reviews']['4_stars'] + '%;"></b>' +
-               '  </div>' +
-               '   <div class="col-20">' +
-               '   <p style="border: 2px gray solid; text-align: center;">' + json['posts'][0]['reviews']['4_stars'] + '</p>' +
-               ' </div>' +
-
-               '</div>' +
-
-               '<div class="row" style="align-items: center;">' +
-               '  <div class="col-20">' +
-               '  3 stars' +
-               ' </div>' +
-               ' <div class="col-50 r-graph" style="">' +
-               ' <b class="r-graph-scroller" style="width:' + json['posts'][0]['reviews']['3_stars'] + '%;"></b>' +
-               '</div>' +
-               '    <div class="col-20">' +
-               '<p style="border: 2px gray solid; text-align: center;">' + json['posts'][0]['reviews']['3_stars'] + '</p>' +
-               ' </div>' +
-
-               '  </div>' +
-
-               ' <div class="row" style="align-items: center;">' +
-               '<div class="col-20">' +
-               '  2 stars' +
-               ' </div>' +
-               '  <div class="col-50 r-graph" style="">' +
-               '<b class="r-graph-scroller" style="width:' + json['posts'][0]['reviews']['2_stars'] + '%;"></b>' +
-               '  </div>' +
-               '  <div class="col-20">' +
-               ' <p style="border: 2px gray solid; text-align: center;">' + json['posts'][0]['reviews']['2_stars'] + '</p>' +
-               ' </div>' +
-
-               '  </div>' +
-
-               '  <div class="row" style="align-items: center;">' +
-               ' <div class="col-20">' +
-               '     1 star' +
-               '   </div>' +
-               '<div class="col-50 r-graph" style="">' +
-               '<b class="r-graph-scroller" style="width:' + json['posts'][0]['reviews']['1_stars'] + '%;"></b>' +
-               '</div>' +
-               '  <div class="col-20">' +
-               ' <p style="border: 2px gray solid; text-align: center;">' + json['posts'][0]['reviews']['1_stars'] + '</p>' +
-               ' </div>' +
-
-               '  </div>';
-            $('.StarsReviews').html(li)
-            $('.numAvgReview').html(json['posts'][0]['reviews']['averageRate'] + " / 5")
-
-
-            for (var l = 0; l < json['posts'][0]['reviews']['reviews'].length; l++) {
-               li = '  <div class="row" style="justify-content:flex-start;margin-left:2vh">' +
-                  ' <div class="col-40" style="font-weight: bolder;">' + json['posts'][0]['reviews']['reviews'][l]['cname'] + '</div>' +
-                  ' <div class="col-60 customer-rateDesc_' + json['posts'][0]['reviews']['reviews'][l]['id'] + '" ></div>' +
-                  '</div>' +
-
-                  ' <div class="row" style="justify-content:flex-start;margin-left:2vh">' +
-                  '  <div class="col-100" >' + json['posts'][0]['reviews']['reviews'][l]['review'] + '</div>' +
-                  // '<div class="col-60  " style="font-size: 11px;" >'+
-                  //       '<span style="color:black; font-weight:bold"> color : </span>'+json['posts'][0]['reviews']['reviews'][l]['color']+
-                  //       '<span style="color:black; font-weight:bold">  size : </span>'+json['posts'][0]['reviews']['reviews'][l]['size']+'</div>'+
-                  '  </div>' +
-                  '  <div class="row" style="justify-content:flex-start;margin-left:2vh">' +
-                  // '<div class="col-40" style="font-weight: bolder;"></div>'+
-                  ' <div class="col-100  " style="font-size: 11px;margin-bottom:2vh ; margin-right:2vh; text-align:end;" > ' + moment().format(json['posts'][0]['reviews']['reviews'][0]['datetime']) + ' </div>' +
-                  '</div>'
+            for (var l =0 ; l < json['posts'][0]['reviews']['reviews'].length; l++ ){
+               li=  '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+              ' <div class="col-40" style="font-weight: bolder;">'+json['posts'][0]['reviews']['reviews'][l]['cname']+'</div>'+
+              ' <div class="col-60 customer-rateDesc_'+json['posts'][0]['reviews']['reviews'][l]['id']+'" ></div>'+
+           '</div>'+
+   
+          ' <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+             '  <div class="col-100" >'+json['posts'][0]['reviews']['reviews'][l]['review']+'</div>'+
+               // '<div class="col-60  " style="font-size: 11px;" >'+
+         //       '<span style="color:black; font-weight:bold"> color : </span>'+json['posts'][0]['reviews']['reviews'][l]['color']+
+         //       '<span style="color:black; font-weight:bold">  size : </span>'+json['posts'][0]['reviews']['reviews'][l]['size']+'</div>'+
+         '  </div>'+
+         '  <div class="row" style="justify-content:flex-start;margin-left:2vh">'+
+               // '<div class="col-40" style="font-weight: bolder;"></div>'+
+              ' <div class="col-100  " style="font-size: 11px;margin-bottom:2vh ; margin-right:2vh; text-align:end;" > '+moment().format(json['posts'][0]['reviews']['reviews'][0]['datetime'])+' </div>'+
+           '</div>'
                $('.containerReview').append(li)
-
-               $(".customer-rateDesc_" + json['posts'][0]['reviews']['reviews'][l]['id']).rateYo({
-                  rating: String(json['posts'][0]['reviews']['reviews'][l]['rate']),
-                  readOnly: true,
-                  starWidth: "20px",
-               });
+               
+  $(".customer-rateDesc_"+json['posts'][0]['reviews']['reviews'][l]['id']).rateYo({
+   rating: String( json['posts'][0]['reviews']['reviews'][l]['rate'] ),
+   readOnly: true,
+   starWidth: "20px",
+});
             }
 
          }
 
-
+      
          $('.info_table').css('width', '100%')
 
          // li=                                 '<img class="imageCategoryProduct" src="'+json['posts'][0]['image']+'" style=" ">'
@@ -4057,11 +4508,17 @@ function getProduct(id, title) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //   ////console.log(mySwiper)
          //   ////console.log(mySwiper.length)
+=======
+         //   //console.log(mySwiper)
+         //   //console.log(mySwiper.length)
+>>>>>>> parent of c100eb4... monaca
 
-         //////console.log(json)
+         ////console.log(json)
 
+<<<<<<< HEAD
          // //////console.log(json['posts'][0] ['image'].length)
 =======
          //   console.log(mySwiper)
@@ -4079,16 +4536,20 @@ function getProduct(id, title) {
 
          // //console.log(json['posts'][0] ['image'].length)
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(json['posts'][0] ['image'].length)
+>>>>>>> parent of c100eb4... monaca
          if (mySwiper.length == undefined) {
             mySwiper.removeAllSlides();
 
             if (json['posts'][0]['images'].length > 0) {
-               if (json['posts'][0]['special'] == '1') {
-                  mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >' +
-                     '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                     + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+               if (json['posts'][0]['special']=='1'){
+                  mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
+                  '<img src="img/onpromotion.png" class="onpromotionbig">'+
+     + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 
                }
+<<<<<<< HEAD
 <<<<<<< HEAD
                else {
                   mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >' +
@@ -4104,6 +4565,11 @@ function getProduct(id, title) {
 >>>>>>> parent of 822d46e... Merge branch 'master' of https://github.com/touficy/BuitandaOptimal
 =======
 >>>>>>> parent of 822d46e... Merge branch 'master' of https://github.com/touficy/BuitandaOptimal
+=======
+               else{
+                  mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
+       ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+>>>>>>> parent of c100eb4... monaca
 
                }
 
@@ -4114,6 +4580,7 @@ function getProduct(id, title) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      ////console.log('in sold flag')
 =======
                      console.log('in sold flag')
@@ -4121,41 +4588,45 @@ function getProduct(id, title) {
 =======
                      console.log('in sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     //console.log('in sold flag')
+>>>>>>> parent of c100eb4... monaca
                      if (i == 0) {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
 
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
                         }
-                        else {
+                        else{
                            mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center "  >' +
-
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-
+    
+                           ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+   
                         }
                      }
                      else {
+ 
+                        if (json['posts'][0]['special']=='1'){
 
-                        if (json['posts'][0]['special'] == '1') {
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
 
-                           mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-
-                              ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-                        }
-                        else {
-
-                           mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-
-                              ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-
-                        }
+                        ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
                      }
+                     else{
+                        
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+ 
+                        ' <img  src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+             
+                     }
+                  }
                   }
 
                   else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                      //////console.log( 'out sold flag')
@@ -4179,29 +4650,40 @@ function getProduct(id, title) {
 
                            mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
                               '<img src="img/onpromotion.png" class="onpromotionbig">' +
+=======
+                     ////console.log( 'out sold flag')
 
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
-                        }
-                        else {
-                           mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
+                     if (i == 0) {
+                        //console.log('out sold flag')
+>>>>>>> parent of c100eb4... monaca
 
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                        if (json['posts'][0]['special']=='1'){
 
-                        }
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center"    >' +
+ 
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                
+                     }
+                  }
                      else {
-                        if (json['posts'][0]['special'] == '1') {
+                         if (json['posts'][0]['special']=='1'){
 
-                           mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
-                        }
-                        else {
-
-                           mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
-                        }
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        
+                        mySwiper.addSlide(i + 1, '  <div class="swiper-slide" style="width:unset;text-align:center" >' + 
+                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                     }
+                  }
                   }
                   mySwiper.update();
 
@@ -4215,33 +4697,33 @@ function getProduct(id, title) {
                for (var i = 0; i < 3; i++) {
                   if (i == 0) {
                      if (soldFlag == 0) {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
-                        }
-                        else {
-                           mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
-                        }
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                     }
+                  }
                      else {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
-                        }
-                        else {
-                           mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-
-                        }
                      }
+                     else{
+                        mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+                     }
+                  }
                      mySwiper.update();
 
                   }
@@ -4255,6 +4737,7 @@ function getProduct(id, title) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('in else')
 =======
             console.log('in else')
@@ -4262,11 +4745,15 @@ function getProduct(id, title) {
 =======
             console.log('in else')
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('in else')
+>>>>>>> parent of c100eb4... monaca
             if (json['posts'][0]['images'].length > 0) {
 
 
                for (var i = 0; i < json['posts'][0]['images'].length; i++) {
                   if (soldFlag == 1) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                      //////console.log( 'in sold flag')
@@ -4276,38 +4763,42 @@ function getProduct(id, title) {
 =======
                      //console.log( 'in sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     ////console.log( 'in sold flag')
+>>>>>>> parent of c100eb4... monaca
                      if (i == 0) {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
-                        }
-                        else {
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-
-
-                        }
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+
+                     }
+                  }
                      else {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
-                        }
-                        else {
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-
-                        }
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+                     }
+                  }
                   }
 
                   else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                      //////console.log( 'out sold flag')
@@ -4317,34 +4808,37 @@ function getProduct(id, title) {
 =======
                      //console.log( 'out sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     ////console.log( 'out sold flag')
+>>>>>>> parent of c100eb4... monaca
 
                      if (i == 0) {
-                        if (json['posts'][0]['special'] == '1') {
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                        if (json['posts'][0]['special']=='1'){
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                         }
-                        else {
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
-
+                        else{
+                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                            ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+                              
                         }
                      }
                      else {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
-                        }
-                        else {
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-
-                              ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
-
-                        }
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         
+                        ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>');
+                   
+                     }
+                  }
                   }
                   mySwiper[mySwiper.length - 1].update();
 
@@ -4358,32 +4852,32 @@ function getProduct(id, title) {
                for (var i = 0; i < 3; i++) {
                   if (i == 0) {
                      if (soldFlag == 0) {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
-                        }
-                        else {
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
-
-                        }
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + 
+                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
+              
+                     }
+                  }
                      else {
-                        if (json['posts'][0]['special'] == '1') {
+                        if (json['posts'][0]['special']=='1'){
 
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                        '<img src="img/onpromotion.png" class="onpromotionbig">'+
+                        ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
 
-                        }
-                        else {
-                           mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
-                              ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
-
-                        }
                      }
+                     else{
+                        mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
+                         ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '   <img src="img/sold.png" class="top-left">' + '</div>');
+
+                     }
+                  }
                      mySwiper[mySwiper.length - 1].update();
 
                   }
@@ -4417,6 +4911,7 @@ function getValudBid() {
    var data = $("input[name='my-radioBid']:checked").val();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(data)
 =======
    console.log(data)
@@ -4424,6 +4919,9 @@ function getValudBid() {
 =======
    console.log(data)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(data)
+>>>>>>> parent of c100eb4... monaca
    $('.bidbackGroundBid').css('background-color', '#32c2ff');
    $('.Text-Color').css('color', 'white');
    $('.bidbackGroundBid_' + data).css('background-color', 'white');
@@ -4438,6 +4936,7 @@ function getRegisterForm() {
    $('#bidbackGround_' + data).css('background', 'black')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(data)
 =======
    console.log(data)
@@ -4445,6 +4944,9 @@ function getRegisterForm() {
 =======
    console.log(data)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(data)
+>>>>>>> parent of c100eb4... monaca
    var li = ''
    if (data == 'Company') {
       getCountryCompany()
@@ -4739,6 +5241,7 @@ function getBidDiv() {
    var data = $("input[name='my-radio']:checked").val();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(data)
 =======
    console.log(data)
@@ -4746,6 +5249,9 @@ function getBidDiv() {
 =======
    console.log(data)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(data)
+>>>>>>> parent of c100eb4... monaca
 
 }
 function getCountry() {
@@ -4757,6 +5263,7 @@ function getCountry() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -4764,6 +5271,9 @@ function getCountry() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + json['posts'][i]['name'] + '</option>'
@@ -4788,6 +5298,7 @@ function getBusinessType() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -4795,6 +5306,9 @@ function getBusinessType() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + if_lang(json['posts'][i]['name'], json['posts'][i]['secname']) + '</option>'
@@ -4819,6 +5333,7 @@ function getBusinessTypeByID(id) {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -4826,6 +5341,9 @@ function getBusinessTypeByID(id) {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -4862,6 +5380,7 @@ function getProductType() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -4869,6 +5388,9 @@ function getProductType() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '</option>'
@@ -4892,6 +5414,7 @@ function getProductTypeByID(id) {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -4899,6 +5422,9 @@ function getProductTypeByID(id) {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -4935,6 +5461,7 @@ function getCountryCompany() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -4942,6 +5469,9 @@ function getCountryCompany() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + ' <option value="' + json['posts'][i]['id'] + '">' + json['posts'][i]['name'] + '</option>'
@@ -4990,6 +5520,7 @@ function getCountryByID(id) {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -4997,6 +5528,9 @@ function getCountryByID(id) {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
@@ -5027,6 +5561,7 @@ function getCity() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log($('#CountrySelect').val())
    var id = $('.CountrySelect').val()
    ////console.log(id)
@@ -5040,12 +5575,18 @@ function getCity() {
    var id = $('.CountrySelect').val()
    console.log(id)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log($('#CountrySelect').val())
+   var id = $('.CountrySelect').val()
+   //console.log(id)
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log(json)
@@ -5055,6 +5596,9 @@ function getCity() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          if (json['posts'][0] != 0) {
             for (var i = 0; i < json['posts'].length; i++) {
@@ -5081,6 +5625,7 @@ function getCityCompany() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log($('#CountrySelect').val())
    var id = $('#CountrySelectCompany').val()
    ////console.log(id)
@@ -5094,12 +5639,18 @@ function getCityCompany() {
    var id = $('#CountrySelectCompany').val()
    console.log(id)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log($('#CountrySelect').val())
+   var id = $('#CountrySelectCompany').val()
+   //console.log(id)
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=cities&country_id=" + id + "&format=json ",
 
 
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log(json)
@@ -5109,6 +5660,9 @@ function getCityCompany() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          if (json['posts'][0] != 0) {
             for (var i = 0; i < json['posts'].length; i++) {
@@ -5139,6 +5693,7 @@ function getCityByID(id, Cityid) {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('city')
          ////console.log(json)
 =======
@@ -5149,6 +5704,10 @@ function getCityByID(id, Cityid) {
          console.log('city')
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('city')
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             if (Cityid == json['posts'][i]['id']) {
@@ -5204,19 +5763,26 @@ function RegisterPerson() {
                }
 
                else {
-                  if (is_email(Email) == false) {
+                  if(is_email(Email) == false){
                      hideIndicator()
 
                      alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
                   }
+                  else{
+
+                 
+                  if (mobile == '') {
+                     hideIndicator()
+
+                     alert(if_lang("please enter mobile", 'por favor entre no celular'))
+                  }
                   else {
-
-
-                     if (mobile == '') {
+                     if (password == '') {
                         hideIndicator()
 
-                        alert(if_lang("please enter mobile", 'por favor entre no celular'))
+                        alert(if_lang("please enter password", 'por favor digite a senha'))
                      }
+<<<<<<< HEAD
                      else {
                         if (password == '') {
                            hideIndicator()
@@ -5255,41 +5821,44 @@ function RegisterPerson() {
                                  else if (json['posts'][0] == 0) {
                                     alert(if_lang('There is a problem currently being resolved, please try again later  ', 'Há um problema sendo resolvido no momento. Tente novamente mais tarde'))
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 
-                        else {
-                           if (!$('.conditions').prop('checked')) {
-                              alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
+                     else {
+                        if (!$('.conditions').prop('checked')) {
+                           alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
 
-                           } else {
-                              var url = 'https://buitanda.com/ws-v1.3.9.php?type=registration&name=' + name + '&email=' + Email + '&version=' + versionApplication +
-                                 '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json'
-                              $.ajax({
-                                 type: 'POST',
-                                 url: url,
-                                 //   processData: false,
-                                 //       contentType: false,
-                                 //       cache: false,
-                                 //       dataType: "json",
-                                 //       data : {name : name,
-                                 //          email : Email,
-                                 //          version : versionApplication,
-                                 //          address : adddres,
-                                 //          user_type : 'Personal' , 
-                                 //          password : password , 
-                                 //          phone : mobile ,
-                                 //          country_id : Country ,
-                                 //          city_id : City,
-                                 //          uuid : UUID, 
-                                 //          platform :PLATFORM
-                                 //       },
-                                 success: function (json) {
-                                    ////console.log(json)
-                                    if (json['posts'][0] == -1) {
-                                       alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
-                                    }
-                                    else if (json['posts'][0] == 0) {
-                                       alert(if_lang('There is a problem currently being resolved, please try again later  ', 'Há um problema sendo resolvido no momento. Tente novamente mais tarde'))
+                        } else {
+                           var url = 'https://buitanda.com/ws-v1.3.9.php?type=registration&name=' + name + '&email=' + Email + '&version=' + versionApplication +
+                              '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json'
+                           $.ajax({
+                              type: 'POST',
+                              url: url,
+                              //   processData: false,
+                              //       contentType: false,
+                              //       cache: false,
+                              //       dataType: "json",
+                              //       data : {name : name,
+                              //          email : Email,
+                              //          version : versionApplication,
+                              //          address : adddres,
+                              //          user_type : 'Personal' , 
+                              //          password : password , 
+                              //          phone : mobile ,
+                              //          country_id : Country ,
+                              //          city_id : City,
+                              //          uuid : UUID, 
+                              //          platform :PLATFORM
+                              //       },
+                              success: function (json) {
+                                 //console.log(json)
+                                 if (json['posts'][0] == -1) {
+                                    alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
+                                 }
+                                 else if (json['posts'][0] == 0) {
+                                    alert(if_lang('There is a problem currently being resolved, please try again later  ', 'Há um problema sendo resolvido no momento. Tente novamente mais tarde'))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     }
                                     else {
@@ -5309,17 +5878,28 @@ function RegisterPerson() {
                                     console.log(localStorage.buitandaUserID)
                                     console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
 >>>>>>> parent of 40b1156... monaca
-
-                                       location.reload()
-
-                                    }
-                                    hideIndicator()
+=======
                                  }
-                              });
+                                 else {
+                                    // alert(if_lang('The account has been successfully created congratulations ' , 'A conta foi criada com sucesso parabéns'))
 
-                           }
+                                    localStorage.buitandaUserID = json['posts'][0]
+                                    localStorage.buitandaUserType = json['posts'][1]
+
+                                    //console.log(localStorage.buitandaUserID)
+                                    //console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
+>>>>>>> parent of c100eb4... monaca
+
+                                    location.reload()
+
+                                 }
+                                 hideIndicator()
+                              }
+                           });
+
                         }
                      }
+ }
                   }
                }
             }
@@ -5330,6 +5910,7 @@ function RegisterPerson() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -5337,6 +5918,9 @@ function RegisterPerson() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 
 
    hideIndicator()
@@ -5397,21 +5981,26 @@ function RegisterCompany() {
                            alert(if_lang("please enter email", 'por favor insira o email'))
                         }
                         else {
-                           if (is_email(Email) == false) {
+                           if(is_email(Email) == false){
                               hideIndicator()
-
+         
                               alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
                            }
-                           else {
-                              if (phone == '') {
-                                 alert(if_lang("please choose phone", 'por favor escolha a telefone'))
+                           else{
+                           if (phone == '') {
+                              alert(if_lang("please choose phone", 'por favor escolha a telefone'))
 
+                           }
+                           else {
+                              if (mobile == '') {
+                                 alert(if_lang("please enter mobile", 'por favor entre no celular'))
                               }
                               else {
-                                 if (mobile == '') {
-                                    alert(if_lang("please enter mobile", 'por favor entre no celular'))
+                                 if (password == '') {
+                                    alert(if_lang("please enter password", 'por favor digite a senha'))
                                  }
                                  else {
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     if (password == '') {
                                        alert(if_lang("please enter password", 'por favor digite a senha'))
@@ -5423,32 +6012,38 @@ function RegisterCompany() {
                                           ////console.log('city ---- > ' + City)
                                           ////console.log('Countery ---- > ' + Country)
                                           ////console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+=======
+                                    if (!$('.conditions').prop('checked')) {
+                                       alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
+                                    } else {
+                                       //console.log('city ---- > ' + City)
+                                       //console.log('Countery ---- > ' + Country)
+                                       //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+>>>>>>> parent of c100eb4... monaca
                                           // '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
-                                          $.ajax({
-                                             type: 'POST',
-                                             url: 'https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&version=' + versionApplication + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
-                                                '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
+                                       $.ajax({
+                                          type: 'POST',
+                                          url: 'https://buitanda.com/ws-v1.3.9.php?type=registration_company&name=' + name + '&email=' + Email + '&version=' + versionApplication + '&user_type=Company&password=' + password + '&phone=' + phone + '&mobile=' + mobile +
+                                             '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
-                                             success: function (json) {
-                                                ////console.log(json)
-                                                if (json['posts'][0] == -1) {
-                                                   alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
-                                                }
-                                                else if (json['posts'][0] == 0) {
-                                                   alert(if_lang('There is a problem currently being resolved, please try again later  ', 'Há um problema sendo resolvido no momento. Tente novamente mais tarde'))
+                                          success: function (json) {
+                                             //console.log(json)
+                                             if (json['posts'][0] == -1) {
+                                                alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
+                                             }
+                                             else if (json['posts'][0] == 0) {
+                                                alert(if_lang('There is a problem currently being resolved, please try again later  ', 'Há um problema sendo resolvido no momento. Tente novamente mais tarde'))
 
-                                                }
-                                                else {
-                                                   // alert(if_lang('The account has been successfully created congratulations ' , 'A conta foi criada com sucesso parabéns'))
+                                             }
+                                             else {
+                                                // alert(if_lang('The account has been successfully created congratulations ' , 'A conta foi criada com sucesso parabéns'))
 
 
-                                                   localStorage.buitandaUserID = json['posts'][0]
-                                                   localStorage.buitandaUserType = 'Company'
-                                                   ////console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
+                                                localStorage.buitandaUserID = json['posts'][0]
+                                                localStorage.buitandaUserType = 'Company'
+                                                //console.log('user type ----- REgistsr >' + localStorage.buitandaUserType)
 
-                                                   location.reload()
-                                                }
-
+<<<<<<< HEAD
                                                 hideIndicator()
 =======
                                     if (!$('.conditions').prop('checked')) {
@@ -5494,12 +6089,17 @@ function RegisterCompany() {
 
                                                 location.reload()
 >>>>>>> parent of 40b1156... monaca
+=======
+                                                location.reload()
+>>>>>>> parent of c100eb4... monaca
                                              }
-                                          });
 
-                                       }
+                                             hideIndicator()
+                                          }
+                                       });
 
                                     }
+
                                  }
                               }
                            }
@@ -5507,11 +6107,13 @@ function RegisterCompany() {
                      }
                   }
                }
+               }
             }
          }
       }
    }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -5521,6 +6123,9 @@ function RegisterCompany() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 
    hideIndicator()
 }
@@ -5576,17 +6181,22 @@ function RegisterSeller() {
                         }
 
                         else {
-                           if (is_email(Email) == false) {
+                           if(is_email(Email) == false){
                               hideIndicator()
-
+         
                               alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
                            }
-                           else {
-                              if (phone == '') {
-                                 alert(if_lang("please choose phone", 'por favor escolha a telefone'))
+                           else{
+                           if (phone == '') {
+                              alert(if_lang("please choose phone", 'por favor escolha a telefone'))
 
+                           }
+                           else {
+                              if (mobile == '') {
+                                 alert(if_lang("please enter mobile", 'por favor entre no celular'))
                               }
                               else {
+<<<<<<< HEAD
 <<<<<<< HEAD
                                  if (mobile == '') {
                                     alert(if_lang("please enter mobile", 'por favor entre no celular'))
@@ -5596,6 +6206,12 @@ function RegisterSeller() {
                                        alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
                                     } else {
                                        ////console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+=======
+                                 if (!$('.conditions').prop('checked')) {
+                                    alert(if_lang('Please check agree in conditions', 'Please check agree in conditions'))
+                                 } else {
+                                    //console.log('https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+>>>>>>> parent of c100eb4... monaca
                                        // '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
 =======
                                  if (!$('.conditions').prop('checked')) {
@@ -5614,6 +6230,7 @@ function RegisterSeller() {
                                        '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json')
 >>>>>>> parent of 100d6cb... push
 
+<<<<<<< HEAD
                                        $.ajax({
                                           type: 'POST',
                                           url: 'https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
@@ -5632,21 +6249,33 @@ function RegisterSeller() {
                                              alert(if_lang('Request Sent , we will contact your briefly . ', 'Pedido enviado, entraremos em contato brevemente.'))
                                              location.reload()
 >>>>>>> parent of 40b1156... monaca
+=======
+                                    $.ajax({
+                                       type: 'POST',
+                                       url: 'https://buitanda.com/ws-v1.3.9.php?type=registration_seller&name=' + name + '&email=' + Email + '&phone=' + phone + '&mobile=' + mobile +
+                                          '&NIF=' + nif + '&address=' + Address + '&country_id=' + Country + '&city_id=' + City + '&bussines_type=' + business + '&prod_type=' + product + '&format=json',
+>>>>>>> parent of c100eb4... monaca
 
-                                             }
+                                       success: function (json) {
+                                          //console.log(json)
+                                          if (json['posts'][0] != 0) {
+                                             alert(if_lang('Request Sent , we will contact your briefly . ', 'Pedido enviado, entraremos em contato brevemente.'))
+                                             location.reload()
 
-                                             hideIndicator()
                                           }
-                                       });
+
+                                          hideIndicator()
+                                       }
+                                    });
 
 
 
-                                    }
                                  }
                               }
                            }
                         }
                      }
+                  }
                   }
                }
             }
@@ -5656,6 +6285,7 @@ function RegisterSeller() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -5663,6 +6293,9 @@ function RegisterSeller() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 
    hideIndicator()
 }
@@ -5677,6 +6310,7 @@ function login() {
    var password = $('#passwordLogins').val()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(email+ '    ' +password)
 =======
    //console.log(email+ '    ' +password)
@@ -5684,6 +6318,9 @@ function login() {
 =======
    //console.log(email+ '    ' +password)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(email+ '    ' +password)
+>>>>>>> parent of c100eb4... monaca
 
    if (email == '') {
       alert(if_lang('please enter email', 'please enter right email'))
@@ -5703,6 +6340,7 @@ function login() {
 
 
             success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                ////console.log(PLATFORM)
@@ -5726,6 +6364,15 @@ function login() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(PLATFORM)
+               //console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               //console.log(json)
+               if (json['posts'][0] != 0) {
+                  localStorage.buitandaUserID = json['posts'][0]['id']
+                  localStorage.buitandaUserType = json['posts'][0]['user_type']
+                  // //console.log(  localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
                   location.reload()
                   updateUUIDtoCustomerID(json['posts'][0]['id'])
 
@@ -5737,6 +6384,7 @@ function login() {
                // if(json['posts'][0]  == 0){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                // //////console.log('nice')}
 =======
                // //console.log('nice')}
@@ -5744,6 +6392,9 @@ function login() {
 =======
                // //console.log('nice')}
 >>>>>>> parent of 40b1156... monaca
+=======
+               // ////console.log('nice')}
+>>>>>>> parent of c100eb4... monaca
                hideIndicator()
             }
          });
@@ -5782,6 +6433,7 @@ function resetPassword() {
          success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log(json)
 =======
             console.log(json)
@@ -5789,6 +6441,9 @@ function resetPassword() {
 =======
             console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
 
 
@@ -5798,6 +6453,7 @@ function resetPassword() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                //////console.log('nice')
 =======
                //console.log('nice')
@@ -5805,6 +6461,9 @@ function resetPassword() {
 =======
                //console.log('nice')
 >>>>>>> parent of 40b1156... monaca
+=======
+               ////console.log('nice')
+>>>>>>> parent of c100eb4... monaca
             }
             else {
                alert(if_lang('this email dosn\'t exist'))
@@ -5829,6 +6488,7 @@ function checkCode() {
    else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //////console.log(localStorage.buitandaTemp)
 =======
       //console.log(localStorage.buitandaTemp)
@@ -5836,6 +6496,9 @@ function checkCode() {
 =======
       //console.log(localStorage.buitandaTemp)
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log(localStorage.buitandaTemp)
+>>>>>>> parent of c100eb4... monaca
 
       $.ajax({
          type: 'POST',
@@ -5845,6 +6508,7 @@ function checkCode() {
          success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -5852,6 +6516,9 @@ function checkCode() {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
             if (json['posts'][0] != 0) {
                go_to_page("ResetPassword")
 
@@ -5865,6 +6532,7 @@ function checkCode() {
             // if(json['posts'][0]  == 0){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // //////console.log('nice')}
 =======
             // //console.log('nice')}
@@ -5872,6 +6540,9 @@ function checkCode() {
 =======
             // //console.log('nice')}
 >>>>>>> parent of 40b1156... monaca
+=======
+            // ////console.log('nice')}
+>>>>>>> parent of c100eb4... monaca
             hideIndicator()
          }
       });
@@ -5882,6 +6553,7 @@ function checkCode() {
 function setNewPassword() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(localStorage.buitandaTemp)
 =======
    //console.log(localStorage.buitandaTemp)
@@ -5889,6 +6561,9 @@ function setNewPassword() {
 =======
    //console.log(localStorage.buitandaTemp)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(localStorage.buitandaTemp)
+>>>>>>> parent of c100eb4... monaca
 
    showIndicator()
    var cpassword = $('#cPasswordReset').val()
@@ -5918,6 +6593,7 @@ function setNewPassword() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(localStorage.buitandaTemp)
 =======
             //console.log(localStorage.buitandaTemp)
@@ -5925,6 +6601,9 @@ function setNewPassword() {
 =======
             //console.log(localStorage.buitandaTemp)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(localStorage.buitandaTemp)
+>>>>>>> parent of c100eb4... monaca
 
             $.ajax({
                type: 'POST',
@@ -5934,6 +6613,7 @@ function setNewPassword() {
                success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //////console.log(json)
 =======
                   //console.log(json)
@@ -5941,6 +6621,9 @@ function setNewPassword() {
 =======
                   //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
                   localStorage.buitandaUserID = localStorage.buitandaTemp
 
@@ -5964,6 +6647,7 @@ function getProfile() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
          // ////console.log($('#namePerson'))
          // ////console.log(json['posts'][0]['name'])
@@ -5977,6 +6661,11 @@ function getProfile() {
          // console.log($('#namePerson'))
          // console.log(json['posts'][0]['name'])
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+         // //console.log($('#namePerson'))
+         // //console.log(json['posts'][0]['name'])
+>>>>>>> parent of c100eb4... monaca
 
          getCountryByID(json['posts'][0]['country_id'])
          getCityByID(json['posts'][0]['country_id'], json['posts'][0]['city_id'])
@@ -6002,44 +6691,44 @@ function getProfile() {
          $('#phoneShop').val(json['posts'][0]['phoneNumber'])
          $('#AddressShop').val(json['posts'][0]['address'])
 
+        
+      var   li = 
 
-         var li =
-
-            ' <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; padding-top: 1vh;" id="nameShop">' + json['posts'][0]['name'] + '</p>' +
-            '<div class="list no-hairlines-md" style="margin:2vh 2vh 0vh  0vh;">' +
-            '  <ul>' +
-            '  <li class="item-content item-input">' +
-            ' <div class="item-inner">' +
-            '  <div class="item-title item-label">' + if_lang('phone ', 'telefone') + '</div>' +
-            '      <div class="item-input-wrap"><input id="phoneShop" value="' + json['posts'][0]['phoneNumber'] + '" type="number" placeholder=" " name="name"><span' +
-            '  class="input-clear-button"></span></div>' +
-            '  </div>' +
-            ' </li>' +
-            ' </ul>' +
-            '   </div>' +
-            '   <div class="list " style="margin:2vh 2vh 0vh  0vh;">' +
-            ' <ul>' +
-            '<li class="item-content item-input">' +
-            ' <div class="item-inner">' +
-            '  <div class="item-title item-label">' + if_lang('Address ', '  Endereço') + '</div>' +
-            ' <div class="item-input-wrap"><input value="' + json['posts'][0]['address'] + '" id="AddressShop" type="text" placeholder=" " name="name"><span' +
-            'class="input-clear-button"></span></div>' +
-            '  </div>' +
-            '  </li>' +
-            ' </ul>' +
-            '</div>' +
-            '  <div class="list " style="margin:2vh 2vh 0vh  0vh;">' +
-            ' <ul>' +
-            ' <li class="item-content item-input">' +
-            ' <div class="item-inner">' +
-            ' <div class="item-title item-label">Note</div>' +
-            ' <div class="item-input-wrap"><input id="noteShop" type="text" placeholder=" " name="name"><span' +
-            ' class="input-clear-button"></span></div>' +
-            ' </div>' +
-            '  </li>' +
-            ' </ul>' +
-            '  </div>'
-
+        ' <p style="font-weight: bolder; margin: 1vh 0vh 0vh 2vh; padding-top: 1vh;" id="nameShop">'+json['posts'][0]['name']+'</p>'+
+        '<div class="list no-hairlines-md" style="margin:2vh 2vh 0vh  0vh;">'+
+        '  <ul>'+
+          '  <li class="item-content item-input">'+
+             ' <div class="item-inner">'+
+              '  <div class="item-title item-label">'+if_lang('phone ', 'telefone')+'</div>'+
+          '      <div class="item-input-wrap"><input id="phoneShop" value="'+json['posts'][0]['phoneNumber']+'" type="number" placeholder=" " name="name"><span'+
+                  '  class="input-clear-button"></span></div>'+
+            '  </div>'+
+           ' </li>'+
+         ' </ul>'+
+     '   </div>'+
+     '   <div class="list " style="margin:2vh 2vh 0vh  0vh;">'+
+         ' <ul>'+
+            '<li class="item-content item-input">'+
+             ' <div class="item-inner">'+
+              '  <div class="item-title item-label">'+if_lang('Address ', '  Endereço')+'</div>'+
+               ' <div class="item-input-wrap"><input value="'+json['posts'][0]['address']+'" id="AddressShop" type="text" placeholder=" " name="name"><span'+
+                    'class="input-clear-button"></span></div>'+
+            '  </div>'+
+          '  </li>'+
+         ' </ul>'+
+        '</div>'+
+      '  <div class="list " style="margin:2vh 2vh 0vh  0vh;">'+
+         ' <ul>'+
+           ' <li class="item-content item-input">'+
+             ' <div class="item-inner">'+
+               ' <div class="item-title item-label">Note</div>'+
+               ' <div class="item-input-wrap"><input id="noteShop" type="text" placeholder=" " name="name"><span'+
+                   ' class="input-clear-button"></span></div>'+
+             ' </div>'+
+          '  </li>'+
+         ' </ul>'+
+      '  </div>'
+     
          $('.loginProfileShop').html(li)
          hideIndicator()
       }
@@ -6085,42 +6774,42 @@ function updateProfile() {
                alert(if_lang("please enter email", 'por favor insira o email'))
             }
             else {
-               if (is_email(Email) == false) {
+               if(is_email(Email) == false){
                   hideIndicator()
 
                   alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
                }
-               else {
-                  if (mobile == '') {
-                     hideIndicator()
+               else{
+               if (mobile == '') {
+                  hideIndicator()
 
-                     alert(if_lang("please enter mobile", 'por favor entre no celular'))
+                  alert(if_lang("please enter mobile", 'por favor entre no celular'))
+               }
+               else {
+                  if (localStorage.buitandaUserType == 'Company' && nif == '') {
+                     alert(if_lang('please enter inf', 'por favor insira inf'))
                   }
                   else {
-                     if (localStorage.buitandaUserType == 'Company' && nif == '') {
-                        alert(if_lang('please enter inf', 'por favor insira inf'))
+                     if (localStorage.buitandaUserType == 'Company' && ProductType == '-1') {
+                        alert(if_lang('please choose Product Type', 'por favor escolha a Tipo de Produto'))
+
                      }
                      else {
-                        if (localStorage.buitandaUserType == 'Company' && ProductType == '-1') {
-                           alert(if_lang('please choose Product Type', 'por favor escolha a Tipo de Produto'))
+                        if (localStorage.buitandaUserType == 'Company' && business == '-1') {
+                           alert(if_lang('please choose business type', 'por favor escolha a Tipo de Negócio'))
 
                         }
                         else {
-                           if (localStorage.buitandaUserType == 'Company' && business == '-1') {
-                              alert(if_lang('please choose business type', 'por favor escolha a Tipo de Negócio'))
+                           if (localStorage.buitandaUserType == 'Company' && phone == '') {
+                              alert(if_lang('please enter phone', 'por favor Telefone'))
 
                            }
                            else {
-                              if (localStorage.buitandaUserType == 'Company' && phone == '') {
-                                 alert(if_lang('please enter phone', 'por favor Telefone'))
+                              if (address == '') {
+                                 alert(if_lang('please enter address', 'por favor endereço'))
 
                               }
                               else {
-                                 if (address == '') {
-                                    alert(if_lang('please enter address', 'por favor endereço'))
-
-                                 }
-                                 else {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6137,13 +6826,13 @@ function updateProfile() {
                                     ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
 >>>>>>> parent of 100d6cb... push
 
-                                    ////console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
+                                 //console.log('https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&phone=' + mobile + '&email=' + Email +
                                     // ' &country_id=' + Country + '&city_id=' + City + '&customer_id=' + localStorage.buitandaUserID + '&format=json')
 
-                                    $.ajax({
-                                       type: 'POST',
-                                       url: 'https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&mobile=' + mobile + '&email=' + Email +
-                                          ' &country_id=' + Country + '&city_id=' + City + '&NIF=' + nif + '&prod_type=' + ProductType + '&bussines_type=' + business + '&address=' + address + '&phone=' + phone + '&customer_id=' + localStorage.buitandaUserID + '&format=json',
+                                 $.ajax({
+                                    type: 'POST',
+                                    url: 'https://buitanda.com/ws-v1.3.9.php?type=update_profile_user&name=' + name + '&mobile=' + mobile + '&email=' + Email +
+                                       ' &country_id=' + Country + '&city_id=' + City + '&NIF=' + nif + '&prod_type=' + ProductType + '&bussines_type=' + business + '&address=' + address + '&phone=' + phone + '&customer_id=' + localStorage.buitandaUserID + '&format=json',
 
 <<<<<<< HEAD
 =======
@@ -6152,34 +6841,35 @@ function updateProfile() {
                                        AnotherAlert(if_lang("your profile updated successfully", 'seu perfil foi atualizado com sucesso'))
 >>>>>>> parent of 40b1156... monaca
 
-                                       success: function (json) {
-                                          ////console.log(json)
-                                          AnotherAlert(if_lang("your profile updated successfully", 'seu perfil foi atualizado com sucesso'))
+                                    success: function (json) {
+                                       //console.log(json)
+                                       AnotherAlert(if_lang("your profile updated successfully", 'seu perfil foi atualizado com sucesso'))
 
-                                          // location.reload();
-
-
-                                          //   go_to_page("profile")
-                                          hideIndicator()
-                                       }
-                                    });
+                                       // location.reload();
 
 
+                                       //   go_to_page("profile")
+                                       hideIndicator()
+                                    }
+                                 });
 
-                                 }
+
+
                               }
                            }
-
                         }
+
                      }
                   }
                }
+            }
             }
          }
       }
    }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -6189,6 +6879,9 @@ function updateProfile() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 
 
    hideIndicator()
@@ -6204,6 +6897,7 @@ function getLang() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -6211,10 +6905,14 @@ function getLang() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var li = ''
          for (var i = 0; i < json['posts'].length; i++) {
             li = li + '<li>' +
                '            <label class="item-radio item-content">';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             //////console.log(localStorage.BuitLang) 
@@ -6227,6 +6925,10 @@ function getLang() {
             //console.log(localStorage.BuitLang) 
             //console.log(json['posts'][i]['name']) 
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(localStorage.BuitLang) 
+            ////console.log(json['posts'][i]['name']) 
+>>>>>>> parent of c100eb4... monaca
 
             if (localStorage.BuitLang == json['posts'][i]['name']) {
                li = li + '   <input type="radio" name="demo-radio" checked value="' + json['posts'][i]['name'] + '" id="buitanda' + i + '">'
@@ -6244,6 +6946,7 @@ function getLang() {
          }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // //////console.log(li)
 =======
          // //console.log(li)
@@ -6251,6 +6954,9 @@ function getLang() {
 =======
          // //console.log(li)
 >>>>>>> parent of 40b1156... monaca
+=======
+         // ////console.log(li)
+>>>>>>> parent of c100eb4... monaca
          $('.CounteryHome').html(li)
 
 
@@ -6262,6 +6968,7 @@ function getLang() {
 
 
 function setLang() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    //////console.log($("input[name='demo-radio']:checked").val())
@@ -6277,6 +6984,11 @@ function setLang() {
    localStorage.BuitLang = $("input[name='demo-radio']:checked").val();
    //console.log(localStorage.BuitLang)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log($("input[name='demo-radio']:checked").val())
+   localStorage.BuitLang = $("input[name='demo-radio']:checked").val();
+   ////console.log(localStorage.BuitLang)
+>>>>>>> parent of c100eb4... monaca
    // go_to_page("profile")
    location.reload();
 
@@ -6303,6 +7015,7 @@ function getBanners() {
          });
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -6310,6 +7023,9 @@ function getBanners() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          if (flagSwip == 0) {
 
             for (var i = 0; i < json['posts'].length; i++) {
@@ -6346,6 +7062,7 @@ function getAuctionsList() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -6353,6 +7070,9 @@ function getAuctionsList() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
          if (json['posts'][0] != 0) {
 
 
@@ -6396,6 +7116,7 @@ function getAuctionProduct(id) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(id)
 =======
    //console.log(id)
@@ -6403,6 +7124,9 @@ function getAuctionProduct(id) {
 =======
    //console.log(id)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(id)
+>>>>>>> parent of c100eb4... monaca
    //  $('.imgSwi').empty();
 
 
@@ -6416,15 +7140,20 @@ function getAuctionProduct(id) {
          $('.RecomendedForYOU').html(if_lang('RECOMMENDED ITEMS', 'ITENS RECOMENDADOS'))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var title = if_lang(json['posts'][0]['title'], json['posts'][0]['sectitle'])
-         // ////console.log('str --- > '+title)
+         // //console.log('str --- > '+title)
          var lenString = title.length
 
-         //////console.log(title[2])
+         ////console.log(title[2])
          var str = ''
-         ////console.log('length --- > ' + lenString)
+         //console.log('length --- > ' + lenString)
          if (lenString > 17) {
+<<<<<<< HEAD
             ////console.log('ttile --- > ' + title)
 =======
 =======
@@ -6443,6 +7172,9 @@ function getAuctionProduct(id) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('ttile --- > ' + title)
+>>>>>>> parent of c100eb4... monaca
             for (var x = 0; x < 15; x++) {
                str = str + title[x]
             }
@@ -6453,6 +7185,7 @@ function getAuctionProduct(id) {
          }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('str --- > ' + str)
 =======
          console.log('str --- > ' + str)
@@ -6460,6 +7193,9 @@ function getAuctionProduct(id) {
 =======
          console.log('str --- > ' + str)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('str --- > ' + str)
+>>>>>>> parent of c100eb4... monaca
 
          $('.titleAuction').html(str);
 
@@ -6490,6 +7226,7 @@ function getAuctionProduct(id) {
          if ($('.timer_' + id).html() != 'EXPIRED') {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log($('.timer_' + id).html())
 =======
             console.log($('.timer_' + id).html())
@@ -6497,10 +7234,14 @@ function getAuctionProduct(id) {
 =======
             console.log($('.timer_' + id).html())
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log($('.timer_' + id).html())
+>>>>>>> parent of c100eb4... monaca
 
             li = li + '<p class="descP margin-top-p Current_Bid_' + json['posts'][0]['id'] + ' ">' + if_lang('Current Bid ', 'Oferta atual ') + '<span> :' + json['posts'][0]['bid']['bidcoins'] + ' KWZ</span></p>';
          }
          if ($('.timer_' + id).html() == 'EXPIRED') {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             ////console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
@@ -6510,6 +7251,9 @@ function getAuctionProduct(id) {
 =======
             console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('whaaaaaaaat ---- > ' + $('.timer_' + id).html())
+>>>>>>> parent of c100eb4... monaca
             li = li + '<p class="descP margin-top-p Current_Bid_' + json['posts'][0]['id'] + ' ">' + if_lang('Closed Bid ', 'Oferta Fechada ') + '<span> :' + json['posts'][0]['bid']['bidcoins'] + ' KWZ</span></p>';
 
          }
@@ -6518,6 +7262,7 @@ function getAuctionProduct(id) {
             '<div class="bid_' + json['posts'][0]['id'] + '">' + '<div class="list list-box" style="display: flex;  "  >' +
             '<div class="row"  style="width: -webkit-fill-available;" >';
          if ($('.timer_' + id).html() != 'EXPIRED') {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             ////console.log($('.timer_' + id).html())
@@ -6530,6 +7275,10 @@ function getAuctionProduct(id) {
             console.log($('.timer_' + id).html())
             console.log('Trueeeeeeeeeeeeeeeeee')
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log($('.timer_' + id).html())
+            //console.log('Trueeeeeeeeeeeeeeeeee')
+>>>>>>> parent of c100eb4... monaca
             for (var i = 0; i < json['posts']['suggestions'].length; i++) {
 
 
@@ -6551,6 +7300,7 @@ function getAuctionProduct(id) {
          else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('in else')
 =======
             console.log('in else')
@@ -6558,6 +7308,9 @@ function getAuctionProduct(id) {
 =======
             console.log('in else')
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('in else')
+>>>>>>> parent of c100eb4... monaca
             $('.Current_Bid_' + json['posts'][0]['id']).html(if_lang('Closed Bid ', 'Oferta Fechada  ') + '<span> :' + json['posts'][0]['bid']['bidcoins'] + ' KWZ')
          }
          li = li + '</div>' +
@@ -6570,6 +7323,7 @@ function getAuctionProduct(id) {
             '<p class="descP margin-top-p">' + if_lang('info ', 'informação ') + ' <span> :' + if_lang(json['posts'][0]['description'], json['posts'][0]['secdescription']) + '</span></p>' +
 
             '<div style="text-align:-webkit-center" >';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log(TimerFlag)
@@ -6585,6 +7339,11 @@ function getAuctionProduct(id) {
          if ($('.timer_' + id).html() != 'EXPIRED') {
             console.log(TimerFlag)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(TimerFlag)
+         if ($('.timer_' + id).html() != 'EXPIRED') {
+            //console.log(TimerFlag)
+>>>>>>> parent of c100eb4... monaca
             li = li + '                          <div style="text-align:-webkit-center">' +
                ' <button id="bidBtn_' + json['posts'][0]['id'] + '" class="col button button-raised button-fill bidBtn_' + json['posts'][0]['id'] + '" style="width: 20vh; margin: 1vh 0 1vh 0; background-color: red;" onclick="SubmitAuction(' + id + ',' + "'" + title + "'" + ')">' + if_lang('Bid', 'Oferta') + '   </button>';
             + '</div>'
@@ -6627,6 +7386,7 @@ function getAuctionProduct(id) {
          //   mySwiper.removeAllSlides();	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // ////console.log(mySwiper)
          // ////console.log(mySwiper.length)
 =======
@@ -6637,6 +7397,10 @@ function getAuctionProduct(id) {
          // console.log(mySwiper)
          // console.log(mySwiper.length)
 >>>>>>> parent of 40b1156... monaca
+=======
+         // //console.log(mySwiper)
+         // //console.log(mySwiper.length)
+>>>>>>> parent of c100eb4... monaca
 
 
 
@@ -6644,6 +7408,7 @@ function getAuctionProduct(id) {
          if (mySwiper.length == undefined) {
             mySwiper.removeAllSlides()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             // ////console.log('in iff ')
@@ -6665,6 +7430,14 @@ function getAuctionProduct(id) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+            // //console.log('in iff ')
+            // //console.log(flagAcution)
+            // //console.log()
+            if (json['posts'][0]['images'] != undefined) {
+               for (var i = 0; i < json['posts'][0]['images'].length; i++) {
+                  ////console.log( 'in sold flag')
+>>>>>>> parent of c100eb4... monaca
                   if (i == 0) {
 
                      mySwiper.addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' +
@@ -6700,6 +7473,7 @@ function getAuctionProduct(id) {
                for (var i = 0; i < json['posts'][0]['images'].length; i++) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //////console.log( 'in sold flag')
 =======
                   //console.log( 'in sold flag')
@@ -6707,6 +7481,9 @@ function getAuctionProduct(id) {
 =======
                   //console.log( 'in sold flag')
 >>>>>>> parent of 40b1156... monaca
+=======
+                  ////console.log( 'in sold flag')
+>>>>>>> parent of c100eb4... monaca
                   if (i == 0) {
 
                      mySwiper[mySwiper.length - 1].addSlide(i, '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['images'][i]['image'] + '"  style=" width:35vh">' + '</div>' + '  <div class="swiper-slide" style="width:unset;text-align:center"  >' + ' <img src="' + json['posts'][0]['image'] + '"  style=" width:35vh">' + '</div>');
@@ -6750,6 +7527,7 @@ function bidSetIntreval(id) {
          success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // ////console.log(json)
 =======
             // console.log(json)
@@ -6757,6 +7535,9 @@ function bidSetIntreval(id) {
 =======
             // console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            // //console.log(json)
+>>>>>>> parent of c100eb4... monaca
             if ($('.timer_' + id).html() != 'EXPIRED') {
 
                $('.Current_Bid_' + id).html(if_lang('Current Bid ', 'Oferta atual ') + '<span> :' + json['posts']['bid'] + '  </span>')
@@ -6786,6 +7567,7 @@ function bidSetIntreval(id) {
 function timer(date, id, server_time) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    // ////console.log(id)
 =======
    // console.log(id)
@@ -6793,6 +7575,9 @@ function timer(date, id, server_time) {
 =======
    // console.log(id)
 >>>>>>> parent of 40b1156... monaca
+=======
+   // //console.log(id)
+>>>>>>> parent of c100eb4... monaca
    clearInterval(x)
 
    var countDownDate = new Date(date).getTime();
@@ -6830,6 +7615,7 @@ function timer(date, id, server_time) {
          TimerFlag = 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // ////console.log('timer flaag ---  > '+ TimerFlag)
 =======
          // console.log('timer flaag ---  > '+ TimerFlag)
@@ -6837,6 +7623,9 @@ function timer(date, id, server_time) {
 =======
          // console.log('timer flaag ---  > '+ TimerFlag)
 >>>>>>> parent of 40b1156... monaca
+=======
+         // //console.log('timer flaag ---  > '+ TimerFlag)
+>>>>>>> parent of c100eb4... monaca
          $('.bid_' + id).hide()
          $('.bidBtn_' + id).hide()
          clearInterval(x)
@@ -6857,6 +7646,7 @@ function getRecomendedCategory(idprod, idCat) {
          //alert(json['posts'][0]['description']);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //  //////console.log('json ')
          //  ////console.log(json)
 =======
@@ -6867,6 +7657,10 @@ function getRecomendedCategory(idprod, idCat) {
          //  //console.log('json ')
          //  console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //  ////console.log('json ')
+         //  //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          if (json['posts'][0] != 0) {
 
             var mySwiper = app.swiper.create('.swiper-category', {
@@ -6893,6 +7687,7 @@ function getRecomendedCategory(idprod, idCat) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             // //////console.log(json['posts'].length)
             ////console.log(mySwiper)
             ////console.log(mySwiper.length)
@@ -6906,6 +7701,11 @@ function getRecomendedCategory(idprod, idCat) {
             console.log(mySwiper)
             console.log(mySwiper.length)
 >>>>>>> parent of 40b1156... monaca
+=======
+            // ////console.log(json['posts'].length)
+            //console.log(mySwiper)
+            //console.log(mySwiper.length)
+>>>>>>> parent of c100eb4... monaca
             for (var i = 0; i < json['posts'].length; i++) {
                if (mySwiper.length == undefined) {
                   mySwiper.addSlide(i, '<div class="swiper-slide" style="width:19vh; ">' +
@@ -6967,6 +7767,7 @@ function getRecomendedCategory(idprod, idCat) {
 function getRecomendedAuction(id) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    // //////console.log('in auction')
 =======
    // //console.log('in auction')
@@ -6974,6 +7775,9 @@ function getRecomendedAuction(id) {
 =======
    // //console.log('in auction')
 >>>>>>> parent of 40b1156... monaca
+=======
+   // ////console.log('in auction')
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=like&auc_id=" + id + "&format=json",
@@ -6981,6 +7785,7 @@ function getRecomendedAuction(id) {
       success: function (json) {
          if (json['posts'][0] != 0) {
             //alert(json['posts'][0]['description']);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             ////console.log('json ')
@@ -6993,6 +7798,10 @@ function getRecomendedAuction(id) {
             console.log('json ')
             console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('json ')
+            //console.log(json)
+>>>>>>> parent of c100eb4... monaca
             var mySwiper = app.swiper.create('.swiper-RecomendedAuction', {
                slidesPerView: '3',
                // autoplay: {
@@ -7089,6 +7898,7 @@ function contact() {
    var msg = $('.MsgC').val()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(name)
    //////console.log('email --- > '+ email) 
    //////console.log('sub --- > '+ sub) 
@@ -7104,6 +7914,12 @@ function contact() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name)
+   ////console.log('email --- > '+ email) 
+   ////console.log('sub --- > '+ sub) 
+   ////console.log('msg --- > '+ msg) 
+>>>>>>> parent of c100eb4... monaca
 
 
    if (name == '') {
@@ -7138,6 +7954,7 @@ function contact() {
                   success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      //////console.log(json)
 =======
                      //console.log(json)
@@ -7145,6 +7962,9 @@ function contact() {
 =======
                      //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                     ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
                      alert('your message send sucssefully ')
                      location.reload()
 
@@ -7192,10 +8012,11 @@ function setbeforeNavigationFlag(id) {
 
 function setSoldFlag(id) {
    soldFlag = id
-}
+} 
 
 
 function getMyCard() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    // ////console.log('im get my card')
@@ -7205,6 +8026,9 @@ function getMyCard() {
 =======
    // console.log('im get my card')
 >>>>>>> parent of 40b1156... monaca
+=======
+   // //console.log('im get my card')
+>>>>>>> parent of c100eb4... monaca
    if (Checklogin()) {
 
       $.ajax({
@@ -7218,6 +8042,7 @@ function getMyCard() {
                if (json['posts'][0] != 0) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   // ////console.log(json)
 =======
                   // console.log(json)
@@ -7225,6 +8050,9 @@ function getMyCard() {
 =======
                   // console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  // //console.log(json)
+>>>>>>> parent of c100eb4... monaca
                   var li = ''
                   var nameProduct;
                   var total = 0;
@@ -7238,6 +8066,7 @@ function getMyCard() {
                      '      </tr>'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //////console.log(json['posts'].length)
 =======
                   //console.log(json['posts'].length)
@@ -7245,6 +8074,9 @@ function getMyCard() {
 =======
                   //console.log(json['posts'].length)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  ////console.log(json['posts'].length)
+>>>>>>> parent of c100eb4... monaca
                   if (json['posts']['0'] != 0) {
                      for (var i = 0; i < json['posts'].length; i++) {
 
@@ -7254,6 +8086,7 @@ function getMyCard() {
                         var nf = Intl.NumberFormat('fr');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         // ////console.log(nf.format(total)); // 42,000,000 in many locales
 =======
                         // console.log(nf.format(total)); // 42,000,000 in many locales
@@ -7261,6 +8094,9 @@ function getMyCard() {
 =======
                         // console.log(nf.format(total)); // 42,000,000 in many locales
 >>>>>>> parent of 40b1156... monaca
+=======
+                        // //console.log(nf.format(total)); // 42,000,000 in many locales
+>>>>>>> parent of c100eb4... monaca
                         total = nf.format(total)
 
                         nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
@@ -7268,7 +8104,7 @@ function getMyCard() {
 
                            '  <td class="ItemOrder" width="15%">' +
                            '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
-                           ' <p style="text-align: center;word-break: break-word;">' + if_lang(json['posts'][i]['deal_info']['title'], json['posts'][i]['deal_info']['sectitle']) + ' </p>' +
+                           ' <p style="text-align: center;word-break: break-word;">' +if_lang(json['posts'][i]['deal_info']['title'], json['posts'][i]['deal_info']['sectitle']) + ' </p>' +
 
                            '   </td>' +
 
@@ -7309,6 +8145,7 @@ function getMyCard() {
                   $('.TotalA').html(totalAll + ' KWZ')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   // ////console.log('i ---- >'+i)
 =======
                   // console.log('i ---- >'+i)
@@ -7316,6 +8153,9 @@ function getMyCard() {
 =======
                   // console.log('i ---- >'+i)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  // //console.log('i ---- >'+i)
+>>>>>>> parent of c100eb4... monaca
                   if (i > 0) {
                      $('.cart_counter').css('display', 'block')
                      $('.cart_counter').html(i)
@@ -7327,6 +8167,7 @@ function getMyCard() {
                   else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      ////console.log('in else getCard')
 =======
                      console.log('in else getCard')
@@ -7334,6 +8175,9 @@ function getMyCard() {
 =======
                      console.log('in else getCard')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     //console.log('in else getCard')
+>>>>>>> parent of c100eb4... monaca
                      $('.cart_counter').css('display', 'none')
                      $("#nextCheckout").attr("disabled", true);
                      $("#nextCheckout").css("background", 'gray');
@@ -7355,6 +8199,7 @@ function getMyCard() {
 
 
    }
+<<<<<<< HEAD
    else {
       if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
          $.ajax({
@@ -7384,8 +8229,17 @@ function getMyCard() {
                      //////console.log(json['posts'].length)
                      if (json['posts']['0'] != 0) {
                         for (var i = 0; i < json['posts'].length; i++) {
+=======
+   else { 
+      $.ajax({
+         type: 'GET',
+         url: "https://buitanda.com/ws-v1.3.9.php?type=getCart&uuid=" + UUID + "&format=json",
+>>>>>>> parent of c100eb4... monaca
 
+         cache: false,
+         success: function (json) {
 
+<<<<<<< HEAD
                            total = parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
                            totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
                            var nf = Intl.NumberFormat('fr');
@@ -7395,12 +8249,22 @@ function getMyCard() {
             if (json['posts'] != undefined) {
                 if (json['posts'][0] != 0) {
                   // console.log(json)
+=======
+            if (json['posts'] != undefined) {
+                if (json['posts'][0] != 0) {
+                  // //console.log(json)
+>>>>>>> parent of c100eb4... monaca
                   var li = ''
                   var nameProduct;
                   var total = 0;
                   var totalAll = 0;
+<<<<<<< HEAD
                   console.log('caaaaaaaaaaaaaaaaart')            
                                console.log(JSON.stringify(json))
+=======
+                  //console.log('caaaaaaaaaaaaaaaaart')            
+                               //console.log(JSON.stringify(json))
+>>>>>>> parent of c100eb4... monaca
                   li = li + ' <tr>' +
                      '   <th class="text-align-center"   width="15%">' + if_lang('Product', 'Produtos') + '</th>' +
                      ' <th class="text-align-center" width="20%">' + if_lang('Price ', 'Preço  ') + '</th>' +
@@ -7408,6 +8272,7 @@ function getMyCard() {
                      ' <th class="text-align-center" width="10%"> </th>' +
                      ' <th class="text-align-center" width="30%">  ' + if_lang('Total ', 'Total') + '</th>' +
                      '      </tr>'
+<<<<<<< HEAD
                   //console.log(json['posts'].length)
                   if (json['posts']['0'] != 0) {
                      for (var i = 0; i < json['posts'].length; i++) {
@@ -7419,44 +8284,52 @@ function getMyCard() {
                         // console.log(nf.format(total)); // 42,000,000 in many locales
                         total = nf.format(total)
 >>>>>>> parent of 40b1156... monaca
-
-                           nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
-                           li = li + ' <tr style="font-size: 8px;">' +
-
-                              '  <td class="ItemOrder" width="15%">' +
-                              '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
-                              ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
-
-                              '   </td>' +
+=======
+                  ////console.log(json['posts'].length)
+                  if (json['posts']['0'] != 0) {
+                     for (var i = 0; i < json['posts'].length; i++) {
+>>>>>>> parent of c100eb4... monaca
 
 
-                              '   <td class="text-align-center  QtyOrder"  width="20%">' +
-                              '      <p>' + json['posts'][i]['deal_info']['current'] + ' KWZ	</p>' +
-                              '  </td>' +
+                        total = parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
+                        totalAll = totalAll + parseFloat(json['posts'][i]['deal_info']['current']) * parseInt(json['posts'][i]['qty'])
+                        var nf = Intl.NumberFormat('fr');
+                        // //console.log(nf.format(total)); // 42,000,000 in many locales
+                        total = nf.format(total)
+
+                        nameProduct = if_lang(json['posts'][i]['deal_info']['title'].split(" ")[0], json['posts'][i]['deal_info']['sectitle'].split(" ")[0])
+                        li = li + ' <tr style="font-size: 8px;">' +
+
+                           '  <td class="ItemOrder" width="15%">' +
+                           '   <img src="' + json['posts'][i]['deal_info']['thumb'] + '" style="width:  10vh" >' +
+                           ' <p style="text-align: center;">' + nameProduct + '.. </p>' +
+
+                           '   </td>' +
 
 
-                              '   <td class="text-align-center subTotal_Delviery"  width="15%">' +
-
-                              '   <div class="row" style="width:12vh">' +
-
-                              '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + json['posts'][i]['cid'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
-                              '   <div class="col-40">' +
-                              '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
-                              '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
-                              ' </div>' +
-                              '   </td>' +
-
-                              '<td class="text-align-center subTotal_Delviery" width="10%">' +
-                              ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" style="width:  3vh" >' +
-
-                              '   </td>' +
+                           '   <td class="text-align-center  QtyOrder"  width="20%">' +
+                           '      <p>' + json['posts'][i]['deal_info']['current'] + ' KWZ	</p>' +
+                           '  </td>' +
 
 
-                              '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
-                              '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+                           '   <td class="text-align-center subTotal_Delviery"  width="15%">' +
 
-                              '   </td>' +
+                           '   <div class="row" style="width:12vh">' +
 
+                           '    <div class="col-30" style="  text-align: end;" onclick="decreaseQty(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['miniumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + json['posts'][i]['cid'] + ')"> <i class="material-icons" style="font-size: 15px;">remove</i> </div>' +
+                           '   <div class="col-40">' +
+                           '   <input type="number" class="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" readonly="" id="valCardPro_' + json['posts'][i]['deal_info']['id'] + '" value="' + json['posts'][i]['qty'] + '" style="  text-align: center; width:-webkit-fill-available "> </div>' +
+                           '  <div class="col-30" onclick="increaseQTy(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['deal_info']['availumquantity'] + ',' + json['posts'][i]['deal_info']['current'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" > <i class="material-icons"style="font-size: 15px;" >add</i> </div>' +
+                           ' </div>' +
+                           '   </td>' +
+
+                           '<td class="text-align-center subTotal_Delviery" width="10%">' +
+                           ' <img src="img/delete.svg"  onclick="deleteProduct(' + json['posts'][i]['deal_info']['id'] + ',' + json['posts'][i]['sid'] + ',' + json['posts'][i]['cid'] + ')" style="width:  3vh" >' +
+
+                           '   </td>' +
+
+
+<<<<<<< HEAD
                               '  </tr>'
                         }
                      }
@@ -7471,9 +8344,16 @@ function getMyCard() {
                         $('.cart_counter').html(i)
                         $("#nextCheckout").removeAttr("disabled");
                         $("#nextCheckout").css("background", '#32c2ff');
+=======
+                           '   <td class="text-align-center subTotal_Delviery"  width="35%">' +
+                           '   <p class="totalProduct' + json['posts'][i]['deal_info']['id'] + '">' + total + ' KWZ	</p>' +
+>>>>>>> parent of c100eb4... monaca
 
+                           '   </td>' +
 
+                           '  </tr>'
                      }
+<<<<<<< HEAD
                      else {
                         ////console.log('in else getCard')
                         $('.cart_counter').css('display', 'none')
@@ -7481,48 +8361,70 @@ function getMyCard() {
                         $("#nextCheckout").css("background", 'gray');
 
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
                   }
                   $('.DataItem').html(li)
                   var nf = Intl.NumberFormat('fr');
                   totalAll = nf.format(totalAll)
                   $('.TotalA').html(totalAll + ' KWZ')
+<<<<<<< HEAD
                   // console.log('i ---- >'+i)
+=======
+                  // //console.log('i ---- >'+i)
+>>>>>>> parent of c100eb4... monaca
                   if (i > 0) {
                      $('.cart_counter').css('display', 'block')
                      $('.cart_counter').html(i)
                      $("#nextCheckout").removeAttr("disabled");
                      $("#nextCheckout").css("background", '#32c2ff');
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
 
 
-                     }
                   }
                   else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                      console.log('in else getCard')
 >>>>>>> parent of 40b1156... monaca
 =======
                      console.log('in else getCard')
 >>>>>>> parent of 40b1156... monaca
+=======
+                     //console.log('in else getCard')
+>>>>>>> parent of c100eb4... monaca
                      $('.cart_counter').css('display', 'none')
                      $("#nextCheckout").attr("disabled", true);
                      $("#nextCheckout").css("background", 'gray');
-                     $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
+
+
+
                   }
                }
-
+               else {
+                  $('.cart_counter').css('display', 'none')
+                  $("#nextCheckout").attr("disabled", true);
+                  $("#nextCheckout").css("background", 'gray');
+                  $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
+               }
             }
-         });
-      }
+
+         }
+      });
    }
+
 }
 
 
 
-function addToCard(id, avilable, minQty) {
+function addToCard(id, avilable , minQty) {
    var qty = parseInt($('.avQuantity').html())
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    ////console.log('qty --- > ' + qty)
@@ -7532,11 +8434,14 @@ function addToCard(id, avilable, minQty) {
 =======
    console.log('qty --- > ' + qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('qty --- > ' + qty)
+>>>>>>> parent of c100eb4... monaca
 
    if (qty == 0 || qty < 0) {
       alert(if_lang('Sorry, Item is not available', 'Desculpe, o item não está disponível'))
    }
-   else if (avilable < minQty) {
+   else if (avilable < minQty){
 
       alert(if_lang('no enough quantity to order', 'quantidade suficiente para pedir'))
 
@@ -7565,6 +8470,7 @@ function addToCard(id, avilable, minQty) {
                         qty = parseInt(qty)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ////console.log(qty)
 =======
                         console.log(qty)
@@ -7572,6 +8478,9 @@ function addToCard(id, avilable, minQty) {
 =======
                         console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                        //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
                         if (avilable > 0) {
                            if (qty > 0) {
                               $.ajax({
@@ -7581,6 +8490,7 @@ function addToCard(id, avilable, minQty) {
                                  cache: false,
 
                                  success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                     ////console.log(json)
@@ -7593,6 +8503,10 @@ function addToCard(id, avilable, minQty) {
                                     console.log(json)
                                     //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                                    //console.log(json)
+                                    ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                                     alert(if_lang('your product added successfully ', 'your product added successfully '))
                                     getMyCard()
                                  }
@@ -7609,17 +8523,24 @@ function addToCard(id, avilable, minQty) {
                      }
                      else {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
 =======
                         var qty = $('.valCardPros_' + id).val()
                         qty = parseInt(qty)
                         console.log(qty)
+=======
+                        var qty = $('.valCardPros_' + id).val()
+                        qty = parseInt(qty)
+                        //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
                         if (avilable > 0) {
                            if (qty > 0) {
                               $.ajax({
                                  type: 'GET',
                                  url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
                                  cache: false,
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
 
                            var qty = $('.valCardPros_' + id).val()
@@ -7631,9 +8552,12 @@ function addToCard(id, avilable, minQty) {
                                     type: 'GET',
                                     url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
                                     cache: false,
+=======
+>>>>>>> parent of c100eb4... monaca
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
                                     success: function (json) {
                                        ////console.log(json)
                                        //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
@@ -7649,18 +8573,29 @@ function addToCard(id, avilable, minQty) {
                                  success: function (json) {
                                     console.log(json)
                                     //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+=======
+                                 success: function (json) {
+                                    //console.log(json)
+                                    ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                                     alert(if_lang('your product added successfully ', 'your product added successfully '))
                                     getMyCard()
                                  }
                               });
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
                            }
                            else {
-                              alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                              alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
                            }
-                           // alert(if_lang('please login first', 'faça o login primeiro'))
-                           // go_to_page("Login")
                         }
+                        else {
+                           alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                        }
+                        // alert(if_lang('please login first', 'faça o login primeiro'))
+                        // go_to_page("Login")
                      }
                   }
                }
@@ -7681,6 +8616,7 @@ function addToCard(id, avilable, minQty) {
                   qty = parseInt(qty)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   ////console.log(qty)
 =======
                   console.log(qty)
@@ -7688,6 +8624,9 @@ function addToCard(id, avilable, minQty) {
 =======
                   console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                  //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
                   if (avilable > 0) {
                      if (qty > 0) {
                         $.ajax({
@@ -7700,6 +8639,7 @@ function addToCard(id, avilable, minQty) {
                            success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               ////console.log(json)
                               //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 =======
@@ -7710,6 +8650,10 @@ function addToCard(id, avilable, minQty) {
                               console.log(json)
                               //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                              //console.log(json)
+                              ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                               alert(if_lang('your product added successfully ', 'your product added successfully '))
                               getMyCard()
                            }
@@ -7725,6 +8669,7 @@ function addToCard(id, avilable, minQty) {
 
                }
                else {
+<<<<<<< HEAD
 <<<<<<< HEAD
                   if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
 
@@ -7765,18 +8710,40 @@ function addToCard(id, avilable, minQty) {
                            success: function (json) {
                               console.log(json)
                               //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+=======
+                  var qty = $('.valCardPros_' + id).val()
+                  qty = parseInt(qty)
+                  //console.log(qty)
+                  if (avilable > 0) {
+                     if (qty > 0) {
+                        $.ajax({
+                           type: 'GET',
+                           url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                           cache: false,
+
+
+                           success: function (json) {
+                              //console.log(json)
+                              ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                               alert(if_lang('your product added successfully ', 'your product added successfully '))
                               getMyCard()
                            }
                         });
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
                      }
                      else {
-                        alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                        alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
                      }
-                     // alert(if_lang('please login first', 'faça o login primeiro'))
-                     // go_to_page("Login")
                   }
+                  else {
+                     alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                  }
+                  // alert(if_lang('please login first', 'faça o login primeiro'))
+                  // go_to_page("Login")
                }
             }
          }
@@ -7804,6 +8771,7 @@ function addToCard(id, avilable, minQty) {
                qty = parseInt(qty)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log(qty)
 =======
                console.log(qty)
@@ -7811,6 +8779,9 @@ function addToCard(id, avilable, minQty) {
 =======
                console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
                if (avilable > 0) {
                   if (qty > 0) {
                      $.ajax({
@@ -7823,6 +8794,7 @@ function addToCard(id, avilable, minQty) {
                         success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            ////console.log(json)
                            //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 =======
@@ -7833,6 +8805,10 @@ function addToCard(id, avilable, minQty) {
                            console.log(json)
                            //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                           //console.log(json)
+                           ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                            alert(if_lang('your product added successfully ', 'your product added successfully '))
                            getMyCard()
                         }
@@ -7848,6 +8824,7 @@ function addToCard(id, avilable, minQty) {
 
             }
             else {
+<<<<<<< HEAD
 <<<<<<< HEAD
                if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
 
@@ -7888,18 +8865,40 @@ function addToCard(id, avilable, minQty) {
                         success: function (json) {
                            console.log(json)
                            //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+=======
+               var qty = $('.valCardPros_' + id).val()
+               qty = parseInt(qty)
+               //console.log(qty)
+               if (avilable > 0) {
+                  if (qty > 0) {
+                     $.ajax({
+                        type: 'GET',
+                        url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=" + $('.Price_Prod').html() + "&sid=" + $('#size_id').val() + "&cid=" + $('#color_id').val() + "&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                        cache: false,
+
+
+                        success: function (json) {
+                           //console.log(json)
+                           ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                            alert(if_lang('your product added successfully ', 'your product added successfully '))
                            getMyCard()
                         }
                      });
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
                   }
                   else {
-                     alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                     alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
                   }
-                  // alert(if_lang('please login first', 'faça o login primeiro'))
-                  // go_to_page("Login")
                }
+               else {
+                  alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+               }
+               // alert(if_lang('please login first', 'faça o login primeiro'))
+               // go_to_page("Login")
             }
 
          }
@@ -7912,6 +8911,7 @@ function addToCard(id, avilable, minQty) {
             qty = parseInt(qty)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log(qty)
 =======
             console.log(qty)
@@ -7919,6 +8919,9 @@ function addToCard(id, avilable, minQty) {
 =======
             console.log(qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log(qty)
+>>>>>>> parent of c100eb4... monaca
             if (avilable > 0) {
                if (qty > 0) {
                   $.ajax({
@@ -7931,6 +8934,7 @@ function addToCard(id, avilable, minQty) {
                      success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ////console.log(json)
                         //////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 =======
@@ -7941,6 +8945,10 @@ function addToCard(id, avilable, minQty) {
                         console.log(json)
                         //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+                        //console.log(json)
+                        ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                         alert(if_lang('your product added successfully ', 'your product added successfully '))
                         getMyCard()
                      }
@@ -7956,6 +8964,7 @@ function addToCard(id, avilable, minQty) {
 
          }
          else {
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
 
@@ -7994,18 +9003,39 @@ function addToCard(id, avilable, minQty) {
                      success: function (json) {
                         console.log(json)
                         //console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+=======
+            var qty = $('.valCardPros_' + id).val()
+            qty = parseInt(qty)
+            //console.log(qty)
+            if (avilable > 0) {
+               if (qty > 0) {
+                  $.ajax({
+                     type: 'GET',
+                     url: "https://buitanda.com/ws-v1.3.9.php?type=addToCart&price=0&sid=0&cid=0&uuid=" + UUID + "&product_id=" + id + "&qty=" + qty + "&format=json",
+                     cache: false,
+
+                     success: function (json) {
+                        //console.log(json)
+                        ////console.log( localStorage.buitandaUserID + '    ' + id + '     '+qty)
+>>>>>>> parent of c100eb4... monaca
                         alert(if_lang('your product added successfully ', 'your product added successfully '))
                         getMyCard()
                      }
                   });
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
                }
                else {
-                  alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+                  alert(if_lang('you Can not add 0 product in cart ', 'Você não pode adicionar 0 produto no carrinho'))
                }
-               // alert(if_lang('please login first', 'faça o login primeiro'))
-               // go_to_page("Login")
             }
+            else {
+               alert(if_lang('sorry , available quantity is 0 ', 'desculpe, a quantidade disponível é 0'))
+            }
+            // alert(if_lang('please login first', 'faça o login primeiro'))
+            // go_to_page("Login")
          }
       }
    }
@@ -8022,6 +9052,7 @@ function deleteProduct(id, sid, cid) {
          success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -8029,6 +9060,9 @@ function deleteProduct(id, sid, cid) {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
             getMyCard()
          }
@@ -8043,6 +9077,7 @@ function deleteProduct(id, sid, cid) {
          success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(json)
 =======
             //console.log(json)
@@ -8050,6 +9085,9 @@ function deleteProduct(id, sid, cid) {
 =======
             //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
             getMyCard()
          }
@@ -8060,7 +9098,6 @@ function deleteProduct(id, sid, cid) {
 }
 
 function decreaseQty(id, minQty, current, sid, cid) {
-   showIndicator()
    GetShipping()
 
    var qty = parseInt($('.valCardPro_' + id).val())
@@ -8078,6 +9115,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
          if (AllTotal[i] != '') {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ////console.log('if')
 =======
             console.log('if')
@@ -8085,11 +9123,15 @@ function decreaseQty(id, minQty, current, sid, cid) {
 =======
             console.log('if')
 >>>>>>> parent of 40b1156... monaca
+=======
+            //console.log('if')
+>>>>>>> parent of c100eb4... monaca
             tot = tot + AllTotal[i]
          }
       }
       tot = AllTotal.replace(/\s/g, '')
       tot = tot.replace('KWZ', '')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log(tot)
@@ -8109,6 +9151,13 @@ function decreaseQty(id, minQty, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(tot)
+      //console.log('parseFloat(tot) --- > ' + parseFloat(tot))
+      //console.log('Rest  --- > ' + Rest)
+      var inte = parseFloat(tot) - Rest
+      //console.log('parseFloat(tot) - Rest  --- > ' + inte)
+>>>>>>> parent of c100eb4... monaca
       inte = nf.format(inte);
       total = nf.format(total)
       if (Checklogin()) {
@@ -8121,6 +9170,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
             success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                //////console.log(json)
 =======
                //console.log(json)
@@ -8128,6 +9178,9 @@ function decreaseQty(id, minQty, current, sid, cid) {
 =======
                //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
                $('.valCardPro_' + id).val(qty)
 
                $('.totalProduct' + id).html(total + ' KWZ')
@@ -8135,7 +9188,6 @@ function decreaseQty(id, minQty, current, sid, cid) {
                $('.TotalA').html(inte + ' KWZ ')
                constantTotal = inte + ' KWZ '
                GetShipping()
-               hideIndicator()
             }
          })
       }
@@ -8149,6 +9201,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
             success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                //////console.log(json)
 =======
                //console.log(json)
@@ -8156,6 +9209,9 @@ function decreaseQty(id, minQty, current, sid, cid) {
 =======
                //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
                $('.valCardPro_' + id).val(qty)
 
                $('.totalProduct' + id).html(total + ' KWZ')
@@ -8163,7 +9219,6 @@ function decreaseQty(id, minQty, current, sid, cid) {
                $('.TotalA').html(inte + ' KWZ ')
                constantTotal = inte + ' KWZ '
                GetShipping()
-               hideIndicator()
             }
          })
       }
@@ -8173,6 +9228,7 @@ function decreaseQty(id, minQty, current, sid, cid) {
 
 
 function increaseQTy(id, max, current, sid, cid) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    showIndicator()
@@ -8191,6 +9247,12 @@ function increaseQTy(id, max, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('in increase')
+   var OldQty = parseInt($('.valCardPro_' + id).val())
+   var total = 0
+   //console.log(OldQty + '   <   ' + max)
+>>>>>>> parent of c100eb4... monaca
    if (OldQty < max) {
 
       var qty = OldQty + 1
@@ -8210,6 +9272,7 @@ function increaseQTy(id, max, current, sid, cid) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(tot)
       tot = AllTotal.replace(/\s/g, '')
       tot = tot.replace('KWZ', '')
@@ -8225,11 +9288,18 @@ function increaseQTy(id, max, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(tot)
+      tot = AllTotal.replace(/\s/g, '')
+      tot = tot.replace('KWZ', '')
+      //  //console.log
+>>>>>>> parent of c100eb4... monaca
 
 
       var inte = parseFloat(tot) + Rest
       inte = nf.format(inte);
       total = nf.format(total)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log('qty ---- > ' + qty)
@@ -8239,10 +9309,12 @@ function increaseQTy(id, max, current, sid, cid) {
 =======
       console.log('qty ---- > ' + qty)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('qty ---- > ' + qty)
+>>>>>>> parent of c100eb4... monaca
       $('.valCardPro_' + id).val(qty)
 
       if (Checklogin()) {
-
          $.ajax({
             type: 'GET',
 
@@ -8251,6 +9323,7 @@ function increaseQTy(id, max, current, sid, cid) {
 
 
             success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                ////console.log(json)
@@ -8272,6 +9345,14 @@ function increaseQTy(id, max, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(json)
+               //console.log('old --- > ' + OldQty)
+               //console.log('new --- > ' + qty)
+               //console.log('valCardPro_' + id)
+
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
                qty = parseInt(qty)
 
 
@@ -8280,7 +9361,7 @@ function increaseQTy(id, max, current, sid, cid) {
                $('.TotalA').html(inte + ' KWZ ')
                constantTotal = inte + ' KWZ '
                GetShipping()
-               hideIndicator()
+
             }
          })
       }
@@ -8295,6 +9376,7 @@ function increaseQTy(id, max, current, sid, cid) {
             success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log(json)
                ////console.log('old --- > ' + OldQty)
                ////console.log('new --- > ' + qty)
@@ -8314,6 +9396,14 @@ function increaseQTy(id, max, current, sid, cid) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(json)
+               //console.log('old --- > ' + OldQty)
+               //console.log('new --- > ' + qty)
+               //console.log('valCardPro_' + id)
+
+               ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
                qty = parseInt(qty)
 
 
@@ -8322,7 +9412,6 @@ function increaseQTy(id, max, current, sid, cid) {
                $('.TotalA').html(inte + ' KWZ ')
                constantTotal = inte + ' KWZ '
                GetShipping()
-               hideIndicator()
 
             }
          })
@@ -8415,6 +9504,7 @@ function getOrderArr() {
       // $('.logoutProfileShop').hide()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('in logout')
 =======
       console.log('in logout')
@@ -8422,6 +9512,9 @@ function getOrderArr() {
 =======
       console.log('in logout')
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('in logout')
+>>>>>>> parent of c100eb4... monaca
       $.ajax({
          type: 'GET',
          url: "https://buitanda.com/ws-v1.3.9.php?type=getCart&customer_id=" + localStorage.buitandaUserID + "&format=json",
@@ -8445,6 +9538,7 @@ function getOrderArr() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(arrOrder)
 =======
             //console.log(arrOrder)
@@ -8452,6 +9546,9 @@ function getOrderArr() {
 =======
             //console.log(arrOrder)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(arrOrder)
+>>>>>>> parent of c100eb4... monaca
          }
       })
    }
@@ -8480,6 +9577,7 @@ function getOrderArr() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //////console.log(arrOrder)
 =======
             //console.log(arrOrder)
@@ -8487,6 +9585,9 @@ function getOrderArr() {
 =======
             //console.log(arrOrder)
 >>>>>>> parent of 40b1156... monaca
+=======
+            ////console.log(arrOrder)
+>>>>>>> parent of c100eb4... monaca
          }
       })
       // $('.loginProfileShop').hide()
@@ -8504,6 +9605,7 @@ function getPersonalDataOrder() {
    if ($('#phoneShop').html() != undefined && $('#phoneShop').html() != '') {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       //////console.log('in if')
       //////console.log($('#phoneShop').html())
 =======
@@ -8514,12 +9616,17 @@ function getPersonalDataOrder() {
       //console.log('in if')
       //console.log($('#phoneShop').html())
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('in if')
+      ////console.log($('#phoneShop').html())
+>>>>>>> parent of c100eb4... monaca
 
       phoneOrder = $('#phoneShop').html()
       AddressOrder = $('#AddressShop').html()
 
    }
    else if ($('#phoneShop').val() != undefined && $('#phoneShop').val() != '') {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       //////console.log('in else')
@@ -8529,6 +9636,9 @@ function getPersonalDataOrder() {
 =======
       //console.log('in else')
 >>>>>>> parent of 40b1156... monaca
+=======
+      ////console.log('in else')
+>>>>>>> parent of c100eb4... monaca
 
       phoneOrder = $('#phoneShop').val()
       AddressOrder = $('#AddressShop').val()
@@ -8543,6 +9653,7 @@ function getPersonalDataOrder() {
    else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('addr --- >' + AddressOrder)
 =======
       console.log('addr --- >' + AddressOrder)
@@ -8550,11 +9661,15 @@ function getPersonalDataOrder() {
 =======
       console.log('addr --- >' + AddressOrder)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('addr --- >' + AddressOrder)
+>>>>>>> parent of c100eb4... monaca
       if (AddressOrder == ' ' || AddressOrder == '' || AddressOrder == undefined) {
          alert(if_lang('Please enter Address  ', 'Digite o ENDEREÇO'))
 
       }
       else {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log(AddressOrder + '     ' + phoneOrder)
@@ -8568,10 +9683,17 @@ function getPersonalDataOrder() {
          GetShipping()
          go_to_page('SubmitOrder')
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(AddressOrder + '     ' + phoneOrder)
+         // go_to_page('Delivery')
+         GetShipping()
+         go_to_page('SubmitOrder')
+>>>>>>> parent of c100eb4... monaca
 
       }
 
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    //////console.log($('#phoneShop').val())
@@ -8587,12 +9709,18 @@ function getPersonalDataOrder() {
 
    //console.log(AddressOrder + '       ' +phoneOrder)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log($('#phoneShop').val())
+
+   ////console.log(AddressOrder + '       ' +phoneOrder)
+>>>>>>> parent of c100eb4... monaca
 }
 
 function getDeleiveryType() {
 
-
+   go_to_page('SubmitOrder')
    DeliveryType = $("input[name='my-radio']:checked").val();
+<<<<<<< HEAD
    //console.log(DeliveryType)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8608,13 +9736,18 @@ function getDeleiveryType() {
 }
 >>>>>>> parent of 40b1156... monaca
 
+=======
+   ////console.log(DeliveryType)
+>>>>>>> parent of c100eb4... monaca
 }
+
 function SubmitOrder() {
    $('#ProccedOrder').hide()
    showIndicator()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(arrOrder)
    var paymen_type = $("input[name='my-radio']:checked").val();
 
@@ -8632,10 +9765,17 @@ function SubmitOrder() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(arrOrder)
+   var paymen_type = $("input[name='my-radio']:checked").val();
+
+   arrOrder = encodeURIComponent(JSON.stringify(arrOrder));
+   //console.log(arrOrder)
+>>>>>>> parent of c100eb4... monaca
 
    var url = "https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
       "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
-      "&delivery_type=" + DeliveryType + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json"
+      "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json"
    $.ajax({
       type: 'POST',
       url: url,
@@ -8654,6 +9794,7 @@ function SubmitOrder() {
       //          payment_type : paymen_type
       // },
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          //console.log("https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
@@ -8687,20 +9828,29 @@ function SubmitOrder() {
 >>>>>>> parent of 40b1156... monaca
          if ( paymen_type =='PAYEMENT of BANK'){
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(url)
+         //console.log("https://buitanda.com/ws-v1.3.9.php?type=addOrder&products=" + arrOrder + "&customer_id=" + localStorage.buitandaUserID +
+            // "&delivery_status=pending&payment_status=pending&phone=" + phoneOrder + "&address=" + AddressOrder +
+            // "&delivery_type=Delivery" + "&notes=" + notesORder + "&payment_type=" + paymen_type + "&format=json")
+         // //console.log(json)
+         if ( paymen_type =='PAYEMENT of BANK'){
+>>>>>>> parent of c100eb4... monaca
             alert(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
 
             go_to_page('instructionsSubmit')
          }
-         else {
-            alert_Reload(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
-         }
+         else{
+         alert_Reload(if_lang('Order saved successfully', 'Pedido salvo com sucesso'))
+      }
       },
-      error: function (err) {
+      error : function(err){
          $('#ProccedOrder').show()
 
       }
    })
 }
+
 
 function getInstructionsSubmit() {
 
@@ -8712,6 +9862,7 @@ function getInstructionsSubmit() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -8719,6 +9870,9 @@ function getInstructionsSubmit() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var desc = json['posts'][0]['description'].split("src='")
          desc = desc[0] + "src='https://buitanda.com/" + desc[1]
          desc = desc.split("width")
@@ -8727,15 +9881,16 @@ function getInstructionsSubmit() {
          var descAr = json['posts'][0]['ardescription'].split("src='")
          descAr = descAr[0] + "src='https://buitanda.com/" + descAr[1]
          descAr = descAr.split("width")
-
+      
 
          descAr = descAr[0] + "width:100% ;text-align:'" + descAr[1]
          $('.instructionsTitle').html(if_lang(json['posts'][0]['name'], json['posts'][0]['arname']))
-
+         
 
          //   $('.instruction').html(if_lang(desc, descAr))
-         $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
+           $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          //////console.log(json)
@@ -8745,6 +9900,9 @@ function getInstructionsSubmit() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
       }
    })
 }
@@ -8758,6 +9916,7 @@ function getInstructions() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -8765,6 +9924,9 @@ function getInstructions() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          var desc = json['posts'][0]['description'].split("src='")
          desc = desc[0] + "src='https://buitanda.com/" + desc[1]
          desc = desc.split("width")
@@ -8773,15 +9935,16 @@ function getInstructions() {
          var descAr = json['posts'][0]['ardescription'].split("src='")
          descAr = descAr[0] + "src='https://buitanda.com/" + descAr[1]
          descAr = descAr.split("width")
-
+      
 
          descAr = descAr[0] + "width:100% ;text-align:'" + descAr[1]
          $('.instructionsTitle').html(if_lang(json['posts'][0]['name'], json['posts'][0]['arname']))
-
+         
 
          //   $('.instruction').html(if_lang(desc, descAr))
-         $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
+           $('.instruction').html(if_lang(json['posts'][0]['description'], json['posts'][0]['ardescription']))
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          //////console.log(json)
@@ -8791,10 +9954,14 @@ function getInstructions() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
       }
    })
 }
 function SubmitRefOrder() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    //////console.log(localStorage.BuitLang)
@@ -8804,6 +9971,9 @@ function SubmitRefOrder() {
 =======
    //console.log(localStorage.BuitLang)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(localStorage.BuitLang)
+>>>>>>> parent of c100eb4... monaca
    alert(if_lang('Comming Soon ', 'Comming Soon'))
 }
 
@@ -8823,6 +9993,7 @@ function getOrders() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -8830,6 +10001,9 @@ function getOrders() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          if (json['posts'][0] != 0) {
             var li = ''
             var nf = Intl.NumberFormat('fr');
@@ -8851,6 +10025,7 @@ function getOrders() {
                if (json['posts'][i]['payment_status'] != "Pending" && json['posts'][i]['payment_status'] != "pending" && json['posts'][i]['payment_status'] != "Cancelled" && json['posts'][i]['payment_status'] != "cancelled") {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //   ////console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
@@ -8858,6 +10033,9 @@ function getOrders() {
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 >>>>>>> parent of 40b1156... monaca
+=======
+                  //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
+>>>>>>> parent of c100eb4... monaca
                   li = li + '<span class="badge color-green inv-badge fl-right">' + json['posts'][i]['payment_status'] + '</span></div>'
                } else if (json['posts'][i]['payment_status'] != "Cancelled" && json['posts'][i]['payment_status'] != "cancelled") {
                   li = li + '</span> <span class="badge  inv-badge fl-right" style="background:orange">' + json['posts'][i]['payment_status'] + '</span></div>'
@@ -8890,6 +10068,7 @@ function getOrders() {
          }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -8897,6 +10076,9 @@ function getOrders() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
 
 
@@ -8914,6 +10096,7 @@ function getMyAuction() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log(json)
 =======
          console.log(json)
@@ -8921,6 +10104,9 @@ function getMyAuction() {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          if (json['posts'][0] != 0) {
             var li = ''
             var nf = Intl.NumberFormat('fr');
@@ -8943,6 +10129,7 @@ function getMyAuction() {
                if (json['posts'][i]['winner_id'] != 0 && json['posts'][i]['winner_id'] != localStorage.buitandaUserID) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   //   ////console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
@@ -8950,6 +10137,9 @@ function getMyAuction() {
 =======
                   //   console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
 >>>>>>> parent of 40b1156... monaca
+=======
+                  //   //console.log(i + ' --- > '+ json['posts'][i]['payment_status'] )
+>>>>>>> parent of c100eb4... monaca
                   li = li + '<span class="badge red-color   inv-badge fl-right">' + if_lang('lost ', 'perder') + '</span></div>'
                } else if (json['posts'][i]['winner_id'] == 0) {
                   li = li + '</span> <span class="badge  inv-badge fl-right" style="background:orange">' + if_lang('Running', 'Corrida') + '</span></div>'
@@ -8981,6 +10171,7 @@ function getMyAuction() {
          }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //////console.log(json)
 =======
          //console.log(json)
@@ -8988,6 +10179,9 @@ function getMyAuction() {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
 
 
 
@@ -8997,15 +10191,14 @@ function getMyAuction() {
 
 
 function getMyOrder(id) {
-   var nf = Intl.NumberFormat('fr');
-   // totalPlusShiping = nf.format(json['posts']['0']['total'])
 
    go_to_page('MyOrder')
    $.ajax({
       type: 'GET',
       url: " https://buitanda.com/ws-v1.3.9.php?type=getOrderById&id=" + id + "&format=json",
-      cache: false,
+       cache: false,
       success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log(json)
@@ -9015,71 +10208,71 @@ function getMyOrder(id) {
 =======
          console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log(json)
+>>>>>>> parent of c100eb4... monaca
          $('.MyOrderTitle').html(if_lang('Order Details', 'detalhes do pedido'))
          if (json[0] != 0) {
             var li
-            var totalS = json['posts'][0]['total'].replace(/\s/g, '')
-            totalS = parseFloat(totalS) + parseFloat(json['posts'][0]['totalShipping'])
-            totalS = nf.format(totalS)
-            //console.log(parseFloat(totalS))
 
 
             for (var i = 0; i < json['posts'].length; i++) {
-               constantTotal = json['posts'][i]['total']
+                   constantTotal = json['posts'][i]['total']
 
-               li = '<div class="block block-strong inv-section">' +
-                  '  <div class="inv-logo">' +
-                  '    <h2 id="orderTitle">' + if_lang('Order ', 'Encomenda ') + '# ' + json['posts'][i]['id'] + '  </h2>' +
-                  ' </div>' +
-                  '  <div class="row">' +
-                  ' <div class="col-50">' +
-                  '  <div class="invoice-details">' +
-                  ' <ul>' +
-                  ' <li>' +
-                  '   <h5>' + if_lang('Shipped to', 'Enviado para') + ' <span class="dateOrder">' + json['posts'][i]['address'] + '</span></h5></li>' +
-                  '    <li>' +
-                  '  <h5>' + if_lang('phone ', 'telefone	') + ' <span class="CompleteOrder">' + json['posts'][i]['phone'] + '</span></h5></li>' +
-                  ' <li>' +
-                  '   <h5>' + if_lang('Note', 'Note') + ' <span class="dateOrder">' + json['posts'][i]['notes'] + '</span></h5></li>' +
-                  ' </ul>' +
-                  '   </div>' +
-                  '  </div>' +
-                  ' <div class="col-50">' +
-                  '  <div class="invoice-details">' +
-                  ' <ul>' +
-                  ' <li>' +
-                  '   <h5>' + if_lang('Order Date', 'Data hora') + ' <span class="dateOrder">' + json['posts'][i]['datetime'] + '</span></h5></li>' +
-                  '   <li>' +
-                  '<h5>' + if_lang('Payment Status', 'Estado de pagamento	') + '<span class="paidOrder">' + json['posts'][i]['payment_status'] + '</span></h5></li>' +
-                  '  <li>' +
-                  '  <h5>' + if_lang('Delivery  Status', 'Estado de entrega	') + ' <span class="CompleteOrder">' + json['posts'][i]['delivery_status'] + '</span></h5></li>';
-               if (json['posts'][i]['paymentType'] != 'PAYEMENT of BANK') {
-                  li = li + ' <li>' +
-                     '   <h5>' + if_lang('payment type', 'tipo de pagamento   ') + ' <span class="dateOrder">' + json['posts'][i]['paymentType'] + '</span></h5></li>'
-               }
-               else {
-                  li = li + ' <li>' +
-                     '   <h5>' + if_lang('payment type', 'tipo de pagamento   ') +
-                     ' <span class="dateOrder" style="color:#32c2ff;text-decoration:underline"> <a href="/instructions/" >' + json['posts'][i]['paymentType'] + '</a></span></h5></li>'
-
-
-               }
-               li = li + ' </ul>' +
-                  '   </div>' +
-                  '      </div>' +
-                  '    </div>';
-               for (x = 0; x < json['posts'][i]['products'].length; x++) {
-                  if (x == 0) {
-                     li = li + '  <table class="inv-table" style="width:100%">' +
-                        '  <tbody  class="">' +
-                        '<tr>' +
-                        '  <th class="text-align-left">  ' + if_lang('Product', 'Produtos') + '</th>' +
-                        ' <th class="text-align-center"> ' + if_lang('Price ', 'Preço  ') + '</th>' +
-                        ' <th class="text-align-center">Qty</th>' +
-                        ' <th class="text-align-center">Total</th>' +
-                        '  </tr>';
+                  li = '<div class="block block-strong inv-section">' +
+                     '  <div class="inv-logo">' +
+                     '    <h2 id="orderTitle">' + if_lang('Order ', 'Encomenda ') + '# ' + json['posts'][i]['id'] + '  </h2>' +
+                     ' </div>' +
+                     '  <div class="row">' +
+                     ' <div class="col-50">' +
+                     '  <div class="invoice-details">' +
+                     ' <ul>' +
+                     ' <li>' +
+                     '   <h5>' + if_lang('Shipped to', 'Enviado para') + ' <span class="dateOrder">' + json['posts'][i]['address'] + '</span></h5></li>' +
+                     '    <li>' +
+                     '  <h5>' + if_lang('phone ', 'telefone	') + ' <span class="CompleteOrder">' + json['posts'][i]['phone'] + '</span></h5></li>' +
+                     ' <li>' +
+                     '   <h5>' + if_lang('Note', 'Note') + ' <span class="dateOrder">' + json['posts'][i]['notes'] + '</span></h5></li>' +
+                     ' </ul>' +
+                     '   </div>' +
+                     '  </div>' +
+                     ' <div class="col-50">' +
+                     '  <div class="invoice-details">' +
+                     ' <ul>' +
+                     ' <li>' +
+                     '   <h5>' + if_lang('Order Date', 'Data hora') + ' <span class="dateOrder">' + json['posts'][i]['datetime'] + '</span></h5></li>' +
+                     '   <li>' +
+                     '<h5>' + if_lang('Payment Status', 'Estado de pagamento	') + '<span class="paidOrder">' + json['posts'][i]['payment_status'] + '</span></h5></li>' +
+                     '  <li>' +
+                     '  <h5>' + if_lang('Delivery  Status', 'Estado de entrega	') + ' <span class="CompleteOrder">' + json['posts'][i]['delivery_status'] + '</span></h5></li>' ;
+                    if ( json['posts'][i]['paymentType'] !='PAYEMENT of BANK'){
+                   li =li+  ' <li>' +
+                     '   <h5>' + if_lang('payment type', 'tipo de pagamento   ') + ' <span class="dateOrder">' + json['posts'][i]['paymentType'] + '</span></h5></li>' 
                   }
+                  else{
+                     li =li+  ' <li>' +
+                     '   <h5>' + if_lang('payment type', 'tipo de pagamento   ') +
+                      ' <span class="dateOrder" style="color:#32c2ff;text-decoration:underline"> <a href="/instructions/" >' + json['posts'][i]['paymentType'] + '</a></span></h5></li>' 
+          
 
+                  }
+              li = li+       ' </ul>' +
+                     '   </div>' +
+                     '      </div>' +
+                     '    </div>';
+                  for (x = 0; x < json['posts'][i]['products'].length; x++) {
+                     if (x == 0) {
+                        li = li + '  <table class="inv-table" style="width:100%">' +
+                           '  <tbody  class="">' +
+                           '<tr>' +
+                           '  <th class="text-align-left">  ' + if_lang('Product', 'Produtos') + '</th>' +
+                           ' <th class="text-align-center"> ' + if_lang('Price ', 'Preço  ') + '</th>' +
+                           ' <th class="text-align-center">Qty</th>' +
+                           ' <th class="text-align-center">Total</th>' +
+                           '  </tr>';
+                     }
+
+<<<<<<< HEAD
 <<<<<<< HEAD
                   var total = parseFloat(json['posts'][i]['products'][x]['qty']) * parseFloat(json['posts'][i]['products'][x]['unit_price'])
                   total = new Intl.NumberFormat('fr').format(total)
@@ -9088,10 +10281,13 @@ function getMyOrder(id) {
                   ////console.log('unit price ---- > '+ unit_price)
                   // ////console.log('unit price in app  ---- > '+ unit_price)
 =======
+=======
+>>>>>>> parent of c100eb4... monaca
                      var total = parseFloat(json['posts'][i]['products'][x]['qty']) * parseFloat(json['posts'][i]['products'][x]['unit_price'])
                      total = new Intl.NumberFormat('fr').format(total)
                      var quantity = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['qty']))
                      var unit_price = new Intl.NumberFormat('fr').format(parseFloat(json['posts'][i]['products'][x]['unit_price']))
+<<<<<<< HEAD
                      console.log('unit price ---- > '+ unit_price)
                      // console.log('unit price in app  ---- > '+ unit_price)
 <<<<<<< HEAD
@@ -9107,44 +10303,58 @@ function getMyOrder(id) {
                      '  <td class="text-align-center  QtyOrder">' + quantity + '</td>' +
                      '  <td class="text-align-center subTotal_Delviery">' + total + ' KWZ</td>' +
                      ' </tr>'
+=======
+                     //console.log('unit price ---- > '+ unit_price)
+                     // //console.log('unit price in app  ---- > '+ unit_price)
+>>>>>>> parent of c100eb4... monaca
+
+                     li = li + ' <tr>' +
+                        '<td class="ItemOrder">' +
+                        if_lang(json['posts'][i]['products'][x]['product_name'], json['posts'][i]['products'][x]['sec_product_name']) +
+                        '  </td>' +
+                        '    <td class="text-align-center PriceOrder">' + unit_price + ' KWZ</td>' +
+                        '  <td class="text-align-center  QtyOrder">' + quantity + '</td>' +
+                        '  <td class="text-align-center subTotal_Delviery">' + total + ' KWZ</td>' +
+                        ' </tr>'
 
 
 
-               }
-               li = li + '    </tbody>' +
-                  '  <tfoot>' +
-                  '   <tr>' +
-                  '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
-                  ' <td colspan="4" >' + json['posts'][i]['total'] + ' KWZ</td>' +
-                  ' </tr>' +
+                  }
+                  li = li + '    </tbody>' +
+                     '  <tfoot>' +
+                     '   <tr>' +
+                     '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
+                     ' <td colspan="4" >' + json['posts'][i]['total'] + ' KWZ</td>' +
+                     ' </tr>' +
 
-                  '   <tr>' +
-                  '   <td colspan="1"><b>' + if_lang('Total shipping ', ' ENTREGA	') + ':</b></td>' +
-                  ' <td colspan="4" class="TotalShippingA">' + nf.format(json['posts']['0']['totalShipping']) + 'KWZ  </td>' +
-                  ' </tr>' +
+                     '   <tr>' +
+                     '   <td colspan="1"><b>' + if_lang('Total shipping ', ' ENTREGA	') + ':</b></td>' +
+                     ' <td colspan="4" class="TotalShippingA">' + '  </td>' +
+                     ' </tr>' +
 
-                  '   <tr>' +
-                  '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
-                  ' <td colspan="4" class="TotalWithShippingg">' + totalS + '  KWZ </td>' +
-                  ' </tr>' +
-                  ' </tfoot>' +
+                     '   <tr>' +
+                     '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
+                     ' <td colspan="4" class="TotalWithShippingg">' + '  </td>' +
+                     ' </tr>' +
+                     ' </tfoot>' +
 
-                  '  </table>' +
+                     '  </table>' +
 
-                  '  </div>'
+                     '  </div>'
 
-
+                
             }
 
             $('.allContent').html(li)
 
-            // GetShipping()
+            GetShipping()
 
 
          }
          else {
 
          }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          //////console.log(json)
@@ -9154,14 +10364,19 @@ function getMyOrder(id) {
 =======
          //console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+         ////console.log(json)
+>>>>>>> parent of c100eb4... monaca
       }
    })
 }
 
 
 
+
 function callNum() {
    var num = $('.PhoneNumbContact').html()
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    ////console.log(num)
@@ -9171,12 +10386,16 @@ function callNum() {
 =======
    console.log(num)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(num)
+>>>>>>> parent of c100eb4... monaca
    if (num) {
       window.plugins.CallNumber.callNumber(onSuccess222, onError222, num, true);
    } else {
       // ons.notification.alert('')
    }
    function onSuccess222(result) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log("Success:" + result);
@@ -9196,6 +10415,13 @@ function callNum() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log("Success:" + result);
+   }
+
+   function onError222(result) {
+      //console.log("Error:" + result);
+>>>>>>> parent of c100eb4... monaca
    }
 
 }
@@ -9215,6 +10441,7 @@ function SubmitAuction(idPro, title) {
             if (json['posts'][0] != -1) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ////console.log("https://buitanda.com/ws-v1.3.9.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
 
                ////console.log(json)
@@ -9228,6 +10455,11 @@ function SubmitAuction(idPro, title) {
 
                console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log("https://buitanda.com/ws-v1.3.9.php?type=submit_bid&prod_id=" + idPro + "&customer_id=" + localStorage.buitandaUserID + "&bid_price=" + data + "&format=json")
+
+               //console.log(json)
+>>>>>>> parent of c100eb4... monaca
                alert(if_lang('bid added successfully', 'lance adicionado com sucesso'))
 
             }
@@ -9256,6 +10488,7 @@ function SearchISIN(idPro, title) {
    var text = $('.SearchHome').val()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(text)
    ////console.log(typeof (text))
 =======
@@ -9266,6 +10499,10 @@ function SearchISIN(idPro, title) {
    console.log(text)
    console.log(typeof (text))
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(text)
+   //console.log(typeof (text))
+>>>>>>> parent of c100eb4... monaca
 
    view.router.navigate({
       name: 'Search',
@@ -9288,6 +10525,7 @@ function SearchISINCat(idPro, title) {
    var text = $('.SearchCate').val()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log(text)
    ////console.log(typeof (text))
 =======
@@ -9298,6 +10536,10 @@ function SearchISINCat(idPro, title) {
    console.log(text)
    console.log(typeof (text))
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(text)
+   //console.log(typeof (text))
+>>>>>>> parent of c100eb4... monaca
 
    view.router.navigate({
       name: 'Search',
@@ -9367,6 +10609,7 @@ $("input").bind("click", function () {
 function ToolbarCategory() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log('in cat bar cat')
 =======
    console.log('in cat bar cat')
@@ -9374,6 +10617,9 @@ function ToolbarCategory() {
 =======
    console.log('in cat bar cat')
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log('in cat bar cat')
+>>>>>>> parent of c100eb4... monaca
    // $('#tab2').css('color','#32c2ff')
    $('.catpic').attr('src', 'img/Categories Blue.svg')
    $('.HomePic').attr('src', 'img/Home gray.svg')
@@ -9423,6 +10669,7 @@ function get_timeDifference(strtdatetime) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(datetime + " " + now);
 =======
    //console.log(datetime + " " + now);
@@ -9430,6 +10677,9 @@ function get_timeDifference(strtdatetime) {
 =======
    //console.log(datetime + " " + now);
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(datetime + " " + now);
+>>>>>>> parent of c100eb4... monaca
 
    if (datetime < now) {
       return 'Expired';
@@ -9484,6 +10734,7 @@ function get_timeDifference(strtdatetime) {
       if (msectext.length == 1) { msectext = '0' + msectext };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       // ////console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 =======
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
@@ -9491,6 +10742,9 @@ function get_timeDifference(strtdatetime) {
 =======
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 >>>>>>> parent of 40b1156... monaca
+=======
+      // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
+>>>>>>> parent of c100eb4... monaca
       return daylabel + ' Day ' + hourtext + " h " + mintext + " m " + sectext + ' sec ';
    }
 }
@@ -9506,6 +10760,7 @@ function get_timeDifference_Days(strtdatetime) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(datetime + " " + now);
 =======
    //console.log(datetime + " " + now);
@@ -9513,6 +10768,9 @@ function get_timeDifference_Days(strtdatetime) {
 =======
    //console.log(datetime + " " + now);
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(datetime + " " + now);
+>>>>>>> parent of c100eb4... monaca
 
    if (datetime < now) {
       return 'Expired';
@@ -9571,6 +10829,7 @@ function get_timeDifference_Days(strtdatetime) {
       if (msectext.length == 1) { msectext = '0' + msectext };
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log(daylabel)
       // ////console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 =======
@@ -9581,6 +10840,10 @@ function get_timeDifference_Days(strtdatetime) {
       console.log(daylabel)
       // console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(daylabel)
+      // //console.log(daylabel + hourtext + ":" + mintext + ":" + sectext + ":" + msectext)
+>>>>>>> parent of c100eb4... monaca
       return daylabel + ' Day ' + hourtext + " h ";
    }
 }
@@ -9622,12 +10885,8 @@ var shipping
 var totalPlusShiping
 
 function GetShipping() {
-
-   var shippingType = DeliveryType
-
-   //console.log('in else --- > ' + shippingType)
-
    var tot
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    ////console.log(constantTotal)
@@ -9645,11 +10904,18 @@ function GetShipping() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(constantTotal)
+   for (i = 0; i < constantTotal.length; i++) {
+      if (constantTotal[i] != '') {
+         //console.log('if')
+>>>>>>> parent of c100eb4... monaca
          tot = tot + constantTotal[i]
       }
    }
    tot = constantTotal.replace(/\s/g, '')
    tot = tot.replace('KWZ', '')
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    ////console.log(tot)
@@ -9659,6 +10925,9 @@ function GetShipping() {
 =======
    console.log(tot)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log(tot)
+>>>>>>> parent of c100eb4... monaca
    $.ajax({
       async: false,
       type: 'GET',
@@ -9666,17 +10935,20 @@ function GetShipping() {
 
 
       success: function (json) {
+<<<<<<< HEAD
                $('.PaidDeleivery').html(json['posts']['0']['totalShipping']+ ' kwz ' )
 
 <<<<<<< HEAD
+=======
+>>>>>>> parent of c100eb4... monaca
          var nf = Intl.NumberFormat('fr');
-         var
-            ////console.log('shipping')
 
-            ////console.log(json)
-            // shipping = nf.format(json['posts']['0']['totalShipping'])
-            shipping = json['posts']['0']['totalShipping']
+         //console.log('shipping')
 
+         //console.log(json)
+         shipping = nf.format(json['posts']['0']['totalShipping'])
+
+<<<<<<< HEAD
 <<<<<<< HEAD
          // totalPlusShiping = nf.format(json['posts']['0']['total'])
          totalPlusShiping = json['posts']['0']['total']
@@ -9695,41 +10967,19 @@ function GetShipping() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+         totalPlusShiping = nf.format(json['posts']['0']['total'])
+         //console.log(totalPlusShiping)
+>>>>>>> parent of c100eb4... monaca
          if (shipping == 0) {
-            //console.log('shiping is ---- > ' + shipping)
             $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
          }
          else {
-            if (shippingType == 'Pick_Up') {
-               shipping = 0
-               if (json['posts']['0']['total'] > json['posts']['0']['totalShipping']) {
-                  totalPlusShiping = parseFloat(json['posts']['0']['total']) - parseFloat(json['posts']['0']['totalShipping'])
-                  totalPlusShiping = nf.format(totalPlusShiping)
-                  $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
-                  $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
+            $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
 
-               }
-               else {
-                  shipping = 0
 
-                  totalPlusShiping = parseFloat(json['posts']['0']['total']) - parseFloat(json['posts']['0']['total'])
-                  totalPlusShiping = nf.format(totalPlusShiping)
-                  $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
-                  $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
-
-               }
-
-               //console.log('in if --- > ' + shippingType)
-            }
-            else {
-               totalPlusShiping = nf.format(totalPlusShiping)
-
-               $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
-               $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
-
-            }
          }
-         //console.log('shiping --- > ' + shipping)
+         $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
       }
 
@@ -9743,6 +10993,7 @@ function getProductCategorySorting() {
    $$('.infinite-scroll-preloader').show()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
    ////console.log(sort)
@@ -9756,6 +11007,11 @@ function getProductCategorySorting() {
    sort = $('.Sortprod').val()
    console.log(sort)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -9768,6 +11024,7 @@ function getProductCategoryTagSorting() {
    $$('.infinite-scroll-preloader').show()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
    ////console.log(sort)
@@ -9781,6 +11038,11 @@ function getProductCategoryTagSorting() {
    sort = $('.Sortprod').val()
    console.log(sort)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -9793,6 +11055,7 @@ function getProductCategoryLastProduct() {
    $$('.infinite-scroll-preloader').show()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
    ////console.log(sort)
@@ -9806,6 +11069,11 @@ function getProductCategoryLastProduct() {
    sort = $('.Sortprod').val()
    console.log(sort)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -9818,6 +11086,7 @@ function getProductCategoryBrandSorting() {
    $$('.infinite-scroll-preloader').show()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ////console.log($('.Sortprod').val())
    sort = $('.Sortprod').val()
    ////console.log(sort)
@@ -9831,6 +11100,11 @@ function getProductCategoryBrandSorting() {
    sort = $('.Sortprod').val()
    console.log(sort)
 >>>>>>> parent of 40b1156... monaca
+=======
+   //console.log($('.Sortprod').val())
+   sort = $('.Sortprod').val()
+   //console.log(sort)
+>>>>>>> parent of c100eb4... monaca
    $('.CatProd').empty()
    start = 0
    end = 8
@@ -9887,6 +11161,7 @@ function RegisterTillCheckout() {
    else {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ////console.log('name --- >' + name)
 =======
       console.log('name --- >' + name)
@@ -9894,6 +11169,9 @@ function RegisterTillCheckout() {
 =======
       console.log('name --- >' + name)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('name --- >' + name)
+>>>>>>> parent of c100eb4... monaca
       if (adddres == '') {
          alert(if_lang("please enter address", 'digite o endereço'))
       }
@@ -9913,33 +11191,34 @@ function RegisterTillCheckout() {
 
                   alert(if_lang("please enter email", 'por favor insira o email'))
                }
-
+               
                else {
-                  if (is_email(Email) == false) {
+                  if(is_email(Email) == false){
                      hideIndicator()
 
                      alert(if_lang("please enter right email format", 'digite o formato de e-mail certo'))
                   }
+                  else{
+                  if (mobile == '') {
+                     hideIndicator()
+
+                     alert(if_lang("please enter mobile", 'por favor entre no celular'))
+                  }
                   else {
-                     if (mobile == '') {
+                     if (password == '') {
                         hideIndicator()
 
-                        alert(if_lang("please enter mobile", 'por favor entre no celular'))
+                        alert(if_lang("please enter password", 'por favor digite a senha'))
                      }
-                     else {
-                        if (password == '') {
-                           hideIndicator()
 
-                           alert(if_lang("please enter password", 'por favor digite a senha'))
-                        }
-
-                        else {
+                   else {
                            $.ajax({
                               type: 'POST',
                               url: 'https://buitanda.com/ws-v1.3.9.php?type=registration&name=' + name + '&email=' + Email + '&version=' + versionApplication + '&address=' + adddres + '&user_type=Personal&password=' + password + '&phone=' + mobile + '&country_id=' + Country + '&city_id=' + City + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json',
 
 
                               success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                  ////console.log(json)
@@ -9949,6 +11228,9 @@ function RegisterTillCheckout() {
 =======
                                  console.log(json)
 >>>>>>> parent of 40b1156... monaca
+=======
+                                 //console.log(json)
+>>>>>>> parent of c100eb4... monaca
                                  if (json['posts'][0] == -1) {
                                     alert(if_lang('this is Email was registerd before ! ', 'este é Email foi registrado antes!'))
                                  }
@@ -9964,6 +11246,7 @@ function RegisterTillCheckout() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     ////console.log(localStorage.buitandaUserID)
 =======
                                     console.log(localStorage.buitandaUserID)
@@ -9971,31 +11254,35 @@ function RegisterTillCheckout() {
 =======
                                     console.log(localStorage.buitandaUserID)
 >>>>>>> parent of 40b1156... monaca
+=======
+                                    //console.log(localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
                                     notesORder = note
                                     phoneOrder = mobile
                                     AddressOrder = adddres
                                     updateUUIDtoCustomerID(json['posts'][0])
-
-                                    // GetShipping()
+                   
+                                    GetShipping()
                                     go_to_page('SubmitOrder')
-
-
+                  
+ 
                                  }
                                  hideIndicator()
                               }
                            });
-
-                        }
-
+ 
                      }
+
                   }
                }
+            }
             }
          }
       }
    }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    //////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
@@ -10005,6 +11292,9 @@ function RegisterTillCheckout() {
 =======
    //console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(name + '    '+Country + '    '+City + '    '+mobile + '    '+password  )
+>>>>>>> parent of c100eb4... monaca
 
 
    hideIndicator()
@@ -10072,6 +11362,7 @@ function loginTillCheckout() {
    var password = $('.passwordLoginss').val()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    //////console.log(email+ '    ' +password)
 =======
    //console.log(email+ '    ' +password)
@@ -10079,6 +11370,9 @@ function loginTillCheckout() {
 =======
    //console.log(email+ '    ' +password)
 >>>>>>> parent of 40b1156... monaca
+=======
+   ////console.log(email+ '    ' +password)
+>>>>>>> parent of c100eb4... monaca
 
    if (email == '') {
       alert(if_lang('please enter email', 'من فضلك ادخل البريد الالكتروني'))
@@ -10098,6 +11392,7 @@ function loginTillCheckout() {
 
 
             success: function (json) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                ////console.log(PLATFORM)
@@ -10125,6 +11420,15 @@ function loginTillCheckout() {
                   localStorage.buitandaUserType = json['posts'][0]['user_type']
                   // console.log(  localStorage.buitandaUserID)
 >>>>>>> parent of 40b1156... monaca
+=======
+               //console.log(PLATFORM)
+               //console.log('https://buitanda.com/ws-v1.3.9.php?type=login&email=' + email + '&password=' + password + '&uuid=' + UUID + '&platform=' + PLATFORM + '&format=json')
+               //console.log(json)
+               if (json['posts'][0] != 0) {
+                  localStorage.buitandaUserID = json['posts'][0]['id']
+                  localStorage.buitandaUserType = json['posts'][0]['user_type']
+                  // //console.log(  localStorage.buitandaUserID)
+>>>>>>> parent of c100eb4... monaca
 
                   notesORder = ''
                   phoneOrder = json['posts'][0]['phoneNumber']
@@ -10144,6 +11448,7 @@ function loginTillCheckout() {
                // if(json['posts'][0]  == 0){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                // //////console.log('nice')}
 =======
                // //console.log('nice')}
@@ -10151,6 +11456,9 @@ function loginTillCheckout() {
 =======
                // //console.log('nice')}
 >>>>>>> parent of 40b1156... monaca
+=======
+               // ////console.log('nice')}
+>>>>>>> parent of c100eb4... monaca
                hideIndicator()
             }
          });
@@ -10170,6 +11478,7 @@ function getNewProductDetails() {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('in get new product deatails ')
          ////console.log(json['posts']['quantity'])
 =======
@@ -10180,6 +11489,10 @@ function getNewProductDetails() {
          console.log('in get new product deatails ')
          console.log(json['posts']['quantity'])
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('in get new product deatails ')
+         //console.log(json['posts']['quantity'])
+>>>>>>> parent of c100eb4... monaca
          if (json['posts']['image']) {
             $('#main_img_swiper').attr('src', json['posts']['image'])
 
@@ -10220,6 +11533,7 @@ function updateUUIDtoCustomerID(id) {
       success: function (json) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ////console.log('uuid ---- > ' + UUID)
          ////console.log('id ----- > ' + id)
 =======
@@ -10230,6 +11544,10 @@ function updateUUIDtoCustomerID(id) {
          console.log('uuid ---- > ' + UUID)
          console.log('id ----- > ' + id)
 >>>>>>> parent of 40b1156... monaca
+=======
+         //console.log('uuid ---- > ' + UUID)
+         //console.log('id ----- > ' + id)
+>>>>>>> parent of c100eb4... monaca
 
       }
    });
@@ -10237,16 +11555,16 @@ function updateUUIDtoCustomerID(id) {
 
 
 
-function getSubCategory(id) {
+function getSubCategory(id){
    $.ajax({
       type: 'GET',
-      url: 'https://buitanda.com/ws-v1.3.9.php?type=getSubCategories&parent=' + id + '&format=json',
+      url: 'https://buitanda.com/ws-v1.3.9.php?type=getSubCategories&parent='+id+'&format=json',
       cache: false,
 
       success: function (json) {
-         var li = ''
-         for (var i = 0; i < json['posts'].length; i++) {
-            li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+         li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
                ' <a style="display:inline-flex;align-items:center;height: 12vh;"> ' +
 
                ' <p class="margin-white paddig-product textSubCat" style="color:black;"> ' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '  </p>' +
@@ -10258,181 +11576,181 @@ function getSubCategory(id) {
                '  </a>' +
 
                '</div>'
-         }
-         li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'ParentCategoryProduct' + "'" + ',' + id + ')" >' +
+            }
+            li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'ParentCategoryProduct' + "'" + ',' + id + ')" >' +
             ' <a style="display:inline-flex;align-items:center;height: 12vh;"> ' +
 
             ' <p class="margin-white paddig-product textSubCat" style="color:black;"> ' + if_lang('All', 'All') + '  </p>' +
 
-            ' <img class="" src="' + + '"  style=" width:10vh"  >' +
+            ' <img class="" src="' +  + '"  style=" width:10vh"  >' +
 
             '  </a>' +
 
             '</div>'
-         $('.AllSubCat').html(li)
+            $('.AllSubCat').html(li)
 
       }
    });
 }
 
+ 
 
-
-function getHomeBoxes() {
+ function getHomeBoxes (){
    $.ajax({
       type: 'GET',
       url: 'https://buitanda.com/ws-v1.3.9.php?type=getHomepageBoxes&format=json',
       cache: false,
 
       success: function (json) {
-         var li = ''
-         for (var i = 0; i < json['posts'].length; i++) {
-            if (i == 0) {
-               li = li + '<div class="col-100" onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="' + json['posts'][i]['image'] + '" ></div>';
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+            if(i == 0 ){
+            li = li+	'<div class="col-100" onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
 
+                     }
+       else{
+          if( json['posts'][i]['id'] == '78' ){
+            li = li +'  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryLastProduct' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+
+          }
+          else{
+            li = li +'  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+
+          }
+      }
             }
-            else {
-               if (json['posts'][i]['id'] == '78') {
-                  li = li + '  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryLastProduct' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="' + json['posts'][i]['image'] + '" ></div>';
-
-               }
-               else {
-                  li = li + '  <div class="col-50"  onclick="go_to_page_two_params(' + "'" + 'CategoryTag' + "'" + ',' + json['posts'][i]['tagId'] + ')"><img style="width: 100%;" src="' + json['posts'][i]['image'] + '" ></div>';
-
-               }
-            }
-         }
-
-         $('.homeboxes').html(li)
+           
+            $('.homeboxes').html(li)
 
       }
    });
+   
 
+ 
+ }
 
+ 
 
-}
-
-
-
-function getbrandHome() {
+ function getbrandHome (){
    $.ajax({
       type: 'GET',
       url: 'https://buitanda.com/ws-v1.3.9.php?type=getHomepageBrands&format=json',
       cache: false,
 
       success: function (json) {
-         var li = ''
-         if (json['posts'][0] != 0) {
-            for (var i = 0; i < json['posts'].length; i++) {
-
-
-               li = li + '  <div class="col-20"  onclick="go_to_page_two_params(' + "'" + 'CategoryBrand' + "'" + ',' + json['posts'][i]['id'] + ')"><img style="width: 100%;" src="' + json['posts'][i]['image'] + '" ></div>';
-
+         var li=''
+         if (json['posts'][0] !=  0){
+                     for(var i = 0 ; i < json['posts'].length ; i++){
+         
+      
+         li = li +'  <div class="col-20"  onclick="go_to_page_two_params(' + "'" + 'CategoryBrand' + "'" + ',' + json['posts'][i]['id'] + ')"><img style="width: 100%;" src="'+json['posts'][i]['image']+'" ></div>';
+    
             }
-
+           
             $('.brands').html(li)
          }
 
       }
    });
+   
 
+ 
+ }
 
+ 
 
-}
-
-
-
-function getProductReview() {
+ function getProductReview (){
 
    $.ajax({
       type: 'GET',
-      url: 'https://buitanda.com/ws-v1.3.9.php?type=getCustomerReviews&customerId=' + localStorage.buitandaUserID + '&format=json',
+      url: 'https://buitanda.com/ws-v1.3.9.php?type=getCustomerReviews&customerId='+localStorage.buitandaUserID+'&format=json',
       cache: false,
 
       success: function (json) {
-         var li = ''
-         if (json['posts'] != null) {
-            for (var i = 0; i < json['posts'].length; i++) {
-
-               if (i == 0) {
-                  li = li + '<div class="reviewDesc col-30 bold">#' + if_lang('product', ' produtos') + '</div>' +
-                     '    <div class="reviewDesc col-30 bold">' + if_lang('review', 'Reveja') + '</div>' +
-                     '<div class="reviewDesc col-20 bold">' + if_lang('rate', 'taxa') + '</div>' +
-                     '  <div class="reviewDesc col-20 bold">' + if_lang('action', 'açao') + '</div>'
-               }
-               if (json['posts'][i]['review'] == false) {
-                  li = li + '<div class="col-30"  style ="margin-bottom:4vh"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['deel_id'] + ')">' + json['posts'][i]['title'] + '</div>' +
-                     '  <div class="col-30">' + if_lang('not reviewed yet', 'ainda não revisado') + '</div>' +
-                     '   <div class="col-20">' + if_lang('not rated yet', 'ainda não avaliado') + '</div>' +
-                     ' <div class="col-20"><i class="f7-icons" onclick="popReview(' + json['posts'][i]['id'] + ',' + json['posts'][i]['deel_id'] + ')">star</i></div>'
-               }
-               else {
-                  li = li + '<div class="col-30" style ="margin-bottom:4vh" onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['deel_id'] + ')">' + json['posts'][i]['title'] + '</div>' +
-                     '  <div class="col-30">' + json['posts'][i]['review']['review'] + '</div>' +
-                     '   <div class="col-20">' + json['posts'][i]['review']['rate'] + '</div>' +
-                     ' <div class="col-20"><i class="f7-icons" onclick="Deletereviewproduct(' + json['posts'][i]['deel_id'] + ')">star_fill</i></div>'
-
-               }
+         var li=''
+         if (json['posts']!= null ){
+         for(var i = 0 ; i < json['posts'].length ; i++){
+         
+            if (i == 0 ){
+               li = li +   '<div class="reviewDesc col-30 bold">#'+if_lang('product',' produtos')+'</div>'+
+           '    <div class="reviewDesc col-30 bold">'+if_lang('review','Reveja')+'</div>'+
+               '<div class="reviewDesc col-20 bold">'+if_lang('rate','taxa')+'</div>'+
+             '  <div class="reviewDesc col-20 bold">'+if_lang('action','açao')+'</div>'
+            }
+            if (json['posts'][i]['review'] == false){
+               li = li +   '<div class="col-30"  style ="margin-bottom:4vh"  onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['deel_id'] + ')">'+json['posts'][i]['title'] +'</div>'+
+               '  <div class="col-30">'+if_lang('not reviewed yet','ainda não revisado')+'</div>'+
+              '   <div class="col-20">'+if_lang('not rated yet','ainda não avaliado')+'</div>'+
+                ' <div class="col-20"><i class="f7-icons" onclick="popReview('+json['posts'][i]['id']+','+json['posts'][i]['deel_id']+')">star</i></div>'
+         }
+         else {
+            li = li +   '<div class="col-30" style ="margin-bottom:4vh" onclick="go_to_page_two_params(' + "'" + 'CategoryProduct' + "'" + ',' + json['posts'][i]['deel_id'] + ')">'+json['posts'][i]['title'] +'</div>'+
+            '  <div class="col-30">'+json['posts'][i]['review']['review'] +'</div>'+
+           '   <div class="col-20">'+json['posts'][i]['review']['rate'] +'</div>'+
+             ' <div class="col-20"><i class="f7-icons" onclick="Deletereviewproduct('+json['posts'][i]['deel_id']+')">star_fill</i></div>'
+          
+         }
             }
 
             $('.reviewsClient').html(li)
          }
-         else {
+         else{
             $('.reviewsClient').html('<p>no product to review now </p>')
          }
-
+ 
       }
    });
+   
 
+ 
 
+ }
 
+ 
+var rate =0
 
-}
-
-
-var rate = 0
-
-function reviewproduct(id, deel_id) {
+ function reviewproduct (id , deel_id){
    $.ajax({
       type: 'GET',
-      url: 'https://buitanda.com/ws-v1.3.9.php?type=addProductReview&productId=' + deel_id + '&dealId=' + deel_id + '&customerId=' + localStorage.buitandaUserID + '&review=' + $('.reviewCust').val() + '&rate=' + rate + '&format=json',
+      url: 'https://buitanda.com/ws-v1.3.9.php?type=addProductReview&productId='+deel_id+'&dealId='+deel_id+'&customerId='+localStorage.buitandaUserID+'&review='+$('.reviewCust').val()+'&rate='+rate+'&format=json',
       cache: false,
 
       success: function (json) {
-
+      
          getProductReview()
       }
    });
+   
 
+ 
 
+ }
+ 
 
-
-}
-
-
-function Deletereviewproduct(id) {
+ function Deletereviewproduct (id){
 
    $.ajax({
       type: 'GET',
-      url: 'https://buitanda.com/ws-v1.3.9.php?type=removeProductReview&productId=' + id + '&customerId=' + localStorage.buitandaUserID + '&format=json',
+      url: 'https://buitanda.com/ws-v1.3.9.php?type=removeProductReview&productId='+id+'&customerId='+localStorage.buitandaUserID+'&format=json',
       cache: false,
 
       success: function (json) {
          getProductReview()
       }
    });
+   
+
+ 
+
+ }
 
 
 
 
-}
-
-
-
-
-
-function popReview(id, deal_id) {
-
-
+ 
+function popReview(id ,deal_id) {
+ 
+  
    app.popup.create({
       content: '<div class="popup" style=" overflow-y:scroll; height:56vh;margin-top:28vh">' +
          '<div style="text-align:end; margin:1vh">' +
@@ -10443,77 +11761,77 @@ function popReview(id, deal_id) {
          //  '<div class="row">'+
          //  '<div class="col-30"> rate </div>'+
          // '   <div class="col-70" style="display:inline-block;" id="rateYo"></div>'+
-         // '<input type="hidden" name="rating" id="rating_input" value="" />'+
+      	// '<input type="hidden" name="rating" id="rating_input" value="" />'+
 
          //  '</div>'+
-         '   <div class="card" style="box-shadow:unset">' +
-         '    <div class="card-header">' + if_lang('product review', 'revisão do Produto') + '</div>' +
-         ' <div class="card-content card-content-padding">' +
-         '<div class="row">' +
-         '<div class="col-30"> rate </div>' +
-         '   <div class="col-70 rateYo" style="display:inline-block;"  id="rateYo"></div>' +
-         '<input type="hidden" name="rating" id="rating_input" value="" />' +
+               '   <div class="card" style="box-shadow:unset">'+
+     '    <div class="card-header">'+if_lang('product review' ,'revisão do Produto')+'</div>'+
+        ' <div class="card-content card-content-padding">'+
+        '<div class="row">'+
+         '<div class="col-30"> rate </div>'+
+        '   <div class="col-70 rateYo" style="display:inline-block;"  id="rateYo"></div>'+
+        '<input type="hidden" name="rating" id="rating_input" value="" />'+
 
-         '</div>' +
-         ' <div class="list no-hairlines-md" style="margin-top: 2vh;">' +
-         '   <ul  >' +
-         '   <li class="item-content item-input">' +
-         '<div class="item-inner">' +
-         '<div class="item-title item-label MsgCLable">Review</div>' +
+         '</div>'+
+        ' <div class="list no-hairlines-md" style="margin-top: 2vh;">'+
+      '   <ul  >'+
+      '   <li class="item-content item-input">'+
+         '<div class="item-inner">'+
+          '<div class="item-title item-label MsgCLable">Review</div>'+
 
-         '  <div class="item-input-wrap">' +
-         '  <textarea style="border:1px solid gray; margin-top:1vh" rows="4" cols="50" class="reviewCust" placeholder=" "></textarea>' +
+         '  <div class="item-input-wrap">'+
+          '  <textarea style="border:1px solid gray; margin-top:1vh" rows="4" cols="50" class="reviewCust" placeholder=" "></textarea>'+
 
-
-         '    <span class="input-clear-button"></span>' +
-
-         ' </div>' +
-         '   </div>' +
-         ' </li>' +
-         '</ul>' +
-         '</div>' +
-         '</div>' +
-         ' <div class="card-footer">' +
-         '<div style="margin-left:auto">' +
-         '   <button class="popup-close col button button-raised button-fill" id="loginbtn" style="width: 42vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="reviewproduct(' + id + ',' + deal_id + ')">' + if_lang('Submit review', 'Enviar revisão') + '   </button>' +
-         '     </div>' +
-         '</div>' +
-         ' </div>' +
-
+         
+        '    <span class="input-clear-button"></span>'+
+  
+         ' </div>'+
+     '   </div>'+
+     ' </li>'+
+      '</ul>'+
+     '</div>'+
+        '</div>'+
+        ' <div class="card-footer">'+
+        '<div style="margin-left:auto">' +
+        '   <button class="popup-close col button button-raised button-fill" id="loginbtn" style="width: 42vw; margin: 3vh 0 1vh 0; background-color: #32c2ff;" onclick="reviewproduct('+id+','+deal_id+')">'+if_lang('Submit review' ,'Enviar revisão')+'   </button>' +
+        '     </div>' +
+        '</div>'+
+        ' </div>'+
+        
          //  '<div class="block block-strong">' + if_lang(json['posts'][0].description, json['posts'][0].ardescription) + '</div>' +
          '</div>' +
          '</div>',
-      on: {
-         opened: function () {
-            $("#rateYo").rateYo({
-               halfStar: true,
-               onChange: function (rating, rateYoInstance) {
-                  rate = rating
-
-                  $('#rating_input').val(rating); //setting up rating value to hidden field
-               }
-            });
-         }
-      },
+         on: {
+            opened: function () {
+               $("#rateYo").rateYo({
+                  halfStar: true,
+                  onChange : function(rating, rateYoInstance) {
+                     rate = rating
+            
+                      $('#rating_input').val(rating); //setting up rating value to hidden field
+                   }
+              });            }
+          },
    }).open();
 
 
-
-
-
+  
+  
+ 
 
 }
-function destroy() {
+function destroy (){
    app.popup.destroy()
 }
 
-
+ 
 
 
 function is_email(email) {
    var atpos = email.indexOf("@");
    var dotpos = email.lastIndexOf(".");
    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log('wrong email')
@@ -10531,20 +11849,27 @@ function is_email(email) {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log('wrong email')
+     return false;
+   }else{
+      //console.log('right email')
+>>>>>>> parent of c100eb4... monaca
 
-      return true;
+     return true;
    }
-}
+ }
+ 
 
-
-function loadMoreReviews(id) {
+ function loadMoreReviews (id){
    $.ajax({
       type: 'GET',
-      url: 'https://buitanda.com/ws-v1.3.9.php?type=getProductReviews&deal_id=' + id + '&offset=' + offsit + '&format=json',
+      url: 'https://buitanda.com/ws-v1.3.9.php?type=getProductReviews&deal_id='+id+'&offset='+offsit+'&format=json',
       cache: false,
 
       success: function (json) {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          ////console.log('legth --- > '+json['posts']['reviews'].length)
@@ -10590,6 +11915,9 @@ function loadMoreReviews(id) {
 =======
 >>>>>>> parent of 40b1156... monaca
          console.log('legth --- > '+json['posts']['reviews'].length)
+=======
+         //console.log('legth --- > '+json['posts']['reviews'].length)
+>>>>>>> parent of c100eb4... monaca
          offsit = offsit +5
          if (json['posts']['reviews'].length > 0){    
             for (var l =0 ; l < json['posts']['reviews'].length; l++ ){
@@ -10627,13 +11955,17 @@ starWidth: "20px",
 });
          }}
          else{
+<<<<<<< HEAD
 >>>>>>> parent of 40b1156... monaca
+=======
+>>>>>>> parent of c100eb4... monaca
             $$('.infinite-scroll-preloader').hide();
             app.infiniteScroll.destroy('.infinite-scroll-content');
          }
-
+     
       }
    });
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 }
@@ -10703,6 +12035,41 @@ function changeListThumbnailLastProduct(id) {
    console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
 >>>>>>> parent of 40b1156... monaca
+=======
+   
+ }
+
+ function changeListThumbnailBrand (id){
+    //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+    if (localStorage.ListThumbnail=='Thumbnail'){
+       localStorage.ListThumbnail = 'List'
+       $('.list-thumbnail').html('square_list')
+       start = 0
+       end = 8
+       app.infiniteScroll.create('.infinite-scroll-content')
+
+       getCategoryProductBrand(id)
+          }
+    else if  (localStorage.ListThumbnail == 'List'){
+       localStorage.ListThumbnail = 'Thumbnail'
+       $('.list-thumbnail').html('rectangle_grid_2x2')
+       start = 0
+       end = 8
+       //console.log(' end ----- > '+ localStorage.ListThumbnail)
+       app.infiniteScroll.create('.infinite-scroll-content')
+
+       getCategoryProductBrand(id)
+
+    }
+    
+ }
+
+ 
+ 
+ function changeListThumbnailLastProduct (id){
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+>>>>>>> parent of c100eb4... monaca
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
       start = 0
@@ -10711,12 +12078,13 @@ function changeListThumbnailLastProduct(id) {
       $$('.infinite-scroll-preloader').show();
 
       getCategoryLastProduct(id)
-   }
-   else if (localStorage.ListThumbnail == 'List') {
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
       localStorage.ListThumbnail = 'Thumbnail'
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -10726,15 +12094,20 @@ function changeListThumbnailLastProduct(id) {
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
       getCategoryLastProduct(id)
 
    }
-
+   
 }
+ 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function changeListThumbnailTag(id) {
@@ -10745,6 +12118,11 @@ function changeListThumbnailTag(id) {
    console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
 >>>>>>> parent of 40b1156... monaca
+=======
+ function changeListThumbnailTag (id){
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+>>>>>>> parent of c100eb4... monaca
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
       start = 0
@@ -10753,12 +12131,13 @@ function changeListThumbnailTag(id) {
       $$('.infinite-scroll-preloader').show();
 
       getCategoryProductTag(id)
-   }
-   else if (localStorage.ListThumbnail == 'List') {
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
       localStorage.ListThumbnail = 'Thumbnail'
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -10768,17 +12147,21 @@ function changeListThumbnailTag(id) {
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
       getCategoryProductTag(id)
 
    }
-
+   
 }
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function changeListThumbnailParentCategory(id) {
    ////console.log(' Start ----- > '+ localStorage.ListThumbnail)
@@ -10788,6 +12171,11 @@ function changeListThumbnailParentCategory (id){
    console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
 >>>>>>> parent of 40b1156... monaca
+=======
+function changeListThumbnailParentCategory (id){
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+>>>>>>> parent of c100eb4... monaca
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
       start = 0
@@ -10796,12 +12184,13 @@ function changeListThumbnailParentCategory (id){
       $$('.infinite-scroll-preloader').show();
 
       getParentCategoryProduct(id)
-   }
-   else if (localStorage.ListThumbnail == 'List') {
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
       localStorage.ListThumbnail = 'Thumbnail'
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -10811,17 +12200,21 @@ function changeListThumbnailParentCategory (id){
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
       getParentCategoryProduct(id)
 
    }
-
+   
 }
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function changeListThumbnailCategoryProduct(id) {
    ////console.log(' Start ----- > '+ localStorage.ListThumbnail)
@@ -10831,6 +12224,11 @@ function changeListThumbnailCategoryProduct (id){
    console.log(' Start ----- > '+ localStorage.ListThumbnail)
    if (localStorage.ListThumbnail=='Thumbnail'){
 >>>>>>> parent of 40b1156... monaca
+=======
+function changeListThumbnailCategoryProduct (id){
+   //console.log(' Start ----- > '+ localStorage.ListThumbnail)
+   if (localStorage.ListThumbnail=='Thumbnail'){
+>>>>>>> parent of c100eb4... monaca
       localStorage.ListThumbnail = 'List'
       $('.list-thumbnail').html('square_list')
       start = 0
@@ -10839,12 +12237,13 @@ function changeListThumbnailCategoryProduct (id){
       $$('.infinite-scroll-preloader').show();
 
       getCategoryProduct(id)
-   }
-   else if (localStorage.ListThumbnail == 'List') {
+         }
+   else if  (localStorage.ListThumbnail == 'List'){
       localStorage.ListThumbnail = 'Thumbnail'
       $('.list-thumbnail').html('rectangle_grid_2x2')
       start = 0
       end = 8
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ////console.log(' end ----- > '+ localStorage.ListThumbnail)
@@ -10854,33 +12253,30 @@ function changeListThumbnailCategoryProduct (id){
 =======
       console.log(' end ----- > '+ localStorage.ListThumbnail)
 >>>>>>> parent of 40b1156... monaca
+=======
+      //console.log(' end ----- > '+ localStorage.ListThumbnail)
+>>>>>>> parent of c100eb4... monaca
       app.infiniteScroll.create('.infinite-scroll-content')
       $$('.infinite-scroll-preloader').show();
 
       getCategoryProduct(id)
 
    }
-
+   
 }
 
 
 
 
-function logFileInsert() {
-   var platformFlag
-   //console.log('platform ---- > ' + PLATFORM)
-   if (PLATFORM == 'Android') {
-      platformFlag = '1'
-   }
-   else {
-      platformFlag = '2'
-   }
-    $.ajax({
-      type: 'GET',
-      url: "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userid=" + localStorage.buitandaUserID + "&uuid=" + UUID + "&Platform=" + PLATFORM + "&appver=" + versionApplication + "&format=json",
-      cache: false,
+function logFileInsert( ) {
+
+   $.ajax({
+       type: 'GET',
+      url: "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json",
+      cache : false ,
 
       success: function (json) { 
+<<<<<<< HEAD
 <<<<<<< HEAD
          //console.log('platform ---- > ' + PLATFORM)
    //console.log(versionApplication)
@@ -10891,18 +12287,21 @@ function logFileInsert() {
 >>>>>>> parent of 40b1156... monaca
 =======
 >>>>>>> parent of 40b1156... monaca
+=======
+ 
+         //console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userI="+localStorage.buitandaUserID+"&uuid="+UUID+"&Platform="+PLATFORM+"&appver="+versionApplication+"&format=json")
+>>>>>>> parent of c100eb4... monaca
 
-         //console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userid=" + localStorage.buitandaUserID + "&uuid=" + UUID + "&Platform=" + PLATFORM + "&appver=" + versionApplication + "&format=json")
+         
 
-//console.log(versionApplication.replace(/\./g,''))
       }
-
+ 
 
    });
 }
 
 
-function getHotCategoryHome() {
+function getHotCategoryHome (){
 
    $.ajax({
       type: 'GET',
@@ -10910,9 +12309,9 @@ function getHotCategoryHome() {
       cache: false,
 
       success: function (json) {
-         var li = ''
-         for (var i = 0; i < json['posts'].length; i++) {
-            li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
+         var li=''
+         for(var i = 0 ; i < json['posts'].length ; i++){
+         li = li + '<div  class="col-50 subCat" onclick="go_to_page_two_params(' + "'" + 'Category' + "'" + ',' + json['posts'][i]['id'] + ')" >' +
                ' <a style="display:inline-flex;align-items:center;height: 12vh;"> ' +
 
                ' <p class="margin-white paddig-product textSubCat" style="color:black;"> ' + if_lang(json['posts'][i]['name'], json['posts'][i]['aname']) + '  </p>' +
@@ -10924,9 +12323,9 @@ function getHotCategoryHome() {
                '  </a>' +
 
                '</div>'
-         }
-
-         $('.HotCat').html(li)
+            }
+            
+            $('.HotCat').html(li)
 
       }
    });
