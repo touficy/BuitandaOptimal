@@ -3469,6 +3469,9 @@ function getProduct(id, title) {
                   mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >'         +
       + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 822d46e... Merge branch 'master' of https://github.com/touficy/BuitandaOptimal
+=======
 >>>>>>> parent of 822d46e... Merge branch 'master' of https://github.com/touficy/BuitandaOptimal
 =======
 >>>>>>> parent of 822d46e... Merge branch 'master' of https://github.com/touficy/BuitandaOptimal
