@@ -192,6 +192,7 @@ function onDeviceReady() {
    }
 
    PLATFORM = device.platform;
+
    ////console.log(PLATFORM)
    // alert("hi");
    // //////console.log('device ready --- > ' + localStorage, mercadoLanguage)
@@ -236,7 +237,7 @@ function onDeviceReady() {
       }).endInit();
    window.plugins.OneSignal.getIds(function (ids) {
       UUID = ids.userId;
-      //console.log('uuid --- > ' + ids.userId)
+      console.log('uuid --- > ' + ids.userId + '   platform --- > ' + PLATFORM)
       // alert(UUID);
       localStorage.setItem("login_uuid", ids.userId);
 
@@ -317,13 +318,16 @@ function onDeviceReady() {
 
    setTimeout(logFileInsert, 7000)
 
+   ///////////////////////////////////////// index code //////////////////////////////////
+
+
 
 }
 
 /*************LOGIN FACE ID SECTION **************/
 var biometryType;
 var token = "";
- 
+
 function login_using_touchid() {
    if (window.plugins) {
       if (Framework7.device.ios) {
@@ -796,7 +800,7 @@ $$(document).on('page:init', '.page[data-name="Delivery"]', function (e) {
    $('.AddressCheckout').html(if_lang('ADDRESS ', '  ENDEREÇO  '))
    $('.DeliveryCheckout').html(if_lang('DELIVERY ', '  ENTREGA   '))
    $('.PaymentCHECKOUT').html(if_lang('PAYMENT ', '  PAGAMENTO'))
- 
+
    $('.HomeDelivery').html(if_lang('Home / Office Delivery Shipping Time : Delivery within 48th after payment - Buissiness Days from 8am to 6pm and Saturday until 1pm Best Price and speed ',
       '  Entrega em Casa / Escritório Tempo de envio: Entrega até 48h após pagamento - Dias úteis das 8h às 18h e Sábados até às 13h O melhor preço e velocidade'))
    $('.pickupDEliivery').html(if_lang('Pick up : 9:00 -16:00 ' +
@@ -3457,7 +3461,7 @@ function getProduct(id, title) {
                if (json['posts'][0]['special'] == '1') {
                   mySwiper.addSlide(0, '  <div  class="swiper-slide " style="width:unset;text-align:center"  >' +
                      '<img src="img/onpromotion.png" class="onpromotionbig">' +
-                     + ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
+                     ' <img id="main_img_swiper" src="' + json['posts'][0]['image'] + '"  style=" width:35vh" >' + '</div>')
 
                }
                else {
@@ -5966,6 +5970,8 @@ function getMyCard() {
 
    }
    else {
+      console.log('uuid --- > ' + UUID)
+
       if (UUID != undefined && UUID != '' && UUID != ' ' && UUID != null && UUID != null) {
          $.ajax({
             type: 'GET',
@@ -6074,6 +6080,12 @@ function getMyCard() {
 
             }
          });
+      }
+      else {
+         $('.cart_counter').css('display', 'none')
+         $("#nextCheckout").attr("disabled", true);
+         $("#nextCheckout").css("background", 'gray');
+         $('.AllCheckout').html('<h2 style="color:red ; text-align:center">' + if_lang(' No items in the cart ', 'Não há itens no carrinho') + ' </h2>')
       }
    }
 }
@@ -7174,13 +7186,13 @@ function getMyOrder(id) {
                   '   <tr>' +
                   '   <td colspan="1"><b>' + if_lang('Total shipping ', ' ENTREGA	') + ':</b></td>' +
                   // ' <td colspan="4" class="TotalShippingA">' + nf.format(json['posts']['0']['totalShipping']) + 'KWZ  </td>' +
-                  ' <td colspan="4" class="TotalShippingA">'   +json['posts'][i]['totalShipping']+ ' KWZ  </td>' +
+                  ' <td colspan="4" class="TotalShippingA">' + json['posts'][i]['totalShipping'] + ' KWZ  </td>' +
                   ' </tr>' +
 
                   '   <tr>' +
                   '   <td colspan="1"><b>' + if_lang('Total', 'Total') + ':</b></td>' +
                   // ' <td colspan="4" class="TotalWithShippingg">' + totalS + '  KWZ </td>' +
-                  ' <td colspan="4" class="TotalWithShippingg">' + (json['posts'][i]['total'] + json['posts'][i]['totalShipping']) +'  KWZ </td>' +
+                  ' <td colspan="4" class="TotalWithShippingg">' + (json['posts'][i]['total'] + json['posts'][i]['totalShipping']) + '  KWZ </td>' +
                   ' </tr>' +
                   ' </tfoot>' +
 
@@ -7596,11 +7608,11 @@ function GetShipping() {
 
 
       success: function (json) {
-         if(json['posts']['0']['totalShipping'] != 0 && json['posts']['0']['totalShipping'] != '0' ){
-               $('.PaidDeleivery').html(json['posts']['0']['totalShipping']+ ' kwz ' )
+         if (json['posts']['0']['totalShipping'] != 0 && json['posts']['0']['totalShipping'] != '0') {
+            $('.PaidDeleivery').html(json['posts']['0']['totalShipping'] + ' kwz ')
          }
-         else{
-               $('.PaidDeleivery').html( ' FREE ' )
+         else {
+            $('.PaidDeleivery').html(' FREE ')
 
          }
          var nf = Intl.NumberFormat('fr');
@@ -7610,29 +7622,29 @@ function GetShipping() {
             ////console.log(json)
             // shipping = nf.format(json['posts']['0']['totalShipping'])
             shipping = json['posts']['0']['totalShipping']
- 
+
          // totalPlusShiping = nf.format(json['posts']['0']['total'])
-         totalPlusShiping = parseFloat( json['posts']['0']['total'] ) + parseFloat(json['posts']['0']['totalShipping'])
+         totalPlusShiping = parseFloat(json['posts']['0']['total']) + parseFloat(json['posts']['0']['totalShipping'])
          ////console.log(totalPlusShiping)
          if (shipping == 0) {
-            console.log('totalPlusShiping in shipping 0 --- > '+ totalPlusShiping)
-               // totalPlusShiping = nf.format(totalPlusShiping)
+            console.log('totalPlusShiping in shipping 0 --- > ' + totalPlusShiping)
+            // totalPlusShiping = nf.format(totalPlusShiping)
 
-             $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
-                               $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
+            $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
+            $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
          }
          else {
             if (shippingType == 'Pick_Up') {
-                           console.log('totalPlusShiping in Pick_Up --- > '+ totalPlusShiping)
+               console.log('totalPlusShiping in Pick_Up --- > ' + totalPlusShiping)
 
-               
+
                shipping = 0
                if (json['posts']['0']['total'] > json['posts']['0']['totalShipping']) {
                   totalPlusShiping = parseFloat(json['posts']['0']['total']) - parseFloat(json['posts']['0']['totalShipping'])
                   // totalPlusShiping = nf.format(totalPlusShiping)
                   $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
-                                             console.log('totalPlusShiping in Pick_Up --- > '+ totalPlusShiping)
+                  console.log('totalPlusShiping in Pick_Up --- > ' + totalPlusShiping)
 
                   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
@@ -7643,7 +7655,7 @@ function GetShipping() {
                   totalPlusShiping = parseFloat(json['posts']['0']['total']) - parseFloat(json['posts']['0']['total'])
                   // totalPlusShiping = nf.format(totalPlusShiping)
                   $('.TotalShippingA').html(if_lang('Free Shipping ', ' Entrega Grátis'))
-                                             console.log('totalPlusShiping in Pick_Up down --- > '+ totalPlusShiping)
+                  console.log('totalPlusShiping in Pick_Up down --- > ' + totalPlusShiping)
 
                   $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
 
@@ -7653,7 +7665,7 @@ function GetShipping() {
             }
             else {
                // totalPlusShiping = nf.format(totalPlusShiping)
-                           console.log('totalPlusShiping in else final  --- > '+ totalPlusShiping)
+               console.log('totalPlusShiping in else final  --- > ' + totalPlusShiping)
 
                $('.TotalShippingA').html(if_lang(shipping + ' KWZ', shipping + ' KWZ'))
                $('.TotalWithShippingg').html(totalPlusShiping + ' KWZ')
@@ -7957,7 +7969,7 @@ function loginTillCheckout() {
                   localStorage.buitandaUserType = json['posts'][0]['user_type']
 
                   GetShipping()
-                  go_to_page('SubmitOrder')
+                  go_to_page('Delivery')
 
                }
                else {
@@ -8527,18 +8539,18 @@ function logFileInsert() {
    else {
       platformFlag = '2'
    }
-    $.ajax({
+   $.ajax({
       type: 'GET',
       url: "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userid=" + localStorage.buitandaUserID + "&uuid=" + UUID + "&Platform=" + PLATFORM + "&appver=" + versionApplication + "&format=json",
       cache: false,
 
-      success: function (json) { 
+      success: function (json) {
          //console.log('platform ---- > ' + PLATFORM)
-   //console.log(versionApplication)
+         //console.log(versionApplication)
 
          //console.log('url -- > ' + "https://buitanda.com/ws-v1.3.9.php?type=mobilelog&userid=" + localStorage.buitandaUserID + "&uuid=" + UUID + "&Platform=" + PLATFORM + "&appver=" + versionApplication + "&format=json")
 
-//console.log(versionApplication.replace(/\./g,''))
+         //console.log(versionApplication.replace(/\./g,''))
       }
 
 
